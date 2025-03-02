@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KingMeServer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,84 @@ namespace sistema_autonomo
         public Form1()
         {
             InitializeComponent();
+            cboFiltrarPartidas.Items.Add("Todos");
+            cboFiltrarPartidas.Items.Add("Abertas");
+            cboFiltrarPartidas.Items.Add("Jogando");
+            cboFiltrarPartidas.Items.Add("Encerradas");
+            cboFiltrarPartidas.SelectedIndex = 0;
+            lblVersaoJogo.Text = Jogo.versao;
         }
+
+        private void btnListarPartidas_Click(object sender, EventArgs e)
+        {
+            string listaDePartidas = Jogo.ListarPartidas("T");
+            listaDePartidas = listaDePartidas.Replace("\r", "");
+            string[] partidas = listaDePartidas.Split('\n');
+
+            //Adiciona as partidas na lista
+            lstListaDePartidas.Items.Clear();
+            for (int i = 0; i < partidas.Length - 1; i++)
+            {
+                if(cboFiltrarPartidas.Text.Substring(0, 1) == "T")
+                {
+                    lstListaDePartidas.Items.Add(partidas[i]);
+                }
+                if(cboFiltrarPartidas.Text.Substring(0,1) == partidas[i].Substring(partidas[i].Length - 1, 1))//Dado indice (i), recorta o ultimo caractere.
+                {
+                    lstListaDePartidas.Items.Add(partidas[i]);
+                }
+
+            }
+         }
+        private void lstListaDePartidas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string partidaSelecionadaRecebida = lstListaDePartidas.SelectedItem.ToString();
+            string[] partidaSelecionada = partidaSelecionadaRecebida.Split(',');
+
+            int idPartidaSelecionada = Convert.ToInt32(partidaSelecionada[0]);
+            string nomePartidaSelecionada = partidaSelecionada[1];
+            string dataPartidaSelecionada = partidaSelecionada[2];
+            string statusPartidaSelecionada = partidaSelecionada[3];
+
+            lblIdPartidaSelecionada.Text = idPartidaSelecionada.ToString();
+            lblNomePartidaSelecionada.Text = nomePartidaSelecionada;
+            lblDataPartidaSelecionada.Text = dataPartidaSelecionada;
+            
+            switch (statusPartidaSelecionada)
+            {
+                case "A":
+                    lblStatusPartidaSelecionada.Text = "Aberta";
+                    break;
+                case "J":
+                    lblStatusPartidaSelecionada.Text = "Jogando";
+                    break;
+                case "E":
+                    lblStatusPartidaSelecionada.Text = "Encerrada";
+                    break;
+            }
+
+            string jogadoresRecebidos = Jogo.ListarJogadores(idPartidaSelecionada);
+            
+            //Informa quando não tem nenhum jogador
+            if(jogadoresRecebidos == "")
+            {
+                lstJogadores.Items.Clear();
+                lstJogadores.Items.Add("Nenhum jogador na partida!");
+                return;
+            }
+
+            jogadoresRecebidos = jogadoresRecebidos.Replace("\r", "");
+            string[] jogadores = jogadoresRecebidos.Split('\n');
+
+            //Adiciona todos os jogadores na lista
+            lstJogadores.Items.Clear();
+            for (int i = 0; i < jogadores.Length; i++)
+            {
+                lstJogadores.Items.Add(jogadores[i]);
+            }
+
+
+        }
+
     }
 }
