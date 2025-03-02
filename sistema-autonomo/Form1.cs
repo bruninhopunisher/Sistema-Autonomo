@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -91,9 +92,34 @@ namespace sistema_autonomo
             {
                 lstJogadores.Items.Add(jogadores[i]);
             }
-
-
         }
 
+        private void btnCriarPartida_Click(object sender, EventArgs e)
+        {
+            string nomePartida = txtInputNomePartida.Text.Trim();
+            string senhaPartida = txtInputSenhaPartida.Text.Trim();
+            string nomeGrupo = txtInputNomeGrupo.Text.Trim();
+
+            if (nomePartida == "")
+            {
+                MessageBox.Show("ERRO: informe o nome da partida");
+                return;
+            }
+            else if (senhaPartida == "")
+            {
+                MessageBox.Show("ERRO: informe a senha da partida");
+                return;
+            } 
+            else if (nomeGrupo == "")
+            {
+                MessageBox.Show("ERRO: informe o nome do grupo");
+                return;
+            }
+            else
+            {   
+                string idPartidaCriada = Jogo.CriarPartida(nomePartida, senhaPartida, nomeGrupo);
+                MessageBox.Show($"Partida criada com sucesso!\nO ID da sua partida é {idPartidaCriada}");
+            }
+        }
     }
 }

@@ -11,3 +11,16 @@ C:\Users\Stephanie Travensolo\Documents\Caua Estudos\PI3\projeto-pi3\sistema-aut
 C:\Users\Stephanie Travensolo\Documents\Caua Estudos\PI3\projeto-pi3\sistema-autonomo\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
 C:\Users\Stephanie Travensolo\Documents\Caua Estudos\PI3\projeto-pi3\sistema-autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.exe
 C:\Users\Stephanie Travensolo\Documents\Caua Estudos\PI3\projeto-pi3\sistema-autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.pdb
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\bin\Debug\sistema-autonomo.exe.config
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\bin\Debug\sistema-autonomo.exe
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\bin\Debug\sistema-autonomo.pdb
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.dll
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.xml
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.AssemblyReference.cache
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Form1.resources
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Properties.Resources.resources
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.GenerateResource.cache
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.exe
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.pdb
