@@ -1,4 +1,5 @@
 ﻿using KingMeServer;
+using sistema_autonomo.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,17 +13,24 @@ using System.Windows.Forms;
 
 namespace sistema_autonomo
 {
+
     public partial class Form1 : Form
     {
+        public Partida partida = new Partida();
+        public Jogador JogadorLogado = new Jogador();
         public Form1()
         {
+            
             InitializeComponent();
+            
+
             cboFiltrarPartidas.Items.Add("Todos");
             cboFiltrarPartidas.Items.Add("Abertas");
             cboFiltrarPartidas.Items.Add("Jogando");
             cboFiltrarPartidas.Items.Add("Encerradas");
             cboFiltrarPartidas.SelectedIndex = 0;
             lblVersaoJogo.Text = Jogo.versao;
+            
         }
 
         private void btnListarPartidas_Click(object sender, EventArgs e)
@@ -46,21 +54,25 @@ namespace sistema_autonomo
 
             }
          }
-        private void lstListaDePartidas_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        public void lstListaDePartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            
             string partidaSelecionadaRecebida = lstListaDePartidas.SelectedItem.ToString();
             string[] partidaSelecionada = partidaSelecionadaRecebida.Split(',');
 
-            int idPartidaSelecionada = Convert.ToInt32(partidaSelecionada[0]);
-            string nomePartidaSelecionada = partidaSelecionada[1];
-            string dataPartidaSelecionada = partidaSelecionada[2];
-            string statusPartidaSelecionada = partidaSelecionada[3];
+            partida.setID(Convert.ToInt32(partidaSelecionada[0]));
+            partida.setNome (partidaSelecionada[1]);
+            partida.setData( partidaSelecionada[2]);
+            partida.setStatus( partidaSelecionada[3]);
 
-            lblIdPartidaSelecionada.Text = idPartidaSelecionada.ToString();
-            lblNomePartidaSelecionada.Text = nomePartidaSelecionada;
-            lblDataPartidaSelecionada.Text = dataPartidaSelecionada;
+            lblIdPartidaSelecionada.Text = partida.getID().ToString();
+            lblNomePartidaSelecionada.Text = partida.getNome();
+            lblDataPartidaSelecionada.Text = partida.getData();
             
-            switch (statusPartidaSelecionada)
+            switch (partida.getStatus())
             {
                 case "A":
                     lblStatusPartidaSelecionada.Text = "Aberta";
@@ -73,7 +85,7 @@ namespace sistema_autonomo
                     break;
             }
 
-            string jogadoresRecebidos = Jogo.ListarJogadores(idPartidaSelecionada);
+            string jogadoresRecebidos = Jogo.ListarJogadores(partida.getID());
             
             //Informa quando não tem nenhum jogador
             if(jogadoresRecebidos == "")
@@ -98,8 +110,7 @@ namespace sistema_autonomo
         {
             string nomePartida = txtInputNomePartida.Text.Trim();
             string senhaPartida = txtInputSenhaPartida.Text.Trim();
-            string nomeGrupo = txtInputNomeGrupo.Text.Trim();
-
+            
             if (nomePartida == "")
             {
                 MessageBox.Show("ERRO: informe o nome da partida");
@@ -110,16 +121,43 @@ namespace sistema_autonomo
                 MessageBox.Show("ERRO: informe a senha da partida");
                 return;
             } 
-            else if (nomeGrupo == "")
-            {
-                MessageBox.Show("ERRO: informe o nome do grupo");
-                return;
-            }
+           
             else
             {   
-                string idPartidaCriada = Jogo.CriarPartida(nomePartida, senhaPartida, nomeGrupo);
+                string idPartidaCriada = Jogo.CriarPartida(nomePartida, senhaPartida, "Estudantes de Bolonha");
                 MessageBox.Show($"Partida criada com sucesso!\nO ID da sua partida é {idPartidaCriada}");
             }
         }
+        
+       
+
+        private void btnEntrarPartida_Click_1(object sender, EventArgs e)
+        {
+            
+            
+            string[] dadosJogador = new string[2];
+            string senhaDigitada = txtSenhaEntrarPartida.Text.Trim();
+            string nomeDoJogador = txtNomeDoJogador.Text.Trim();
+            string dadosRecebidos = Jogo.Entrar(partida.getID(), nomeDoJogador, senhaDigitada);
+        
+            dadosJogador = dadosRecebidos.Split(',');
+
+            if (dadosRecebidos.Substring(0, 4) != "ERRO")
+            {
+                JogadorLogado.SetId(Convert.ToInt32(dadosJogador[0]));
+                JogadorLogado.SetSenha(dadosJogador[1]);
+                JogadorLogado.SetNome(nomeDoJogador);
+                LobbyPartida LobbyPartida1 = new LobbyPartida(partida, JogadorLogado);
+                LobbyPartida1.idJogadorLogado = JogadorLogado.GetId();
+                LobbyPartida1.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show(dadosJogador[0]);
+            }
+        }
+
+      
     }
 }
