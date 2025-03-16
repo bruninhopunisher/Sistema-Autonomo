@@ -18,10 +18,13 @@ namespace sistema_autonomo
     {
         public Partida partida = new Partida();
         public Jogador JogadorLogado = new Jogador();
+
         public Form1()
         {
             
             InitializeComponent();
+
+
             
 
             cboFiltrarPartidas.Items.Add("Todos");
@@ -30,7 +33,13 @@ namespace sistema_autonomo
             cboFiltrarPartidas.Items.Add("Encerradas");
             cboFiltrarPartidas.SelectedIndex = 0;
             lblVersaoJogo.Text = Jogo.versao;
-            
+
+            //LobbyPartida LobbyPartida1 = new LobbyPartida(partida, JogadorLogado);
+
+            //LobbyPartida1.ShowDialog();
+            //this.Hide();
+
+
         }
 
         private void btnListarPartidas_Click(object sender, EventArgs e)
