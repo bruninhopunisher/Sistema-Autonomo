@@ -4,11 +4,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using KingMeServer;
 using sistema_autonomo.Classes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace sistema_autonomo
 {
@@ -17,35 +21,59 @@ namespace sistema_autonomo
         public int idJogadorLogado { get; set; }
         Partida partidaSelecionada;
         Jogador jogadorSelecionado;
+
         public LobbyPartida(Partida partidaRecebida, Jogador jogadorRecebido)
         {
             InitializeComponent();
 
             partidaSelecionada = partidaRecebida;
             jogadorSelecionado = jogadorRecebido;
-            lblIdJogadorLogado.Text = jogadorSelecionado.GetId().ToString();
-            lblSenhaJogadorLogado.Text = jogadorSelecionado.GetSenha().ToString();
-            
+            lblConstIdJogadorLogado.Text = jogadorSelecionado.GetId().ToString();
+            //lblConstSenhaJogadorLogado.Text = jogadorSelecionado.GetSenha().ToString();
+
+
+            //DataGrid com nome dos personagens
+            dgvPersonagens.DataSource = Personagem.ListarPersonagem(0);
+            dgvPersonagens.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPersonagens.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgvPersonagens.AllowUserToResizeRows = false;
+            dgvPersonagens.AllowUserToResizeColumns = false;
+            dgvPersonagens.RowHeadersVisible = false;
+            dgvPersonagens.Columns[0].Visible = false;
+            dgvPersonagens.Columns[1].HeaderText = "Nome do Personagem";
+            dgvPersonagens.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvPersonagens.Columns[2].HeaderText = "Posição";
+            dgvPersonagens.Columns[3].HeaderText = "Status";
+
+
+            //Lista de setores
+
+            string listaSetores = Jogo.ListarSetores();
+            listaSetores = listaSetores.Replace("\r", "");
+            string[] setores = listaSetores.Split('\n');
+            for (int i = 0; i < setores.Length-1; i++)
+            {
+                lstSetores.Items.Add(setores[i]);
+            }
         }
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
             string verificacaoInicio = Jogo.Iniciar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha());
             MessageBox.Show(verificacaoInicio);
-
-            string cartasSorteadas = Jogo.ListarCartas(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha());
             
-            partidaSelecionada.setStatus("Jogando");
-            lblNomePartida.Text = partidaSelecionada.getNome();
-            lblStatusPartida.Text = partidaSelecionada.getStatus();
-            lblPontuacao.Text = jogadorSelecionado.GetPontos().ToString();
+            string cartasSorteadas = Jogo.ListarCartas(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha());
 
-            if(verificacaoInicio.Substring(0,4) != "ERRO")
+            partidaSelecionada.setStatus("Jogando");
+            lblAltNomePartida.Text = partidaSelecionada.getNome();
+            lblAltStatusPartida.Text = partidaSelecionada.getStatus();
+            lblAltPontuacao.Text = jogadorSelecionado.GetPontos().ToString();
+
+            if(verificacaoInicio.Substring(0,2) != "ER")
             {
                 lstCartasSorteadas.Items.Clear();
                 for (int i = 0; i < 6; i++)
                 {
-
                     switch (cartasSorteadas.Substring(i, 1))
                     {
                         case "A":
@@ -90,8 +118,104 @@ namespace sistema_autonomo
 
                     }
                 }
+            }
+        }
 
-            
+        private void btnAltPosicionarPersonagem_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonagens.SelectedRows.Count > 0)
+            {
+                
+                Personagem personagemSelecionado = (Personagem)dgvPersonagens.SelectedRows[0].DataBoundItem;
+
+                if (personagemSelecionado != null && !string.IsNullOrEmpty(personagemSelecionado.nome) && lstSetores.SelectedItem != null)
+                {
+                    string nomePersonagemSelecionado = personagemSelecionado.nome;
+                    string setorPersonagemSelecionado = lstSetores.SelectedItem.ToString();
+                    string[] setores = setorPersonagemSelecionado.Split(',');
+
+                    string estadoTabuleiro = Jogo.ColocarPersonagem(
+                        jogadorSelecionado.GetId(),
+                        jogadorSelecionado.GetSenha(),
+                        Convert.ToInt32(setores[0]),
+                        nomePersonagemSelecionado.Substring(0, 1)
+                    );
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecione um personagem e um setor válido.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione uma linha válida no DataGridView.");
+            }
+
+        }
+
+        private void btnAltAtualizarLista_Click(object sender, EventArgs e)
+        {
+            int indice = 0;
+            int idRetornado;
+            string nomeRetornado;
+            int indiceRecebido = 0;
+            string verificarVez = Jogo.VerificarVez(partidaSelecionada.getID());
+
+            string dadosJogadores = Jogo.ListarJogadores(partidaSelecionada.getID());
+            dadosJogadores = dadosJogadores.Replace("\r", "");
+            string[] dadosJogadorestratados = dadosJogadores.Split('\n');
+
+            StructJogador[] structJogadores = new StructJogador[6];
+
+            foreach (string dadosJogadorestratado in dadosJogadorestratados)
+            {
+                if (string.IsNullOrWhiteSpace(dadosJogadorestratado)) continue;
+
+                string[] valores = dadosJogadorestratado.Split(',');
+                if (valores.Length < 3) continue;
+
+                structJogadores[indice].id = valores[0];
+                structJogadores[indice].nome = valores[1];
+                structJogadores[indice].pontos = valores[2];
+                indice++;
+            }
+
+            if (verificarVez.Substring(0, 4) != "ERRO")
+            {
+                verificarVez = verificarVez.Replace("\r", "");
+                string[] tabuleiro = verificarVez.Split('\n');
+                lstTabuleiroDoJogo.Items.Clear();
+                for (int i = 0; i < tabuleiro.Length - 1; i++)
+                {
+                    lstTabuleiroDoJogo.Items.Add(tabuleiro[i]);
+                }
+                string[] dadosPartida = tabuleiro[0].Split(',');
+                int jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
+
+                for (int i = 0; i < indice; i++)
+                {
+                    if (Convert.ToInt32(structJogadores[i].id) == jogadorVez)
+                    {
+                        idRetornado = Convert.ToInt32(structJogadores[i].id);
+                        nomeRetornado = structJogadores[i].nome;
+                        indiceRecebido = i;
+                    }
+                }
+
+                if (idJogadorLogado == jogadorVez)
+                {
+                    lblConstMostrarVez.Text = $"É a sua vez ID {jogadorSelecionado.GetId()}: {jogadorSelecionado.GetNome()}";
+                }
+                else
+                {
+                    lblConstMostrarVez.Text = $"É a vez do ID {structJogadores[indiceRecebido].id}: {structJogadores[indiceRecebido].nome}";
+                }
+
+                //dgvPersonagens.DataSource = Personagem.ListarPersonagem(5);
+            }
+            else
+            {
+                MessageBox.Show(verificarVez);
             }
         }
     }

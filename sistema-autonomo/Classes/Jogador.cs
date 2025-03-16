@@ -28,9 +28,9 @@ namespace sistema_autonomo
             this.nome = nome;
         }
 
-        public int GetNome()
+        public string GetNome()
         {
-            return id;
+            return nome;
         }
 
         public void SetSenha(string senha)
