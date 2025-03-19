@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using KingMeServer;
 
 namespace sistema_autonomo.Classes
 {
@@ -12,11 +15,10 @@ namespace sistema_autonomo.Classes
         private int id;
         private string nome;
         private string senha;
-        private string nomeGrupo = "Estudantes de Bolonha";
         private string data;
         private string status;
 
-        public void setID (int id)
+        public void setID(int id)
         {
             this.id = id;
         }
@@ -46,11 +48,6 @@ namespace sistema_autonomo.Classes
             return senha;
         }
 
-        public string getGrupo()
-        {
-            return nomeGrupo;
-        }
-
         public void setData(string data)
         {
             this.data = data;
@@ -69,6 +66,5 @@ namespace sistema_autonomo.Classes
             return status;
         }
 
-       
     }
 }

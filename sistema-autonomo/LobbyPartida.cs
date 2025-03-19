@@ -140,6 +140,8 @@ namespace sistema_autonomo
                         Convert.ToInt32(setores[0]),
                         nomePersonagemSelecionado.Substring(0, 1)
                     );
+
+                    MessageBox.Show(estadoTabuleiro.ToString());
                 }
                 else
                 {

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Classes\StructJogador.cs" />
     <Compile Include="Classes\Partida.cs" />
+    <Compile Include="Classes\Lobby.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
