@@ -72,7 +72,6 @@ namespace sistema_autonomo
                 novoPersonagem.foiDeBase = false;
                 personagens_instancia.Add(novoPersonagem);
             }
-
             return personagens_instancia;
         }
 
