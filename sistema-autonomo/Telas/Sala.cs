@@ -20,6 +20,7 @@ namespace sistema_autonomo
         Personagem personagem;
         List<Personagem> minhaLista = new List<Personagem>();
         List<PictureBox> listaPic = new List<PictureBox>();
+        string verificarVez;
 
         public Sala(Partida partidaRecebida, Jogador jogadorRecebido)
         {
@@ -93,7 +94,7 @@ namespace sistema_autonomo
             int idRetornado;
             string nomeRetornado;
             int indiceRecebido = 0;
-            string verificarVez = Jogo.VerificarVez(partidaSelecionada.getID());
+            verificarVez = Jogo.VerificarVez(partidaSelecionada.getID());
 
             string dadosJogadores = Jogo.ListarJogadores(partidaSelecionada.getID());
             dadosJogadores = dadosJogadores.Replace("\r", "");
@@ -168,81 +169,41 @@ namespace sistema_autonomo
             if (lstCartas.SelectedItem != null)
             {
                 string nomecartaSelecionada = lstCartas.SelectedItem.ToString();
-                nomecartaSelecionada = lstCartas.SelectedItem.ToString();
                 string NomeRecortado = nomecartaSelecionada.Substring(0, 1);
-                // MessageBox.Show(nomecartaSelecionada);
-                string nomeSetor = lstSetoresSala.SelectedItem.ToString();
-                int numeroSetorSelecionado = Convert.ToInt32(nomeSetor.Substring(0, 1));
 
-                string retornoColocar = Jogo.ColocarPersonagem(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), numeroSetorSelecionado, NomeRecortado);
-                Console.WriteLine(retornoColocar);
-                retornoColocar.Replace("\r", "");
-                string[] dadosRetornados = retornoColocar.Split('\n');
-
-                // Metodo classe personagem para alterar a posicao do personagem um pouco a baixo
-                for (int i = 0; i < dadosRetornados.Length - 1; i++)
+                if (lstSetoresSala.SelectedItem != null)
                 {
-                    // Retorna a letra inicial na variavel person
-                    string person = dadosRetornados[i].Substring(0, 3);
-                    int setor = Convert.ToInt32(dadosRetornados[i].Substring(0, 1));
+                    string nomeSetor = lstSetoresSala.SelectedItem.ToString();
+                    int numeroSetorSelecionado = Convert.ToInt32(nomeSetor.Substring(0, 1));
 
-                    personagem.AlterarSetorPersonagem(person, setor);
-                }
-                
-                /*
-                for (int i = 0; i < minhaLista.Count(); i++)
-                {
-                    Personagem personagemEmandamento = new Personagem();
-                    personagemEmandamento = minhaLista[i];
-                    string nomeDavez = personagemEmandamento.nome;
-                    nomeDavez = nomeDavez.Substring(0, 1);
-                    if(nomeDavez == retornoColocar)
-                    {
-                        //picAdilson.Name
-                    }
-                }
-                */
-                //Botão deletado (Pegar apenas referencia)
-                /*
-                if (dgvPersonagens.SelectedRows.Count > 0)
-                {
-
-                    Personagem personagemSelecionado = (Personagem)dgvPersonagens.SelectedRows[0].DataBoundItem;
-
-                    if (personagemSelecionado != null && !string.IsNullOrEmpty(personagemSelecionado.nome) && lstSetores.SelectedItem != null)
-                    {
-                        string nomePersonagemSelecionado = personagemSelecionado.nome;
-                        string setorPersonagemSelecionado = lstSetores.SelectedItem.ToString();
-                        string[] setores = setorPersonagemSelecionado.Split(',');
-
-                        string estadoTabuleiro = Jogo.ColocarPersonagem(
-                            jogadorSelecionado.GetId(),
-                            jogadorSelecionado.GetSenha(),
-                            Convert.ToInt32(setores[0]),
-                            nomePersonagemSelecionado.Substring(0, 1)
-                        );
-
-                        MessageBox.Show(estadoTabuleiro.ToString());
-                    }
-                    else
-                    {
-                        MessageBox.Show("Por favor, selecione um personagem e um setor válido.");
-                    }
+                    string retornoColocar = Jogo.ColocarPersonagem(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), numeroSetorSelecionado, NomeRecortado);
+                    Console.WriteLine(retornoColocar);
+                    retornoColocar = retornoColocar.Replace("\r", "");
+                    string[] dadosRetornados = retornoColocar.Split('\n');
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, selecione uma linha válida no DataGridView.");
+                    MessageBox.Show("Selecione um setor para posicionar!");
                 }
             }
-        
-
-                void picAdilson_Click(object sender, EventArgs e)
+            else
             {
+                MessageBox.Show("Selecione um personagem para posicionar!");
+            }
+        }
 
+        // Botão de atualizar tabuleiro
+        private void btnAtualizarTabuleiro_Click(object sender, EventArgs e)
+        {
+            verificarVez = Jogo.VerificarVez(partidaSelecionada.getID());
+
+            verificarVez = verificarVez.Replace("\r", "");
+            string[] tabuleiro = verificarVez.Split('\n');
+            lstAltTabuleiroSala.Items.Clear();
+            for (int i = 0; i < tabuleiro.Length - 1; i++)
+            {
+                lstAltTabuleiroSala.Items.Add(tabuleiro[i]);
             }
-            */
-            }
-            MessageBox.Show("Selecione um personagem para posicionar!");
         }
     }
 }

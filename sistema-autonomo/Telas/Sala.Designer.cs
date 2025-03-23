@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sala));
             this.lblNomeJogador = new System.Windows.Forms.Label();
             this.lblNomePartida = new System.Windows.Forms.Label();
-            this.btnTeste = new System.Windows.Forms.Button();
             this.txtConstMinhasCartasSala = new System.Windows.Forms.Label();
             this.lstMinhasCartasSala = new System.Windows.Forms.ListBox();
             this.lblSetoresSala = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@
             this.txtReceberNomePersonagem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lstCartas = new System.Windows.Forms.ListBox();
+            this.btnAtualizarTabuleiro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -92,15 +92,6 @@
             this.lblNomePartida.Size = new System.Drawing.Size(35, 13);
             this.lblNomePartida.TabIndex = 1;
             this.lblNomePartida.Text = "label2";
-            // 
-            // btnTeste
-            // 
-            this.btnTeste.Location = new System.Drawing.Point(128, 52);
-            this.btnTeste.Name = "btnTeste";
-            this.btnTeste.Size = new System.Drawing.Size(75, 23);
-            this.btnTeste.TabIndex = 2;
-            this.btnTeste.Text = "button1";
-            this.btnTeste.UseVisualStyleBackColor = true;
             // 
             // txtConstMinhasCartasSala
             // 
@@ -320,7 +311,7 @@
             // txtReceberNomePersonagem
             // 
             this.txtReceberNomePersonagem.Location = new System.Drawing.Point(102, 194);
-            this.txtReceberNomePersonagem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReceberNomePersonagem.Margin = new System.Windows.Forms.Padding(2);
             this.txtReceberNomePersonagem.Name = "txtReceberNomePersonagem";
             this.txtReceberNomePersonagem.Size = new System.Drawing.Size(102, 20);
             this.txtReceberNomePersonagem.TabIndex = 27;
@@ -339,16 +330,27 @@
             // 
             this.lstCartas.FormattingEnabled = true;
             this.lstCartas.Location = new System.Drawing.Point(507, 411);
-            this.lstCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstCartas.Margin = new System.Windows.Forms.Padding(2);
             this.lstCartas.Name = "lstCartas";
             this.lstCartas.Size = new System.Drawing.Size(91, 147);
             this.lstCartas.TabIndex = 29;
+            // 
+            // btnAtualizarTabuleiro
+            // 
+            this.btnAtualizarTabuleiro.Location = new System.Drawing.Point(1123, 292);
+            this.btnAtualizarTabuleiro.Name = "btnAtualizarTabuleiro";
+            this.btnAtualizarTabuleiro.Size = new System.Drawing.Size(136, 68);
+            this.btnAtualizarTabuleiro.TabIndex = 30;
+            this.btnAtualizarTabuleiro.Text = "Atualizar Tabuleiro";
+            this.btnAtualizarTabuleiro.UseVisualStyleBackColor = true;
+            this.btnAtualizarTabuleiro.Click += new System.EventHandler(this.btnAtualizarTabuleiro_Click);
             // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnAtualizarTabuleiro);
             this.Controls.Add(this.lstCartas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtReceberNomePersonagem);
@@ -376,7 +378,6 @@
             this.Controls.Add(this.lblSetoresSala);
             this.Controls.Add(this.lstMinhasCartasSala);
             this.Controls.Add(this.txtConstMinhasCartasSala);
-            this.Controls.Add(this.btnTeste);
             this.Controls.Add(this.lblNomePartida);
             this.Controls.Add(this.lblNomeJogador);
             this.Name = "Sala";
@@ -404,7 +405,6 @@
 
         private System.Windows.Forms.Label lblNomeJogador;
         private System.Windows.Forms.Label lblNomePartida;
-        private System.Windows.Forms.Button btnTeste;
         private System.Windows.Forms.Label txtConstMinhasCartasSala;
         private System.Windows.Forms.ListBox lstMinhasCartasSala;
         private System.Windows.Forms.Label lblSetoresSala;
@@ -432,5 +432,6 @@
         private System.Windows.Forms.TextBox txtReceberNomePersonagem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstCartas;
+        private System.Windows.Forms.Button btnAtualizarTabuleiro;
     }
 }
