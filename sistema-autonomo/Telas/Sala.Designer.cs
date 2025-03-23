@@ -55,8 +55,6 @@
             this.picToshio = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPosicionar = new System.Windows.Forms.Button();
-            this.txtReceberNomePersonagem = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lstCartas = new System.Windows.Forms.ListBox();
             this.btnAtualizarTabuleiro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
@@ -78,7 +76,7 @@
             // lblNomeJogador
             // 
             this.lblNomeJogador.AutoSize = true;
-            this.lblNomeJogador.Location = new System.Drawing.Point(43, 36);
+            this.lblNomeJogador.Location = new System.Drawing.Point(22, 20);
             this.lblNomeJogador.Name = "lblNomeJogador";
             this.lblNomeJogador.Size = new System.Drawing.Size(35, 13);
             this.lblNomeJogador.TabIndex = 0;
@@ -87,7 +85,7 @@
             // lblNomePartida
             // 
             this.lblNomePartida.AutoSize = true;
-            this.lblNomePartida.Location = new System.Drawing.Point(59, 78);
+            this.lblNomePartida.Location = new System.Drawing.Point(22, 37);
             this.lblNomePartida.Name = "lblNomePartida";
             this.lblNomePartida.Size = new System.Drawing.Size(35, 13);
             this.lblNomePartida.TabIndex = 1;
@@ -96,7 +94,7 @@
             // txtConstMinhasCartasSala
             // 
             this.txtConstMinhasCartasSala.AutoSize = true;
-            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(354, 10);
+            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(282, 10);
             this.txtConstMinhasCartasSala.Name = "txtConstMinhasCartasSala";
             this.txtConstMinhasCartasSala.Size = new System.Drawing.Size(74, 13);
             this.txtConstMinhasCartasSala.TabIndex = 3;
@@ -105,7 +103,7 @@
             // lstMinhasCartasSala
             // 
             this.lstMinhasCartasSala.FormattingEnabled = true;
-            this.lstMinhasCartasSala.Location = new System.Drawing.Point(297, 37);
+            this.lstMinhasCartasSala.Location = new System.Drawing.Point(225, 37);
             this.lstMinhasCartasSala.Name = "lstMinhasCartasSala";
             this.lstMinhasCartasSala.Size = new System.Drawing.Size(175, 160);
             this.lstMinhasCartasSala.TabIndex = 4;
@@ -113,7 +111,7 @@
             // lblSetoresSala
             // 
             this.lblSetoresSala.AutoSize = true;
-            this.lblSetoresSala.Location = new System.Drawing.Point(538, 20);
+            this.lblSetoresSala.Location = new System.Drawing.Point(538, 216);
             this.lblSetoresSala.Name = "lblSetoresSala";
             this.lblSetoresSala.Size = new System.Drawing.Size(43, 13);
             this.lblSetoresSala.TabIndex = 5;
@@ -122,7 +120,7 @@
             // lstSetoresSala
             // 
             this.lstSetoresSala.FormattingEnabled = true;
-            this.lstSetoresSala.Location = new System.Drawing.Point(507, 36);
+            this.lstSetoresSala.Location = new System.Drawing.Point(507, 232);
             this.lstSetoresSala.Name = "lstSetoresSala";
             this.lstSetoresSala.Size = new System.Drawing.Size(121, 160);
             this.lstSetoresSala.TabIndex = 6;
@@ -130,7 +128,7 @@
             // lblTabuleiro
             // 
             this.lblTabuleiro.AutoSize = true;
-            this.lblTabuleiro.Location = new System.Drawing.Point(539, 220);
+            this.lblTabuleiro.Location = new System.Drawing.Point(544, 21);
             this.lblTabuleiro.Name = "lblTabuleiro";
             this.lblTabuleiro.Size = new System.Drawing.Size(51, 13);
             this.lblTabuleiro.TabIndex = 7;
@@ -139,7 +137,7 @@
             // lstAltTabuleiroSala
             // 
             this.lstAltTabuleiroSala.FormattingEnabled = true;
-            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(507, 236);
+            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(512, 37);
             this.lstAltTabuleiroSala.Name = "lstAltTabuleiroSala";
             this.lstAltTabuleiroSala.Size = new System.Drawing.Size(116, 160);
             this.lstAltTabuleiroSala.TabIndex = 8;
@@ -147,7 +145,7 @@
             // lblConstStatusVezSala
             // 
             this.lblConstStatusVezSala.AutoSize = true;
-            this.lblConstStatusVezSala.Location = new System.Drawing.Point(375, 266);
+            this.lblConstStatusVezSala.Location = new System.Drawing.Point(421, 37);
             this.lblConstStatusVezSala.Name = "lblConstStatusVezSala";
             this.lblConstStatusVezSala.Size = new System.Drawing.Size(73, 13);
             this.lblConstStatusVezSala.TabIndex = 9;
@@ -156,7 +154,7 @@
             // lblAltStatusVezSala
             // 
             this.lblAltStatusVezSala.AutoSize = true;
-            this.lblAltStatusVezSala.Location = new System.Drawing.Point(375, 288);
+            this.lblAltStatusVezSala.Location = new System.Drawing.Point(421, 59);
             this.lblAltStatusVezSala.Name = "lblAltStatusVezSala";
             this.lblAltStatusVezSala.Size = new System.Drawing.Size(13, 13);
             this.lblAltStatusVezSala.TabIndex = 10;
@@ -164,7 +162,7 @@
             // 
             // btnConstVerificarVez
             // 
-            this.btnConstVerificarVez.Location = new System.Drawing.Point(397, 306);
+            this.btnConstVerificarVez.Location = new System.Drawing.Point(424, 80);
             this.btnConstVerificarVez.Name = "btnConstVerificarVez";
             this.btnConstVerificarVez.Size = new System.Drawing.Size(75, 23);
             this.btnConstVerificarVez.TabIndex = 11;
@@ -292,7 +290,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(648, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(648, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(469, 643);
             this.pictureBox1.TabIndex = 12;
@@ -308,31 +306,13 @@
             this.btnPosicionar.UseVisualStyleBackColor = true;
             this.btnPosicionar.Click += new System.EventHandler(this.btnPosicionar_Click);
             // 
-            // txtReceberNomePersonagem
-            // 
-            this.txtReceberNomePersonagem.Location = new System.Drawing.Point(102, 194);
-            this.txtReceberNomePersonagem.Margin = new System.Windows.Forms.Padding(2);
-            this.txtReceberNomePersonagem.Name = "txtReceberNomePersonagem";
-            this.txtReceberNomePersonagem.Size = new System.Drawing.Size(102, 20);
-            this.txtReceberNomePersonagem.TabIndex = 27;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 197);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Qual personagem:";
-            // 
             // lstCartas
             // 
             this.lstCartas.FormattingEnabled = true;
-            this.lstCartas.Location = new System.Drawing.Point(507, 411);
+            this.lstCartas.Location = new System.Drawing.Point(507, 412);
             this.lstCartas.Margin = new System.Windows.Forms.Padding(2);
             this.lstCartas.Name = "lstCartas";
-            this.lstCartas.Size = new System.Drawing.Size(91, 147);
+            this.lstCartas.Size = new System.Drawing.Size(116, 147);
             this.lstCartas.TabIndex = 29;
             // 
             // btnAtualizarTabuleiro
@@ -352,8 +332,6 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.btnAtualizarTabuleiro);
             this.Controls.Add(this.lstCartas);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtReceberNomePersonagem);
             this.Controls.Add(this.btnPosicionar);
             this.Controls.Add(this.picToshio);
             this.Controls.Add(this.picTakeo);
@@ -429,8 +407,6 @@
         private System.Windows.Forms.PictureBox picToshio;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnPosicionar;
-        private System.Windows.Forms.TextBox txtReceberNomePersonagem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstCartas;
         private System.Windows.Forms.Button btnAtualizarTabuleiro;
     }

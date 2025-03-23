@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace sistema_autonomo
 {
@@ -15,6 +16,8 @@ namespace sistema_autonomo
         public bool foiDeBase { get; set; }
         public int x { get; set; }
         public int y { get; set; }
+
+        public PictureBox cardPersonagem { get; set; }
 
         public static List<Personagem> ListarPersonagem(int setor)
         {

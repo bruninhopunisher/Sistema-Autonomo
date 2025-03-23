@@ -15,11 +15,11 @@ namespace sistema_autonomo
 {
     public partial class Sala : Form
     {
+        Tabuleiro tabuleiro = new Tabuleiro();
         Partida partidaSelecionada;
         Jogador jogadorSelecionado;
         Personagem personagem;
         List<Personagem> minhaLista = new List<Personagem>();
-        List<PictureBox> listaPic = new List<PictureBox>();
         string verificarVez;
 
         public Sala(Partida partidaRecebida, Jogador jogadorRecebido)
@@ -27,6 +27,55 @@ namespace sistema_autonomo
             InitializeComponent();
             partidaSelecionada = partidaRecebida;
             jogadorSelecionado = jogadorRecebido;
+
+            //Atribui personagens na lista assim que o programa e executado
+            minhaLista = Personagem.ListarPersonagem(0);
+            //Adiciona Pictures na instancia do personagem
+            for (int i = 0; i < minhaLista.Count; i++)
+            {
+                switch (minhaLista[i].nome)
+                {
+                    case "Adilson Konrad":
+                        minhaLista[i].cardPersonagem = picAdilson;
+                        break;
+                    case "Beatriz Paiva":
+                        minhaLista[i].cardPersonagem = picBeatriz;
+                        break;
+                    case "Claro":
+                        minhaLista[i].cardPersonagem = picClaro;
+                        break;
+                    case "Douglas Baquiao":
+                        minhaLista[i].cardPersonagem = picDouglas;
+                        break;
+                    case "Eduardo Takeo":
+                        minhaLista[i].cardPersonagem = picTakeo;
+                        break;
+                    case "Guilherme Rey":
+                        minhaLista[i].cardPersonagem = picGui;
+                        break;
+                    case "Heredia":
+                        minhaLista[i].cardPersonagem = picHeredia;
+                        break;
+                    case "Kelly Kiyumi":
+                        minhaLista[i].cardPersonagem = picKelly;
+                        break;
+                    case "Leonardo Takuno":
+                        minhaLista[i].cardPersonagem = picLeonardo;
+                        break;
+                    case "Mario Toledo":
+                        minhaLista[i].cardPersonagem = picMario;
+                        break;
+                    case "Quintas":
+                        minhaLista[i].cardPersonagem = picQuintas;
+                        break;
+                    case "Ranulfo":
+                        minhaLista[i].cardPersonagem = picRanulfo;
+                        break;
+                    case "Toshio":
+                        minhaLista[i].cardPersonagem = picToshio;
+                        break;
+                }
+            }
 
             //Exibir cartas jogador
             string cartasSorteadas = Jogo.ListarCartas(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha());
@@ -57,7 +106,7 @@ namespace sistema_autonomo
                         lstMinhasCartasSala.Items.Add("Heredia");
                         break;
                     case "K":
-                        lstMinhasCartasSala.Items.Add("Karin");
+                        lstMinhasCartasSala.Items.Add("Kelly Kiyumi");
                         break;
                     case "L":
                         lstMinhasCartasSala.Items.Add("Leonardo Takuno");
@@ -86,7 +135,6 @@ namespace sistema_autonomo
                 lstSetoresSala.Items.Add(setores[i]);
             }
         }
-
         private void btnConstVerificarVez_Click_1(object sender, EventArgs e)
         {
             Personagem personagem = new Personagem();
@@ -154,18 +202,19 @@ namespace sistema_autonomo
                 //Jogo.ColocarPersonagem(jogadorSelecionado.GetId);
             }
 
-            minhaLista = Personagem.ListarPersonagem(0);
+            //minhaLista = Personagem.ListarPersonagem(0);
+            
             lstCartas.Items.Clear();
-
             // Colocando as cartas na lstbox
             for (int i = 0; i < minhaLista.Count; i++)
             {
                 lstCartas.Items.Add(minhaLista[i].nome);
             }
         }
-
+        
         private void btnPosicionar_Click(object sender, EventArgs e)
         {
+            
             if (lstCartas.SelectedItem != null)
             {
                 string nomecartaSelecionada = lstCartas.SelectedItem.ToString();
@@ -175,11 +224,100 @@ namespace sistema_autonomo
                 {
                     string nomeSetor = lstSetoresSala.SelectedItem.ToString();
                     int numeroSetorSelecionado = Convert.ToInt32(nomeSetor.Substring(0, 1));
+                    MessageBox.Show(numeroSetorSelecionado.ToString());
 
                     string retornoColocar = Jogo.ColocarPersonagem(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), numeroSetorSelecionado, NomeRecortado);
-                    Console.WriteLine(retornoColocar);
-                    retornoColocar = retornoColocar.Replace("\r", "");
-                    string[] dadosRetornados = retornoColocar.Split('\n');
+                    if(retornoColocar.Substring(0, 4) == "ERRO")
+                    {
+                        MessageBox.Show(retornoColocar);
+                    }
+                    else
+                    {
+                        for (int i = 0; i < minhaLista.Count; i++)
+                        {
+                            if (minhaLista[i].nome == nomecartaSelecionada)
+                            {
+                                bool posicaoEstaDisponivel = true;
+                                int posicaoDisponivelTabuleiro = 0;
+                                Point novaPosicaoPersonagem;
+                                //minhaLista[i].cardPersonagem.Location = new Point(752, 547);
+                                switch (numeroSetorSelecionado)
+                                {
+                                    case 1:
+                                        posicaoEstaDisponivel = true;
+                                        posicaoDisponivelTabuleiro = 10;
+
+                                        do
+                                        {
+                                            posicaoDisponivelTabuleiro++;
+                                            if(posicaoDisponivelTabuleiro >= 11 && posicaoDisponivelTabuleiro <= 14)
+                                            {
+                                                posicaoEstaDisponivel = tabuleiro.verificarSetorDisponivel(posicaoDisponivelTabuleiro);
+                                            }
+                                        } while (posicaoEstaDisponivel == true);
+
+                                        novaPosicaoPersonagem = tabuleiro.posicaoSetor(posicaoDisponivelTabuleiro);
+                                        minhaLista[i].cardPersonagem.Location = novaPosicaoPersonagem;
+                                        tabuleiro.AlterarEstadoSetor(posicaoDisponivelTabuleiro);
+                                        break;
+                                    case 2:
+                                        posicaoEstaDisponivel = true;
+                                        posicaoDisponivelTabuleiro = 20;
+
+                                        do
+                                        {
+                                            posicaoDisponivelTabuleiro++;
+                                            if (posicaoDisponivelTabuleiro >= 21 && posicaoDisponivelTabuleiro <= 24)
+                                            {
+                                                posicaoEstaDisponivel = tabuleiro.verificarSetorDisponivel(posicaoDisponivelTabuleiro);
+                                            }
+                                        } while (posicaoEstaDisponivel == true);
+
+                                        novaPosicaoPersonagem = tabuleiro.posicaoSetor(posicaoDisponivelTabuleiro);
+                                        minhaLista[i].cardPersonagem.Location = novaPosicaoPersonagem;
+                                        tabuleiro.AlterarEstadoSetor(posicaoDisponivelTabuleiro);
+                                        break;
+                                    case 3:
+                                        posicaoEstaDisponivel = true;
+                                        posicaoDisponivelTabuleiro = 30;
+
+                                        do
+                                        {
+                                            posicaoDisponivelTabuleiro++;
+                                            if (posicaoDisponivelTabuleiro >= 31 && posicaoDisponivelTabuleiro <= 34)
+                                            {
+                                                posicaoEstaDisponivel = tabuleiro.verificarSetorDisponivel(posicaoDisponivelTabuleiro);
+                                            }
+                                        } while (posicaoEstaDisponivel == true);
+
+                                        novaPosicaoPersonagem = tabuleiro.posicaoSetor(posicaoDisponivelTabuleiro);
+                                        minhaLista[i].cardPersonagem.Location = novaPosicaoPersonagem;
+                                        tabuleiro.AlterarEstadoSetor(posicaoDisponivelTabuleiro);
+                                        break;
+                                    case 4:
+                                        posicaoEstaDisponivel = true;
+                                        posicaoDisponivelTabuleiro = 40;
+
+                                        do
+                                        {
+                                            posicaoDisponivelTabuleiro++;
+                                            if (posicaoDisponivelTabuleiro >= 41 && posicaoDisponivelTabuleiro <= 44)
+                                            {
+                                                posicaoEstaDisponivel = tabuleiro.verificarSetorDisponivel(posicaoDisponivelTabuleiro);
+                                            }
+                                        } while (posicaoEstaDisponivel == true);
+
+                                        novaPosicaoPersonagem = tabuleiro.posicaoSetor(posicaoDisponivelTabuleiro);
+                                        minhaLista[i].cardPersonagem.Location = novaPosicaoPersonagem;
+                                        tabuleiro.AlterarEstadoSetor(posicaoDisponivelTabuleiro);
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                    //Console.WriteLine(retornoColocar);
+                    //retornoColocar = retornoColocar.Replace("\r", "");
+                    //string[] dadosRetornados = retornoColocar.Split('\n');
                 }
                 else
                 {
