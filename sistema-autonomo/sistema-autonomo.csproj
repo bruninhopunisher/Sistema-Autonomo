@@ -52,28 +52,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\StructJogador.cs" />
     <Compile Include="Classes\Partida.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Classes\Lobby.cs" />
+    <Compile Include="Telas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Telas\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Jogador.cs" />
-    <Compile Include="LobbyPartida.cs">
+    <Compile Include="Telas\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LobbyPartida.Designer.cs">
-      <DependentUpon>LobbyPartida.cs</DependentUpon>
+    <Compile Include="Telas\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Personagem.cs" />
+    <Compile Include="Telas\Lobby.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Lobby.Designer.cs">
+      <DependentUpon>Lobby.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Telas\Sala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Sala.Designer.cs">
+      <DependentUpon>Sala.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Telas\Lobby.resx">
+      <DependentUpon>Lobby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LobbyPartida.resx">
-      <DependentUpon>LobbyPartida.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,7 +101,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Telas\Sala.resx">
+      <DependentUpon>Sala.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

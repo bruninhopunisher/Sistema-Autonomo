@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using KingMeServer;
+using sistema_autonomo.Classes;
 
 namespace sistema_autonomo
 {
@@ -28,9 +31,9 @@ namespace sistema_autonomo
             this.nome = nome;
         }
 
-        public int GetNome()
+        public string GetNome()
         {
-            return id;
+            return nome;
         }
 
         public void SetSenha(string senha)
@@ -52,7 +55,6 @@ namespace sistema_autonomo
         {
             return pontos;
         }
-
 
     }
 }
