@@ -9,52 +9,12 @@ namespace sistema_autonomo
 {
     public class Personagem
     {
-
         public int id { get; set; }
         public string nome { get; set; }
-
         public int setor { get; set; }
-
         public bool foiDeBase { get; set; }
-
-
-        //public int id;
-        //public string nome;
-        //public int posicao;
-        //public bool foiDeBase;
-
-        //public int GetId()
-        //{
-        //    return this.id;
-        //}
-        //public void SetId(int id)
-        //{
-        //    this.id = id;
-        //}
-        //public string GetNome()
-        //{
-        //    return this.nome;
-        //}
-        //public void SetNome(string nome)
-        //{
-        //    this.nome = nome;
-        //}
-        //public int GetPosicao()
-        //{
-        //    return this.posicao;
-        //}
-        //public void SetPosicao(int posicao)
-        //{
-        //    this.posicao = posicao;
-        //}
-        //public bool GetFoiDeBase()
-        //{
-        //    return this.foiDeBase;
-        //}
-        //public void SetFoiDeBase(bool foiDeBase)
-        //{
-        //    this.foiDeBase = foiDeBase;
-        //}
+        public int x { get; set; }
+        public int y { get; set; }
 
         public static List<Personagem> ListarPersonagem(int setor)
         {
@@ -75,6 +35,19 @@ namespace sistema_autonomo
             return personagens_instancia;
         }
 
+        public void AlterarSetorPersonagem(string nome, int setor)
+        {
+            List<Personagem> personagens = ListarPersonagem(this.setor);
+            this.nome = nome;
+            this.setor = setor;
 
+            for (int i = 0; i < personagens.Count; i++)
+            {
+                if (nome == personagens[i].nome)
+                {
+                    personagens[i].setor = setor;
+                }
+            }
+        }
     }
 }

@@ -48,7 +48,7 @@
             this.picHeredia = new System.Windows.Forms.PictureBox();
             this.picKelly = new System.Windows.Forms.PictureBox();
             this.picTakeo = new System.Windows.Forms.PictureBox();
-            this.picRey = new System.Windows.Forms.PictureBox();
+            this.picGui = new System.Windows.Forms.PictureBox();
             this.picRanulfo = new System.Windows.Forms.PictureBox();
             this.picQuintas = new System.Windows.Forms.PictureBox();
             this.picMario = new System.Windows.Forms.PictureBox();
@@ -56,6 +56,9 @@
             this.picToshio = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPosicionar = new System.Windows.Forms.Button();
+            this.txtReceberNomePersonagem = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lstCartas = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -63,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picHeredia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKelly)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTakeo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGui)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRanulfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQuintas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMario)).BeginInit();
@@ -186,7 +189,6 @@
             this.picAdilson.Size = new System.Drawing.Size(67, 81);
             this.picAdilson.TabIndex = 13;
             this.picAdilson.TabStop = false;
-            this.picAdilson.Click += new System.EventHandler(this.picAdilson_Click);
             // 
             // picBeatriz
             // 
@@ -229,7 +231,7 @@
             this.picKelly.Image = ((System.Drawing.Image)(resources.GetObject("picKelly.Image")));
             this.picKelly.Location = new System.Drawing.Point(239, 453);
             this.picKelly.Name = "picKelly";
-            this.picKelly.Size = new System.Drawing.Size(67, 81);
+            this.picKelly.Size = new System.Drawing.Size(67, 80);
             this.picKelly.TabIndex = 18;
             this.picKelly.TabStop = false;
             // 
@@ -242,14 +244,14 @@
             this.picTakeo.TabIndex = 24;
             this.picTakeo.TabStop = false;
             // 
-            // picRey
+            // picGui
             // 
-            this.picRey.Image = ((System.Drawing.Image)(resources.GetObject("picRey.Image")));
-            this.picRey.Location = new System.Drawing.Point(166, 452);
-            this.picRey.Name = "picRey";
-            this.picRey.Size = new System.Drawing.Size(67, 81);
-            this.picRey.TabIndex = 23;
-            this.picRey.TabStop = false;
+            this.picGui.Image = ((System.Drawing.Image)(resources.GetObject("picGui.Image")));
+            this.picGui.Location = new System.Drawing.Point(166, 452);
+            this.picGui.Name = "picGui";
+            this.picGui.Size = new System.Drawing.Size(67, 81);
+            this.picGui.TabIndex = 23;
+            this.picGui.TabStop = false;
             // 
             // picRanulfo
             // 
@@ -307,23 +309,53 @@
             // 
             // btnPosicionar
             // 
-            this.btnPosicionar.Location = new System.Drawing.Point(438, 511);
+            this.btnPosicionar.Location = new System.Drawing.Point(463, 574);
             this.btnPosicionar.Name = "btnPosicionar";
             this.btnPosicionar.Size = new System.Drawing.Size(164, 87);
             this.btnPosicionar.TabIndex = 26;
-            this.btnPosicionar.Text = "button1";
+            this.btnPosicionar.Text = "Colocar personagem";
             this.btnPosicionar.UseVisualStyleBackColor = true;
             this.btnPosicionar.Click += new System.EventHandler(this.btnPosicionar_Click);
+            // 
+            // txtReceberNomePersonagem
+            // 
+            this.txtReceberNomePersonagem.Location = new System.Drawing.Point(102, 194);
+            this.txtReceberNomePersonagem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReceberNomePersonagem.Name = "txtReceberNomePersonagem";
+            this.txtReceberNomePersonagem.Size = new System.Drawing.Size(102, 20);
+            this.txtReceberNomePersonagem.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 197);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Qual personagem:";
+            // 
+            // lstCartas
+            // 
+            this.lstCartas.FormattingEnabled = true;
+            this.lstCartas.Location = new System.Drawing.Point(507, 411);
+            this.lstCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstCartas.Name = "lstCartas";
+            this.lstCartas.Size = new System.Drawing.Size(91, 147);
+            this.lstCartas.TabIndex = 29;
             // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lstCartas);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtReceberNomePersonagem);
             this.Controls.Add(this.btnPosicionar);
             this.Controls.Add(this.picToshio);
             this.Controls.Add(this.picTakeo);
-            this.Controls.Add(this.picRey);
+            this.Controls.Add(this.picGui);
             this.Controls.Add(this.picRanulfo);
             this.Controls.Add(this.picQuintas);
             this.Controls.Add(this.picMario);
@@ -356,7 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picHeredia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKelly)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTakeo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGui)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRanulfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQuintas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMario)).EndInit();
@@ -389,7 +421,7 @@
         private System.Windows.Forms.PictureBox picHeredia;
         private System.Windows.Forms.PictureBox picKelly;
         private System.Windows.Forms.PictureBox picTakeo;
-        private System.Windows.Forms.PictureBox picRey;
+        private System.Windows.Forms.PictureBox picGui;
         private System.Windows.Forms.PictureBox picRanulfo;
         private System.Windows.Forms.PictureBox picQuintas;
         private System.Windows.Forms.PictureBox picMario;
@@ -397,5 +429,8 @@
         private System.Windows.Forms.PictureBox picToshio;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnPosicionar;
+        private System.Windows.Forms.TextBox txtReceberNomePersonagem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lstCartas;
     }
 }
