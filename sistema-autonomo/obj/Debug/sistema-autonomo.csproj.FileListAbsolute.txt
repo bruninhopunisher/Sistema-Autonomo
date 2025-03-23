@@ -17,7 +17,6 @@ C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\bin\Debug\sist
 C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.dll
 C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.xml
 C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.AssemblyReference.cache
-C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Form1.resources
 C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Properties.Resources.resources
 C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.GenerateResource.cache
 C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.CoreCompileInputs.cache
@@ -66,3 +65,7 @@ C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI3-Sistema-Autonomo\Sist
 C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI3-Sistema-Autonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
 C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI3-Sistema-Autonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.exe
 C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI3-Sistema-Autonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.pdb
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Inicio.resources
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Sala.resources
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Lobby.resources
+C:\Users\bruno\Downloads\PI_III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Login.resources
