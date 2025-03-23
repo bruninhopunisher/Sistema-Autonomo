@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,9 @@ namespace sistema_autonomo
         Partida partidaSelecionada;
         Jogador jogadorSelecionado;
         Personagem personagem;
+        List<Personagem> minhaLista = new List<Personagem>();
+        List<PictureBox> listaPic = new List<PictureBox>();
+
         public Sala(Partida partidaRecebida, Jogador jogadorRecebido)
         {
             InitializeComponent();
@@ -84,6 +88,7 @@ namespace sistema_autonomo
 
         private void btnConstVerificarVez_Click_1(object sender, EventArgs e)
         {
+            Personagem personagem = new Personagem();
             int indice = 0;
             int idRetornado;
             string nomeRetornado;
@@ -145,46 +150,99 @@ namespace sistema_autonomo
             else
             {
                 MessageBox.Show(verificarVez);
+                //Jogo.ColocarPersonagem(jogadorSelecionado.GetId);
+            }
+
+            minhaLista = Personagem.ListarPersonagem(0);
+            lstCartas.Items.Clear();
+
+            // Colocando as cartas na lstbox
+            for (int i = 0; i < minhaLista.Count; i++)
+            {
+                lstCartas.Items.Add(minhaLista[i].nome);
             }
         }
 
         private void btnPosicionar_Click(object sender, EventArgs e)
         {
-            //Botão deletado (Pegar apenas referencia)
-            if (dgvPersonagens.SelectedRows.Count > 0)
+            if (lstCartas.SelectedItem != null)
             {
+                string nomecartaSelecionada = lstCartas.SelectedItem.ToString();
+                nomecartaSelecionada = lstCartas.SelectedItem.ToString();
+                string NomeRecortado = nomecartaSelecionada.Substring(0, 1);
+                // MessageBox.Show(nomecartaSelecionada);
+                string nomeSetor = lstSetoresSala.SelectedItem.ToString();
+                int numeroSetorSelecionado = Convert.ToInt32(nomeSetor.Substring(0, 1));
 
-                Personagem personagemSelecionado = (Personagem)dgvPersonagens.SelectedRows[0].DataBoundItem;
+                string retornoColocar = Jogo.ColocarPersonagem(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), numeroSetorSelecionado, NomeRecortado);
+                Console.WriteLine(retornoColocar);
+                retornoColocar.Replace("\r", "");
+                string[] dadosRetornados = retornoColocar.Split('\n');
 
-                if (personagemSelecionado != null && !string.IsNullOrEmpty(personagemSelecionado.nome) && lstSetores.SelectedItem != null)
+                // Metodo classe personagem para alterar a posicao do personagem um pouco a baixo
+                for (int i = 0; i < dadosRetornados.Length - 1; i++)
                 {
-                    string nomePersonagemSelecionado = personagemSelecionado.nome;
-                    string setorPersonagemSelecionado = lstSetores.SelectedItem.ToString();
-                    string[] setores = setorPersonagemSelecionado.Split(',');
+                    // Retorna a letra inicial na variavel person
+                    string person = dadosRetornados[i].Substring(0, 3);
+                    int setor = Convert.ToInt32(dadosRetornados[i].Substring(0, 1));
 
-                    string estadoTabuleiro = Jogo.ColocarPersonagem(
-                        jogadorSelecionado.GetId(),
-                        jogadorSelecionado.GetSenha(),
-                        Convert.ToInt32(setores[0]),
-                        nomePersonagemSelecionado.Substring(0, 1)
-                    );
+                    personagem.AlterarSetorPersonagem(person, setor);
+                }
+                
+                /*
+                for (int i = 0; i < minhaLista.Count(); i++)
+                {
+                    Personagem personagemEmandamento = new Personagem();
+                    personagemEmandamento = minhaLista[i];
+                    string nomeDavez = personagemEmandamento.nome;
+                    nomeDavez = nomeDavez.Substring(0, 1);
+                    if(nomeDavez == retornoColocar)
+                    {
+                        //picAdilson.Name
+                    }
+                }
+                */
+                //Botão deletado (Pegar apenas referencia)
+                /*
+                if (dgvPersonagens.SelectedRows.Count > 0)
+                {
 
-                    MessageBox.Show(estadoTabuleiro.ToString());
+                    Personagem personagemSelecionado = (Personagem)dgvPersonagens.SelectedRows[0].DataBoundItem;
+
+                    if (personagemSelecionado != null && !string.IsNullOrEmpty(personagemSelecionado.nome) && lstSetores.SelectedItem != null)
+                    {
+                        string nomePersonagemSelecionado = personagemSelecionado.nome;
+                        string setorPersonagemSelecionado = lstSetores.SelectedItem.ToString();
+                        string[] setores = setorPersonagemSelecionado.Split(',');
+
+                        string estadoTabuleiro = Jogo.ColocarPersonagem(
+                            jogadorSelecionado.GetId(),
+                            jogadorSelecionado.GetSenha(),
+                            Convert.ToInt32(setores[0]),
+                            nomePersonagemSelecionado.Substring(0, 1)
+                        );
+
+                        MessageBox.Show(estadoTabuleiro.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, selecione um personagem e um setor válido.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, selecione um personagem e um setor válido.");
+                    MessageBox.Show("Por favor, selecione uma linha válida no DataGridView.");
                 }
             }
-            else
+        
+
+                void picAdilson_Click(object sender, EventArgs e)
             {
-                MessageBox.Show("Por favor, selecione uma linha válida no DataGridView.");
+
             }
-        }
-
-        private void picAdilson_Click(object sender, EventArgs e)
-        {
-
+            */
+            }
+            MessageBox.Show("Selecione um personagem para posicionar!");
         }
     }
 }
