@@ -17,14 +17,10 @@ namespace sistema_autonomo
         public Inicio()
         {
             InitializeComponent();
-            //string tabuleiroRecebido = Jogo.VerificarVez(1244);
-            //tabuleiroRecebido.Replace("\r", "");
-            //string[] tabuleiroSala = tabuleiroRecebido.Split('\n');
-            //for(int i = 1; tabuleiroSala.Length - 1 > 0; i++)
-            //{
-            //    string[] personagemNoSetor = tabuleiroSala[i].Split(',');
-            //    MessageBox.Show(personagemNoSetor[0]);
-            //}
+            string tabuleiroRecebido = Jogo.VerificarVez(1358);
+            tabuleiroRecebido.Replace("\r", "");
+            string[] tabuleiroSala = tabuleiroRecebido.Split('\n');
+            MessageBox.Show(tabuleiroSala[2]);
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

@@ -20,6 +20,7 @@ namespace sistema_autonomo
         Jogador jogadorSelecionado;
         Personagem personagem;
         List<Personagem> minhaLista = new List<Personagem>();
+        Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
         string verificarVez;
 
         public Sala(Partida partidaRecebida, Jogador jogadorRecebido)
@@ -76,6 +77,8 @@ namespace sistema_autonomo
                         break;
                 }
             }
+            //Atualiza estado do tabuleiro
+            estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.getID(), minhaLista);
 
             //Exibir cartas jogador
             string cartasSorteadas = Jogo.ListarCartas(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha());
@@ -135,8 +138,12 @@ namespace sistema_autonomo
                 lstSetoresSala.Items.Add(setores[i]);
             }
         }
+
         private void btnConstVerificarVez_Click_1(object sender, EventArgs e)
         {
+            estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.getID(), minhaLista);
+            minhaLista = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, minhaLista);
+
             Personagem personagem = new Personagem();
             int indice = 0;
             int idRetornado;
@@ -166,13 +173,13 @@ namespace sistema_autonomo
             if (verificarVez.Substring(0, 4) != "ERRO")
             {
                 verificarVez = verificarVez.Replace("\r", "");
-                string[] tabuleiro = verificarVez.Split('\n');
+                string[] tabuleiroRecebido = verificarVez.Split('\n');
                 lstAltTabuleiroSala.Items.Clear();
-                for (int i = 0; i < tabuleiro.Length - 1; i++)
+                for (int i = 0; i < tabuleiroRecebido.Length - 1; i++)
                 {
-                    lstAltTabuleiroSala.Items.Add(tabuleiro[i]);
+                    lstAltTabuleiroSala.Items.Add(tabuleiroRecebido[i]);
                 }
-                string[] dadosPartida = tabuleiro[0].Split(',');
+                string[] dadosPartida = tabuleiroRecebido[0].Split(',');
                 int jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
 
                 for (int i = 0; i < indice; i++)
@@ -210,6 +217,7 @@ namespace sistema_autonomo
             {
                 lstCartas.Items.Add(minhaLista[i].nome);
             }
+
         }
         
         private void btnPosicionar_Click(object sender, EventArgs e)
@@ -233,87 +241,8 @@ namespace sistema_autonomo
                     }
                     else
                     {
-                        for (int i = 0; i < minhaLista.Count; i++)
-                        {
-                            if (minhaLista[i].nome == nomecartaSelecionada)
-                            {
-                                bool posicaoEstaDisponivel = true;
-                                int posicaoDisponivelTabuleiro = 0;
-                                Point novaPosicaoPersonagem;
-                                //minhaLista[i].cardPersonagem.Location = new Point(752, 547);
-                                switch (numeroSetorSelecionado)
-                                {
-                                    case 1:
-                                        posicaoEstaDisponivel = true;
-                                        posicaoDisponivelTabuleiro = 10;
-
-                                        do
-                                        {
-                                            posicaoDisponivelTabuleiro++;
-                                            if(posicaoDisponivelTabuleiro >= 11 && posicaoDisponivelTabuleiro <= 14)
-                                            {
-                                                posicaoEstaDisponivel = tabuleiro.verificarSetorDisponivel(posicaoDisponivelTabuleiro);
-                                            }
-                                        } while (posicaoEstaDisponivel == true);
-
-                                        novaPosicaoPersonagem = tabuleiro.posicaoSetor(posicaoDisponivelTabuleiro);
-                                        minhaLista[i].cardPersonagem.Location = novaPosicaoPersonagem;
-                                        tabuleiro.AlterarEstadoSetor(posicaoDisponivelTabuleiro);
-                                        break;
-                                    case 2:
-                                        posicaoEstaDisponivel = true;
-                                        posicaoDisponivelTabuleiro = 20;
-
-                                        do
-                                        {
-                                            posicaoDisponivelTabuleiro++;
-                                            if (posicaoDisponivelTabuleiro >= 21 && posicaoDisponivelTabuleiro <= 24)
-                                            {
-                                                posicaoEstaDisponivel = tabuleiro.verificarSetorDisponivel(posicaoDisponivelTabuleiro);
-                                            }
-                                        } while (posicaoEstaDisponivel == true);
-
-                                        novaPosicaoPersonagem = tabuleiro.posicaoSetor(posicaoDisponivelTabuleiro);
-                                        minhaLista[i].cardPersonagem.Location = novaPosicaoPersonagem;
-                                        tabuleiro.AlterarEstadoSetor(posicaoDisponivelTabuleiro);
-                                        break;
-                                    case 3:
-                                        posicaoEstaDisponivel = true;
-                                        posicaoDisponivelTabuleiro = 30;
-
-                                        do
-                                        {
-                                            posicaoDisponivelTabuleiro++;
-                                            if (posicaoDisponivelTabuleiro >= 31 && posicaoDisponivelTabuleiro <= 34)
-                                            {
-                                                posicaoEstaDisponivel = tabuleiro.verificarSetorDisponivel(posicaoDisponivelTabuleiro);
-                                            }
-                                        } while (posicaoEstaDisponivel == true);
-
-                                        novaPosicaoPersonagem = tabuleiro.posicaoSetor(posicaoDisponivelTabuleiro);
-                                        minhaLista[i].cardPersonagem.Location = novaPosicaoPersonagem;
-                                        tabuleiro.AlterarEstadoSetor(posicaoDisponivelTabuleiro);
-                                        break;
-                                    case 4:
-                                        posicaoEstaDisponivel = true;
-                                        posicaoDisponivelTabuleiro = 40;
-
-                                        do
-                                        {
-                                            posicaoDisponivelTabuleiro++;
-                                            if (posicaoDisponivelTabuleiro >= 41 && posicaoDisponivelTabuleiro <= 44)
-                                            {
-                                                posicaoEstaDisponivel = tabuleiro.verificarSetorDisponivel(posicaoDisponivelTabuleiro);
-                                            }
-                                        } while (posicaoEstaDisponivel == true);
-
-                                        novaPosicaoPersonagem = tabuleiro.posicaoSetor(posicaoDisponivelTabuleiro);
-                                        minhaLista[i].cardPersonagem.Location = novaPosicaoPersonagem;
-                                        tabuleiro.AlterarEstadoSetor(posicaoDisponivelTabuleiro);
-                                        break;
-                                }
-                            }
-                        }
+                        estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.getID(), minhaLista);
+                        minhaLista = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, minhaLista);
                     }
                     //Console.WriteLine(retornoColocar);
                     //retornoColocar = retornoColocar.Replace("\r", "");
