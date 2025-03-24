@@ -16,16 +16,17 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace sistema_autonomo
 {
-    public partial class Lobby : Form
+    public partial class LobbyEspera : Form
     {
         public int idJogadorLogado { get; set; }
         Partida partidaSelecionada;
         Jogador jogadorSelecionado;
 
-        public Lobby(Partida partidaRecebida, Jogador jogadorRecebido)
+        public LobbyEspera(Partida partidaRecebida, Jogador jogadorRecebido)
         {
             InitializeComponent();
-
+            lblVersaoDoJogo.Text = Jogo.versao.ToString();
+            lblNomeDoGrupo.Text = Lobby.GetNomeGrupo().ToString();
             partidaSelecionada = partidaRecebida;
             jogadorSelecionado = jogadorRecebido;
             lblConstIdJogadorLogado.Text = jogadorSelecionado.GetId().ToString();
@@ -41,11 +42,6 @@ namespace sistema_autonomo
             partidaSelecionada.setStatus("Jogando");
             sala.Show();
             this.Hide();
-        }
-
-        private void Lobby_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

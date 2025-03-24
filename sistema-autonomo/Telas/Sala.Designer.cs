@@ -57,6 +57,8 @@
             this.btnPosicionar = new System.Windows.Forms.Button();
             this.lstCartas = new System.Windows.Forms.ListBox();
             this.btnAtualizarTabuleiro = new System.Windows.Forms.Button();
+            this.lblVersaoDoJogo = new System.Windows.Forms.Label();
+            this.lblNomeDoGrupo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -325,11 +327,29 @@
             this.btnAtualizarTabuleiro.UseVisualStyleBackColor = true;
             this.btnAtualizarTabuleiro.Click += new System.EventHandler(this.btnAtualizarTabuleiro_Click);
             // 
+            // lblVersaoDoJogo
+            // 
+            this.lblVersaoDoJogo.AutoSize = true;
+            this.lblVersaoDoJogo.Location = new System.Drawing.Point(1184, 616);
+            this.lblVersaoDoJogo.Name = "lblVersaoDoJogo";
+            this.lblVersaoDoJogo.Size = new System.Drawing.Size(0, 13);
+            this.lblVersaoDoJogo.TabIndex = 31;
+            // 
+            // lblNomeDoGrupo
+            // 
+            this.lblNomeDoGrupo.AutoSize = true;
+            this.lblNomeDoGrupo.Location = new System.Drawing.Point(39, 624);
+            this.lblNomeDoGrupo.Name = "lblNomeDoGrupo";
+            this.lblNomeDoGrupo.Size = new System.Drawing.Size(0, 13);
+            this.lblNomeDoGrupo.TabIndex = 32;
+            // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblNomeDoGrupo);
+            this.Controls.Add(this.lblVersaoDoJogo);
             this.Controls.Add(this.btnAtualizarTabuleiro);
             this.Controls.Add(this.lstCartas);
             this.Controls.Add(this.btnPosicionar);
@@ -409,5 +429,7 @@
         private System.Windows.Forms.Button btnPosicionar;
         private System.Windows.Forms.ListBox lstCartas;
         private System.Windows.Forms.Button btnAtualizarTabuleiro;
+        private System.Windows.Forms.Label lblVersaoDoJogo;
+        private System.Windows.Forms.Label lblNomeDoGrupo;
     }
 }

@@ -17,10 +17,8 @@ namespace sistema_autonomo
         public Inicio()
         {
             InitializeComponent();
-            string tabuleiroRecebido = Jogo.VerificarVez(1358);
-            tabuleiroRecebido.Replace("\r", "");
-            string[] tabuleiroSala = tabuleiroRecebido.Split('\n');
-            MessageBox.Show(tabuleiroSala[2]);
+            lblVersaoJogo.Text = Jogo.versao.ToString();
+            lblNomeGrupo.Text = Lobby.GetNomeGrupo().ToString();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

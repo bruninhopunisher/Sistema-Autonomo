@@ -196,7 +196,7 @@
             // lblVersaoJogo
             // 
             this.lblVersaoJogo.AutoSize = true;
-            this.lblVersaoJogo.Location = new System.Drawing.Point(1223, 614);
+            this.lblVersaoJogo.Location = new System.Drawing.Point(1206, 627);
             this.lblVersaoJogo.Name = "lblVersaoJogo";
             this.lblVersaoJogo.Size = new System.Drawing.Size(0, 13);
             this.lblVersaoJogo.TabIndex = 15;
@@ -436,7 +436,7 @@
             this.pictureBox9.TabIndex = 38;
             this.pictureBox9.TabStop = false;
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -451,7 +451,7 @@
             this.MaximumSize = new System.Drawing.Size(1280, 720);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1280, 720);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KingMe";
             this.panel1.ResumeLayout(false);

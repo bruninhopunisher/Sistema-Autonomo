@@ -147,7 +147,7 @@ namespace sistema_autonomo
                 JogadorLogado.SetId(Convert.ToInt32(dadosJogador[0]));
                 JogadorLogado.SetSenha(dadosJogador[1]);
                 JogadorLogado.SetNome(nomeDoJogador);
-                Lobby LobbyPartida1 = new Lobby(partida, JogadorLogado);
+                LobbyEspera LobbyPartida1 = new LobbyEspera(partida, JogadorLogado);
                 LobbyPartida1.idJogadorLogado = JogadorLogado.GetId();
                 LobbyPartida1.Show();
                 this.Hide();

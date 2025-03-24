@@ -28,6 +28,8 @@ namespace sistema_autonomo
             InitializeComponent();
             partidaSelecionada = partidaRecebida;
             jogadorSelecionado = jogadorRecebido;
+            lblNomeDoGrupo.Text = Lobby.GetNomeGrupo().ToString();
+            lblVersaoDoJogo.Text = Jogo.versao.ToString();
 
             //Atribui personagens na lista assim que o programa e executado
             minhaLista = Personagem.ListarPersonagem(0);

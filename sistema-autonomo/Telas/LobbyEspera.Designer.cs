@@ -1,6 +1,6 @@
 ﻿namespace sistema_autonomo
 {
-    partial class Lobby
+    partial class LobbyEspera
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,8 @@
             this.lblAltStatusPartida = new System.Windows.Forms.Label();
             this.lblAltPontuacao = new System.Windows.Forms.Label();
             this.dgvPersonagens = new System.Windows.Forms.DataGridView();
+            this.lblVersaoDoJogo = new System.Windows.Forms.Label();
+            this.lblNomeDoGrupo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonagens)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,11 +133,29 @@
             this.dgvPersonagens.Size = new System.Drawing.Size(400, 292);
             this.dgvPersonagens.TabIndex = 11;
             // 
-            // Lobby
+            // lblVersaoDoJogo
+            // 
+            this.lblVersaoDoJogo.AutoSize = true;
+            this.lblVersaoDoJogo.Location = new System.Drawing.Point(1153, 634);
+            this.lblVersaoDoJogo.Name = "lblVersaoDoJogo";
+            this.lblVersaoDoJogo.Size = new System.Drawing.Size(0, 13);
+            this.lblVersaoDoJogo.TabIndex = 12;
+            // 
+            // lblNomeDoGrupo
+            // 
+            this.lblNomeDoGrupo.AutoSize = true;
+            this.lblNomeDoGrupo.Location = new System.Drawing.Point(1015, 634);
+            this.lblNomeDoGrupo.Name = "lblNomeDoGrupo";
+            this.lblNomeDoGrupo.Size = new System.Drawing.Size(0, 13);
+            this.lblNomeDoGrupo.TabIndex = 13;
+            // 
+            // LobbyEspera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblNomeDoGrupo);
+            this.Controls.Add(this.lblVersaoDoJogo);
             this.Controls.Add(this.dgvPersonagens);
             this.Controls.Add(this.lblAltPontuacao);
             this.Controls.Add(this.lblAltStatusPartida);
@@ -150,10 +170,9 @@
             this.MaximumSize = new System.Drawing.Size(1280, 720);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(816, 488);
-            this.Name = "Lobby";
+            this.Name = "LobbyEspera";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LobbyPartida";
-            this.Load += new System.EventHandler(this.Lobby_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonagens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,5 +190,7 @@
         private System.Windows.Forms.Label lblAltStatusPartida;
         private System.Windows.Forms.Label lblAltPontuacao;
         private System.Windows.Forms.DataGridView dgvPersonagens;
+        private System.Windows.Forms.Label lblVersaoDoJogo;
+        private System.Windows.Forms.Label lblNomeDoGrupo;
     }
 }

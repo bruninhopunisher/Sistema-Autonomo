@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,7 +11,12 @@ namespace sistema_autonomo.Classes
 {
     public class Lobby
     {
-        public string nomeGrupo { get { return "Estudantes de Bolonha";  } }
+        public static string nomeGrupo { get { return "Estudantes de Bolonha";  } }
+
+        public static string GetNomeGrupo()
+        {
+            return nomeGrupo;
+        }
 
         public static string[] ListarPartidas()
         {

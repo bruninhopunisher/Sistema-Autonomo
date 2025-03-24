@@ -70,11 +70,11 @@
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Personagem.cs" />
-    <Compile Include="Telas\Lobby.cs">
+    <Compile Include="Telas\LobbyEspera.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Lobby.Designer.cs">
-      <DependentUpon>Lobby.cs</DependentUpon>
+    <Compile Include="Telas\LobbyEspera.Designer.cs">
+      <DependentUpon>LobbyEspera.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,8 +84,8 @@
     <Compile Include="Telas\Sala.Designer.cs">
       <DependentUpon>Sala.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Telas\Lobby.resx">
-      <DependentUpon>Lobby.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\LobbyEspera.resx">
+      <DependentUpon>LobbyEspera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
