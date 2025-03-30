@@ -19,6 +19,7 @@ namespace sistema_autonomo
             InitializeComponent();
             lblVersaoJogo.Text = Jogo.versao.ToString();
             lblNomeGrupo.Text = Lobby.GetNomeGrupo().ToString();
+            MessageBox.Show(Jogo.VerificarVez(148));
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3-sistema-autonomo\\sistema-autonomo\\sistema-autonomo\\telas\\sala.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3-sistema-autonomo\\sistema-autonomo\\sistema-autonomo\\classes\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3-sistema-autonomo\\sistema-autonomo\\sistema-autonomo\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3-sistema-autonomo\\sistema-autonomo\\sistema-autonomo\\telas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3-sistema-autonomo\\sistema-autonomo\\sistema-autonomo\\telas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3-sistema-autonomo\\sistema-autonomo\\sistema-autonomo\\telas\\sala.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +37,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 3,
+          "DockedWidth": 5,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -31,8 +47,8 @@
           ]
         },
         {
-          "DockedWidth": 19,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 33,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -40,39 +56,92 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Inicio.cs",
+              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Inicio.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Inicio.cs",
+              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Inicio.cs",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\Inicio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T01:30:23.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Inicio.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Inicio.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Inicio.cs",
+              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Inicio.cs [Design]",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\Inicio.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T01:30:20.468Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Personagem.cs",
+              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Personagem.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Personagem.cs",
+              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Personagem.cs",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Personagem.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAewBEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T00:38:21.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tabuleiro.cs",
+              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Tabuleiro.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Tabuleiro.cs",
+              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Tabuleiro.cs*",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Tabuleiro.cs*",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwCoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T23:22:57.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Sala.cs",
+              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
+              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs*",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs*",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAYwDEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T15:47:31.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Sala.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
+              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs [Design]*",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T15:49:09.175Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Sala.Designer.cs",
               "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.Designer.cs",
               "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.Designer.cs",
               "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.Designer.cs",
               "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAD4v8EBAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-24T16:09:56.214Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Sala.cs",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
-              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAEwBMBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T15:47:31.119Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Sala.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3-Sistema-Autonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs [Design]",
-              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T15:49:09.175Z"
             }
           ]
         }

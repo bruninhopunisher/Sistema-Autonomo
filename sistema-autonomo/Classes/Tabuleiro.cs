@@ -17,7 +17,7 @@ namespace sistema_autonomo.Classes
 
     public class Tabuleiro
     {
-        Partida partidaSelecionada;
+        //Partida partidaSelecionada;
         private Dictionary<int, Point> setoresPosicoes; // Mapeia setores para coordenadas X:Y
         private Dictionary<int, bool> setoresDisponiveis = new Dictionary<int, bool>
             {
@@ -39,8 +39,6 @@ namespace sistema_autonomo.Classes
                 { 11, null }, { 12, null }, { 13, null }, { 14, null },  // 1º
                 {  1, null }, {  2, null }, {  3, null }, {  4, null }  // 0º
             };
-
-
         public Tabuleiro()
         {
             // Mapeamento das coordenadas dos setores
@@ -66,7 +64,56 @@ namespace sistema_autonomo.Classes
             return setoresPosicoes[posicaoSetor];
         }
 
-        public bool verificarSetorDisponivel(int posicaoSetor)
+        public bool verificarSetorDisponivel(int setor)
+        {
+            bool posicaoDisponivel = false;
+            switch (setor)
+            {
+                case 1:
+                    setor = 11;
+                    for (int i = setor; i <= 14; i++)
+                    {
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                    }
+                    return posicaoDisponivel;
+                case 2:
+                    setor = 21;
+                    for (int i = setor; i <= 24; i++)
+                    {
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                    }
+                    return posicaoDisponivel;
+                case 3:
+                    setor = 31;
+                    for (int i = setor; i <= 34; i++)
+                    {
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                    }
+                    return posicaoDisponivel;
+                case 4:
+                    setor = 41;
+                    for (int i = setor; i <= 44; i++)
+                    {
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                    }
+                    return posicaoDisponivel;
+                case 5:
+                    setor = 51;
+                    for (int i = setor; i <= 54; i++)
+                    {
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                    }
+                    return posicaoDisponivel;
+                case 10:
+                    setor = 60;
+                    posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                    return posicaoDisponivel;
+            }
+            return posicaoDisponivel;
+        }
+
+        //Verifica se a posicao esta disponivel
+        public bool verificarPosicaoSetorDisponivel(int posicaoSetor)
         {
             return setoresDisponiveis[posicaoSetor];
         }
@@ -75,6 +122,7 @@ namespace sistema_autonomo.Classes
         {
             List<Personagem> personagensPosicionados = personagensRecebidos;
             Point novaPosicaoPersonagem;
+            //Setor 0
             for (int i = 1; i <= 4; i++)
             {
                 if (estadoTabuleiro[i] != null)
@@ -85,7 +133,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[0].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[0].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[0].personagemPosicionado = true;
                             }
@@ -94,7 +141,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[1].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[1].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[1].personagemPosicionado = true;
                             }
@@ -103,7 +149,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[2].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[2].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[2].personagemPosicionado = true;
                             }
@@ -112,7 +157,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[3].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[3].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[3].personagemPosicionado = true;
                             }
@@ -121,7 +165,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[4].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[4].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[4].personagemPosicionado = true;
                             }
@@ -130,7 +173,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[5].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[5].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[5].personagemPosicionado = true;
                             }
@@ -139,7 +181,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[6].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[6].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[6].personagemPosicionado = true;
                             }
@@ -148,7 +189,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[7].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[7].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[7].personagemPosicionado = true;
                             }
@@ -157,7 +197,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[8].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[8].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[8].personagemPosicionado = true;
                             }
@@ -166,7 +205,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[9].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[9].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[9].personagemPosicionado = true;
                             }
@@ -175,7 +213,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[10].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[10].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[10].personagemPosicionado = true;
                             }
@@ -184,7 +221,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[11].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[11].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[11].personagemPosicionado = true;
                             }
@@ -193,7 +229,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[12].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[12].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[12].personagemPosicionado = true;
                             }
@@ -201,6 +236,7 @@ namespace sistema_autonomo.Classes
                     }
                 }
             }
+            //Setor 1
             for (int i = 11; i <= 14; i++) {
                 if(estadoTabuleiro[i] != null)
                 {
@@ -209,7 +245,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[0].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[0].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[0].personagemPosicionado = true;
                             }
@@ -218,7 +253,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[1].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[1].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[1].personagemPosicionado = true;
                             }
@@ -227,7 +261,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[2].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[2].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[2].personagemPosicionado = true;
                             }
@@ -236,7 +269,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[3].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[3].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[3].personagemPosicionado = true;
                             }
@@ -245,7 +277,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[4].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[4].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[4].personagemPosicionado = true;
                             }
@@ -254,7 +285,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[5].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[5].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[5].personagemPosicionado = true;
                             }
@@ -263,7 +293,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[6].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[6].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[6].personagemPosicionado = true;
                             }
@@ -272,7 +301,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[7].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[7].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[7].personagemPosicionado = true;
                             }
@@ -281,7 +309,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[8].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[8].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[8].personagemPosicionado = true;
                             }
@@ -290,7 +317,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[9].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[9].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[9].personagemPosicionado = true;
                             }
@@ -299,7 +325,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[10].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[10].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[10].personagemPosicionado = true;
                             }
@@ -308,7 +333,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[11].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[11].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[11].personagemPosicionado = true;
                             }
@@ -317,7 +341,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[12].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[12].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[12].personagemPosicionado = true;
                             }
@@ -325,6 +348,7 @@ namespace sistema_autonomo.Classes
                     }
                 }
             }
+            //Setor 2
             for (int i = 21; i <= 24; i++)
             {
                 if (estadoTabuleiro[i] != null)
@@ -335,7 +359,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[0].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[0].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[0].personagemPosicionado = true;
                             }
@@ -344,7 +367,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[1].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[1].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[1].personagemPosicionado = true;
                             }
@@ -353,7 +375,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[2].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[2].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[2].personagemPosicionado = true;
                             }
@@ -362,7 +383,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[3].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[3].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[3].personagemPosicionado = true;
                             }
@@ -371,7 +391,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[4].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[4].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[4].personagemPosicionado = true;
                             }
@@ -380,7 +399,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[5].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[5].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[5].personagemPosicionado = true;
                             }
@@ -389,7 +407,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[6].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[6].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[6].personagemPosicionado = true;
                             }
@@ -398,7 +415,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[7].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[7].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[7].personagemPosicionado = true;
                             }
@@ -407,7 +423,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[8].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[8].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[8].personagemPosicionado = true;
                             }
@@ -416,7 +431,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[9].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[9].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[9].personagemPosicionado = true;
                             }
@@ -425,7 +439,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[10].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[10].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[10].personagemPosicionado = true;
                             }
@@ -434,7 +447,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[11].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[11].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[11].personagemPosicionado = true;
                             }
@@ -443,7 +455,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[12].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[12].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[12].personagemPosicionado = true;
                             }
@@ -451,6 +462,7 @@ namespace sistema_autonomo.Classes
                     }
                 }
             }
+            //Setor 3
             for (int i = 31; i <= 34; i++)
             {
                 if (estadoTabuleiro[i] != null)
@@ -461,7 +473,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[0].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[0].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[0].personagemPosicionado = true;
                             }
@@ -470,7 +481,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[1].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[1].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[1].personagemPosicionado = true;
                             }
@@ -479,7 +489,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[2].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[2].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[2].personagemPosicionado = true;
                             }
@@ -488,7 +497,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[3].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[3].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[3].personagemPosicionado = true;
                             }
@@ -497,7 +505,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[4].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[4].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[4].personagemPosicionado = true;
                             }
@@ -506,7 +513,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[5].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[5].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[5].personagemPosicionado = true;
                             }
@@ -515,7 +521,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[6].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[6].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[6].personagemPosicionado = true;
                             }
@@ -524,7 +529,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[7].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[7].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[7].personagemPosicionado = true;
                             }
@@ -533,7 +537,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[8].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[8].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[8].personagemPosicionado = true;
                             }
@@ -542,7 +545,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[9].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[9].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[9].personagemPosicionado = true;
                             }
@@ -551,7 +553,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[10].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[10].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[10].personagemPosicionado = true;
                             }
@@ -560,7 +561,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[11].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[11].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[11].personagemPosicionado = true;
                             }
@@ -569,7 +569,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[12].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[12].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[12].personagemPosicionado = true;
                             }
@@ -577,6 +576,7 @@ namespace sistema_autonomo.Classes
                     }
                 }
             }
+            //Setor 4
             for (int i = 41; i <= 44; i++)
             {
                 if (estadoTabuleiro[i] != null)
@@ -587,7 +587,6 @@ namespace sistema_autonomo.Classes
                             if(personagensPosicionados[0].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[0].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[0].personagemPosicionado = true;
                             }
@@ -596,7 +595,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[1].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[1].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[1].personagemPosicionado = true;
                             }
@@ -605,7 +603,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[2].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[2].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[2].personagemPosicionado = true;
                             }
@@ -614,7 +611,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[3].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[3].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[3].personagemPosicionado = true;
                             }
@@ -623,7 +619,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[4].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[4].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[4].personagemPosicionado = true;
                             }
@@ -632,7 +627,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[5].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[5].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[5].personagemPosicionado = true;
                             }
@@ -641,7 +635,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[6].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[6].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[6].personagemPosicionado = true;
                             }
@@ -650,7 +643,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[7].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[7].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[7].personagemPosicionado = true;
                             }
@@ -659,7 +651,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[8].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[8].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[8].personagemPosicionado = true;
                             }
@@ -668,7 +659,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[9].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[9].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[9].personagemPosicionado = true;
                             }
@@ -677,7 +667,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[10].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[10].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[10].personagemPosicionado = true;
                             }
@@ -686,7 +675,6 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[11].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[11].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[11].personagemPosicionado = true;
                             }
@@ -695,13 +683,237 @@ namespace sistema_autonomo.Classes
                             if (personagensPosicionados[12].personagemPosicionado == false)
                             {
                                 novaPosicaoPersonagem = posicaoSetor(i);
-                                MessageBox.Show(novaPosicaoPersonagem.ToString());
                                 personagensPosicionados[12].cardPersonagem.Location = novaPosicaoPersonagem;
                                 personagensPosicionados[12].personagemPosicionado = true;
                             }
                             break;
                     }
                 }
+            }
+            //Setor 5
+            for (int i = 51; i <= 54; i++)
+            {
+                if (estadoTabuleiro[i] != null)
+                {
+                    switch (estadoTabuleiro[i].Substring(0, 1))
+                    {
+                        case "A":
+                            if (personagensPosicionados[0].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[0].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[0].personagemPosicionado = true;
+                            }
+                            break;
+                        case "B":
+                            if (personagensPosicionados[1].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[1].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[1].personagemPosicionado = true;
+                            }
+                            break;
+                        case "C":
+                            if (personagensPosicionados[2].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[2].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[2].personagemPosicionado = true;
+                            }
+                            break;
+                        case "D":
+                            if (personagensPosicionados[3].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[3].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[3].personagemPosicionado = true;
+                            }
+                            break;
+                        case "E":
+                            if (personagensPosicionados[4].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[4].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[4].personagemPosicionado = true;
+                            }
+                            break;
+                        case "G":
+                            if (personagensPosicionados[5].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[5].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[5].personagemPosicionado = true;
+                            }
+                            break;
+                        case "H":
+                            if (personagensPosicionados[6].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[6].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[6].personagemPosicionado = true;
+                            }
+                            break;
+                        case "K":
+                            if (personagensPosicionados[7].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[7].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[7].personagemPosicionado = true;
+                            }
+                            break;
+                        case "L":
+                            if (personagensPosicionados[8].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[8].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[8].personagemPosicionado = true;
+                            }
+                            break;
+                        case "M":
+                            if (personagensPosicionados[9].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[9].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[9].personagemPosicionado = true;
+                            }
+                            break;
+                        case "Q":
+                            if (personagensPosicionados[10].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[10].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[10].personagemPosicionado = true;
+                            }
+                            break;
+                        case "R":
+                            if (personagensPosicionados[11].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[11].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[11].personagemPosicionado = true;
+                            }
+                            break;
+                        case "T":
+                            if (personagensPosicionados[12].personagemPosicionado == false)
+                            {
+                                novaPosicaoPersonagem = posicaoSetor(i);
+                                personagensPosicionados[12].cardPersonagem.Location = novaPosicaoPersonagem;
+                                personagensPosicionados[12].personagemPosicionado = true;
+                            }
+                            break;
+                    }
+                }
+            }
+            //Setor 10
+            if (estadoTabuleiro[60] != null)
+            {
+                switch (estadoTabuleiro[60].Substring(0, 1))
+            {
+                case "A":
+                    if (personagensPosicionados[0].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[0].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[0].personagemPosicionado = true;
+                    }
+                    break;
+                case "B":
+                    if (personagensPosicionados[1].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[1].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[1].personagemPosicionado = true;
+                    }
+                    break;
+                case "C":
+                    if (personagensPosicionados[2].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[2].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[2].personagemPosicionado = true;
+                    }
+                    break;
+                case "D":
+                    if (personagensPosicionados[3].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[3].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[3].personagemPosicionado = true;
+                    }
+                    break;
+                case "E":
+                    if (personagensPosicionados[4].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[4].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[4].personagemPosicionado = true;
+                    }
+                    break;
+                case "G":
+                    if (personagensPosicionados[5].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[5].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[5].personagemPosicionado = true;
+                    }
+                    break;
+                case "H":
+                    if (personagensPosicionados[6].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[6].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[6].personagemPosicionado = true;
+                    }
+                    break;
+                case "K":
+                    if (personagensPosicionados[7].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[7].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[7].personagemPosicionado = true;
+                    }
+                    break;
+                case "L":
+                    if (personagensPosicionados[8].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[8].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[8].personagemPosicionado = true;
+                    }
+                    break;
+                case "M":
+                    if (personagensPosicionados[9].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[9].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[9].personagemPosicionado = true;
+                    }
+                    break;
+                case "Q":
+                    if (personagensPosicionados[10].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[10].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[10].personagemPosicionado = true;
+                    }
+                    break;
+                case "R":
+                    if (personagensPosicionados[11].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[11].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[11].personagemPosicionado = true;
+                    }
+                    break;
+                case "T":
+                    if (personagensPosicionados[12].personagemPosicionado == false)
+                    {
+                        novaPosicaoPersonagem = posicaoSetor(60);
+                        personagensPosicionados[12].cardPersonagem.Location = novaPosicaoPersonagem;
+                        personagensPosicionados[12].personagemPosicionado = true;
+                    }
+                    break;
+            }
             }
 
             return personagensPosicionados;
@@ -751,6 +963,7 @@ namespace sistema_autonomo.Classes
             tabuleiroRecebido.Replace("\r", "");
             string[] tabuleiroSala = tabuleiroRecebido.Split('\n');
 
+            //Percorre todo estado do tabuleiro e atribui os valores
             for (int i = 1; i < tabuleiroSala.Length - 1; i++)
             {
                 string[] personagemNoSetor = tabuleiroSala[i].Split(',');
@@ -766,19 +979,22 @@ namespace sistema_autonomo.Classes
                             do
                             {
                                 setorPersonagemSelecionado++;
-                                if (setorPersonagemSelecionado >= 11 && setorPersonagemSelecionado <= 14)
+                                if (setorPersonagemSelecionado >= 1 && setorPersonagemSelecionado <= 4)
                                 {
-                                    posicaoSetorEstaDisponivel = verificarSetorDisponivel(setorPersonagemSelecionado);
+                                    posicaoSetorEstaDisponivel = verificarPosicaoSetorDisponivel(setorPersonagemSelecionado);
                                 }
                                 else
                                 {
                                     break;
                                 }
                             } while (posicaoSetorEstaDisponivel == true);
-                            setoresDisponiveis[setorPersonagemSelecionado] = true;
-                            if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                            if (setorPersonagemSelecionado >= 1 && setorPersonagemSelecionado <= 4)
                             {
-                                estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                setoresDisponiveis[setorPersonagemSelecionado] = true;
+                                if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                                {
+                                    estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                }
                             }
                         }
                         break;
@@ -791,40 +1007,53 @@ namespace sistema_autonomo.Classes
                                 setorPersonagemSelecionado++;
                                 if (setorPersonagemSelecionado >= 11 && setorPersonagemSelecionado <= 14)
                                 {
-                                    posicaoSetorEstaDisponivel = verificarSetorDisponivel(setorPersonagemSelecionado);
+                                    posicaoSetorEstaDisponivel = verificarPosicaoSetorDisponivel(setorPersonagemSelecionado);
                                 }
                                 else
                                 {
+                                    setorPersonagemSelecionado = 1;
                                     break;
                                 }
                             } while (posicaoSetorEstaDisponivel == true);
-                            setoresDisponiveis[setorPersonagemSelecionado] = true;
-                            if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                            if (setorPersonagemSelecionado >= 11 && setorPersonagemSelecionado <= 14)
                             {
-                                estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                setoresDisponiveis[setorPersonagemSelecionado] = true;
+                                if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                                {
+                                    estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                }
                             }
                         }
                         break;
                     case 2:
+                        //Verifica se o personagem esta posicionado
                         if (personagemEstaPosicionado(personagensPosicionados, Convert.ToChar(nomePersonagemSelecionado.Substring(0, 1))) == false)
                         {
                             setorPersonagemSelecionado = 20;
+
+                            //Verifica tem alguma posicao disponivel no setor
                             do
                             {
                                 setorPersonagemSelecionado++;
                                 if (setorPersonagemSelecionado >= 21 && setorPersonagemSelecionado <= 24)
                                 {
-                                    posicaoSetorEstaDisponivel = verificarSetorDisponivel(setorPersonagemSelecionado);
+                                    posicaoSetorEstaDisponivel = verificarPosicaoSetorDisponivel(setorPersonagemSelecionado);
                                 }
                                 else
                                 {
                                     break;
                                 }
                             } while (posicaoSetorEstaDisponivel == true);
-                            setoresDisponiveis[setorPersonagemSelecionado] = true;
-                            if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+
+
+                            //Atribui que o setor não esta mais disponivel e atribui qual a inicial do personagem esta no setor
+                            if (setorPersonagemSelecionado >= 21 && setorPersonagemSelecionado <= 24)
                             {
-                                estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                setoresDisponiveis[setorPersonagemSelecionado] = true;
+                                if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                                {
+                                    estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                }
                             }
                         }
                         break;
@@ -837,17 +1066,20 @@ namespace sistema_autonomo.Classes
                                 setorPersonagemSelecionado++;
                                 if (setorPersonagemSelecionado >= 31 && setorPersonagemSelecionado <= 34)
                                 {
-                                    posicaoSetorEstaDisponivel = verificarSetorDisponivel(setorPersonagemSelecionado);
+                                    posicaoSetorEstaDisponivel = verificarPosicaoSetorDisponivel(setorPersonagemSelecionado);
                                 }
                                 else
                                 {
                                     break;
                                 }
                             } while (posicaoSetorEstaDisponivel == true);
-                            setoresDisponiveis[setorPersonagemSelecionado] = true;
-                            if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                            if (setorPersonagemSelecionado >= 31 && setorPersonagemSelecionado <= 34)
                             {
-                                estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                setoresDisponiveis[setorPersonagemSelecionado] = true;
+                                if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                                {
+                                    estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                }
                             }
                         }
                         break;
@@ -860,14 +1092,67 @@ namespace sistema_autonomo.Classes
                                 setorPersonagemSelecionado++;
                                 if (setorPersonagemSelecionado >= 41 && setorPersonagemSelecionado <= 44)
                                 {
-                                    posicaoSetorEstaDisponivel = verificarSetorDisponivel(setorPersonagemSelecionado);
+                                    posicaoSetorEstaDisponivel = verificarPosicaoSetorDisponivel(setorPersonagemSelecionado);
                                 }
                                 else
                                 {
                                     break;
                                 }
                             } while (posicaoSetorEstaDisponivel == true);
+
                             if(setorPersonagemSelecionado >= 41 && setorPersonagemSelecionado <= 44)
+                            {
+                                setoresDisponiveis[setorPersonagemSelecionado] = true;
+                                if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                                {
+                                    estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                }
+                            }
+                        }
+                        break;
+                    case 5:
+                        if (personagemEstaPosicionado(personagensPosicionados, Convert.ToChar(nomePersonagemSelecionado.Substring(0, 1))) == false)
+                        {
+                            setorPersonagemSelecionado = 50;
+                            do
+                            {
+                                setorPersonagemSelecionado++;
+                                if (setorPersonagemSelecionado >= 51 && setorPersonagemSelecionado <= 54)
+                                {
+                                    posicaoSetorEstaDisponivel = verificarPosicaoSetorDisponivel(setorPersonagemSelecionado);
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            } while (posicaoSetorEstaDisponivel == true);
+                            if (setorPersonagemSelecionado >= 51 && setorPersonagemSelecionado <= 54)
+                            {
+                                setoresDisponiveis[setorPersonagemSelecionado] = true;
+                                if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
+                                {
+                                    estadoSetorPersonagem[setorPersonagemSelecionado] = nomePersonagemSelecionado;
+                                }
+                            }
+                        }
+                        break;
+                    case 10:
+                        if (personagemEstaPosicionado(personagensPosicionados, Convert.ToChar(nomePersonagemSelecionado.Substring(0, 1))) == false)
+                        {
+                            setorPersonagemSelecionado = 60;
+                            do
+                            {
+                                setorPersonagemSelecionado++;
+                                if (setorPersonagemSelecionado == 60)
+                                {
+                                    posicaoSetorEstaDisponivel = verificarPosicaoSetorDisponivel(setorPersonagemSelecionado);
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            } while (posicaoSetorEstaDisponivel == true);
+                            if (setorPersonagemSelecionado == 60)
                             {
                                 setoresDisponiveis[setorPersonagemSelecionado] = true;
                                 if (estadoSetorPersonagem[setorPersonagemSelecionado] == null)
@@ -881,6 +1166,46 @@ namespace sistema_autonomo.Classes
             }
 
             return estadoSetorPersonagem;
+        }
+
+        public Dictionary<int, string> LimparTabuleiro(Dictionary<int, string> estadoTabuleiro)
+        {
+            Dictionary<int, string> estadoTabuleiroRecebido = estadoTabuleiro;
+            //Percorre todas as posições do tabuleiro e transforma em nulo o estado do tabuleiro
+            for (int i = 1; i <= 4; i++)
+            {
+                setoresDisponiveis[i] = false;
+                estadoTabuleiroRecebido[i] = null;
+            }
+            for (int i = 11; i <= 14; i++)
+            {
+                setoresDisponiveis[i] = false;
+                estadoTabuleiroRecebido[i] = null;
+            }
+            for (int i = 21; i <= 24; i++)
+            {
+                setoresDisponiveis[i] = false;
+                estadoTabuleiroRecebido[i] = null;
+            }
+            for (int i = 31; i <= 34; i++)
+            {
+                setoresDisponiveis[i] = false;
+                estadoTabuleiroRecebido[i] = null;
+            }
+            for (int i = 41; i <= 44; i++)
+            {
+                setoresDisponiveis[i] = false;
+                estadoTabuleiroRecebido[i] = null;
+            }
+            for (int i = 51; i <= 54; i++)
+            {
+                setoresDisponiveis[i] = false;
+                estadoTabuleiroRecebido[i] = null;
+            }
+            setoresDisponiveis[60] = false;
+            estadoTabuleiroRecebido[60] = null;
+
+            return estadoTabuleiroRecebido;
         }
     }
 

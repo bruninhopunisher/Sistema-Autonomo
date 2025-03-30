@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sala));
-            this.lblNomeJogador = new System.Windows.Forms.Label();
-            this.lblNomePartida = new System.Windows.Forms.Label();
             this.txtConstMinhasCartasSala = new System.Windows.Forms.Label();
             this.lstMinhasCartasSala = new System.Windows.Forms.ListBox();
             this.lblSetoresSala = new System.Windows.Forms.Label();
@@ -59,6 +57,11 @@
             this.btnAtualizarTabuleiro = new System.Windows.Forms.Button();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
             this.lblNomeDoGrupo = new System.Windows.Forms.Label();
+            this.btnConstPromoverPersonagem = new System.Windows.Forms.Button();
+            this.lblConstNomeJogador = new System.Windows.Forms.Label();
+            this.lblConstSenhaJogador = new System.Windows.Forms.Label();
+            this.lblAltNomeJogador = new System.Windows.Forms.Label();
+            this.lblAltSenhaJogador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -75,28 +78,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblNomeJogador
-            // 
-            this.lblNomeJogador.AutoSize = true;
-            this.lblNomeJogador.Location = new System.Drawing.Point(22, 20);
-            this.lblNomeJogador.Name = "lblNomeJogador";
-            this.lblNomeJogador.Size = new System.Drawing.Size(35, 13);
-            this.lblNomeJogador.TabIndex = 0;
-            this.lblNomeJogador.Text = "label1";
-            // 
-            // lblNomePartida
-            // 
-            this.lblNomePartida.AutoSize = true;
-            this.lblNomePartida.Location = new System.Drawing.Point(22, 37);
-            this.lblNomePartida.Name = "lblNomePartida";
-            this.lblNomePartida.Size = new System.Drawing.Size(35, 13);
-            this.lblNomePartida.TabIndex = 1;
-            this.lblNomePartida.Text = "label2";
-            // 
             // txtConstMinhasCartasSala
             // 
             this.txtConstMinhasCartasSala.AutoSize = true;
-            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(282, 10);
+            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(520, 460);
             this.txtConstMinhasCartasSala.Name = "txtConstMinhasCartasSala";
             this.txtConstMinhasCartasSala.Size = new System.Drawing.Size(74, 13);
             this.txtConstMinhasCartasSala.TabIndex = 3;
@@ -105,15 +90,15 @@
             // lstMinhasCartasSala
             // 
             this.lstMinhasCartasSala.FormattingEnabled = true;
-            this.lstMinhasCartasSala.Location = new System.Drawing.Point(225, 37);
+            this.lstMinhasCartasSala.Location = new System.Drawing.Point(487, 477);
             this.lstMinhasCartasSala.Name = "lstMinhasCartasSala";
-            this.lstMinhasCartasSala.Size = new System.Drawing.Size(175, 160);
+            this.lstMinhasCartasSala.Size = new System.Drawing.Size(140, 160);
             this.lstMinhasCartasSala.TabIndex = 4;
             // 
             // lblSetoresSala
             // 
             this.lblSetoresSala.AutoSize = true;
-            this.lblSetoresSala.Location = new System.Drawing.Point(538, 216);
+            this.lblSetoresSala.Location = new System.Drawing.Point(429, 43);
             this.lblSetoresSala.Name = "lblSetoresSala";
             this.lblSetoresSala.Size = new System.Drawing.Size(43, 13);
             this.lblSetoresSala.TabIndex = 5;
@@ -122,15 +107,15 @@
             // lstSetoresSala
             // 
             this.lstSetoresSala.FormattingEnabled = true;
-            this.lstSetoresSala.Location = new System.Drawing.Point(507, 232);
+            this.lstSetoresSala.Location = new System.Drawing.Point(398, 59);
             this.lstSetoresSala.Name = "lstSetoresSala";
-            this.lstSetoresSala.Size = new System.Drawing.Size(121, 160);
+            this.lstSetoresSala.Size = new System.Drawing.Size(112, 160);
             this.lstSetoresSala.TabIndex = 6;
             // 
             // lblTabuleiro
             // 
             this.lblTabuleiro.AutoSize = true;
-            this.lblTabuleiro.Location = new System.Drawing.Point(544, 21);
+            this.lblTabuleiro.Location = new System.Drawing.Point(242, 43);
             this.lblTabuleiro.Name = "lblTabuleiro";
             this.lblTabuleiro.Size = new System.Drawing.Size(51, 13);
             this.lblTabuleiro.TabIndex = 7;
@@ -139,7 +124,7 @@
             // lstAltTabuleiroSala
             // 
             this.lstAltTabuleiroSala.FormattingEnabled = true;
-            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(512, 37);
+            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(210, 59);
             this.lstAltTabuleiroSala.Name = "lstAltTabuleiroSala";
             this.lstAltTabuleiroSala.Size = new System.Drawing.Size(116, 160);
             this.lstAltTabuleiroSala.TabIndex = 8;
@@ -147,7 +132,7 @@
             // lblConstStatusVezSala
             // 
             this.lblConstStatusVezSala.AutoSize = true;
-            this.lblConstStatusVezSala.Location = new System.Drawing.Point(421, 37);
+            this.lblConstStatusVezSala.Location = new System.Drawing.Point(207, 21);
             this.lblConstStatusVezSala.Name = "lblConstStatusVezSala";
             this.lblConstStatusVezSala.Size = new System.Drawing.Size(73, 13);
             this.lblConstStatusVezSala.TabIndex = 9;
@@ -156,7 +141,7 @@
             // lblAltStatusVezSala
             // 
             this.lblAltStatusVezSala.AutoSize = true;
-            this.lblAltStatusVezSala.Location = new System.Drawing.Point(421, 59);
+            this.lblAltStatusVezSala.Location = new System.Drawing.Point(286, 21);
             this.lblAltStatusVezSala.Name = "lblAltStatusVezSala";
             this.lblAltStatusVezSala.Size = new System.Drawing.Size(13, 13);
             this.lblAltStatusVezSala.TabIndex = 10;
@@ -164,7 +149,7 @@
             // 
             // btnConstVerificarVez
             // 
-            this.btnConstVerificarVez.Location = new System.Drawing.Point(424, 80);
+            this.btnConstVerificarVez.Location = new System.Drawing.Point(305, 16);
             this.btnConstVerificarVez.Name = "btnConstVerificarVez";
             this.btnConstVerificarVez.Size = new System.Drawing.Size(75, 23);
             this.btnConstVerificarVez.TabIndex = 11;
@@ -300,9 +285,9 @@
             // 
             // btnPosicionar
             // 
-            this.btnPosicionar.Location = new System.Drawing.Point(463, 574);
+            this.btnPosicionar.Location = new System.Drawing.Point(448, 236);
             this.btnPosicionar.Name = "btnPosicionar";
-            this.btnPosicionar.Size = new System.Drawing.Size(164, 87);
+            this.btnPosicionar.Size = new System.Drawing.Size(133, 32);
             this.btnPosicionar.TabIndex = 26;
             this.btnPosicionar.Text = "Colocar personagem";
             this.btnPosicionar.UseVisualStyleBackColor = true;
@@ -311,10 +296,10 @@
             // lstCartas
             // 
             this.lstCartas.FormattingEnabled = true;
-            this.lstCartas.Location = new System.Drawing.Point(507, 412);
+            this.lstCartas.Location = new System.Drawing.Point(515, 59);
             this.lstCartas.Margin = new System.Windows.Forms.Padding(2);
             this.lstCartas.Name = "lstCartas";
-            this.lstCartas.Size = new System.Drawing.Size(116, 147);
+            this.lstCartas.Size = new System.Drawing.Size(112, 160);
             this.lstCartas.TabIndex = 29;
             // 
             // btnAtualizarTabuleiro
@@ -343,11 +328,62 @@
             this.lblNomeDoGrupo.Size = new System.Drawing.Size(0, 13);
             this.lblNomeDoGrupo.TabIndex = 32;
             // 
+            // btnConstPromoverPersonagem
+            // 
+            this.btnConstPromoverPersonagem.Location = new System.Drawing.Point(448, 279);
+            this.btnConstPromoverPersonagem.Name = "btnConstPromoverPersonagem";
+            this.btnConstPromoverPersonagem.Size = new System.Drawing.Size(133, 36);
+            this.btnConstPromoverPersonagem.TabIndex = 33;
+            this.btnConstPromoverPersonagem.Text = "Promover Personagem";
+            this.btnConstPromoverPersonagem.UseVisualStyleBackColor = true;
+            this.btnConstPromoverPersonagem.Click += new System.EventHandler(this.btnConstPromoverPersonagem_Click);
+            // 
+            // lblConstNomeJogador
+            // 
+            this.lblConstNomeJogador.AutoSize = true;
+            this.lblConstNomeJogador.Location = new System.Drawing.Point(20, 16);
+            this.lblConstNomeJogador.Name = "lblConstNomeJogador";
+            this.lblConstNomeJogador.Size = new System.Drawing.Size(45, 13);
+            this.lblConstNomeJogador.TabIndex = 34;
+            this.lblConstNomeJogador.Text = "Jogador";
+            // 
+            // lblConstSenhaJogador
+            // 
+            this.lblConstSenhaJogador.AutoSize = true;
+            this.lblConstSenhaJogador.Location = new System.Drawing.Point(20, 59);
+            this.lblConstSenhaJogador.Name = "lblConstSenhaJogador";
+            this.lblConstSenhaJogador.Size = new System.Drawing.Size(38, 13);
+            this.lblConstSenhaJogador.TabIndex = 36;
+            this.lblConstSenhaJogador.Text = "Senha";
+            // 
+            // lblAltNomeJogador
+            // 
+            this.lblAltNomeJogador.AutoSize = true;
+            this.lblAltNomeJogador.Location = new System.Drawing.Point(20, 37);
+            this.lblAltNomeJogador.Name = "lblAltNomeJogador";
+            this.lblAltNomeJogador.Size = new System.Drawing.Size(13, 13);
+            this.lblAltNomeJogador.TabIndex = 37;
+            this.lblAltNomeJogador.Text = "1";
+            // 
+            // lblAltSenhaJogador
+            // 
+            this.lblAltSenhaJogador.AutoSize = true;
+            this.lblAltSenhaJogador.Location = new System.Drawing.Point(20, 82);
+            this.lblAltSenhaJogador.Name = "lblAltSenhaJogador";
+            this.lblAltSenhaJogador.Size = new System.Drawing.Size(13, 13);
+            this.lblAltSenhaJogador.TabIndex = 38;
+            this.lblAltSenhaJogador.Text = "1";
+            // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblAltSenhaJogador);
+            this.Controls.Add(this.lblAltNomeJogador);
+            this.Controls.Add(this.lblConstSenhaJogador);
+            this.Controls.Add(this.lblConstNomeJogador);
+            this.Controls.Add(this.btnConstPromoverPersonagem);
             this.Controls.Add(this.lblNomeDoGrupo);
             this.Controls.Add(this.lblVersaoDoJogo);
             this.Controls.Add(this.btnAtualizarTabuleiro);
@@ -376,8 +412,6 @@
             this.Controls.Add(this.lblSetoresSala);
             this.Controls.Add(this.lstMinhasCartasSala);
             this.Controls.Add(this.txtConstMinhasCartasSala);
-            this.Controls.Add(this.lblNomePartida);
-            this.Controls.Add(this.lblNomeJogador);
             this.Name = "Sala";
             this.Text = "Game";
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).EndInit();
@@ -400,9 +434,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNomeJogador;
-        private System.Windows.Forms.Label lblNomePartida;
         private System.Windows.Forms.Label txtConstMinhasCartasSala;
         private System.Windows.Forms.ListBox lstMinhasCartasSala;
         private System.Windows.Forms.Label lblSetoresSala;
@@ -431,5 +462,10 @@
         private System.Windows.Forms.Button btnAtualizarTabuleiro;
         private System.Windows.Forms.Label lblVersaoDoJogo;
         private System.Windows.Forms.Label lblNomeDoGrupo;
+        private System.Windows.Forms.Button btnConstPromoverPersonagem;
+        private System.Windows.Forms.Label lblConstNomeJogador;
+        private System.Windows.Forms.Label lblConstSenhaJogador;
+        private System.Windows.Forms.Label lblAltNomeJogador;
+        private System.Windows.Forms.Label lblAltSenhaJogador;
     }
 }
