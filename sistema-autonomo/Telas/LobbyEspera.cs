@@ -38,10 +38,14 @@ namespace sistema_autonomo
             string verificacaoInicio = Jogo.Iniciar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha());
             MessageBox.Show(verificacaoInicio);
 
-            Sala sala = new Sala(partidaSelecionada, jogadorSelecionado);
-            partidaSelecionada.setStatus("Jogando");
-            sala.Show();
-            this.Hide();
+            if (verificacaoInicio.Substring(0,1) != "E")
+            {
+                Sala sala = new Sala(partidaSelecionada, jogadorSelecionado);
+                partidaSelecionada.setStatus("Jogando");
+                sala.Show();
+                this.Hide();
+            }
+
         }
     }
 }
