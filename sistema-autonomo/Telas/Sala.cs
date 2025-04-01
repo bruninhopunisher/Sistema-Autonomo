@@ -149,8 +149,6 @@ namespace sistema_autonomo
             {
                 lstSetoresSala.Items.Add(setores[i]);
             }
-
-            
         }
 
         private void btnConstVerificarVez_Click_1(object sender, EventArgs e)

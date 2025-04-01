@@ -25,12 +25,12 @@ namespace sistema_autonomo
         public LobbyEspera(Partida partidaRecebida, Jogador jogadorRecebido)
         {
             InitializeComponent();
+
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
             lblNomeDoGrupo.Text = Lobby.GetNomeGrupo().ToString();
             partidaSelecionada = partidaRecebida;
             jogadorSelecionado = jogadorRecebido;
-            lblConstIdJogadorLogado.Text = jogadorSelecionado.GetId().ToString();
-            lblConstSenhaJogadorLogado.Text = jogadorSelecionado.GetSenha().ToString();
+            lblNomeJogador.Text = jogadorSelecionado.GetId().ToString();
         }
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
@@ -47,5 +47,5 @@ namespace sistema_autonomo
             }
 
         }
-    }
+    }
 }
