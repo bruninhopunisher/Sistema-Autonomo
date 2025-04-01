@@ -36,7 +36,7 @@ namespace sistema_autonomo
             lblAltSenhaJogador.Text = jogadorSelecionado.GetSenha();
 
             //Atribui personagens na lista assim que o programa e executado
-            listaDePersonagens = Personagem.ListarPersonagem(0);
+            listaDePersonagens = sistema_autonomo.Personagem.ListarPersonagem(0);
 
             //Adiciona Pictures na instancia do personagem
             for (int i = 0; i < listaDePersonagens.Count; i++)
@@ -402,6 +402,20 @@ namespace sistema_autonomo
             {
                 MessageBox.Show("ERRO: Posição não disponivel, por favor selecione uma posição válida!");
             }
+        }
+
+        private void btnVotar_Click(object sender, EventArgs e)
+        {
+            string txtVoto = txtVotoJogador.Text.Trim();
+            string listaDeVotos = Jogo.ExibirUltimaVotacao(partidaSelecionada.getID());
+            lstVotacao.Items.Clear();
+
+            Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), txtVoto);
+
+            listaDeVotos.Replace("\r", "");
+            listaDeVotos.Split('\n');
+
+            //Falta exibir votos restantes
         }
     }
 }
