@@ -18,11 +18,11 @@ namespace sistema_autonomo
     {
         public Partida partida = new Partida();
         public Jogador JogadorLogado = new Jogador();
+
         public Login()
         {
 
             InitializeComponent();
-
 
             cboFiltrarPartidas.Items.Add("Todos");
             cboFiltrarPartidas.Items.Add("Abertas");
@@ -58,8 +58,6 @@ namespace sistema_autonomo
 
         public void lstListaDePartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
             string partidaSelecionadaRecebida = lstListaDePartidas.SelectedItem.ToString();
             string[] partidaSelecionada = partidaSelecionadaRecebida.Split(',');
 
@@ -133,8 +131,6 @@ namespace sistema_autonomo
 
         private void btnEntrarPartida_Click_1(object sender, EventArgs e)
         {
-
-
             string[] dadosJogador = new string[2];
             string senhaDigitada = txtSenhaEntrarPartida.Text.Trim();
             string nomeDoJogador = txtNomeDoJogador.Text.Trim();
