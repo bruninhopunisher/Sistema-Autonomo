@@ -21,7 +21,6 @@ namespace sistema_autonomo
 
         public Login()
         {
-
             InitializeComponent();
 
             cboFiltrarPartidas.Items.Add("Todos");
@@ -30,7 +29,6 @@ namespace sistema_autonomo
             cboFiltrarPartidas.Items.Add("Encerradas");
             cboFiltrarPartidas.SelectedIndex = 0;
             lblVersaoJogo.Text = Jogo.versao;
-
         }
 
         private void btnListarPartidas_Click(object sender, EventArgs e)
@@ -61,16 +59,16 @@ namespace sistema_autonomo
             string partidaSelecionadaRecebida = lstListaDePartidas.SelectedItem.ToString();
             string[] partidaSelecionada = partidaSelecionadaRecebida.Split(',');
 
-            partida.setID(Convert.ToInt32(partidaSelecionada[0]));
-            partida.setNome(partidaSelecionada[1]);
-            partida.setData(partidaSelecionada[2]);
-            partida.setStatus(partidaSelecionada[3]);
+            partida.SetID(Convert.ToInt32(partidaSelecionada[0]));
+            partida.SetNome(partidaSelecionada[1]);
+            partida.SetData(partidaSelecionada[2]);
+            partida.SetStatus(partidaSelecionada[3]);
 
-            lblIdPartidaSelecionada.Text = partida.getID().ToString();
-            lblNomePartidaSelecionada.Text = partida.getNome();
-            lblDataPartidaSelecionada.Text = partida.getData();
+            lblIdPartidaSelecionada.Text = partida.GetID().ToString();
+            lblNomePartidaSelecionada.Text = partida.GetNome();
+            lblDataPartidaSelecionada.Text = partida.GetData();
 
-            switch (partida.getStatus())
+            switch (partida.GetStatus())
             {
                 case "A":
                     lblStatusPartidaSelecionada.Text = "Aberta";
@@ -83,7 +81,7 @@ namespace sistema_autonomo
                     break;
             }
 
-            string jogadoresRecebidos = Jogo.ListarJogadores(partida.getID());
+            string jogadoresRecebidos = Jogo.ListarJogadores(partida.GetID());
 
             //Informa quando não tem nenhum jogador
             if (jogadoresRecebidos == "")
@@ -134,7 +132,7 @@ namespace sistema_autonomo
             string[] dadosJogador = new string[2];
             string senhaDigitada = txtSenhaEntrarPartida.Text.Trim();
             string nomeDoJogador = txtNomeDoJogador.Text.Trim();
-            string dadosRecebidos = Jogo.Entrar(partida.getID(), nomeDoJogador, senhaDigitada);
+            string dadosRecebidos = Jogo.Entrar(partida.GetID(), nomeDoJogador, senhaDigitada);
 
             dadosJogador = dadosRecebidos.Split(',');
 

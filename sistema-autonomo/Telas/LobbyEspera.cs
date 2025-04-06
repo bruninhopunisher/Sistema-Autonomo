@@ -22,6 +22,8 @@ namespace sistema_autonomo
         Partida partidaSelecionada;
         Jogador jogadorSelecionado;
 
+        List<Jogador> jogadoresNaPartida = new List<Jogador>();
+
         public LobbyEspera(Partida partidaRecebida, Jogador jogadorRecebido)
         {
             InitializeComponent();
@@ -40,12 +42,13 @@ namespace sistema_autonomo
 
             if (verificacaoInicio.Substring(0,1) != "E")
             {
+                string listaJogadores = Jogo.ListarJogadores(partidaSelecionada.GetID());
+
                 Sala sala = new Sala(partidaSelecionada, jogadorSelecionado);
-                partidaSelecionada.setStatus("Jogando");
+                partidaSelecionada.SetStatus("Jogando");
                 sala.Show();
                 this.Hide();
             }
-
         }
     }
 }

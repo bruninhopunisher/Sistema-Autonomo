@@ -18,50 +18,50 @@ namespace sistema_autonomo.Classes
         private string data;
         private string status;
 
-        public void setID(int id)
+        public void SetID(int id)
         {
             this.id = id;
         }
 
-        public int getID()
+        public int GetID()
         {
             return id;
         }
 
-        public void setNome(string nome)
+        public void SetNome(string nome)
         {
             this.nome = nome;
         }
 
-        public string getNome()
+        public string GetNome()
         {
             return nome;
         }
 
-        public void setSenha(string senha)
+        public void SetSenha(string senha)
         {
             this.senha = senha;
         }
 
-        public string getSenha()
+        public string GetSenha()
         {
             return senha;
         }
 
-        public void setData(string data)
+        public void SetData(string data)
         {
             this.data = data;
         }
 
-        public string getData()
+        public string GetData()
         {
             return data;
         }
-        public void setStatus(string status)
+        public void SetStatus(string status)
         {
             this.status = status;
         }
-        public string getStatus()
+        public string GetStatus()
         {
             return status;
         }

@@ -19,7 +19,41 @@ namespace sistema_autonomo
             InitializeComponent();
             lblVersaoJogo.Text = Jogo.versao.ToString();
             lblNomeGrupo.Text = Lobby.GetNomeGrupo().ToString();
-            MessageBox.Show(Jogo.VerificarVez(236));
+
+
+            string listaJogadores = Jogo.ListarJogadores(573);
+
+            //listaJogadores = listaJogadores.Replace("\r", "");
+
+            //// Separa cada jogador por linha
+            //string[] linhasDeJogadores = listaJogadores.Split('\n');
+
+            //foreach (string linha in linhasDeJogadores)
+            //{
+            //    if (!string.IsNullOrWhiteSpace(linha))
+            //    {
+            //        string[] partes = linha.Split(',');
+
+            //        if (partes.Length >= 2)
+            //        {
+            //            string id = partes[0];
+            //            string nome = partes[1];
+
+            //            Console.WriteLine($"ID: {id}, Nome: {nome}");
+            //        }
+            //    }
+            //}
+
+            //string listaJogadores = Jogo.ListarJogadores(554);
+
+            //listaJogadores = listaJogadores.Replace("\r", "");
+            //listaJogadores = listaJogadores.Replace("\n", "");
+            //string []listaDeJogadoresTratados = listaJogadores.Split(',');
+
+            //for (int i = 1; i < listaDeJogadoresTratados.Length - 1; i += 2)
+            //{
+            //    Console.WriteLine(listaDeJogadoresTratados[i].ToString());
+            //}
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
