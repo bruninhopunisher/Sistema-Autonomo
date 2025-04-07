@@ -17,6 +17,8 @@ namespace sistema_autonomo
         private int pontos;
         private int qtdeNao;
 
+        List<Jogador> listaDeJogadores = new List<Jogador>();
+
         public void SetId(int id)
         {
             this.id = id;
@@ -57,9 +59,18 @@ namespace sistema_autonomo
             return pontos;
         }
 
-        public void SetNao(int qtdeNao)
+        public void SetNao(int num)
         {
-            this.qtdeNao = qtdeNao;
+            //foreach (Jogador item in listaDeJogadores)
+            //{
+            //    if (GetNome() == item.nome)
+            //    {
+            //        item.qtdeNao = num;
+            //    }
+            //}
+            MessageBox.Show($"FOI SETADO NO SET {num}");
+            Console.WriteLine($"Foi setado {num}");
+            this.qtdeNao = num;
         }
 
         public int GetNao()
@@ -67,10 +78,8 @@ namespace sistema_autonomo
             return qtdeNao;
         }
 
-
         public List<Jogador> ListarJogadores(int IDPartida)
         {
-            List<Jogador> lista_jogadores_instanciados = new List<Jogador>();
 
             string listaJogadores;
             string[] listaDeJogadoresTratados;
@@ -88,10 +97,10 @@ namespace sistema_autonomo
                 Jogador novoJogador = new Jogador();
                 novoJogador.id = Convert.ToInt32(listaDeJogadoresTratados[i]);
                 novoJogador.nome = listaDeJogadoresTratados[i + 1];
-                lista_jogadores_instanciados.Add(novoJogador);
+                listaDeJogadores.Add(novoJogador);
             }
 
-            return lista_jogadores_instanciados;
+            return listaDeJogadores;
         }
     }
 }

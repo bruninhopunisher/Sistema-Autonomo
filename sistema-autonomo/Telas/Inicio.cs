@@ -21,46 +21,43 @@ namespace sistema_autonomo
             lblNomeGrupo.Text = Lobby.GetNomeGrupo().ToString();
 
 
-            string listaJogadores = Jogo.ListarJogadores(573);
+            //string listaJogadores = Jogo.ListarJogadores(573);
+            //MessageBox.Show(listaJogadores);
 
-            //listaJogadores = listaJogadores.Replace("\r", "");
+            //string[] linhas = listaJogadores.Split('\n');
 
-            //// Separa cada jogador por linha
-            //string[] linhasDeJogadores = listaJogadores.Split('\n');
+            //// Cria uma lista para armazenar os IDs
+            //List<int> ids = new List<int>();
 
-            //foreach (string linha in linhasDeJogadores)
+            //foreach (string linha in linhas)
             //{
-            //    if (!string.IsNullOrWhiteSpace(linha))
+            //    if (!string.IsNullOrWhiteSpace(linha)) // Ignora linhas vazias
             //    {
             //        string[] partes = linha.Split(',');
-
-            //        if (partes.Length >= 2)
+            //        if (partes.Length > 0 && int.TryParse(partes[0], out int id))
             //        {
-            //            string id = partes[0];
-            //            string nome = partes[1];
-
-            //            Console.WriteLine($"ID: {id}, Nome: {nome}");
+            //            ids.Add(id);
             //        }
             //    }
             //}
 
-            //string listaJogadores = Jogo.ListarJogadores(554);
-
-            //listaJogadores = listaJogadores.Replace("\r", "");
-            //listaJogadores = listaJogadores.Replace("\n", "");
-            //string []listaDeJogadoresTratados = listaJogadores.Split(',');
-
-            //for (int i = 1; i < listaDeJogadoresTratados.Length - 1; i += 2)
+            // Agora você tem todos os IDs em "ids"
+            //foreach (int id in ids)
             //{
-            //    Console.WriteLine(listaDeJogadoresTratados[i].ToString());
+            //    Console.WriteLine(id); // ou faça o que quiser com os IDs
             //}
+
+            //Console.WriteLine(ids.Count);
+
+            //MessageBox.Show(listaDeJogadoresTratados.ToString());
+
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
             Login form1 = new Login();
-            form1.Show();
-            this.Hide();
+            form1.ShowDialog();
+            this.Close();
         }
     }
 }

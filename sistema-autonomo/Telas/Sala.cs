@@ -32,6 +32,7 @@ namespace sistema_autonomo
             jogadorSelecionado = jogadorRecebido;
             lblNomeDoGrupo.Text = Lobby.GetNomeGrupo().ToString();
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
+            lblQtdeVotos.Text = Convert.ToString(jogadorRecebido.GetNao());
 
             //Informações do jogador que esta logado
             lblAltNomeJogador.Text = jogadorSelecionado.GetNome();
@@ -335,9 +336,14 @@ namespace sistema_autonomo
             //Dados recebidos para promover o personagem
             int idJogador = jogadorSelecionado.GetId();
             string senhaJogador = jogadorSelecionado.GetSenha();
-            string cartaSelecionada = lstCartas.SelectedItem.ToString();
+            string cartaSelecionada = null;
             string setorSelecionadoRecebido = lstSetoresSala.SelectedItem.ToString();
             int idSetorSelecionado = Convert.ToInt32(setorSelecionadoRecebido.Substring(0, 1));
+
+            if (lstCartas.SelectedItem.ToString() != null)
+            {
+                cartaSelecionada = lstCartas.SelectedItem.ToString();
+            }
 
             if (tabuleiro.verificarSetorDisponivel(idSetorSelecionado) == true)
             {
@@ -402,8 +408,31 @@ namespace sistema_autonomo
 
         private void btnVotar_Click(object sender, EventArgs e)
         {
-            string txtVoto = txtVotoJogador.Text.Trim();
-            Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), txtVoto);
+            string txtVoto;
+            int qtdeVotos;
+
+            string retornoDaFuncao;
+
+            // Adicionar campo de verificação se esta aberto para votação
+            qtdeVotos = jogadorSelecionado.GetNao();
+            txtVoto = txtVotoJogador.Text.Trim();
+            
+            
+            if (qtdeVotos > 0)
+            {
+                retornoDaFuncao = Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), txtVoto);
+                MessageBox.Show(retornoDaFuncao);
+                if (retornoDaFuncao.Substring(0,1) != "E")
+                {
+                    jogadorSelecionado.SetNao(qtdeVotos - 1);
+                }
+            }
+            else
+            {
+                Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), "s");
+            }
+            
+            lblQtdeVotos.Text = Convert.ToString(qtdeVotos);
         }
     }
 }

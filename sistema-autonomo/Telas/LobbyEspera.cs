@@ -44,10 +44,12 @@ namespace sistema_autonomo
             {
                 string listaJogadores = Jogo.ListarJogadores(partidaSelecionada.GetID());
 
+                //string nomeJogadorBuscado = jogadorSelecionado.GetNome();
+                partidaSelecionada.QuantidadeDeJogadoresNaPartida(jogadorSelecionado);
                 Sala sala = new Sala(partidaSelecionada, jogadorSelecionado);
                 partidaSelecionada.SetStatus("Jogando");
-                sala.Show();
-                this.Hide();
+                sala.ShowDialog();
+                this.Close();
             }
         }
     }

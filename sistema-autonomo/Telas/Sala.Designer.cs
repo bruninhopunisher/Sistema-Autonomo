@@ -66,6 +66,8 @@
             this.txtVotoJogador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lstVotacao = new System.Windows.Forms.ListView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblQtdeVotos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -413,11 +415,30 @@
             this.lstVotacao.TabIndex = 43;
             this.lstVotacao.UseCompatibleStateImageBehavior = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1117, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 13);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Quantidade de Votos Nãos";
+            // 
+            // lblQtdeVotos
+            // 
+            this.lblQtdeVotos.AutoSize = true;
+            this.lblQtdeVotos.Location = new System.Drawing.Point(1155, 59);
+            this.lblQtdeVotos.Name = "lblQtdeVotos";
+            this.lblQtdeVotos.Size = new System.Drawing.Size(0, 13);
+            this.lblQtdeVotos.TabIndex = 45;
+            // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblQtdeVotos);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lstVotacao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtVotoJogador);
@@ -456,6 +477,7 @@
             this.Controls.Add(this.lstMinhasCartasSala);
             this.Controls.Add(this.txtConstMinhasCartasSala);
             this.Name = "Sala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).EndInit();
@@ -514,5 +536,7 @@
         private System.Windows.Forms.TextBox txtVotoJogador;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView lstVotacao;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblQtdeVotos;
     }
 }

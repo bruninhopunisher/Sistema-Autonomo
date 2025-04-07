@@ -143,8 +143,8 @@ namespace sistema_autonomo
                 JogadorLogado.SetNome(nomeDoJogador);
                 LobbyEspera LobbyPartida1 = new LobbyEspera(partida, JogadorLogado);
                 LobbyPartida1.idJogadorLogado = JogadorLogado.GetId();
-                LobbyPartida1.Show();
-                this.Hide();
+                LobbyPartida1.ShowDialog();
+                this.Close();
             }
             else
             {
