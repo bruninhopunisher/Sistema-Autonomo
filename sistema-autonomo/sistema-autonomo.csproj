@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Tabuleiro.cs" />
-    <Compile Include="Classes\StructJogador.cs" />
     <Compile Include="Classes\Partida.cs" />
     <Compile Include="Classes\Lobby.cs" />
     <Compile Include="Telas\Login.cs">
@@ -107,6 +106,18 @@
     <EmbeddedResource Include="Telas\Sala.resx">
       <DependentUpon>Sala.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Jogador.datasource" />
+    <None Include="Properties\DataSources\KingMeServer.Jogo.datasource" />
+    <None Include="Properties\DataSources\LobbyEspera.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\Personagem.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Sala.datasource" />
+    <None Include="Properties\DataSources\sistema_autonomo.Classes.Lobby.datasource" />
+    <None Include="Properties\DataSources\sistema_autonomo.Classes.Partida.datasource" />
+    <None Include="Properties\DataSources\sistema_autonomo.Classes.Tabuleiro.datasource" />
+    <None Include="Properties\DataSources\sistema_autonomo.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\sistema_autonomo.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

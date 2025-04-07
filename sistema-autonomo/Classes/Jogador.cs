@@ -15,6 +15,9 @@ namespace sistema_autonomo
         private string nome;
         private string senha;
         private int pontos;
+        private int qtdeNao;
+
+        List<Jogador> listaDeJogadores = new List<Jogador>();
 
         public void SetId(int id)
         {
@@ -56,5 +59,48 @@ namespace sistema_autonomo
             return pontos;
         }
 
+        public void SetNao(int num)
+        {
+            //foreach (Jogador item in listaDeJogadores)
+            //{
+            //    if (GetNome() == item.nome)
+            //    {
+            //        item.qtdeNao = num;
+            //    }
+            //}
+            MessageBox.Show($"FOI SETADO NO SET {num}");
+            Console.WriteLine($"Foi setado {num}");
+            this.qtdeNao = num;
+        }
+
+        public int GetNao()
+        {
+            return qtdeNao;
+        }
+
+        public List<Jogador> ListarJogadores(int IDPartida)
+        {
+
+            string listaJogadores;
+            string[] listaDeJogadoresTratados;
+            string[] linhasDeJogadores;
+
+            listaJogadores = Jogo.ListarJogadores(IDPartida);
+            listaJogadores = listaJogadores.Replace("\r", "");
+            listaJogadores = listaJogadores.Replace("\n", "");
+            listaDeJogadoresTratados = listaJogadores.Split(',');
+            listaJogadores = listaJogadores.Replace("\r", "");
+            linhasDeJogadores = listaJogadores.Split('\n');
+
+            for (int i = 0; i < listaDeJogadoresTratados.Length - 1; i += 2)
+            {
+                Jogador novoJogador = new Jogador();
+                novoJogador.id = Convert.ToInt32(listaDeJogadoresTratados[i]);
+                novoJogador.nome = listaDeJogadoresTratados[i + 1];
+                listaDeJogadores.Add(novoJogador);
+            }
+
+            return listaDeJogadores;
+        }
     }
 }

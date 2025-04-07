@@ -18,53 +18,97 @@ namespace sistema_autonomo.Classes
         private string data;
         private string status;
 
-        public void setID(int id)
+        public void SetID(int id)
         {
             this.id = id;
         }
 
-        public int getID()
+        public int GetID()
         {
             return id;
         }
 
-        public void setNome(string nome)
+        public void SetNome(string nome)
         {
             this.nome = nome;
         }
 
-        public string getNome()
+        public string GetNome()
         {
             return nome;
         }
 
-        public void setSenha(string senha)
+        public void SetSenha(string senha)
         {
             this.senha = senha;
         }
 
-        public string getSenha()
+        public string GetSenha()
         {
             return senha;
         }
 
-        public void setData(string data)
+        public void SetData(string data)
         {
             this.data = data;
         }
 
-        public string getData()
+        public string GetData()
         {
             return data;
         }
-        public void setStatus(string status)
+        public void SetStatus(string status)
         {
             this.status = status;
         }
-        public string getStatus()
+        public string GetStatus()
         {
             return status;
         }
 
+        public void QuantidadeDeJogadoresNaPartida(Jogador jogadorSelecionado)
+        {
+            string listaJogadores = Jogo.ListarJogadores(GetID());
+            string[] linhas = listaJogadores.Split('\n');
+
+            List<int> ids = new List<int>();
+
+            // Retorna a quantidade de Id´s (jogadores) na partida
+            foreach (string linha in linhas)
+            {
+                if (!string.IsNullOrWhiteSpace(linha))
+                {
+                    string[] partes = linha.Split(',');
+                    if (partes.Length > 0 && int.TryParse(partes[0], out int id))
+                    {
+                        ids.Add(id);
+                    }
+                }
+            }
+
+            //Seta a quatidade de cartas Nãos para o jogador
+            if (ids.Count == 3)
+            {
+                jogadorSelecionado.SetNao(4);
+                Console.WriteLine($"Setado 4");
+            }
+            else if (ids.Count == 4)
+            {
+                jogadorSelecionado.SetNao(3);
+                Console.WriteLine($"Setado 3");
+            }
+            else if (ids.Count == 5)
+            {
+                jogadorSelecionado.SetNao(2);
+                Console.WriteLine($"Setado 2");
+            }
+            else
+            {
+                jogadorSelecionado.SetNao(2);
+                Console.WriteLine($"Setado 2");
+            }
+
+            Console.WriteLine(ids);
+        }
     }
 }

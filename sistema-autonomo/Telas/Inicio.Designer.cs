@@ -121,6 +121,7 @@
             this.Controls.Add(this.btnInicio);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.ResumeLayout(false);
             this.PerformLayout();
