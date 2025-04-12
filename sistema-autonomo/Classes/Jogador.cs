@@ -61,15 +61,6 @@ namespace sistema_autonomo
 
         public void SetNao(int num)
         {
-            //foreach (Jogador item in listaDeJogadores)
-            //{
-            //    if (GetNome() == item.nome)
-            //    {
-            //        item.qtdeNao = num;
-            //    }
-            //}
-            MessageBox.Show($"FOI SETADO NO SET {num}");
-            Console.WriteLine($"Foi setado {num}");
             this.qtdeNao = num;
         }
 
@@ -78,7 +69,8 @@ namespace sistema_autonomo
             return qtdeNao;
         }
 
-        public List<Jogador> ListarJogadores(int IDPartida)
+        // 
+        public List<Jogador> QTDEJogadoresPartida(int IDPartida)
         {
 
             string listaJogadores;
@@ -99,7 +91,6 @@ namespace sistema_autonomo
                 novoJogador.nome = listaDeJogadoresTratados[i + 1];
                 listaDeJogadores.Add(novoJogador);
             }
-
             return listaDeJogadores;
         }
     }
