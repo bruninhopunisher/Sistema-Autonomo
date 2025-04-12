@@ -20,7 +20,7 @@ namespace sistema_autonomo
     {
         public int idJogadorLogado { get; set; }
         Partida partidaSelecionada;
-        Jogador jogadorSelecionado;
+        Jogador jogadorLocal;
 
         List<Jogador> jogadoresNaPartida = new List<Jogador>();
 
@@ -31,22 +31,22 @@ namespace sistema_autonomo
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
             lblNomeDoGrupo.Text = Lobby.GetNomeGrupo().ToString();
             partidaSelecionada = partidaRecebida;
-            jogadorSelecionado = jogadorRecebido;
-            lblNomeJogador.Text = jogadorSelecionado.GetId().ToString();
+            jogadorLocal = jogadorRecebido;
+            lblNomeJogador.Text = jogadorLocal.GetId().ToString();
         }
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-            string verificacaoInicio = Jogo.Iniciar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha());
+            string verificacaoInicio = Jogo.Iniciar(jogadorLocal.GetId(), jogadorLocal.GetSenha());
             MessageBox.Show(verificacaoInicio);
 
-            if (verificacaoInicio.Substring(0,1) != "E")
+            if (verificacaoInicio.Substring(0, 1) != "E")
             {
                 string listaJogadores = Jogo.ListarJogadores(partidaSelecionada.GetID());
 
                 //string nomeJogadorBuscado = jogadorSelecionado.GetNome();
-                partidaSelecionada.QuantidadeDeJogadoresNaPartida(jogadorSelecionado);
-                Sala sala = new Sala(partidaSelecionada, jogadorSelecionado);
+                partidaSelecionada.QuantidadeJogadoresPartida(jogadorLocal);
+                Sala sala = new Sala(partidaSelecionada, jogadorLocal);
                 partidaSelecionada.SetStatus("Jogando");
                 sala.ShowDialog();
                 this.Close();

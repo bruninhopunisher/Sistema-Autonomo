@@ -53,7 +53,6 @@ namespace sistema_autonomo
             }
         }
 
-
         public void lstListaDePartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
             string partidaSelecionadaRecebida = lstListaDePartidas.SelectedItem.ToString();
@@ -124,8 +123,6 @@ namespace sistema_autonomo
                 MessageBox.Show($"Partida criada com sucesso!\nO ID da sua partida é {idPartidaCriada}");
             }
         }
-
-
 
         private void btnEntrarPartida_Click_1(object sender, EventArgs e)
         {

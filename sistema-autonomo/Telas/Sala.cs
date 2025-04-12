@@ -159,9 +159,58 @@ namespace sistema_autonomo
             string[] dadosPartida;
             string[] tabuleiroRecebido;
 
+            for (int i = 0; i < listaDePersonagens.Count; i++)
+            {
+                switch (listaDePersonagens[i].nome)
+                {
+                    case "Adilson Konrad":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Beatriz Paiva":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Claro":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Douglas Baquiao":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Eduardo Takeo":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Guilherme Rey":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Heredia":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Kelly Kiyumi":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Leonardo Takuno":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Mario Toledo":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Quintas":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Ranulfo":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                    case "Toshio":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        break;
+                }
+            }
+            //Faz a limpeza do estado do tabuleiro
+            estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
+            //Posiciona personagens
             estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.GetID(), listaDePersonagens);
             listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
-            List<Jogador> listaDeJogadoresNaPartida = jogadorSelecionado.ListarJogadores(partidaSelecionada.GetID());
+
+            List<Jogador> listaDeJogadoresNaPartida = jogadorSelecionado.QTDEJogadoresPartida(partidaSelecionada.GetID());
             verificarVez = Jogo.VerificarVez(partidaSelecionada.GetID());
 
             tabuleiroRecebido = verificarVez.Split('\n');
@@ -195,10 +244,12 @@ namespace sistema_autonomo
                     if (jogadorSelecionado.GetId() == jogadorVez)
                     {
                         lblAltStatusVezSala.Text = $"É a sua vez ID {jogadorSelecionado.GetId()} - {jogadorSelecionado.GetNome()}";
+                        break;
                     }
                     if (j.GetId() == jogadorVez)
                     {
                         lblAltStatusVezSala.Text = $"É a vez do ID {j.GetId()} - {j.GetNome()}";
+                        break;
                     }
                 }
             }
@@ -226,7 +277,7 @@ namespace sistema_autonomo
                 {
                     string nomeSetor = lstSetoresSala.SelectedItem.ToString();
                     int numeroSetorSelecionado = Convert.ToInt32(nomeSetor.Substring(0, 1));
-                    MessageBox.Show(numeroSetorSelecionado.ToString());
+                    //MessageBox.Show(numeroSetorSelecionado.ToString());
 
                     string retornoColocar = Jogo.ColocarPersonagem(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), numeroSetorSelecionado, NomeRecortado);
                     if (retornoColocar.Substring(0, 4) == "ERRO")
@@ -416,13 +467,13 @@ namespace sistema_autonomo
             // Adicionar campo de verificação se esta aberto para votação
             qtdeVotos = jogadorSelecionado.GetNao();
             txtVoto = txtVotoJogador.Text.Trim();
-            
-            
+
+
             if (qtdeVotos > 0)
             {
                 retornoDaFuncao = Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), txtVoto);
-                MessageBox.Show(retornoDaFuncao);
-                if (retornoDaFuncao.Substring(0,1) != "E")
+                //MessageBox.Show(retornoDaFuncao);
+                if (retornoDaFuncao.Substring(0, 1) != "E")
                 {
                     jogadorSelecionado.SetNao(qtdeVotos - 1);
                 }
@@ -431,8 +482,7 @@ namespace sistema_autonomo
             {
                 Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), "s");
             }
-            
-            lblQtdeVotos.Text = Convert.ToString(qtdeVotos);
+            lblQtdeVotos.Text = Convert.ToString(jogadorSelecionado.GetNao());
         }
     }
 }

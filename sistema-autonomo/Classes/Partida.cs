@@ -66,12 +66,12 @@ namespace sistema_autonomo.Classes
             return status;
         }
 
-        public void QuantidadeDeJogadoresNaPartida(Jogador jogadorSelecionado)
+        public void QuantidadeJogadoresPartida(Jogador jogadorLocal)
         {
+            List<int> ids = new List<int>();
+
             string listaJogadores = Jogo.ListarJogadores(GetID());
             string[] linhas = listaJogadores.Split('\n');
-
-            List<int> ids = new List<int>();
 
             // Retorna a quantidade de Id´s (jogadores) na partida
             foreach (string linha in linhas)
@@ -86,25 +86,25 @@ namespace sistema_autonomo.Classes
                 }
             }
 
-            //Seta a quatidade de cartas Nãos para o jogador
+            //Seta a quatidade de cartas Nãos para o jogador local
             if (ids.Count == 3)
             {
-                jogadorSelecionado.SetNao(4);
+                jogadorLocal.SetNao(4);
                 Console.WriteLine($"Setado 4");
             }
             else if (ids.Count == 4)
             {
-                jogadorSelecionado.SetNao(3);
+                jogadorLocal.SetNao(3);
                 Console.WriteLine($"Setado 3");
             }
             else if (ids.Count == 5)
             {
-                jogadorSelecionado.SetNao(2);
+                jogadorLocal.SetNao(2);
                 Console.WriteLine($"Setado 2");
             }
             else
             {
-                jogadorSelecionado.SetNao(2);
+                jogadorLocal.SetNao(2);
                 Console.WriteLine($"Setado 2");
             }
 
