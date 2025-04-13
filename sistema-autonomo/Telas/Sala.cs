@@ -159,54 +159,10 @@ namespace sistema_autonomo
             string[] dadosPartida;
             string[] tabuleiroRecebido;
 
-            for (int i = 0; i < listaDePersonagens.Count; i++)
-            {
-                switch (listaDePersonagens[i].nome)
-                {
-                    case "Adilson Konrad":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Beatriz Paiva":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Claro":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Douglas Baquiao":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Eduardo Takeo":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Guilherme Rey":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Heredia":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Kelly Kiyumi":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Leonardo Takuno":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Mario Toledo":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Quintas":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Ranulfo":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                    case "Toshio":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        break;
-                }
-            }
             //Faz a limpeza do estado do tabuleiro
+            listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
             estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
-            //Posiciona personagens
+            //Atualiza o estado do tabuleiro
             estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.GetID(), listaDePersonagens);
             listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
 
@@ -286,55 +242,10 @@ namespace sistema_autonomo
                     }
                     else
                     {
-                        //Seta que o personagem nao esta mais posicionado
-                        for (int i = 0; i < listaDePersonagens.Count; i++)
-                        {
-                            switch (listaDePersonagens[i].nome)
-                            {
-                                case "Adilson Konrad":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Beatriz Paiva":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Claro":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Douglas Baquiao":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Eduardo Takeo":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Guilherme Rey":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Heredia":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Kelly Kiyumi":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Leonardo Takuno":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Mario Toledo":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Quintas":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Ranulfo":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                                case "Toshio":
-                                    listaDePersonagens[i].personagemPosicionado = false;
-                                    break;
-                            }
-                        }
                         //Faz a limpeza do estado do tabuleiro
+                        listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
                         estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
-
+                        //Atualiza o estado do tabuleiro
                         estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.GetID(), listaDePersonagens);
                         listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
                     }
@@ -391,63 +302,20 @@ namespace sistema_autonomo
             string setorSelecionadoRecebido = lstSetoresSala.SelectedItem.ToString();
             int idSetorSelecionado = Convert.ToInt32(setorSelecionadoRecebido.Substring(0, 1));
 
-            if (lstCartas.SelectedItem.ToString() != null)
-            {
+            if (lstCartas.SelectedItem != null)
                 cartaSelecionada = lstCartas.SelectedItem.ToString();
+            else {
+                MessageBox.Show("ERRO: Selecione uma carta para promover!");
+                return;
             }
 
             if (tabuleiro.verificarSetorDisponivel(idSetorSelecionado) == true)
             {
                 Jogo.Promover(idJogador, senhaJogador, cartaSelecionada.Substring(0, 1));
-                //Seta que o personagem nao esta mais posicionado
-                for (int i = 0; i < listaDePersonagens.Count; i++)
-                {
-                    switch (listaDePersonagens[i].nome)
-                    {
-                        case "Adilson Konrad":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Beatriz Paiva":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Claro":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Douglas Baquiao":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Eduardo Takeo":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Guilherme Rey":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Heredia":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Kelly Kiyumi":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Leonardo Takuno":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Mario Toledo":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Quintas":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Ranulfo":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Toshio":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                    }
-                }
                 //Faz a limpeza do estado do tabuleiro
+                listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
                 estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
-                //Posiciona personagens
+                //Atualiza o estado do tabuleiro
                 estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.GetID(), listaDePersonagens);
                 listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
             }

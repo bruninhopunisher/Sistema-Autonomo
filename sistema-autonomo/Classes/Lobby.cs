@@ -17,7 +17,6 @@ namespace sistema_autonomo.Classes
         {
             return nomeGrupo;
         }
-
         public static string[] ListarPartidas()
         {
             string listaDePartidas = Jogo.ListarPartidas("T");

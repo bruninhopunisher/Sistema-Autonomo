@@ -1208,6 +1208,71 @@ namespace sistema_autonomo.Classes
 
             return estadoTabuleiroRecebido;
         }
+
+        public List<Personagem> LimparPosicaoDoPersonagem(List<Personagem> personagensRecebidos)
+        {
+            List<Personagem> listaDePersonagens = personagensRecebidos;
+            //Limpa posição de todos os personagens
+            for (int i = 0; i < listaDePersonagens.Count; i++)
+            {
+                switch (listaDePersonagens[i].nome)
+                {
+                    case "Adilson Konrad":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(26, 399);
+                        break;
+                    case "Beatriz Paiva":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(99, 399);
+                        break;
+                    case "Claro":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(99, 572);
+                        break;
+                    case "Douglas Baquiao":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(172, 486);
+                        break;
+                    case "Eduardo Takeo":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(172, 399);
+                        break;
+                    case "Guilherme Rey":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(172, 572);
+                        break;
+                    case "Heredia":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(327, 485);
+                        break;
+                    case "Kelly Kiyumi":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(245, 573);
+                        break;
+                    case "Leonardo Takuno":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(245, 486);
+                        break;
+                    case "Mario Toledo":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(26, 485);
+                        break;
+                    case "Quintas":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(245, 399);
+                        break;
+                    case "Ranulfo":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(26, 572);
+                        break;
+                    case "Toshio":
+                        listaDePersonagens[i].personagemPosicionado = false;
+                        listaDePersonagens[i].cardPersonagem.Location = new Point(99, 486);
+                        break;
+                }
+            }
+            return listaDePersonagens;
+        }
     }
 
 }
