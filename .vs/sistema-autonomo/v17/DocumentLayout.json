@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\",
+  "WorkspaceRootPath": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3\\sistema-autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\ironf\\desktop\\pisistema\\sistema-autonomo\\sistema-autonomo\\classes\\automacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\automacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3\\sistema-autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\classes\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3\\sistema-autonomo\\sistema-autonomo\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3\\sistema-autonomo\\sistema-autonomo\\classes\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\classes\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,68 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 5,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Lobby.cs",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Lobby.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Lobby.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Lobby.cs",
-              "RelativeToolTip": "sistema-autonomo\\Classes\\Lobby.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Title": "Personagem.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Personagem.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Personagem.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Personagem.cs",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Personagem.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T00:02:06.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T01:06:19.53Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Tabuleiro.cs",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Tabuleiro.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Tabuleiro.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Tabuleiro.cs",
-              "RelativeToolTip": "sistema-autonomo\\Classes\\Tabuleiro.cs",
-              "ViewState": "AgIAAHkDAAAAAAAAAAAkwP4EAAAAAAAAAAAAAA==",
+              "Title": "Partida.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Partida.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Partida.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Partida.cs",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Partida.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T23:37:22.825Z",
+              "WhenOpened": "2025-04-13T02:53:20.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Automacao.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Automacao.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Automacao.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Automacao.cs",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Automacao.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwBkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T00:42:56.459Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Sala.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs [Design]",
-              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T23:36:33.706Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Sala.cs",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
               "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\pisistema\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
               "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAhwJcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAN4BAAAAAAAAAAAYwOwBAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T23:30:46.316Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 33,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2025-04-12T23:30:46.316Z"
             }
           ]
         }

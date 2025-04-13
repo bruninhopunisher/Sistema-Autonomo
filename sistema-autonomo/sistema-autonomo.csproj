@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Automacao.cs" />
     <Compile Include="Classes\Tabuleiro.cs" />
     <Compile Include="Classes\Partida.cs" />
     <Compile Include="Classes\Lobby.cs" />
