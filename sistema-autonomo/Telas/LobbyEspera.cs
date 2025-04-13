@@ -38,9 +38,8 @@ namespace sistema_autonomo
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
             string verificacaoInicio = Jogo.Iniciar(jogadorLocal.GetId(), jogadorLocal.GetSenha());
-            MessageBox.Show(verificacaoInicio);
 
-            if (verificacaoInicio.Substring(0, 1) != "E")
+            if (verificacaoInicio.Substring(0, 1) != "E" || verificacaoInicio == "ERRO:Partida não está aberta")
             {
                 string listaJogadores = Jogo.ListarJogadores(partidaSelecionada.GetID());
 
@@ -50,6 +49,10 @@ namespace sistema_autonomo
                 partidaSelecionada.SetStatus("Jogando");
                 sala.ShowDialog();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show(verificacaoInicio);
             }
         }
     }

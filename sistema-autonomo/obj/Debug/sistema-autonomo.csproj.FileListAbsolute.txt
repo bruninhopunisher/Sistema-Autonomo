@@ -43,8 +43,6 @@ C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\bin\Debug\si
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\bin\Debug\KingMeServer.dll
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\bin\Debug\KingMeServer.xml
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.AssemblyReference.cache
-C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.Form1.resources
-C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.LobbyPartida.resources
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.Properties.Resources.resources
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.GenerateResource.cache
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.CoreCompileInputs.cache
@@ -151,3 +149,7 @@ C:\Users\ironf\Desktop\pisistema\Sistema-Autonomo\sistema-autonomo\obj\Debug\sis
 C:\Users\ironf\Desktop\pisistema\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
 C:\Users\ironf\Desktop\pisistema\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.exe
 C:\Users\ironf\Desktop\pisistema\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.pdb
+C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.LobbyEspera.resources
+C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.Login.resources
+C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.Inicio.resources
+C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.Sala.resources
