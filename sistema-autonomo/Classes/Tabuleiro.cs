@@ -73,40 +73,52 @@ namespace sistema_autonomo.Classes
                     setor = 11;
                     for (int i = setor; i <= 14; i++)
                     {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
+                        if(posicaoDisponivel == false)
+                            return posicaoDisponivel;
                     }
                     return posicaoDisponivel;
                 case 2:
                     setor = 21;
                     for (int i = setor; i <= 24; i++)
                     {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
+                        if (posicaoDisponivel == false)
+                            return posicaoDisponivel;
                     }
                     return posicaoDisponivel;
                 case 3:
                     setor = 31;
                     for (int i = setor; i <= 34; i++)
                     {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
+                        if (posicaoDisponivel == false)
+                            return posicaoDisponivel;
                     }
                     return posicaoDisponivel;
                 case 4:
                     setor = 41;
                     for (int i = setor; i <= 44; i++)
                     {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
+                        if (posicaoDisponivel == false)
+                            return posicaoDisponivel;
                     }
                     return posicaoDisponivel;
                 case 5:
                     setor = 51;
                     for (int i = setor; i <= 54; i++)
                     {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
+                        if (posicaoDisponivel == false)
+                            return posicaoDisponivel;
                     }
                     return posicaoDisponivel;
                 case 10:
                     setor = 60;
                     posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
+                    if (posicaoDisponivel == false)
+                        return posicaoDisponivel;
                     return posicaoDisponivel;
             }
             return posicaoDisponivel;

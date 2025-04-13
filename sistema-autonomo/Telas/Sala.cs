@@ -221,9 +221,6 @@ namespace sistema_autonomo
                 lstCartas.Items.Add(listaDePersonagens[i].nome);
             }
         }
-        private void btnConstVerificarVez_Click_1(object sender, EventArgs e)
-        {
-        }
 
         private void btnPosicionar_Click(object sender, EventArgs e)
         {
@@ -471,7 +468,7 @@ namespace sistema_autonomo
 
             if(jogadorVez == jogadorSelecionado.GetId())
             {
-                bot.Posicionar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), partidaSelecionada.GetID());
+                bot.Posicionar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), partidaSelecionada.GetID(), tabuleiro);
             }
 
             tmrPosicionarPersonagem.Enabled = true;

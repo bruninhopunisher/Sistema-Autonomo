@@ -11,7 +11,7 @@ namespace sistema_autonomo
 {
     internal class Automacao
     {
-        public void Posicionar(int jogador, string senha,int id)
+        public void Posicionar(int jogador, string senha,int id, Tabuleiro tabuleiroRecebido)
         {
             string minhasCartas = Jogo.ListarCartas(jogador, senha);
             string[] minhasCartasTratadas = new string[minhasCartas.Length];
@@ -20,7 +20,6 @@ namespace sistema_autonomo
             string[] tabuleiroTratado;
             tabuleiroTratado = tabuleiro.Split('\n');
             List<string> CartasJogadas = new List<string>();
-            MessageBox.Show(minhasCartas);
           
             for(int i =1; i< tabuleiroTratado.Length - 1; i++)
             {
@@ -38,16 +37,22 @@ namespace sistema_autonomo
             {
                 if (!(CartasJogadas.Contains(minhasCartasTratadas[i])))
                 {
-                    Jogo.ColocarPersonagem(jogador, senha, i + 1, minhasCartasTratadas[i]);
-                   
-
+                    int j = 0;
+                    do
+                    {
+                        j++;
+                    }
+                    while(tabuleiroRecebido.verificarSetorDisponivel(j) == true);
+                    if(j < 5)
+                    {
+                        Jogo.ColocarPersonagem(jogador, senha, j, minhasCartasTratadas[i]);
+                    }
                 }
+
             }
 
-
-
-            //Jogo.ColocarPersonagem(jogador, senha, setor, personagem);
         }
+            //Jogo.ColocarPersonagem(jogador, senha, setor, personagem);
     }
 
 }
