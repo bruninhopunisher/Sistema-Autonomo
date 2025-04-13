@@ -37,13 +37,15 @@ namespace sistema_autonomo
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-            string verificacaoInicio = Jogo.Iniciar(jogadorLocal.GetId(), jogadorLocal.GetSenha());
+            string listaJogadores;
+            string verificacaoInicio;
+
+            verificacaoInicio = Jogo.Iniciar(jogadorLocal.GetId(), jogadorLocal.GetSenha());
 
             if (verificacaoInicio.Substring(0, 1) != "E" || verificacaoInicio == "ERRO:Partida não está aberta")
             {
-                string listaJogadores = Jogo.ListarJogadores(partidaSelecionada.GetID());
+                listaJogadores = Jogo.ListarJogadores(partidaSelecionada.GetID());
 
-                //string nomeJogadorBuscado = jogadorSelecionado.GetNome();
                 partidaSelecionada.QuantidadeJogadoresPartida(jogadorLocal);
                 Sala sala = new Sala(partidaSelecionada, jogadorLocal);
                 partidaSelecionada.SetStatus("Jogando");

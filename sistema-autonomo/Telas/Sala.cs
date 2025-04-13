@@ -16,23 +16,24 @@ namespace sistema_autonomo
     public partial class Sala : Form
     {
         Tabuleiro tabuleiro = new Tabuleiro();
-        Partida partidaSelecionada;
-        Jogador jogadorSelecionado;
-        //Personagem personagem;
+        Automacao bot = new Automacao();
         List<Personagem> listaDePersonagens = new List<Personagem>();
         Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
-        Automacao bot = new Automacao();
+        
+        Partida partidaSelecionada;
+        Jogador jogadorSelecionado;
+        
         string verificarVez;
         string[] verificaVezTratado;
 
-        public Sala(Partida partidaRecebida, Jogador jogadorRecebido)
+        public Sala(Partida partidaRecebida, Jogador jogadorLocal)
         {
             InitializeComponent();
             partidaSelecionada = partidaRecebida;
-            jogadorSelecionado = jogadorRecebido;
+            jogadorSelecionado = jogadorLocal;
             lblNomeDoGrupo.Text = Lobby.GetNomeGrupo().ToString();
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
-            lblQtdeVotos.Text = Convert.ToString(jogadorRecebido.GetNao());
+            lblQtdeVotos.Text = Convert.ToString(jogadorLocal.GetNao());
             tmrPosicionarPersonagem.Enabled = true;
 
             //Informações do jogador que esta logado
@@ -150,77 +151,6 @@ namespace sistema_autonomo
                 lstSetoresSala.Items.Add(setores[i]);
             }
         }
-        private void VerificarVez()
-        {
-            Personagem personagem = new Personagem();
-
-            int jogadorVez;
-
-            string[] dadosPartida;
-            string[] tabuleiroRecebido;
-
-            //Faz a limpeza do estado do tabuleiro
-            listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
-            estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
-            //Atualiza o estado do tabuleiro
-            estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.GetID(), listaDePersonagens);
-            listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
-
-            List<Jogador> listaDeJogadoresNaPartida = jogadorSelecionado.QTDEJogadoresPartida(partidaSelecionada.GetID());
-            verificarVez = Jogo.VerificarVez(partidaSelecionada.GetID());
-
-            tabuleiroRecebido = verificarVez.Split('\n');
-
-            lstAltTabuleiroSala.Items.Clear();
-            for (int i = 0; i < tabuleiroRecebido.Length - 1; i++)
-            {
-                lstAltTabuleiroSala.Items.Add(tabuleiroRecebido[i]);
-            }
-
-            verificarVez = Jogo.VerificarVez(partidaSelecionada.GetID());
-            verificarVez = verificarVez.Replace("\r", "");
-            verificaVezTratado = verificarVez.Split('\n');
-
-            lstAltTabuleiroSala.Items.Clear();
-
-            for (int i = 0; i < verificaVezTratado.Length - 1; i++)
-            {
-                lstAltTabuleiroSala.Items.Add(verificaVezTratado[i]);
-            }
-
-            dadosPartida = verificaVezTratado[0].Split(',');
-            jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
-
-            if (verificarVez.Substring(0, 4) != "ERRO")
-            {
-                foreach (Jogador j in listaDeJogadoresNaPartida)
-                {
-                    Console.WriteLine($"Jogador: {j.GetNome()}, ID {j.GetId()}");
-
-                    if (jogadorSelecionado.GetId() == jogadorVez)
-                    {
-                        lblAltStatusVezSala.Text = $"É a sua vez ID {jogadorSelecionado.GetId()} - {jogadorSelecionado.GetNome()}";
-                        break;
-                    }
-                    if (j.GetId() == jogadorVez)
-                    {
-                        lblAltStatusVezSala.Text = $"É a vez do ID {j.GetId()} - {j.GetNome()}";
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show(verificarVez);
-            }
-
-            lstCartas.Items.Clear();
-            // Colocando as cartas na lstbox
-            for (int i = 0; i < listaDePersonagens.Count; i++)
-            {
-                lstCartas.Items.Add(listaDePersonagens[i].nome);
-            }
-        }
 
         private void btnPosicionar_Click(object sender, EventArgs e)
         {
@@ -282,15 +212,6 @@ namespace sistema_autonomo
                     lstVotacao.Items.Add(listaDeVotos[i].ToString());
                 }
             }
-
-            //verificarVez = Jogo.VerificarVez(partidaSelecionada.getID());
-            //verificarVez = verificarVez.Replace("\r", "");
-            //string[] tabuleiro = verificarVez.Split('\n');
-            //lstAltTabuleiroSala.Items.Clear();
-            //for (int i = 0; i < tabuleiro.Length - 1; i++)
-            //{
-            //    lstAltTabuleiroSala.Items.Add(tabuleiro[i]);
-            //}
         }
 
         private void btnConstPromoverPersonagem_Click(object sender, EventArgs e)
@@ -304,7 +225,8 @@ namespace sistema_autonomo
 
             if (lstCartas.SelectedItem != null)
                 cartaSelecionada = lstCartas.SelectedItem.ToString();
-            else {
+            else
+            {
                 MessageBox.Show("ERRO: Selecione uma carta para promover!");
                 return;
             }
@@ -329,15 +251,13 @@ namespace sistema_autonomo
         {
             string txtVoto;
             int qtdeVotos;
-
             string retornoDaFuncao;
 
             // Adicionar campo de verificação se esta aberto para votação
             qtdeVotos = jogadorSelecionado.GetNao();
-            txtVoto = txtVotoJogador.Text.Trim();
+            txtVoto = txtVotoJogador.Text.Trim().ToUpper();
 
-
-            if (qtdeVotos > 0)
+            if (qtdeVotos > 0 && txtVoto != "S")
             {
                 retornoDaFuncao = Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), txtVoto);
                 //MessageBox.Show(retornoDaFuncao);
@@ -348,7 +268,7 @@ namespace sistema_autonomo
             }
             else
             {
-                Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), "s");
+                Jogo.Votar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), txtVoto);
             }
             lblQtdeVotos.Text = Convert.ToString(jogadorSelecionado.GetNao());
         }
@@ -466,77 +386,14 @@ namespace sistema_autonomo
                 lstCartas.Items.Add(listaDePersonagens[i].nome);
             }
 
-            if(jogadorVez == jogadorSelecionado.GetId())
+            if (jogadorVez == jogadorSelecionado.GetId())
             {
                 bot.Posicionar(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), partidaSelecionada.GetID(), tabuleiro);
             }
 
             tmrPosicionarPersonagem.Enabled = true;
-            /*
-            
-            List<Jogador> listaDeJogadoresNaPartida = jogadorSelecionado.QTDEJogadoresPartida(partidaSelecionada.GetID());
-            
-            int jogadorVez;
-            string[] dadosPartida;
-            string[] tabuleiroRecebido;
-
-            verificarVez = Jogo.VerificarVez(partidaSelecionada.GetID());
-            verificarVez = verificarVez.Replace("\r", "");
-            verificaVezTratado = verificarVez.Split('\n');
-
-            dadosPartida = verificaVezTratado[0].Split(',');
-            jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
-
-            if (verificarVez.Substring(0, 4) != "ERRO")
-            {
-                foreach (Jogador j in listaDeJogadoresNaPartida)
-                {
-                    Console.WriteLine($"Jogador: {j.GetNome()}, ID {j.GetId()}");
-
-                    if (jogadorSelecionado.GetId() == jogadorVez)
-                    {
-                        lblAltStatusVezSala.Text = $"É a sua vez ID {jogadorSelecionado.GetId()} - {jogadorSelecionado.GetNome()}";
-                        break;
-                    }
-                    if (j.GetId() == jogadorVez)
-                    {
-                        lblAltStatusVezSala.Text = $"É a vez do ID {j.GetId()} - {j.GetNome()}";
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show(verificarVez);
-            }
-
-            //Faz a limpeza do estado do tabuleiro
-            listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
-            estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
-            //Atualiza o estado do tabuleiro
-            estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.GetID(), listaDePersonagens);
-            listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
-
-            tabuleiroRecebido = verificarVez.Split('\n');
-
-            lstAltTabuleiroSala.Items.Clear();
-            for (int i = 0; i < tabuleiroRecebido.Length - 1; i++)
-            {
-                lstAltTabuleiroSala.Items.Add(tabuleiroRecebido[i]);
-            }
-
-            lstAltTabuleiroSala.Items.Clear();
-
-            for (int i = 0; i < verificaVezTratado.Length - 1; i++)
-            {
-                lstAltTabuleiroSala.Items.Add(verificaVezTratado[i]);
-            }
-
-
-
-            */
         }
-            
+
     }
-            
+
 }
