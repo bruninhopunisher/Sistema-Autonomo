@@ -1,6 +1,6 @@
 ﻿namespace sistema_autonomo
 {
-    partial class LobbyEspera
+    partial class Lobby
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LobbyEspera));
-            this.lblConstIdJogadorLogado = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lobby));
+            this.lblIdPartida = new System.Windows.Forms.Label();
             this.lblConstSenhaJogadorLogado = new System.Windows.Forms.Label();
             this.btnIniciarPartida = new System.Windows.Forms.Button();
-            this.dgvPersonagens = new System.Windows.Forms.DataGridView();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
             this.lblNomeDoGrupo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -44,35 +42,44 @@
             this.lblNomeJogador = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblStatusPartida = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonagens)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lstJogadoresLobby = new System.Windows.Forms.ListBox();
+            this.btnAtualizarLobby = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblConstIdJogadorLogado
+            // lblIdPartida
             // 
-            this.lblConstIdJogadorLogado.AutoSize = true;
-            this.lblConstIdJogadorLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConstIdJogadorLogado.ForeColor = System.Drawing.Color.White;
-            this.lblConstIdJogadorLogado.Location = new System.Drawing.Point(268, 133);
-            this.lblConstIdJogadorLogado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblConstIdJogadorLogado.Name = "lblConstIdJogadorLogado";
-            this.lblConstIdJogadorLogado.Size = new System.Drawing.Size(0, 24);
-            this.lblConstIdJogadorLogado.TabIndex = 0;
+            this.lblIdPartida.AutoSize = true;
+            this.lblIdPartida.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdPartida.ForeColor = System.Drawing.Color.White;
+            this.lblIdPartida.Location = new System.Drawing.Point(264, 131);
+            this.lblIdPartida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblIdPartida.Name = "lblIdPartida";
+            this.lblIdPartida.Size = new System.Drawing.Size(55, 24);
+            this.lblIdPartida.TabIndex = 0;
+            this.lblIdPartida.Text = "texto";
+            this.lblIdPartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblConstSenhaJogadorLogado
             // 
             this.lblConstSenhaJogadorLogado.AutoSize = true;
-            this.lblConstSenhaJogadorLogado.Location = new System.Drawing.Point(248, 357);
+            this.lblConstSenhaJogadorLogado.BackColor = System.Drawing.Color.Transparent;
+            this.lblConstSenhaJogadorLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.lblConstSenhaJogadorLogado.Location = new System.Drawing.Point(244, 351);
             this.lblConstSenhaJogadorLogado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConstSenhaJogadorLogado.Name = "lblConstSenhaJogadorLogado";
-            this.lblConstSenhaJogadorLogado.Size = new System.Drawing.Size(0, 13);
+            this.lblConstSenhaJogadorLogado.Size = new System.Drawing.Size(50, 24);
             this.lblConstSenhaJogadorLogado.TabIndex = 1;
+            this.lblConstSenhaJogadorLogado.Text = "texto";
+            this.lblConstSenhaJogadorLogado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnIniciarPartida
             // 
@@ -92,44 +99,25 @@
             this.btnIniciarPartida.UseVisualStyleBackColor = false;
             this.btnIniciarPartida.Click += new System.EventHandler(this.btnIniciarPartida_Click);
             // 
-            // dgvPersonagens
-            // 
-            this.dgvPersonagens.AllowUserToDeleteRows = false;
-            this.dgvPersonagens.BackgroundColor = System.Drawing.Color.Azure;
-            this.dgvPersonagens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPersonagens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonagens.Location = new System.Drawing.Point(521, 165);
-            this.dgvPersonagens.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvPersonagens.Name = "dgvPersonagens";
-            this.dgvPersonagens.RowHeadersWidth = 51;
-            this.dgvPersonagens.RowTemplate.Height = 24;
-            this.dgvPersonagens.Size = new System.Drawing.Size(400, 292);
-            this.dgvPersonagens.TabIndex = 11;
-            // 
             // lblVersaoDoJogo
             // 
             this.lblVersaoDoJogo.AutoSize = true;
+            this.lblVersaoDoJogo.BackColor = System.Drawing.Color.Transparent;
             this.lblVersaoDoJogo.Location = new System.Drawing.Point(1153, 634);
             this.lblVersaoDoJogo.Name = "lblVersaoDoJogo";
-            this.lblVersaoDoJogo.Size = new System.Drawing.Size(0, 13);
+            this.lblVersaoDoJogo.Size = new System.Drawing.Size(30, 13);
             this.lblVersaoDoJogo.TabIndex = 12;
+            this.lblVersaoDoJogo.Text = "texto";
             // 
             // lblNomeDoGrupo
             // 
             this.lblNomeDoGrupo.AutoSize = true;
+            this.lblNomeDoGrupo.BackColor = System.Drawing.Color.Transparent;
             this.lblNomeDoGrupo.Location = new System.Drawing.Point(1015, 634);
             this.lblNomeDoGrupo.Name = "lblNomeDoGrupo";
-            this.lblNomeDoGrupo.Size = new System.Drawing.Size(0, 13);
+            this.lblNomeDoGrupo.Size = new System.Drawing.Size(30, 13);
             this.lblNomeDoGrupo.TabIndex = 13;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(138, 112);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(239, 98);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.lblNomeDoGrupo.Text = "texto";
             // 
             // pictureBox2
             // 
@@ -187,10 +175,12 @@
             this.lblNomeJogador.AutoSize = true;
             this.lblNomeJogador.BackColor = System.Drawing.Color.Transparent;
             this.lblNomeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeJogador.Location = new System.Drawing.Point(279, 315);
+            this.lblNomeJogador.Location = new System.Drawing.Point(274, 311);
             this.lblNomeJogador.Name = "lblNomeJogador";
-            this.lblNomeJogador.Size = new System.Drawing.Size(0, 24);
+            this.lblNomeJogador.Size = new System.Drawing.Size(50, 24);
             this.lblNomeJogador.TabIndex = 21;
+            this.lblNomeJogador.Text = "texto";
+            this.lblNomeJogador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox4
             // 
@@ -205,18 +195,55 @@
             // lblStatusPartida
             // 
             this.lblStatusPartida.AutoSize = true;
+            this.lblStatusPartida.BackColor = System.Drawing.Color.Transparent;
             this.lblStatusPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusPartida.Location = new System.Drawing.Point(251, 171);
+            this.lblStatusPartida.Location = new System.Drawing.Point(252, 169);
             this.lblStatusPartida.Name = "lblStatusPartida";
-            this.lblStatusPartida.Size = new System.Drawing.Size(0, 24);
+            this.lblStatusPartida.Size = new System.Drawing.Size(55, 24);
             this.lblStatusPartida.TabIndex = 23;
+            this.lblStatusPartida.Text = "texto";
+            this.lblStatusPartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // LobbyEspera
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(138, 112);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(239, 98);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lstJogadoresLobby
+            // 
+            this.lstJogadoresLobby.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstJogadoresLobby.FormattingEnabled = true;
+            this.lstJogadoresLobby.ItemHeight = 24;
+            this.lstJogadoresLobby.Location = new System.Drawing.Point(569, 144);
+            this.lstJogadoresLobby.Name = "lstJogadoresLobby";
+            this.lstJogadoresLobby.Size = new System.Drawing.Size(299, 148);
+            this.lstJogadoresLobby.TabIndex = 24;
+            // 
+            // btnAtualizarLobby
+            // 
+            this.btnAtualizarLobby.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtualizarLobby.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarLobby.ForeColor = System.Drawing.Color.Black;
+            this.btnAtualizarLobby.Location = new System.Drawing.Point(646, 294);
+            this.btnAtualizarLobby.Name = "btnAtualizarLobby";
+            this.btnAtualizarLobby.Size = new System.Drawing.Size(144, 37);
+            this.btnAtualizarLobby.TabIndex = 25;
+            this.btnAtualizarLobby.Text = "Atualizar";
+            this.btnAtualizarLobby.UseVisualStyleBackColor = false;
+            this.btnAtualizarLobby.Click += new System.EventHandler(this.btnAtualizarLobby_Click);
+            // 
+            // Lobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnAtualizarLobby);
+            this.Controls.Add(this.lstJogadoresLobby);
             this.Controls.Add(this.lblStatusPartida);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.lblNomeJogador);
@@ -226,9 +253,8 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.lblNomeDoGrupo);
             this.Controls.Add(this.lblVersaoDoJogo);
-            this.Controls.Add(this.dgvPersonagens);
             this.Controls.Add(this.lblConstSenhaJogadorLogado);
-            this.Controls.Add(this.lblConstIdJogadorLogado);
+            this.Controls.Add(this.lblIdPartida);
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -238,17 +264,16 @@
             this.MaximumSize = new System.Drawing.Size(1280, 720);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(816, 488);
-            this.Name = "LobbyEspera";
+            this.Name = "Lobby";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LobbyPartida";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonagens)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,13 +281,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblConstIdJogadorLogado;
+        private System.Windows.Forms.Label lblIdPartida;
         private System.Windows.Forms.Label lblConstSenhaJogadorLogado;
         private System.Windows.Forms.Button btnIniciarPartida;
-        private System.Windows.Forms.DataGridView dgvPersonagens;
         private System.Windows.Forms.Label lblVersaoDoJogo;
         private System.Windows.Forms.Label lblNomeDoGrupo;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -271,5 +294,8 @@
         private System.Windows.Forms.Label lblNomeJogador;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblStatusPartida;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox lstJogadoresLobby;
+        private System.Windows.Forms.Button btnAtualizarLobby;
     }
 }

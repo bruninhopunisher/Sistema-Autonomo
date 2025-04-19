@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnListarPartidas = new System.Windows.Forms.Button();
-            this.lstListaDePartidas = new System.Windows.Forms.ListBox();
+            this.lstPartidas = new System.Windows.Forms.ListBox();
             this.lstJogadores = new System.Windows.Forms.ListBox();
             this.lblVersaoJogo = new System.Windows.Forms.Label();
             this.cboFiltrarPartidas = new System.Windows.Forms.ComboBox();
@@ -51,16 +51,16 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.lblStatusPartidaSelecionada = new System.Windows.Forms.Label();
-            this.label09 = new System.Windows.Forms.Label();
-            this.lblDataPartidaSelecionada = new System.Windows.Forms.Label();
-            this.label08 = new System.Windows.Forms.Label();
-            this.lblIdPartidaSelecionada = new System.Windows.Forms.Label();
-            this.label07 = new System.Windows.Forms.Label();
-            this.lblNomePartidaSelecionada = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblNomePartidaSelecionada = new System.Windows.Forms.Label();
+            this.label07 = new System.Windows.Forms.Label();
+            this.lblIdPartidaSelecionada = new System.Windows.Forms.Label();
+            this.label08 = new System.Windows.Forms.Label();
+            this.lblDataPartidaSelecionada = new System.Windows.Forms.Label();
+            this.label09 = new System.Windows.Forms.Label();
+            this.lblStatusPartidaSelecionada = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -89,16 +89,16 @@
             this.btnListarPartidas.UseVisualStyleBackColor = false;
             this.btnListarPartidas.Click += new System.EventHandler(this.btnListarPartidas_Click);
             // 
-            // lstListaDePartidas
+            // lstPartidas
             // 
-            this.lstListaDePartidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstListaDePartidas.FormattingEnabled = true;
-            this.lstListaDePartidas.ItemHeight = 24;
-            this.lstListaDePartidas.Location = new System.Drawing.Point(33, 268);
-            this.lstListaDePartidas.Name = "lstListaDePartidas";
-            this.lstListaDePartidas.Size = new System.Drawing.Size(311, 100);
-            this.lstListaDePartidas.TabIndex = 2;
-            this.lstListaDePartidas.SelectedIndexChanged += new System.EventHandler(this.lstListaDePartidas_SelectedIndexChanged);
+            this.lstPartidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstPartidas.FormattingEnabled = true;
+            this.lstPartidas.ItemHeight = 24;
+            this.lstPartidas.Location = new System.Drawing.Point(33, 268);
+            this.lstPartidas.Name = "lstPartidas";
+            this.lstPartidas.Size = new System.Drawing.Size(311, 100);
+            this.lstPartidas.TabIndex = 2;
+            this.lstPartidas.SelectedIndexChanged += new System.EventHandler(this.lstPartidas_SelectedIndexChanged);
             // 
             // lstJogadores
             // 
@@ -277,7 +277,7 @@
             this.panel2.Controls.Add(this.label07);
             this.panel2.Controls.Add(this.lstJogadores);
             this.panel2.Controls.Add(this.lblIdPartidaSelecionada);
-            this.panel2.Controls.Add(this.lstListaDePartidas);
+            this.panel2.Controls.Add(this.lstPartidas);
             this.panel2.Controls.Add(this.label08);
             this.panel2.Controls.Add(this.btnListarPartidas);
             this.panel2.Controls.Add(this.lblDataPartidaSelecionada);
@@ -333,6 +333,17 @@
             this.pictureBox5.TabIndex = 34;
             this.pictureBox5.TabStop = false;
             // 
+            // label10
+            // 
+            this.label10.AccessibleDescription = "partida";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(4, 600);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 16);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "STATUS:";
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
@@ -343,46 +354,35 @@
             this.pictureBox4.TabIndex = 34;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox9
+            // lblNomePartidaSelecionada
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
-            this.pictureBox9.Location = new System.Drawing.Point(31, 603);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(221, 29);
-            this.pictureBox9.TabIndex = 38;
-            this.pictureBox9.TabStop = false;
+            this.lblNomePartidaSelecionada.AutoSize = true;
+            this.lblNomePartidaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePartidaSelecionada.Location = new System.Drawing.Point(61, 583);
+            this.lblNomePartidaSelecionada.Name = "lblNomePartidaSelecionada";
+            this.lblNomePartidaSelecionada.Size = new System.Drawing.Size(44, 16);
+            this.lblNomePartidaSelecionada.TabIndex = 8;
+            this.lblNomePartidaSelecionada.Text = "label2";
             // 
-            // lblStatusPartidaSelecionada
+            // label07
             // 
-            this.lblStatusPartidaSelecionada.AutoSize = true;
-            this.lblStatusPartidaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusPartidaSelecionada.Location = new System.Drawing.Point(61, 567);
-            this.lblStatusPartidaSelecionada.Name = "lblStatusPartidaSelecionada";
-            this.lblStatusPartidaSelecionada.Size = new System.Drawing.Size(44, 16);
-            this.lblStatusPartidaSelecionada.TabIndex = 12;
-            this.lblStatusPartidaSelecionada.Text = "label2";
+            this.label07.AutoSize = true;
+            this.label07.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label07.Location = new System.Drawing.Point(4, 551);
+            this.label07.Name = "label07";
+            this.label07.Size = new System.Drawing.Size(23, 16);
+            this.label07.TabIndex = 6;
+            this.label07.Text = "ID:";
             // 
-            // label09
+            // lblIdPartidaSelecionada
             // 
-            this.label09.AccessibleDescription = "partida";
-            this.label09.AutoSize = true;
-            this.label09.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label09.Location = new System.Drawing.Point(4, 583);
-            this.label09.Name = "label09";
-            this.label09.Size = new System.Drawing.Size(50, 16);
-            this.label09.TabIndex = 9;
-            this.label09.Text = "DATA: ";
-            // 
-            // lblDataPartidaSelecionada
-            // 
-            this.lblDataPartidaSelecionada.AutoSize = true;
-            this.lblDataPartidaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataPartidaSelecionada.Location = new System.Drawing.Point(60, 600);
-            this.lblDataPartidaSelecionada.Name = "lblDataPartidaSelecionada";
-            this.lblDataPartidaSelecionada.Size = new System.Drawing.Size(44, 16);
-            this.lblDataPartidaSelecionada.TabIndex = 10;
-            this.lblDataPartidaSelecionada.Text = "label2";
+            this.lblIdPartidaSelecionada.AutoSize = true;
+            this.lblIdPartidaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdPartidaSelecionada.Location = new System.Drawing.Point(61, 547);
+            this.lblIdPartidaSelecionada.Name = "lblIdPartidaSelecionada";
+            this.lblIdPartidaSelecionada.Size = new System.Drawing.Size(61, 16);
+            this.lblIdPartidaSelecionada.TabIndex = 5;
+            this.lblIdPartidaSelecionada.Text = "recebeid";
             // 
             // label08
             // 
@@ -395,46 +395,46 @@
             this.label08.TabIndex = 7;
             this.label08.Text = "NOME: ";
             // 
-            // lblIdPartidaSelecionada
+            // lblDataPartidaSelecionada
             // 
-            this.lblIdPartidaSelecionada.AutoSize = true;
-            this.lblIdPartidaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdPartidaSelecionada.Location = new System.Drawing.Point(61, 547);
-            this.lblIdPartidaSelecionada.Name = "lblIdPartidaSelecionada";
-            this.lblIdPartidaSelecionada.Size = new System.Drawing.Size(61, 16);
-            this.lblIdPartidaSelecionada.TabIndex = 5;
-            this.lblIdPartidaSelecionada.Text = "recebeid";
+            this.lblDataPartidaSelecionada.AutoSize = true;
+            this.lblDataPartidaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataPartidaSelecionada.Location = new System.Drawing.Point(60, 600);
+            this.lblDataPartidaSelecionada.Name = "lblDataPartidaSelecionada";
+            this.lblDataPartidaSelecionada.Size = new System.Drawing.Size(44, 16);
+            this.lblDataPartidaSelecionada.TabIndex = 10;
+            this.lblDataPartidaSelecionada.Text = "label2";
             // 
-            // label07
+            // label09
             // 
-            this.label07.AutoSize = true;
-            this.label07.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label07.Location = new System.Drawing.Point(4, 551);
-            this.label07.Name = "label07";
-            this.label07.Size = new System.Drawing.Size(23, 16);
-            this.label07.TabIndex = 6;
-            this.label07.Text = "ID:";
+            this.label09.AccessibleDescription = "partida";
+            this.label09.AutoSize = true;
+            this.label09.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label09.Location = new System.Drawing.Point(4, 583);
+            this.label09.Name = "label09";
+            this.label09.Size = new System.Drawing.Size(50, 16);
+            this.label09.TabIndex = 9;
+            this.label09.Text = "DATA: ";
             // 
-            // lblNomePartidaSelecionada
+            // lblStatusPartidaSelecionada
             // 
-            this.lblNomePartidaSelecionada.AutoSize = true;
-            this.lblNomePartidaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePartidaSelecionada.Location = new System.Drawing.Point(61, 583);
-            this.lblNomePartidaSelecionada.Name = "lblNomePartidaSelecionada";
-            this.lblNomePartidaSelecionada.Size = new System.Drawing.Size(44, 16);
-            this.lblNomePartidaSelecionada.TabIndex = 8;
-            this.lblNomePartidaSelecionada.Text = "label2";
+            this.lblStatusPartidaSelecionada.AutoSize = true;
+            this.lblStatusPartidaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusPartidaSelecionada.Location = new System.Drawing.Point(61, 567);
+            this.lblStatusPartidaSelecionada.Name = "lblStatusPartidaSelecionada";
+            this.lblStatusPartidaSelecionada.Size = new System.Drawing.Size(44, 16);
+            this.lblStatusPartidaSelecionada.TabIndex = 12;
+            this.lblStatusPartidaSelecionada.Text = "label2";
             // 
-            // label10
+            // pictureBox9
             // 
-            this.label10.AccessibleDescription = "partida";
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 600);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 16);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "STATUS:";
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
+            this.pictureBox9.Location = new System.Drawing.Point(31, 603);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(221, 29);
+            this.pictureBox9.TabIndex = 38;
+            this.pictureBox9.TabStop = false;
             // 
             // Login
             // 
@@ -475,7 +475,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnListarPartidas;
-        private System.Windows.Forms.ListBox lstListaDePartidas;
+        private System.Windows.Forms.ListBox lstPartidas;
         private System.Windows.Forms.ListBox lstJogadores;
         private System.Windows.Forms.Label lblVersaoJogo;
         private System.Windows.Forms.ComboBox cboFiltrarPartidas;
