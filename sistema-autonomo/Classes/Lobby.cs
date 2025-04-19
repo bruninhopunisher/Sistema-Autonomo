@@ -52,7 +52,7 @@ namespace sistema_autonomo.Classes
         public static string[] EntrarPartida(Partida partidaSelecionada, string nomeJogador, string senhaJogador)
         {
             string[] dadosJogador = new string[2];
-            string dadosRecebidos = Jogo.Entrar(partidaSelecionada.GetID(), nomeJogador, senhaJogador);
+            string dadosRecebidos = Jogo.Entrar(partidaSelecionada.Id, nomeJogador, senhaJogador);
 
             if(dadosRecebidos.Substring(0,4) == "ERRO")
             {
@@ -66,7 +66,7 @@ namespace sistema_autonomo.Classes
         }
         public static string[] ListarJogadores(Partida partidaSelecionada)
         {
-            string jogadoresRecebidos = Jogo.ListarJogadores(partidaSelecionada.GetID());
+            string jogadoresRecebidos = Jogo.ListarJogadores(partidaSelecionada.Id);
             jogadoresRecebidos = jogadoresRecebidos.Replace("\r", "");
             string[] jogadores = jogadoresRecebidos.Split('\n');
             return jogadores;

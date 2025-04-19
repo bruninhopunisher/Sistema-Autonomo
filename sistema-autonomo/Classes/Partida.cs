@@ -17,60 +17,37 @@ namespace sistema_autonomo.Classes
         private string senha;
         private string data;
         private string status;
-
-        public void SetID(int id)
+        
+        public int Id
         {
-            this.id = id;
+            get { return id; }
+            set { this.id = value; }
         }
-
-        public int GetID()
+        public string Nome
         {
-            return id;
+            get { return nome; }
+            set { this.nome = value; }
         }
-
-        public void SetNome(string nome)
+        public string Senha
         {
-            this.nome = nome;
+            get { return senha; }
+            set { this.senha = value; }
         }
-
-        public string GetNome()
+        public string Data
         {
-            return nome;
+            get { return data; }
+            set { this.data = value; }
         }
-
-        public void SetSenha(string senha)
+        public string Status
         {
-            this.senha = senha;
+            get { return status; }
+            set { this.status = value; }
         }
-
-        public string GetSenha()
-        {
-            return senha;
-        }
-
-        public void SetData(string data)
-        {
-            this.data = data;
-        }
-
-        public string GetData()
-        {
-            return data;
-        }
-        public void SetStatus(string status)
-        {
-            this.status = status;
-        }
-        public string GetStatus()
-        {
-            return status;
-        }
-
         public void QuantidadeJogadoresPartida(Jogador jogadorLocal)
         {
             List<int> ids = new List<int>();
 
-            string listaJogadores = Jogo.ListarJogadores(GetID());
+            string listaJogadores = Jogo.ListarJogadores(id);
             string[] linhas = listaJogadores.Split('\n');
 
             // Retorna a quantidade de Id´s (jogadores) na partida

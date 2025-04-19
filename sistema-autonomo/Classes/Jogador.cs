@@ -19,34 +19,20 @@ namespace sistema_autonomo
 
         List<Jogador> listaDeJogadores = new List<Jogador>();
 
-        public void SetId(int id)
+        public int Id
         {
-            this.id = id;
+            get { return id; }
+            set { this.id = value; }
         }
-
-        public int GetId()
+        public string Nome
         {
-            return id;
+            get { return nome; }
+            set { this.nome = value; }
         }
-
-        public void SetNome(string nome)
+        public string Senha
         {
-            this.nome = nome;
-        }
-
-        public string GetNome()
-        {
-            return nome;
-        }
-
-        public void SetSenha(string senha)
-        {
-            this.senha = senha;
-        }
-
-        public string GetSenha()
-        {
-            return senha;
+            get { return senha; }
+            set { this.senha = value; }
         }
 
         public void SetPontos(int pontos)
