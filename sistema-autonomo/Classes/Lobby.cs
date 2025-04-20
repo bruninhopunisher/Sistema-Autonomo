@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,8 +11,12 @@ namespace sistema_autonomo.Classes
 {
     public class Lobby
     {
-        public string nomeGrupo { get { return "Estudantes de Bolonha";  } }
+        public static string nomeGrupo { get { return "Estudantes de Bolonha";  } }
 
+        public static string GetNomeGrupo()
+        {
+            return nomeGrupo;
+        }
         public static string[] ListarPartidas()
         {
             string listaDePartidas = Jogo.ListarPartidas("T");
@@ -47,7 +52,7 @@ namespace sistema_autonomo.Classes
         public static string[] EntrarPartida(Partida partidaSelecionada, string nomeJogador, string senhaJogador)
         {
             string[] dadosJogador = new string[2];
-            string dadosRecebidos = Jogo.Entrar(partidaSelecionada.getID(), nomeJogador, senhaJogador);
+            string dadosRecebidos = Jogo.Entrar(partidaSelecionada.Id, nomeJogador, senhaJogador);
 
             if(dadosRecebidos.Substring(0,4) == "ERRO")
             {
@@ -61,7 +66,7 @@ namespace sistema_autonomo.Classes
         }
         public static string[] ListarJogadores(Partida partidaSelecionada)
         {
-            string jogadoresRecebidos = Jogo.ListarJogadores(partidaSelecionada.getID());
+            string jogadoresRecebidos = Jogo.ListarJogadores(partidaSelecionada.Id);
             jogadoresRecebidos = jogadoresRecebidos.Replace("\r", "");
             string[] jogadores = jogadoresRecebidos.Split('\n');
             return jogadores;

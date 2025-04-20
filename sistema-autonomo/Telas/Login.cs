@@ -17,62 +17,49 @@ namespace sistema_autonomo
     public partial class Login : Form
     {
         public Partida partida = new Partida();
-        public Jogador JogadorLogado = new Jogador();
+        public Jogador jogadorLogado = new Jogador();
         public Login()
         {
-
             InitializeComponent();
-
-
             cboFiltrarPartidas.Items.Add("Todos");
             cboFiltrarPartidas.Items.Add("Abertas");
             cboFiltrarPartidas.Items.Add("Jogando");
             cboFiltrarPartidas.Items.Add("Encerradas");
-            cboFiltrarPartidas.SelectedIndex = 0;
+            cboFiltrarPartidas.SelectedIndex = 0; //Define o filtro para "todos"
             lblVersaoJogo.Text = Jogo.versao;
-
         }
-
         private void btnListarPartidas_Click(object sender, EventArgs e)
         {
-            string listaDePartidas = Jogo.ListarPartidas("T");
-            listaDePartidas = listaDePartidas.Replace("\r", "");
-            string[] partidas = listaDePartidas.Split('\n');
+            //Armazena todas as partidas
+            string[] partidas = BancoAuxiliar.TratarDados(Jogo.ListarPartidas("T"));
 
-            //Adiciona as partidas na lista
-            lstListaDePartidas.Items.Clear();
+            //Lógica para add partidas na lista e filtro de partidas
+            lstPartidas.Items.Clear();
             for (int i = 0; i < partidas.Length - 1; i++)
             {
                 if (cboFiltrarPartidas.Text.Substring(0, 1) == "T")
                 {
-                    lstListaDePartidas.Items.Add(partidas[i]);
+                    lstPartidas.Items.Add(partidas[i]);
                 }
-                if (cboFiltrarPartidas.Text.Substring(0, 1) == partidas[i].Substring(partidas[i].Length - 1, 1))//Dado indice (i), recorta o ultimo caractere.
+                //Pega a última letra das info. da partida do servidor para determinar o filtro.
+                else if (cboFiltrarPartidas.Text.Substring(0, 1) == partidas[i].Substring(partidas[i].Length - 1, 1))
                 {
-                    lstListaDePartidas.Items.Add(partidas[i]);
+                    lstPartidas.Items.Add(partidas[i]);
                 }
-
             }
         }
-
-
-        public void lstListaDePartidas_SelectedIndexChanged(object sender, EventArgs e)
+        public void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
-            string partidaSelecionadaRecebida = lstListaDePartidas.SelectedItem.ToString();
-            string[] partidaSelecionada = partidaSelecionadaRecebida.Split(',');
-
-            partida.setID(Convert.ToInt32(partidaSelecionada[0]));
-            partida.setNome(partidaSelecionada[1]);
-            partida.setData(partidaSelecionada[2]);
-            partida.setStatus(partidaSelecionada[3]);
-
-            lblIdPartidaSelecionada.Text = partida.getID().ToString();
-            lblNomePartidaSelecionada.Text = partida.getNome();
-            lblDataPartidaSelecionada.Text = partida.getData();
-
-            switch (partida.getStatus())
+            //Informações da Partida selecionada
+            string[] partidaSelecionada = lstPartidas.SelectedItem.ToString().Split(',');
+            partida.Id = (Convert.ToInt32(partidaSelecionada[0]));
+            partida.Nome = (partidaSelecionada[1]);
+            partida.Data = (partidaSelecionada[2]);
+            partida.Status = (partidaSelecionada[3]);
+            lblIdPartidaSelecionada.Text = partida.Id.ToString();
+            lblNomePartidaSelecionada.Text = partida.Nome;
+            lblDataPartidaSelecionada.Text = partida.Data;
+            switch (partida.Status)
             {
                 case "A":
                     lblStatusPartidaSelecionada.Text = "Aberta";
@@ -84,77 +71,54 @@ namespace sistema_autonomo
                     lblStatusPartidaSelecionada.Text = "Encerrada";
                     break;
             }
+            //Fim
 
-            string jogadoresRecebidos = Jogo.ListarJogadores(partida.getID());
-
-            //Informa quando não tem nenhum jogador
-            if (jogadoresRecebidos == "")
+            //Informações dos jogadores presentes na partida selecionada
+            string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
+            lstJogadores.Items.Clear();
+            if (jogadores == null)//Compara com null devido ao retorno do tratar dados
             {
-                lstJogadores.Items.Clear();
                 lstJogadores.Items.Add("Nenhum jogador na partida!");
                 return;
             }
-
-            jogadoresRecebidos = jogadoresRecebidos.Replace("\r", "");
-            string[] jogadores = jogadoresRecebidos.Split('\n');
-
-            //Adiciona todos os jogadores na lista
-            lstJogadores.Items.Clear();
             for (int i = 0; i < jogadores.Length; i++)
             {
                 lstJogadores.Items.Add(jogadores[i]);
             }
+            //Fim
         }
-
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
-            string nomePartida = txtInputNomePartida.Text.Trim();
-            string senhaPartida = txtInputSenhaPartida.Text.Trim();
+            partida.Nome = txtInputNomePartida.Text.Trim(); //Trim remove o espaço entre os caracteres
+            partida.Senha = txtInputSenhaPartida.Text.Trim();
 
-            if (nomePartida == "")
+            if (partida.Nome == "" || partida.Senha == "")
             {
-                MessageBox.Show("ERRO: informe o nome da partida");
-                return;
+                MessageBox.Show("ERRO: Nome ou senha invalidos");
             }
-            else if (senhaPartida == "")
-            {
-                MessageBox.Show("ERRO: informe a senha da partida");
-                return;
-            }
-
             else
             {
-                string idPartidaCriada = Jogo.CriarPartida(nomePartida, senhaPartida, "Estudantes de Bolonha");
+                string idPartidaCriada = Jogo.CriarPartida(partida.Nome, partida.Senha, "Estudantes de Bolonha");
                 MessageBox.Show($"Partida criada com sucesso!\nO ID da sua partida é {idPartidaCriada}");
             }
         }
-
-
-
         private void btnEntrarPartida_Click_1(object sender, EventArgs e)
         {
-
-
-            string[] dadosJogador = new string[2];
-            string senhaDigitada = txtSenhaEntrarPartida.Text.Trim();
-            string nomeDoJogador = txtNomeDoJogador.Text.Trim();
-            string dadosRecebidos = Jogo.Entrar(partida.getID(), nomeDoJogador, senhaDigitada);
-
-            dadosJogador = dadosRecebidos.Split(',');
-
-            if (dadosRecebidos.Substring(0, 4) != "ERRO")
+            jogadorLogado.Nome = txtNomeDoJogador.Text.Trim();
+            jogadorLogado.Senha = txtSenhaEntrarPartida.Text.Trim();
+            string iniciarPartida = Jogo.Entrar(partida.Id, jogadorLogado.Nome, jogadorLogado.Senha);
+            string[] dadosTratados = iniciarPartida.Split(',');
+            if (iniciarPartida.Substring(0, 1) != "E")
             {
-                JogadorLogado.SetId(Convert.ToInt32(dadosJogador[0]));
-                JogadorLogado.SetSenha(dadosJogador[1]);
-                JogadorLogado.SetNome(nomeDoJogador);
-                Lobby LobbyPartida1 = new Lobby(partida, JogadorLogado);
-                LobbyPartida1.idJogadorLogado = JogadorLogado.GetId();
-                LobbyPartida1.Show();
-                this.Hide();
+                jogadorLogado.Id = Convert.ToInt32(dadosTratados[0]);
+                jogadorLogado.Senha = dadosTratados[1];
+                Lobby telaLobby = new Lobby(partida, jogadorLogado);
+                telaLobby.ShowDialog();
+                this.Close();
             }
             else
             {
-                MessageBox.Show(dadosJogador[0]);
+                MessageBox.Show(iniciarPartida);
             }
         }
     }

@@ -17,54 +17,75 @@ namespace sistema_autonomo.Classes
         private string senha;
         private string data;
         private string status;
+        
+        public int Id
+        {
+            get { return id; }
+            set { this.id = value; }
+        }
+        public string Nome
+        {
+            get { return nome; }
+            set { this.nome = value; }
+        }
+        public string Senha
+        {
+            get { return senha; }
+            set { this.senha = value; }
+        }
+        public string Data
+        {
+            get { return data; }
+            set { this.data = value; }
+        }
+        public string Status
+        {
+            get { return status; }
+            set { this.status = value; }
+        }
+        public void QuantidadeJogadoresPartida(Jogador jogadorLocal)
+        {
+            List<int> ids = new List<int>();
 
-        public void setID(int id)
-        {
-            this.id = id;
-        }
+            string listaJogadores = Jogo.ListarJogadores(id);
+            string[] linhas = listaJogadores.Split('\n');
 
-        public int getID()
-        {
-            return id;
-        }
+            // Retorna a quantidade de Id´s (jogadores) na partida
+            foreach (string linha in linhas)
+            {
+                if (!string.IsNullOrWhiteSpace(linha))
+                {
+                    string[] partes = linha.Split(',');
+                    if (partes.Length > 0 && int.TryParse(partes[0], out int id))
+                    {
+                        ids.Add(id);
+                    }
+                }
+            }
 
-        public void setNome(string nome)
-        {
-            this.nome = nome;
-        }
+            //Seta a quatidade de cartas Nãos para o jogador local
+            if (ids.Count == 3)
+            {
+                jogadorLocal.SetNao(4);
+                Console.WriteLine($"Setado 4");
+            }
+            else if (ids.Count == 4)
+            {
+                jogadorLocal.SetNao(3);
+                Console.WriteLine($"Setado 3");
+            }
+            else if (ids.Count == 5)
+            {
+                jogadorLocal.SetNao(2);
+                Console.WriteLine($"Setado 2");
+            }
+            else
+            {
+                jogadorLocal.SetNao(2);
+                Console.WriteLine($"Setado 2");
+            }
 
-        public string getNome()
-        {
-            return nome;
+            Console.WriteLine(ids);
         }
-
-        public void setSenha(string senha)
-        {
-            this.senha = senha;
-        }
-
-        public string getSenha()
-        {
-            return senha;
-        }
-
-        public void setData(string data)
-        {
-            this.data = data;
-        }
-
-        public string getData()
-        {
-            return data;
-        }
-        public void setStatus(string status)
-        {
-            this.status = status;
-        }
-        public string getStatus()
-        {
-            return status;
-        }
-
     }
 }

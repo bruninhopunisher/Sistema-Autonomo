@@ -15,20 +15,86 @@ namespace sistema_autonomo
 {
     public partial class Sala : Form
     {
+        Tabuleiro tabuleiro = new Tabuleiro();
+        Automacao bot = new Automacao();
+        List<Personagem> listaDePersonagens = new List<Personagem>();
+        Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
+        
         Partida partidaSelecionada;
         Jogador jogadorSelecionado;
-        Personagem personagem;
-        List<Personagem> minhaLista = new List<Personagem>();
-        List<PictureBox> listaPic = new List<PictureBox>();
+        
+        string verificarVez;
+        string[] verificaVezTratado;
 
-        public Sala(Partida partidaRecebida, Jogador jogadorRecebido)
+        public Sala(Partida partidaRecebida, Jogador jogadorLocal)
         {
             InitializeComponent();
             partidaSelecionada = partidaRecebida;
-            jogadorSelecionado = jogadorRecebido;
+            jogadorSelecionado = jogadorLocal;
+            lblNomeDoGrupo.Text = Classes.Lobby.GetNomeGrupo().ToString();
+            lblVersaoDoJogo.Text = Jogo.versao.ToString();
+            lblQtdeVotos.Text = Convert.ToString(jogadorLocal.GetNao());
+            tmrPosicionarPersonagem.Enabled = true;
+
+            //Informações do jogador que esta logado
+            lblAltNomeJogador.Text = jogadorSelecionado.Nome;
+            lblAltSenhaJogador.Text = jogadorSelecionado.Senha;
+
+            //Atribui personagens na lista assim que o programa e executado
+            listaDePersonagens = sistema_autonomo.Personagem.ListarPersonagem(0);
+
+            //Adiciona Pictures na instancia do personagem
+            for (int i = 0; i < listaDePersonagens.Count; i++)
+            {
+                switch (listaDePersonagens[i].nome)
+                {
+                    case "Adilson Konrad":
+                        listaDePersonagens[i].cardPersonagem = picAdilson;
+                        break;
+                    case "Beatriz Paiva":
+                        listaDePersonagens[i].cardPersonagem = picBeatriz;
+                        break;
+                    case "Claro":
+                        listaDePersonagens[i].cardPersonagem = picClaro;
+                        break;
+                    case "Douglas Baquiao":
+                        listaDePersonagens[i].cardPersonagem = picDouglas;
+                        break;
+                    case "Eduardo Takeo":
+                        listaDePersonagens[i].cardPersonagem = picTakeo;
+                        break;
+                    case "Guilherme Rey":
+                        listaDePersonagens[i].cardPersonagem = picGui;
+                        break;
+                    case "Heredia":
+                        listaDePersonagens[i].cardPersonagem = picHeredia;
+                        break;
+                    case "Kelly Kiyumi":
+                        listaDePersonagens[i].cardPersonagem = picKelly;
+                        break;
+                    case "Leonardo Takuno":
+                        listaDePersonagens[i].cardPersonagem = picLeonardo;
+                        break;
+                    case "Mario Toledo":
+                        listaDePersonagens[i].cardPersonagem = picMario;
+                        break;
+                    case "Quintas":
+                        listaDePersonagens[i].cardPersonagem = picQuintas;
+                        break;
+                    case "Ranulfo":
+                        listaDePersonagens[i].cardPersonagem = picRanulfo;
+                        break;
+                    case "Toshio":
+                        listaDePersonagens[i].cardPersonagem = picToshio;
+                        break;
+                }
+            }
+
+            //Atualiza estado do tabuleiro
+            estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
 
             //Exibir cartas jogador
-            string cartasSorteadas = Jogo.ListarCartas(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha());
+            string cartasSorteadas = Jogo.ListarCartas(jogadorSelecionado.Id, jogadorSelecionado.Senha);
             lstMinhasCartasSala.Items.Clear();
             for (int i = 0; i < 6; i++)
             {
@@ -56,7 +122,7 @@ namespace sistema_autonomo
                         lstMinhasCartasSala.Items.Add("Heredia");
                         break;
                     case "K":
-                        lstMinhasCartasSala.Items.Add("Karin");
+                        lstMinhasCartasSala.Items.Add("Kelly Kiyumi");
                         break;
                     case "L":
                         lstMinhasCartasSala.Items.Add("Leonardo Takuno");
@@ -85,164 +151,248 @@ namespace sistema_autonomo
                 lstSetoresSala.Items.Add(setores[i]);
             }
         }
-
-        private void btnConstVerificarVez_Click_1(object sender, EventArgs e)
+        private void LimparEAtualizarTabuleiro()
         {
-            Personagem personagem = new Personagem();
-            int indice = 0;
-            int idRetornado;
-            string nomeRetornado;
-            int indiceRecebido = 0;
-            string verificarVez = Jogo.VerificarVez(partidaSelecionada.getID());
-
-            string dadosJogadores = Jogo.ListarJogadores(partidaSelecionada.getID());
-            dadosJogadores = dadosJogadores.Replace("\r", "");
-            string[] dadosJogadorestratados = dadosJogadores.Split('\n');
-
-            StructJogador[] structJogadores = new StructJogador[6];
-
-            foreach (string dadosJogadorestratado in dadosJogadorestratados)
-            {
-                if (string.IsNullOrWhiteSpace(dadosJogadorestratado)) continue;
-
-                string[] valores = dadosJogadorestratado.Split(',');
-                if (valores.Length < 3) continue;
-
-                structJogadores[indice].id = valores[0];
-                structJogadores[indice].nome = valores[1];
-                structJogadores[indice].pontos = valores[2];
-                indice++;
-            }
-
-            if (verificarVez.Substring(0, 4) != "ERRO")
-            {
-                verificarVez = verificarVez.Replace("\r", "");
-                string[] tabuleiro = verificarVez.Split('\n');
-                lstAltTabuleiroSala.Items.Clear();
-                for (int i = 0; i < tabuleiro.Length - 1; i++)
-                {
-                    lstAltTabuleiroSala.Items.Add(tabuleiro[i]);
-                }
-                string[] dadosPartida = tabuleiro[0].Split(',');
-                int jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
-
-                for (int i = 0; i < indice; i++)
-                {
-                    if (Convert.ToInt32(structJogadores[i].id) == jogadorVez)
-                    {
-                        idRetornado = Convert.ToInt32(structJogadores[i].id);
-                        nomeRetornado = structJogadores[i].nome;
-                        indiceRecebido = i;
-                    }
-                }
-
-                if (jogadorSelecionado.GetId() == jogadorVez)
-                {
-                    lblAltStatusVezSala.Text = $"É a sua vez ID {jogadorSelecionado.GetId()}: {jogadorSelecionado.GetNome()}";
-                }
-                else
-                {
-                    lblAltStatusVezSala.Text = $"É a vez do ID {structJogadores[indiceRecebido].id}: {structJogadores[indiceRecebido].nome}";
-                }
-
-                //dgvPersonagens.DataSource = Personagem.ListarPersonagem(5);
-            }
-            else
-            {
-                MessageBox.Show(verificarVez);
-                //Jogo.ColocarPersonagem(jogadorSelecionado.GetId);
-            }
-
-            minhaLista = Personagem.ListarPersonagem(0);
-            lstCartas.Items.Clear();
-
-            // Colocando as cartas na lstbox
-            for (int i = 0; i < minhaLista.Count; i++)
-            {
-                lstCartas.Items.Add(minhaLista[i].nome);
-            }
+            //Faz a limpeza do estado do tabuleiro
+            listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
+            estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
+            //Atualiza o estado do tabuleiro
+            estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
+            listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
         }
-
         private void btnPosicionar_Click(object sender, EventArgs e)
         {
             if (lstCartas.SelectedItem != null)
             {
                 string nomecartaSelecionada = lstCartas.SelectedItem.ToString();
-                nomecartaSelecionada = lstCartas.SelectedItem.ToString();
                 string NomeRecortado = nomecartaSelecionada.Substring(0, 1);
-                // MessageBox.Show(nomecartaSelecionada);
-                string nomeSetor = lstSetoresSala.SelectedItem.ToString();
-                int numeroSetorSelecionado = Convert.ToInt32(nomeSetor.Substring(0, 1));
 
-                string retornoColocar = Jogo.ColocarPersonagem(jogadorSelecionado.GetId(), jogadorSelecionado.GetSenha(), numeroSetorSelecionado, NomeRecortado);
-                Console.WriteLine(retornoColocar);
-                retornoColocar.Replace("\r", "");
-                string[] dadosRetornados = retornoColocar.Split('\n');
-
-                // Metodo classe personagem para alterar a posicao do personagem um pouco a baixo
-                for (int i = 0; i < dadosRetornados.Length - 1; i++)
+                if (lstSetoresSala.SelectedItem != null)
                 {
-                    // Retorna a letra inicial na variavel person
-                    string person = dadosRetornados[i].Substring(0, 3);
-                    int setor = Convert.ToInt32(dadosRetornados[i].Substring(0, 1));
+                    string nomeSetor = lstSetoresSala.SelectedItem.ToString();
+                    int numeroSetorSelecionado = Convert.ToInt32(nomeSetor.Substring(0, 1));
+                    //MessageBox.Show(numeroSetorSelecionado.ToString());
 
-                    personagem.AlterarSetorPersonagem(person, setor);
-                }
-                
-                /*
-                for (int i = 0; i < minhaLista.Count(); i++)
-                {
-                    Personagem personagemEmandamento = new Personagem();
-                    personagemEmandamento = minhaLista[i];
-                    string nomeDavez = personagemEmandamento.nome;
-                    nomeDavez = nomeDavez.Substring(0, 1);
-                    if(nomeDavez == retornoColocar)
+                    string retornoColocar = Jogo.ColocarPersonagem(jogadorSelecionado.Id, jogadorSelecionado.Senha, numeroSetorSelecionado, NomeRecortado);
+                    if (retornoColocar.Substring(0, 4) == "ERRO")
                     {
-                        //picAdilson.Name
-                    }
-                }
-                */
-                //Botão deletado (Pegar apenas referencia)
-                /*
-                if (dgvPersonagens.SelectedRows.Count > 0)
-                {
-
-                    Personagem personagemSelecionado = (Personagem)dgvPersonagens.SelectedRows[0].DataBoundItem;
-
-                    if (personagemSelecionado != null && !string.IsNullOrEmpty(personagemSelecionado.nome) && lstSetores.SelectedItem != null)
-                    {
-                        string nomePersonagemSelecionado = personagemSelecionado.nome;
-                        string setorPersonagemSelecionado = lstSetores.SelectedItem.ToString();
-                        string[] setores = setorPersonagemSelecionado.Split(',');
-
-                        string estadoTabuleiro = Jogo.ColocarPersonagem(
-                            jogadorSelecionado.GetId(),
-                            jogadorSelecionado.GetSenha(),
-                            Convert.ToInt32(setores[0]),
-                            nomePersonagemSelecionado.Substring(0, 1)
-                        );
-
-                        MessageBox.Show(estadoTabuleiro.ToString());
+                        MessageBox.Show(retornoColocar);
                     }
                     else
                     {
-                        MessageBox.Show("Por favor, selecione um personagem e um setor válido.");
+                        LimparEAtualizarTabuleiro();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, selecione uma linha válida no DataGridView.");
+                    MessageBox.Show("Selecione um setor para posicionar!");
                 }
             }
-        
-
-                void picAdilson_Click(object sender, EventArgs e)
+            else
             {
+                MessageBox.Show("Selecione um personagem para posicionar!");
+            }
+        }
+
+        // Botão de atualizar tabuleiro
+        private void btnAtualizarTabuleiro_Click(object sender, EventArgs e)
+        {
+            string listaDeVotos = Jogo.ExibirUltimaVotacao(partidaSelecionada.Id);
+            listaDeVotos.Replace("\r", "");
+            listaDeVotos.Split('\n');
+
+            if (listaDeVotos.Substring(0, 1) == "E")
+            {
+                MessageBox.Show(listaDeVotos);
+            }
+            else
+            {
+                for (int i = 0; i < listaDeVotos.Length - 1; i += 3)
+                {
+                    lstVotacao.Items.Add(listaDeVotos[i].ToString());
+                }
+            }
+        }
+        private void PromoverPersonagem(string personagem)
+        {
+            //Dados recebidos para promover o personagem
+            int idJogador = jogadorSelecionado.Id;
+            string senhaJogador = jogadorSelecionado.Senha;
+
+            Jogo.Promover(idJogador, senhaJogador, personagem);
+            LimparEAtualizarTabuleiro();
+        }
+        private void Votar()
+        {
+            int qtdeVotosNao;
+            string personagemEleitoVotacao;
+            string retornoDaFuncao;
+            List<string> personagensDoJogadorLocal = new List<string>();
+
+            personagemEleitoVotacao = tabuleiro.VerificarPersonagemDaVotacao();
+            qtdeVotosNao = jogadorSelecionado.GetNao();
+
+            string meusPersonagensRecebidos = Jogo.ListarCartas(jogadorSelecionado.Id, jogadorSelecionado.Senha);
+            meusPersonagensRecebidos = meusPersonagensRecebidos.Replace("\r\n", "");
+
+            for (int i = 0; i < meusPersonagensRecebidos.Length - 1; i++)
+            {
+                personagensDoJogadorLocal.Add(meusPersonagensRecebidos.Substring(i, 1));    
+            }
+
+            if (qtdeVotosNao > 0 && !personagensDoJogadorLocal.Contains(personagemEleitoVotacao))
+            {
+                retornoDaFuncao = Jogo.Votar(jogadorSelecionado.Id, jogadorSelecionado.Senha, "N");
+                //MessageBox.Show(retornoDaFuncao);
+                if (retornoDaFuncao.Substring(0, 1) != "E")
+                {
+                    jogadorSelecionado.SetNao(qtdeVotosNao - 1);
+                }
+            }
+            else
+            {
+                Jogo.Votar(jogadorSelecionado.Id, jogadorSelecionado.Senha, "S");
+            }
+            lblQtdeVotos.Text = Convert.ToString(jogadorSelecionado.GetNao());
+        }
+        private void tmrPosicionarPersonagem_Tick(object sender, EventArgs e)
+        {
+            tmrPosicionarPersonagem.Enabled = false;
+            string faseDaPartida = BancoAuxiliar.VerificarFase(partidaSelecionada.Id);
+
+            lblAltFasePartida.Text = faseDaPartida;
+            
+            if (faseDaPartida == "S")
+            {
+                Personagem personagem = new Personagem();
+            
+                int jogadorVez;
+                string[] dadosPartida;
+                string[] tabuleiroRecebido;
+                verificarVez = Jogo.VerificarVez(partidaSelecionada.Id);
+                verificarVez = verificarVez.Replace("\r", "");
+                verificaVezTratado = verificarVez.Split('\n');
+
+                List<Jogador> listaDeJogadoresNaPartida = jogadorSelecionado.QTDEJogadoresPartida(partidaSelecionada.Id);
+
+
+                dadosPartida = verificaVezTratado[0].Split(',');
+                jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
+
+                if (verificarVez.Substring(0, 4) != "ERRO")
+                {
+                    foreach (Jogador j in listaDeJogadoresNaPartida)
+                    {
+                        Console.WriteLine($"Jogador: {j.Nome}, ID {j.Id}");
+
+                        if (jogadorSelecionado.Id == jogadorVez)
+                        {
+                            lblAltStatusVezSala.Text = $"É a sua vez ID {jogadorSelecionado.Id} - {jogadorSelecionado.Nome}";
+                            break;
+                        }
+                        if (j.Id == jogadorVez)
+                        {
+                            lblAltStatusVezSala.Text = $"É a vez do ID {j.Id} - {j.Nome}";
+                            break;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < listaDePersonagens.Count; i++)
+                {
+                    switch (listaDePersonagens[i].nome)
+                    {
+                        case "Adilson Konrad":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Beatriz Paiva":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Claro":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Douglas Baquiao":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Eduardo Takeo":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Guilherme Rey":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Heredia":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Kelly Kiyumi":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Leonardo Takuno":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Mario Toledo":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Quintas":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Ranulfo":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                        case "Toshio":
+                            listaDePersonagens[i].personagemPosicionado = false;
+                            break;
+                    }
+                }
+
+                //Faz a limpeza do estado do tabuleiro
+                estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
+                //Posiciona personagens
+                estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
+                listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
+
+                tabuleiroRecebido = verificarVez.Split('\n');
+
+                lstAltTabuleiroSala.Items.Clear();
+                for (int i = 0; i < tabuleiroRecebido.Length - 1; i++)
+                {
+                    lstAltTabuleiroSala.Items.Add(tabuleiroRecebido[i]);
+                }
+
+                lstAltTabuleiroSala.Items.Clear();
+
+                for (int i = 0; i < verificaVezTratado.Length - 1; i++)
+                {
+                    lstAltTabuleiroSala.Items.Add(verificaVezTratado[i]);
+                }
+
+                lstCartas.Items.Clear();
+                // Colocando as cartas na lstbox
+                for (int i = 0; i < listaDePersonagens.Count; i++)
+                {
+                    lstCartas.Items.Add(listaDePersonagens[i].nome);
+                }
+
+                if (jogadorVez == jogadorSelecionado.Id)
+                {
+                    bot.Posicionar(jogadorSelecionado.Id, jogadorSelecionado.Senha, partidaSelecionada.Id, tabuleiro);
+                }
 
             }
-            */
+            else if (faseDaPartida == "P")
+            {
+                LimparEAtualizarTabuleiro();
+                string personagemPromover = tabuleiro.VerificarPersonagemMaisAlto();
+                PromoverPersonagem(personagemPromover);
             }
-            MessageBox.Show("Selecione um personagem para posicionar!");
+            else if (faseDaPartida == "V")
+            {
+                LimparEAtualizarTabuleiro();
+                Votar();
+            }
+
+            tmrPosicionarPersonagem.Enabled = true;
         }
+
     }
+
 }

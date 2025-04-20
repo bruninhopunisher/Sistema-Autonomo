@@ -33,6 +33,8 @@
             this.btnCreditosInicio = new System.Windows.Forms.Button();
             this.btnConfiguracaoInicio = new System.Windows.Forms.Button();
             this.btnAjudaInicio = new System.Windows.Forms.Button();
+            this.lblVersaoJogo = new System.Windows.Forms.Label();
+            this.lblNomeGrupo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnInicio
@@ -88,6 +90,22 @@
             this.btnAjudaInicio.TabIndex = 3;
             this.btnAjudaInicio.UseVisualStyleBackColor = false;
             // 
+            // lblVersaoJogo
+            // 
+            this.lblVersaoJogo.AutoSize = true;
+            this.lblVersaoJogo.Location = new System.Drawing.Point(1187, 646);
+            this.lblVersaoJogo.Name = "lblVersaoJogo";
+            this.lblVersaoJogo.Size = new System.Drawing.Size(0, 13);
+            this.lblVersaoJogo.TabIndex = 4;
+            // 
+            // lblNomeGrupo
+            // 
+            this.lblNomeGrupo.AutoSize = true;
+            this.lblNomeGrupo.Location = new System.Drawing.Point(1052, 646);
+            this.lblNomeGrupo.Name = "lblNomeGrupo";
+            this.lblNomeGrupo.Size = new System.Drawing.Size(0, 13);
+            this.lblNomeGrupo.TabIndex = 5;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,14 +113,18 @@
             this.BackColor = System.Drawing.Color.IndianRed;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblNomeGrupo);
+            this.Controls.Add(this.lblVersaoJogo);
             this.Controls.Add(this.btnAjudaInicio);
             this.Controls.Add(this.btnConfiguracaoInicio);
             this.Controls.Add(this.btnCreditosInicio);
             this.Controls.Add(this.btnInicio);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,5 +134,7 @@
         private System.Windows.Forms.Button btnCreditosInicio;
         private System.Windows.Forms.Button btnConfiguracaoInicio;
         private System.Windows.Forms.Button btnAjudaInicio;
+        private System.Windows.Forms.Label lblVersaoJogo;
+        private System.Windows.Forms.Label lblNomeGrupo;
     }
 }

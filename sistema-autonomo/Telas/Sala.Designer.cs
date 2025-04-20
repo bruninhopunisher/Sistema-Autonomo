@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sala));
-            this.lblNomeJogador = new System.Windows.Forms.Label();
-            this.lblNomePartida = new System.Windows.Forms.Label();
-            this.btnTeste = new System.Windows.Forms.Button();
             this.txtConstMinhasCartasSala = new System.Windows.Forms.Label();
             this.lstMinhasCartasSala = new System.Windows.Forms.ListBox();
             this.lblSetoresSala = new System.Windows.Forms.Label();
@@ -40,7 +38,6 @@
             this.lstAltTabuleiroSala = new System.Windows.Forms.ListBox();
             this.lblConstStatusVezSala = new System.Windows.Forms.Label();
             this.lblAltStatusVezSala = new System.Windows.Forms.Label();
-            this.btnConstVerificarVez = new System.Windows.Forms.Button();
             this.picAdilson = new System.Windows.Forms.PictureBox();
             this.picBeatriz = new System.Windows.Forms.PictureBox();
             this.picClaro = new System.Windows.Forms.PictureBox();
@@ -56,9 +53,23 @@
             this.picToshio = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPosicionar = new System.Windows.Forms.Button();
-            this.txtReceberNomePersonagem = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lstCartas = new System.Windows.Forms.ListBox();
+            this.btnAtualizarTabuleiro = new System.Windows.Forms.Button();
+            this.lblVersaoDoJogo = new System.Windows.Forms.Label();
+            this.lblNomeDoGrupo = new System.Windows.Forms.Label();
+            this.lblConstNomeJogador = new System.Windows.Forms.Label();
+            this.lblConstSenhaJogador = new System.Windows.Forms.Label();
+            this.lblAltNomeJogador = new System.Windows.Forms.Label();
+            this.lblAltSenhaJogador = new System.Windows.Forms.Label();
+            this.btnVotar = new System.Windows.Forms.Button();
+            this.txtVotoJogador = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lstVotacao = new System.Windows.Forms.ListView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblQtdeVotos = new System.Windows.Forms.Label();
+            this.tmrPosicionarPersonagem = new System.Windows.Forms.Timer(this.components);
+            this.lblConstFasePartida = new System.Windows.Forms.Label();
+            this.lblAltFasePartida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -75,37 +86,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblNomeJogador
-            // 
-            this.lblNomeJogador.AutoSize = true;
-            this.lblNomeJogador.Location = new System.Drawing.Point(43, 36);
-            this.lblNomeJogador.Name = "lblNomeJogador";
-            this.lblNomeJogador.Size = new System.Drawing.Size(35, 13);
-            this.lblNomeJogador.TabIndex = 0;
-            this.lblNomeJogador.Text = "label1";
-            // 
-            // lblNomePartida
-            // 
-            this.lblNomePartida.AutoSize = true;
-            this.lblNomePartida.Location = new System.Drawing.Point(59, 78);
-            this.lblNomePartida.Name = "lblNomePartida";
-            this.lblNomePartida.Size = new System.Drawing.Size(35, 13);
-            this.lblNomePartida.TabIndex = 1;
-            this.lblNomePartida.Text = "label2";
-            // 
-            // btnTeste
-            // 
-            this.btnTeste.Location = new System.Drawing.Point(128, 52);
-            this.btnTeste.Name = "btnTeste";
-            this.btnTeste.Size = new System.Drawing.Size(75, 23);
-            this.btnTeste.TabIndex = 2;
-            this.btnTeste.Text = "button1";
-            this.btnTeste.UseVisualStyleBackColor = true;
-            // 
             // txtConstMinhasCartasSala
             // 
             this.txtConstMinhasCartasSala.AutoSize = true;
-            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(354, 10);
+            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(483, 460);
             this.txtConstMinhasCartasSala.Name = "txtConstMinhasCartasSala";
             this.txtConstMinhasCartasSala.Size = new System.Drawing.Size(74, 13);
             this.txtConstMinhasCartasSala.TabIndex = 3;
@@ -114,15 +98,15 @@
             // lstMinhasCartasSala
             // 
             this.lstMinhasCartasSala.FormattingEnabled = true;
-            this.lstMinhasCartasSala.Location = new System.Drawing.Point(297, 37);
+            this.lstMinhasCartasSala.Location = new System.Drawing.Point(450, 477);
             this.lstMinhasCartasSala.Name = "lstMinhasCartasSala";
-            this.lstMinhasCartasSala.Size = new System.Drawing.Size(175, 160);
+            this.lstMinhasCartasSala.Size = new System.Drawing.Size(140, 160);
             this.lstMinhasCartasSala.TabIndex = 4;
             // 
             // lblSetoresSala
             // 
             this.lblSetoresSala.AutoSize = true;
-            this.lblSetoresSala.Location = new System.Drawing.Point(538, 20);
+            this.lblSetoresSala.Location = new System.Drawing.Point(430, 118);
             this.lblSetoresSala.Name = "lblSetoresSala";
             this.lblSetoresSala.Size = new System.Drawing.Size(43, 13);
             this.lblSetoresSala.TabIndex = 5;
@@ -131,15 +115,15 @@
             // lstSetoresSala
             // 
             this.lstSetoresSala.FormattingEnabled = true;
-            this.lstSetoresSala.Location = new System.Drawing.Point(507, 36);
+            this.lstSetoresSala.Location = new System.Drawing.Point(399, 134);
             this.lstSetoresSala.Name = "lstSetoresSala";
-            this.lstSetoresSala.Size = new System.Drawing.Size(121, 160);
+            this.lstSetoresSala.Size = new System.Drawing.Size(112, 160);
             this.lstSetoresSala.TabIndex = 6;
             // 
             // lblTabuleiro
             // 
             this.lblTabuleiro.AutoSize = true;
-            this.lblTabuleiro.Location = new System.Drawing.Point(539, 220);
+            this.lblTabuleiro.Location = new System.Drawing.Point(277, 118);
             this.lblTabuleiro.Name = "lblTabuleiro";
             this.lblTabuleiro.Size = new System.Drawing.Size(51, 13);
             this.lblTabuleiro.TabIndex = 7;
@@ -148,7 +132,7 @@
             // lstAltTabuleiroSala
             // 
             this.lstAltTabuleiroSala.FormattingEnabled = true;
-            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(507, 236);
+            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(245, 134);
             this.lstAltTabuleiroSala.Name = "lstAltTabuleiroSala";
             this.lstAltTabuleiroSala.Size = new System.Drawing.Size(116, 160);
             this.lstAltTabuleiroSala.TabIndex = 8;
@@ -156,7 +140,7 @@
             // lblConstStatusVezSala
             // 
             this.lblConstStatusVezSala.AutoSize = true;
-            this.lblConstStatusVezSala.Location = new System.Drawing.Point(375, 266);
+            this.lblConstStatusVezSala.Location = new System.Drawing.Point(304, 16);
             this.lblConstStatusVezSala.Name = "lblConstStatusVezSala";
             this.lblConstStatusVezSala.Size = new System.Drawing.Size(73, 13);
             this.lblConstStatusVezSala.TabIndex = 9;
@@ -165,26 +149,16 @@
             // lblAltStatusVezSala
             // 
             this.lblAltStatusVezSala.AutoSize = true;
-            this.lblAltStatusVezSala.Location = new System.Drawing.Point(375, 288);
+            this.lblAltStatusVezSala.Location = new System.Drawing.Point(383, 16);
             this.lblAltStatusVezSala.Name = "lblAltStatusVezSala";
             this.lblAltStatusVezSala.Size = new System.Drawing.Size(13, 13);
             this.lblAltStatusVezSala.TabIndex = 10;
             this.lblAltStatusVezSala.Text = "1";
             // 
-            // btnConstVerificarVez
-            // 
-            this.btnConstVerificarVez.Location = new System.Drawing.Point(397, 306);
-            this.btnConstVerificarVez.Name = "btnConstVerificarVez";
-            this.btnConstVerificarVez.Size = new System.Drawing.Size(75, 23);
-            this.btnConstVerificarVez.TabIndex = 11;
-            this.btnConstVerificarVez.Text = "Verificar Vez";
-            this.btnConstVerificarVez.UseVisualStyleBackColor = true;
-            this.btnConstVerificarVez.Click += new System.EventHandler(this.btnConstVerificarVez_Click_1);
-            // 
             // picAdilson
             // 
             this.picAdilson.Image = ((System.Drawing.Image)(resources.GetObject("picAdilson.Image")));
-            this.picAdilson.Location = new System.Drawing.Point(20, 279);
+            this.picAdilson.Location = new System.Drawing.Point(26, 399);
             this.picAdilson.Name = "picAdilson";
             this.picAdilson.Size = new System.Drawing.Size(67, 81);
             this.picAdilson.TabIndex = 13;
@@ -193,7 +167,7 @@
             // picBeatriz
             // 
             this.picBeatriz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBeatriz.BackgroundImage")));
-            this.picBeatriz.Location = new System.Drawing.Point(93, 279);
+            this.picBeatriz.Location = new System.Drawing.Point(99, 399);
             this.picBeatriz.Name = "picBeatriz";
             this.picBeatriz.Size = new System.Drawing.Size(67, 81);
             this.picBeatriz.TabIndex = 14;
@@ -202,7 +176,7 @@
             // picClaro
             // 
             this.picClaro.Image = ((System.Drawing.Image)(resources.GetObject("picClaro.Image")));
-            this.picClaro.Location = new System.Drawing.Point(93, 452);
+            this.picClaro.Location = new System.Drawing.Point(99, 572);
             this.picClaro.Name = "picClaro";
             this.picClaro.Size = new System.Drawing.Size(67, 81);
             this.picClaro.TabIndex = 15;
@@ -211,7 +185,7 @@
             // picDouglas
             // 
             this.picDouglas.Image = ((System.Drawing.Image)(resources.GetObject("picDouglas.Image")));
-            this.picDouglas.Location = new System.Drawing.Point(166, 366);
+            this.picDouglas.Location = new System.Drawing.Point(172, 486);
             this.picDouglas.Name = "picDouglas";
             this.picDouglas.Size = new System.Drawing.Size(67, 81);
             this.picDouglas.TabIndex = 16;
@@ -220,7 +194,7 @@
             // picHeredia
             // 
             this.picHeredia.Image = ((System.Drawing.Image)(resources.GetObject("picHeredia.Image")));
-            this.picHeredia.Location = new System.Drawing.Point(321, 365);
+            this.picHeredia.Location = new System.Drawing.Point(327, 485);
             this.picHeredia.Name = "picHeredia";
             this.picHeredia.Size = new System.Drawing.Size(67, 81);
             this.picHeredia.TabIndex = 17;
@@ -229,7 +203,7 @@
             // picKelly
             // 
             this.picKelly.Image = ((System.Drawing.Image)(resources.GetObject("picKelly.Image")));
-            this.picKelly.Location = new System.Drawing.Point(239, 453);
+            this.picKelly.Location = new System.Drawing.Point(245, 573);
             this.picKelly.Name = "picKelly";
             this.picKelly.Size = new System.Drawing.Size(67, 80);
             this.picKelly.TabIndex = 18;
@@ -238,7 +212,7 @@
             // picTakeo
             // 
             this.picTakeo.Image = ((System.Drawing.Image)(resources.GetObject("picTakeo.Image")));
-            this.picTakeo.Location = new System.Drawing.Point(166, 279);
+            this.picTakeo.Location = new System.Drawing.Point(172, 399);
             this.picTakeo.Name = "picTakeo";
             this.picTakeo.Size = new System.Drawing.Size(67, 81);
             this.picTakeo.TabIndex = 24;
@@ -247,7 +221,7 @@
             // picGui
             // 
             this.picGui.Image = ((System.Drawing.Image)(resources.GetObject("picGui.Image")));
-            this.picGui.Location = new System.Drawing.Point(166, 452);
+            this.picGui.Location = new System.Drawing.Point(172, 572);
             this.picGui.Name = "picGui";
             this.picGui.Size = new System.Drawing.Size(67, 81);
             this.picGui.TabIndex = 23;
@@ -256,7 +230,7 @@
             // picRanulfo
             // 
             this.picRanulfo.Image = ((System.Drawing.Image)(resources.GetObject("picRanulfo.Image")));
-            this.picRanulfo.Location = new System.Drawing.Point(20, 452);
+            this.picRanulfo.Location = new System.Drawing.Point(26, 572);
             this.picRanulfo.Name = "picRanulfo";
             this.picRanulfo.Size = new System.Drawing.Size(67, 81);
             this.picRanulfo.TabIndex = 22;
@@ -265,7 +239,7 @@
             // picQuintas
             // 
             this.picQuintas.Image = ((System.Drawing.Image)(resources.GetObject("picQuintas.Image")));
-            this.picQuintas.Location = new System.Drawing.Point(239, 279);
+            this.picQuintas.Location = new System.Drawing.Point(245, 399);
             this.picQuintas.Name = "picQuintas";
             this.picQuintas.Size = new System.Drawing.Size(67, 81);
             this.picQuintas.TabIndex = 21;
@@ -274,7 +248,7 @@
             // picMario
             // 
             this.picMario.Image = ((System.Drawing.Image)(resources.GetObject("picMario.Image")));
-            this.picMario.Location = new System.Drawing.Point(20, 365);
+            this.picMario.Location = new System.Drawing.Point(26, 485);
             this.picMario.Name = "picMario";
             this.picMario.Size = new System.Drawing.Size(67, 81);
             this.picMario.TabIndex = 20;
@@ -283,7 +257,7 @@
             // picLeonardo
             // 
             this.picLeonardo.Image = ((System.Drawing.Image)(resources.GetObject("picLeonardo.Image")));
-            this.picLeonardo.Location = new System.Drawing.Point(239, 366);
+            this.picLeonardo.Location = new System.Drawing.Point(245, 486);
             this.picLeonardo.Name = "picLeonardo";
             this.picLeonardo.Size = new System.Drawing.Size(67, 81);
             this.picLeonardo.TabIndex = 19;
@@ -292,7 +266,7 @@
             // picToshio
             // 
             this.picToshio.Image = ((System.Drawing.Image)(resources.GetObject("picToshio.Image")));
-            this.picToshio.Location = new System.Drawing.Point(93, 366);
+            this.picToshio.Location = new System.Drawing.Point(99, 486);
             this.picToshio.Name = "picToshio";
             this.picToshio.Size = new System.Drawing.Size(67, 81);
             this.picToshio.TabIndex = 25;
@@ -301,7 +275,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(648, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(648, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(469, 643);
             this.pictureBox1.TabIndex = 12;
@@ -309,49 +283,180 @@
             // 
             // btnPosicionar
             // 
-            this.btnPosicionar.Location = new System.Drawing.Point(463, 574);
+            this.btnPosicionar.Location = new System.Drawing.Point(450, 344);
             this.btnPosicionar.Name = "btnPosicionar";
-            this.btnPosicionar.Size = new System.Drawing.Size(164, 87);
+            this.btnPosicionar.Size = new System.Drawing.Size(133, 32);
             this.btnPosicionar.TabIndex = 26;
             this.btnPosicionar.Text = "Colocar personagem";
             this.btnPosicionar.UseVisualStyleBackColor = true;
             this.btnPosicionar.Click += new System.EventHandler(this.btnPosicionar_Click);
             // 
-            // txtReceberNomePersonagem
+            // lstCartas
             // 
-            this.txtReceberNomePersonagem.Location = new System.Drawing.Point(102, 194);
-            this.txtReceberNomePersonagem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtReceberNomePersonagem.Name = "txtReceberNomePersonagem";
-            this.txtReceberNomePersonagem.Size = new System.Drawing.Size(102, 20);
-            this.txtReceberNomePersonagem.TabIndex = 27;
+            this.lstCartas.FormattingEnabled = true;
+            this.lstCartas.Location = new System.Drawing.Point(516, 134);
+            this.lstCartas.Margin = new System.Windows.Forms.Padding(2);
+            this.lstCartas.Name = "lstCartas";
+            this.lstCartas.Size = new System.Drawing.Size(112, 160);
+            this.lstCartas.TabIndex = 29;
+            // 
+            // btnAtualizarTabuleiro
+            // 
+            this.btnAtualizarTabuleiro.Location = new System.Drawing.Point(1123, 477);
+            this.btnAtualizarTabuleiro.Name = "btnAtualizarTabuleiro";
+            this.btnAtualizarTabuleiro.Size = new System.Drawing.Size(136, 35);
+            this.btnAtualizarTabuleiro.TabIndex = 30;
+            this.btnAtualizarTabuleiro.Text = "Atualizar Votação";
+            this.btnAtualizarTabuleiro.UseVisualStyleBackColor = true;
+            // 
+            // lblVersaoDoJogo
+            // 
+            this.lblVersaoDoJogo.AutoSize = true;
+            this.lblVersaoDoJogo.Location = new System.Drawing.Point(1184, 616);
+            this.lblVersaoDoJogo.Name = "lblVersaoDoJogo";
+            this.lblVersaoDoJogo.Size = new System.Drawing.Size(0, 13);
+            this.lblVersaoDoJogo.TabIndex = 31;
+            // 
+            // lblNomeDoGrupo
+            // 
+            this.lblNomeDoGrupo.AutoSize = true;
+            this.lblNomeDoGrupo.Location = new System.Drawing.Point(39, 624);
+            this.lblNomeDoGrupo.Name = "lblNomeDoGrupo";
+            this.lblNomeDoGrupo.Size = new System.Drawing.Size(0, 13);
+            this.lblNomeDoGrupo.TabIndex = 32;
+            // 
+            // lblConstNomeJogador
+            // 
+            this.lblConstNomeJogador.AutoSize = true;
+            this.lblConstNomeJogador.Location = new System.Drawing.Point(20, 16);
+            this.lblConstNomeJogador.Name = "lblConstNomeJogador";
+            this.lblConstNomeJogador.Size = new System.Drawing.Size(45, 13);
+            this.lblConstNomeJogador.TabIndex = 34;
+            this.lblConstNomeJogador.Text = "Jogador";
+            // 
+            // lblConstSenhaJogador
+            // 
+            this.lblConstSenhaJogador.AutoSize = true;
+            this.lblConstSenhaJogador.Location = new System.Drawing.Point(20, 59);
+            this.lblConstSenhaJogador.Name = "lblConstSenhaJogador";
+            this.lblConstSenhaJogador.Size = new System.Drawing.Size(38, 13);
+            this.lblConstSenhaJogador.TabIndex = 36;
+            this.lblConstSenhaJogador.Text = "Senha";
+            // 
+            // lblAltNomeJogador
+            // 
+            this.lblAltNomeJogador.AutoSize = true;
+            this.lblAltNomeJogador.Location = new System.Drawing.Point(20, 37);
+            this.lblAltNomeJogador.Name = "lblAltNomeJogador";
+            this.lblAltNomeJogador.Size = new System.Drawing.Size(13, 13);
+            this.lblAltNomeJogador.TabIndex = 37;
+            this.lblAltNomeJogador.Text = "1";
+            // 
+            // lblAltSenhaJogador
+            // 
+            this.lblAltSenhaJogador.AutoSize = true;
+            this.lblAltSenhaJogador.Location = new System.Drawing.Point(20, 82);
+            this.lblAltSenhaJogador.Name = "lblAltSenhaJogador";
+            this.lblAltSenhaJogador.Size = new System.Drawing.Size(13, 13);
+            this.lblAltSenhaJogador.TabIndex = 38;
+            this.lblAltSenhaJogador.Text = "1";
+            // 
+            // btnVotar
+            // 
+            this.btnVotar.Location = new System.Drawing.Point(1123, 201);
+            this.btnVotar.Name = "btnVotar";
+            this.btnVotar.Size = new System.Drawing.Size(129, 40);
+            this.btnVotar.TabIndex = 39;
+            this.btnVotar.Text = "Votar";
+            this.btnVotar.UseVisualStyleBackColor = true;
+            // 
+            // txtVotoJogador
+            // 
+            this.txtVotoJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVotoJogador.Location = new System.Drawing.Point(1123, 166);
+            this.txtVotoJogador.Name = "txtVotoJogador";
+            this.txtVotoJogador.Size = new System.Drawing.Size(127, 29);
+            this.txtVotoJogador.TabIndex = 40;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 197);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1152, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Qual personagem:";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Voto (S/N)";
             // 
-            // lstCartas
+            // lstVotacao
             // 
-            this.lstCartas.FormattingEnabled = true;
-            this.lstCartas.Location = new System.Drawing.Point(507, 411);
-            this.lstCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.lstCartas.Name = "lstCartas";
-            this.lstCartas.Size = new System.Drawing.Size(91, 147);
-            this.lstCartas.TabIndex = 29;
+            this.lstVotacao.HideSelection = false;
+            this.lstVotacao.Location = new System.Drawing.Point(1123, 253);
+            this.lstVotacao.Name = "lstVotacao";
+            this.lstVotacao.Size = new System.Drawing.Size(128, 200);
+            this.lstVotacao.TabIndex = 43;
+            this.lstVotacao.UseCompatibleStateImageBehavior = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1117, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 13);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Quantidade de Votos Nãos";
+            // 
+            // lblQtdeVotos
+            // 
+            this.lblQtdeVotos.AutoSize = true;
+            this.lblQtdeVotos.Location = new System.Drawing.Point(1155, 59);
+            this.lblQtdeVotos.Name = "lblQtdeVotos";
+            this.lblQtdeVotos.Size = new System.Drawing.Size(0, 13);
+            this.lblQtdeVotos.TabIndex = 45;
+            // 
+            // tmrPosicionarPersonagem
+            // 
+            this.tmrPosicionarPersonagem.Interval = 5000;
+            this.tmrPosicionarPersonagem.Tick += new System.EventHandler(this.tmrPosicionarPersonagem_Tick);
+            // 
+            // lblConstFasePartida
+            // 
+            this.lblConstFasePartida.AutoSize = true;
+            this.lblConstFasePartida.Location = new System.Drawing.Point(20, 107);
+            this.lblConstFasePartida.Name = "lblConstFasePartida";
+            this.lblConstFasePartida.Size = new System.Drawing.Size(81, 13);
+            this.lblConstFasePartida.TabIndex = 46;
+            this.lblConstFasePartida.Text = "Fase da Partida";
+            // 
+            // lblAltFasePartida
+            // 
+            this.lblAltFasePartida.AutoSize = true;
+            this.lblAltFasePartida.Location = new System.Drawing.Point(20, 134);
+            this.lblAltFasePartida.Name = "lblAltFasePartida";
+            this.lblAltFasePartida.Size = new System.Drawing.Size(13, 13);
+            this.lblAltFasePartida.TabIndex = 48;
+            this.lblAltFasePartida.Text = "1";
             // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.lstCartas);
+            this.Controls.Add(this.lblAltFasePartida);
+            this.Controls.Add(this.lblConstFasePartida);
+            this.Controls.Add(this.lblQtdeVotos);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lstVotacao);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtReceberNomePersonagem);
+            this.Controls.Add(this.txtVotoJogador);
+            this.Controls.Add(this.btnVotar);
+            this.Controls.Add(this.lblAltSenhaJogador);
+            this.Controls.Add(this.lblAltNomeJogador);
+            this.Controls.Add(this.lblConstSenhaJogador);
+            this.Controls.Add(this.lblConstNomeJogador);
+            this.Controls.Add(this.lblNomeDoGrupo);
+            this.Controls.Add(this.lblVersaoDoJogo);
+            this.Controls.Add(this.btnAtualizarTabuleiro);
+            this.Controls.Add(this.lstCartas);
             this.Controls.Add(this.btnPosicionar);
             this.Controls.Add(this.picToshio);
             this.Controls.Add(this.picTakeo);
@@ -367,7 +472,6 @@
             this.Controls.Add(this.picBeatriz);
             this.Controls.Add(this.picAdilson);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnConstVerificarVez);
             this.Controls.Add(this.lblAltStatusVezSala);
             this.Controls.Add(this.lblConstStatusVezSala);
             this.Controls.Add(this.lstAltTabuleiroSala);
@@ -376,10 +480,8 @@
             this.Controls.Add(this.lblSetoresSala);
             this.Controls.Add(this.lstMinhasCartasSala);
             this.Controls.Add(this.txtConstMinhasCartasSala);
-            this.Controls.Add(this.btnTeste);
-            this.Controls.Add(this.lblNomePartida);
-            this.Controls.Add(this.lblNomeJogador);
             this.Name = "Sala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).EndInit();
@@ -401,10 +503,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNomeJogador;
-        private System.Windows.Forms.Label lblNomePartida;
-        private System.Windows.Forms.Button btnTeste;
         private System.Windows.Forms.Label txtConstMinhasCartasSala;
         private System.Windows.Forms.ListBox lstMinhasCartasSala;
         private System.Windows.Forms.Label lblSetoresSala;
@@ -413,7 +511,6 @@
         private System.Windows.Forms.ListBox lstAltTabuleiroSala;
         private System.Windows.Forms.Label lblConstStatusVezSala;
         private System.Windows.Forms.Label lblAltStatusVezSala;
-        private System.Windows.Forms.Button btnConstVerificarVez;
         private System.Windows.Forms.PictureBox picAdilson;
         private System.Windows.Forms.PictureBox picBeatriz;
         private System.Windows.Forms.PictureBox picClaro;
@@ -429,8 +526,22 @@
         private System.Windows.Forms.PictureBox picToshio;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnPosicionar;
-        private System.Windows.Forms.TextBox txtReceberNomePersonagem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstCartas;
+        private System.Windows.Forms.Button btnAtualizarTabuleiro;
+        private System.Windows.Forms.Label lblVersaoDoJogo;
+        private System.Windows.Forms.Label lblNomeDoGrupo;
+        private System.Windows.Forms.Label lblConstNomeJogador;
+        private System.Windows.Forms.Label lblConstSenhaJogador;
+        private System.Windows.Forms.Label lblAltNomeJogador;
+        private System.Windows.Forms.Label lblAltSenhaJogador;
+        private System.Windows.Forms.Button btnVotar;
+        private System.Windows.Forms.TextBox txtVotoJogador;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView lstVotacao;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblQtdeVotos;
+        private System.Windows.Forms.Timer tmrPosicionarPersonagem;
+        private System.Windows.Forms.Label lblConstFasePartida;
+        private System.Windows.Forms.Label lblAltFasePartida;
     }
 }

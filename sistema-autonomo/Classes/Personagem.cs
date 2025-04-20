@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace sistema_autonomo
 {
@@ -13,8 +14,8 @@ namespace sistema_autonomo
         public string nome { get; set; }
         public int setor { get; set; }
         public bool foiDeBase { get; set; }
-        public int x { get; set; }
-        public int y { get; set; }
+        public PictureBox cardPersonagem { get; set; }
+        public bool personagemPosicionado { get; set; }
 
         public static List<Personagem> ListarPersonagem(int setor)
         {
@@ -30,6 +31,7 @@ namespace sistema_autonomo
                 novoPersonagem.nome = personagens[i];
                 novoPersonagem.setor = setor;
                 novoPersonagem.foiDeBase = false;
+                novoPersonagem.personagemPosicionado = false;
                 personagens_instancia.Add(novoPersonagem);
             }
             return personagens_instancia;

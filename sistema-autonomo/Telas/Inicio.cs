@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KingMeServer;
+using sistema_autonomo.Classes;
 
 namespace sistema_autonomo
 {
@@ -15,13 +17,19 @@ namespace sistema_autonomo
         public Inicio()
         {
             InitializeComponent();
+            lblVersaoJogo.Text = Jogo.versao.ToString();
+            lblNomeGrupo.Text = Classes.Lobby.GetNomeGrupo().ToString();
+            //string[] personagens = BancoAuxiliar.TratarDados(Jogo.ListarPersonagens());
+            //for (int i = 0; i < personagens.Length - 1; i++)
+            //{
+            //    MessageBox.Show(personagens[i]);
+            //}
         }
-
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            Login form1 = new Login();
-            form1.Show();
-            this.Hide();
+            Login telaLogin = new Login();
+            telaLogin.ShowDialog();
+            this.Close();
         }
     }
 }
