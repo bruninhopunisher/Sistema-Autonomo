@@ -19,6 +19,11 @@ namespace sistema_autonomo
             InitializeComponent();
             lblVersaoJogo.Text = Jogo.versao.ToString();
             lblNomeGrupo.Text = Classes.Lobby.GetNomeGrupo().ToString();
+            //string[] personagens = BancoAuxiliar.TratarDados(Jogo.ListarPersonagens());
+            //for (int i = 0; i < personagens.Length - 1; i++)
+            //{
+            //    MessageBox.Show(personagens[i]);
+            //}
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {

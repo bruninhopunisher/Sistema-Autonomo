@@ -1285,6 +1285,61 @@ namespace sistema_autonomo.Classes
             }
             return listaDePersonagens;
         }
+
+        public string VerificarPersonagemMaisAlto()
+        {
+            for (int i = 51; i < 55; i++)
+            {
+                if (estadoSetorPersonagem[i] != null)
+                {
+                    return estadoSetorPersonagem[i].Substring(0,1);
+                }
+            }
+            for (int i = 41; i < 45; i++)
+            {
+                if (estadoSetorPersonagem[i] != null)
+                {
+                    return estadoSetorPersonagem[i].Substring(0, 1);
+                }
+            }
+            for (int i = 31; i < 35; i++)
+            {
+                if (estadoSetorPersonagem[i] != null)
+                {
+                    return estadoSetorPersonagem[i].Substring(0, 1);
+                }
+            }
+            for (int i = 21; i < 25; i++)
+            {
+                if (estadoSetorPersonagem[i] != null)
+                {
+                    return estadoSetorPersonagem[i].Substring(0, 1);
+                }
+            }
+            for (int i = 11; i < 15; i++)
+            {
+                if (estadoSetorPersonagem[i] != null)
+                {
+                    return estadoSetorPersonagem[i].Substring(0, 1);
+                }
+            }
+            for (int i = 1; i < 5; i++)
+            {
+                if (estadoSetorPersonagem[i] != null)
+                {
+                    return estadoSetorPersonagem[i].Substring(0, 1);
+                }
+            }
+            return "Erro!";
+        }
+
+        public string VerificarPersonagemDaVotacao()
+        {
+            if (estadoSetorPersonagem[60].Substring(0, 1) != null)
+                return estadoSetorPersonagem[60].Substring(0, 1);
+            else
+                return "Erro!";
+        }
     }
 
 }

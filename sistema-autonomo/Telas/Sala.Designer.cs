@@ -57,7 +57,6 @@
             this.btnAtualizarTabuleiro = new System.Windows.Forms.Button();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
             this.lblNomeDoGrupo = new System.Windows.Forms.Label();
-            this.btnConstPromoverPersonagem = new System.Windows.Forms.Button();
             this.lblConstNomeJogador = new System.Windows.Forms.Label();
             this.lblConstSenhaJogador = new System.Windows.Forms.Label();
             this.lblAltNomeJogador = new System.Windows.Forms.Label();
@@ -69,6 +68,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblQtdeVotos = new System.Windows.Forms.Label();
             this.tmrPosicionarPersonagem = new System.Windows.Forms.Timer(this.components);
+            this.lblConstFasePartida = new System.Windows.Forms.Label();
+            this.lblAltFasePartida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -294,7 +295,7 @@
             // 
             this.lstCartas.FormattingEnabled = true;
             this.lstCartas.Location = new System.Drawing.Point(516, 134);
-            this.lstCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstCartas.Margin = new System.Windows.Forms.Padding(2);
             this.lstCartas.Name = "lstCartas";
             this.lstCartas.Size = new System.Drawing.Size(112, 160);
             this.lstCartas.TabIndex = 29;
@@ -323,16 +324,6 @@
             this.lblNomeDoGrupo.Name = "lblNomeDoGrupo";
             this.lblNomeDoGrupo.Size = new System.Drawing.Size(0, 13);
             this.lblNomeDoGrupo.TabIndex = 32;
-            // 
-            // btnConstPromoverPersonagem
-            // 
-            this.btnConstPromoverPersonagem.Location = new System.Drawing.Point(450, 387);
-            this.btnConstPromoverPersonagem.Name = "btnConstPromoverPersonagem";
-            this.btnConstPromoverPersonagem.Size = new System.Drawing.Size(133, 36);
-            this.btnConstPromoverPersonagem.TabIndex = 33;
-            this.btnConstPromoverPersonagem.Text = "Promover Personagem";
-            this.btnConstPromoverPersonagem.UseVisualStyleBackColor = true;
-            this.btnConstPromoverPersonagem.Click += new System.EventHandler(this.btnConstPromoverPersonagem_Click);
             // 
             // lblConstNomeJogador
             // 
@@ -378,7 +369,6 @@
             this.btnVotar.TabIndex = 39;
             this.btnVotar.Text = "Votar";
             this.btnVotar.UseVisualStyleBackColor = true;
-            this.btnVotar.Click += new System.EventHandler(this.btnVotar_Click);
             // 
             // txtVotoJogador
             // 
@@ -428,11 +418,31 @@
             this.tmrPosicionarPersonagem.Interval = 5000;
             this.tmrPosicionarPersonagem.Tick += new System.EventHandler(this.tmrPosicionarPersonagem_Tick);
             // 
+            // lblConstFasePartida
+            // 
+            this.lblConstFasePartida.AutoSize = true;
+            this.lblConstFasePartida.Location = new System.Drawing.Point(20, 107);
+            this.lblConstFasePartida.Name = "lblConstFasePartida";
+            this.lblConstFasePartida.Size = new System.Drawing.Size(81, 13);
+            this.lblConstFasePartida.TabIndex = 46;
+            this.lblConstFasePartida.Text = "Fase da Partida";
+            // 
+            // lblAltFasePartida
+            // 
+            this.lblAltFasePartida.AutoSize = true;
+            this.lblAltFasePartida.Location = new System.Drawing.Point(20, 134);
+            this.lblAltFasePartida.Name = "lblAltFasePartida";
+            this.lblAltFasePartida.Size = new System.Drawing.Size(13, 13);
+            this.lblAltFasePartida.TabIndex = 48;
+            this.lblAltFasePartida.Text = "1";
+            // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblAltFasePartida);
+            this.Controls.Add(this.lblConstFasePartida);
             this.Controls.Add(this.lblQtdeVotos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lstVotacao);
@@ -443,7 +453,6 @@
             this.Controls.Add(this.lblAltNomeJogador);
             this.Controls.Add(this.lblConstSenhaJogador);
             this.Controls.Add(this.lblConstNomeJogador);
-            this.Controls.Add(this.btnConstPromoverPersonagem);
             this.Controls.Add(this.lblNomeDoGrupo);
             this.Controls.Add(this.lblVersaoDoJogo);
             this.Controls.Add(this.btnAtualizarTabuleiro);
@@ -521,7 +530,6 @@
         private System.Windows.Forms.Button btnAtualizarTabuleiro;
         private System.Windows.Forms.Label lblVersaoDoJogo;
         private System.Windows.Forms.Label lblNomeDoGrupo;
-        private System.Windows.Forms.Button btnConstPromoverPersonagem;
         private System.Windows.Forms.Label lblConstNomeJogador;
         private System.Windows.Forms.Label lblConstSenhaJogador;
         private System.Windows.Forms.Label lblAltNomeJogador;
@@ -533,5 +541,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblQtdeVotos;
         private System.Windows.Forms.Timer tmrPosicionarPersonagem;
+        private System.Windows.Forms.Label lblConstFasePartida;
+        private System.Windows.Forms.Label lblAltFasePartida;
     }
 }

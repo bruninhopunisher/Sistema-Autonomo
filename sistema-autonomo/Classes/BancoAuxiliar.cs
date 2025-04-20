@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KingMeServer;
 
 namespace sistema_autonomo
 {
@@ -20,9 +21,13 @@ namespace sistema_autonomo
             }
             return null; //Retorna nulo caso dê erro;
         }
-
-
-
+        public static string VerificarFase(int idPartida)
+        {
+            string[] dados = TratarDados(Jogo.VerificarVez(idPartida));
+            string[] dadosPartida = dados[0].Split(',');
+            string fasePartida = dadosPartida[dadosPartida.Length - 1];
+            return fasePartida;
+        }
 
 
     }
