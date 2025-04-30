@@ -43,7 +43,6 @@ namespace sistema_autonomo
                 }
             }
         }
-        //Jogo.ColocarPersonagem(jogador, senha, setor, personagem);
     }
 
 }
