@@ -35,7 +35,7 @@ namespace sistema_autonomo
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
             lblQtdeVotos.Text = Convert.ToString(jogadorLocal.GetNao());
             tmrPosicionarPersonagem.Enabled = true;
-
+            
             //Informações do jogador que esta logado
             lblAltNomeJogador.Text = jogadorSelecionado.Nome;
             lblAltSenhaJogador.Text = jogadorSelecionado.Senha;
@@ -255,10 +255,20 @@ namespace sistema_autonomo
             }
             lblQtdeVotos.Text = Convert.ToString(jogadorSelecionado.GetNao());
         }
+        //aqui
         private void tmrPosicionarPersonagem_Tick(object sender, EventArgs e)
         {
+            string rodadaPassada = "0";
             tmrPosicionarPersonagem.Enabled = false;
             string faseDaPartida = BancoAuxiliar.VerificarFase(partidaSelecionada.Id);
+            string RodadaAtual = VerificarRodada();
+            if (RodadaAtual != rodadaPassada)
+            {
+                ResetarPosicaoCartas();
+                rodadaPassada = RodadaAtual;
+            }
+            //MessageBox.Show(rodadaPassada.ToString() + " " + RodadaAtual.ToString());
+
 
             lblAltFasePartida.Text = faseDaPartida;
             
@@ -392,7 +402,35 @@ namespace sistema_autonomo
 
             tmrPosicionarPersonagem.Enabled = true;
         }
+       
+        public string VerificarRodada()
+        {
+            string fase = Jogo.VerificarVez(partidaSelecionada.Id);
+            fase = fase.Replace("\r\n", "");
+            string[] Fase = fase.Split(',');
 
+            //MessageBox.Show(Fase[2]);
+            string n = Fase[2];
+            return n;
+        }
+
+        public void ResetarPosicaoCartas()
+        {
+
+                Personagem p = new Personagem();
+                List<Point> ListaInicial = new List<Point>();
+                ListaInicial = p.PointInicial;
+                for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
+                {
+                    p = Personagem.personagenInstanciado[i];
+                    p.cardPersonagem.Location = ListaInicial[i];
+                    
+                    
+                }
+            
+            
+
+        }
     }
 
 }

@@ -18,7 +18,8 @@ namespace sistema_autonomo
         public PictureBox cardPersonagem { get; set; }
         public bool personagemPosicionado { get; set; }
         private List<Point> point;
-
+        public static List<Personagem> personagenInstanciado = new List<Personagem>();
+       
         public Personagem()
         {
             this.point = new List<Point>();
@@ -36,6 +37,7 @@ namespace sistema_autonomo
             point.Add(new Point(26, 572));
             point.Add(new Point(99, 486));
         }
+
         public List<Point> PointInicial
         {
             get { return point; }
@@ -57,9 +59,13 @@ namespace sistema_autonomo
                 novoPersonagem.foiDeBase = false;
                 novoPersonagem.personagemPosicionado = false;
                 personagens_instancia.Add(novoPersonagem);
+                personagenInstanciado.Add(novoPersonagem);
+                
             }
             return personagens_instancia;
         }
+
+        
 
         public void AlterarSetorPersonagem(string nome, int setor)
         {

@@ -1,10 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\",
+  "WorkspaceRootPath": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\lucas\\source\\repos\\sistemaautonomo-pi-lll\\sistema-autonomo\\telas\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\ironf\\desktop\\sistemaautonomo\\sistema-autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\classes\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\classes\\automacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\automacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\telas\\sala.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\telas\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\classes\\jogador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\jogador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +42,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Sala.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.Designer.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.Designer.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.Designer.cs",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.Designer.cs",
+              "ViewState": "AgIAAN0BAAAAAAAAAADwv+ABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:48:33.873Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Sala.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:19:50.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Sala.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs [Design]",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:19:13.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Personagem.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Personagem.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Personagem.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Personagem.cs",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Personagem.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAwwCkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:16:09.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tabuleiro.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Tabuleiro.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Tabuleiro.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Tabuleiro.cs",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Tabuleiro.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:16:16.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Jogador.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Jogador.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Jogador.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Jogador.cs",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Jogador.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:16:06.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Automacao.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Automacao.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Automacao.cs",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Automacao.cs",
+              "RelativeToolTip": "sistema-autonomo\\Classes\\Automacao.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:16:03.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Lobby.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\Lobby.cs",
+              "DocumentMoniker": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Lobby.cs",
               "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Lobby.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\Lobby.cs [Design]",
+              "ToolTip": "C:\\Users\\ironf\\Desktop\\SistemaAutonomo\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Lobby.cs [Design]",
               "RelativeToolTip": "sistema-autonomo\\Telas\\Lobby.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T02:34:37.513Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-01T02:34:37.513Z"
             }
           ]
         }
