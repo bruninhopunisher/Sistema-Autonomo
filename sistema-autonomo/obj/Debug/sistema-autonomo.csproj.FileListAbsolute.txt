@@ -29,14 +29,12 @@ C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\bin\Deb
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.dll
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.xml
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.AssemblyReference.cache
-C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Form1.resources
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Properties.Resources.resources
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.GenerateResource.cache
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.CoreCompileInputs.cache
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.exe
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.pdb
-C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.LobbyPartida.resources
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\bin\Debug\sistema-autonomo.exe.config
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\bin\Debug\sistema-autonomo.exe
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\bin\Debug\sistema-autonomo.pdb
@@ -153,3 +151,7 @@ C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\si
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.Sala.resources
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.Lobby.resources
 C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI3\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Lobby.resources
+C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Lobby.resources
+C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Login.resources
+C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Inicio.resources
+C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Sala.resources
