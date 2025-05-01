@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,6 @@ namespace sistema_autonomo
         private string senha;
         private int pontos;
         private int qtdeNao;
-
         List<Jogador> listaDeJogadores = new List<Jogador>();
 
         public int Id

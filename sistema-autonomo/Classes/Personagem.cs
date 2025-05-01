@@ -1,6 +1,7 @@
 ﻿using KingMeServer;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,29 @@ namespace sistema_autonomo
         public bool foiDeBase { get; set; }
         public PictureBox cardPersonagem { get; set; }
         public bool personagemPosicionado { get; set; }
+        private List<Point> point;
+
+        public Personagem()
+        {
+            this.point = new List<Point>();
+            point.Add(new Point(26, 399));
+            point.Add(new Point(99, 399));
+            point.Add(new Point(99, 572));
+            point.Add(new Point(172, 486));
+            point.Add(new Point(172, 399));
+            point.Add(new Point(172, 572));
+            point.Add(new Point(327, 485));
+            point.Add(new Point(245, 573));
+            point.Add(new Point(245, 486));
+            point.Add(new Point(26, 485));
+            point.Add(new Point(245, 399));
+            point.Add(new Point(26, 572));
+            point.Add(new Point(99, 486));
+        }
+        public List<Point> PointInicial
+        {
+            get { return point; }
+        }
 
         public static List<Personagem> ListarPersonagem(int setor)
         {
