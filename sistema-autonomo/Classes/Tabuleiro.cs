@@ -5,34 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace sistema_autonomo.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Drawing;
-    using System.Runtime.CompilerServices;
-    using System.Windows.Forms;
-    using KingMeServer;
-
-
     public class Tabuleiro
     {
         private const int DISTANCIA_ULTIMA_POSICAO = 3;
         //Partida partidaSelecionada;
         private Dictionary<int, Point> setoresPosicoes; // Mapeia setores para coordenadas X:Y
         private Dictionary<int, bool> setoresDisponiveis = new Dictionary<int, bool>
-            {
+            { //TALVEZ POSSA SER UM FOR, MAS VERIFICAR MAIS PARA FRENTE, POIS DESSA FORMA ESTA VISIVELMENTE MELHOR
                 { 25, false },   // 6º
                 { 21, false }, { 22, false }, { 23, false }, { 24, false },  // 5º
                 { 17, false }, { 18, false }, { 19, false }, { 20, false },  // 4º
                 { 13, false }, { 14, false }, { 15, false }, { 16, false },  // 3º
                 { 9, false }, { 10, false }, { 11, false }, { 12, false },  // 2º
                 { 5, false }, { 6, false }, { 7, false }, { 8, false },  // 1º
-                {  1, false }, {  2, false }, {  3, false }, {  4, false }  // 0º
+                { 1, false }, {  2, false }, {  3, false }, {  4, false }  // 0º
             };
         private Dictionary<int, string> estadoSetorPersonagem = new Dictionary<int, string>
-            {
+            { //TALVEZ POSSA SER UM FOR, MAS VERIFICAR MAIS PARA FRENTE, POIS DESSA FORMA ESTA VISIVELMENTE MELHOR
                 { 25, null },   // 6º
                 { 21, null }, { 22, null }, { 23, null }, { 24, null },  // 5º
                 { 17, null }, { 18, null }, { 19, null }, { 20, null },  // 4º
@@ -55,7 +46,6 @@ namespace sistema_autonomo.Classes
                 {  1, new Point(752, 547) }, {  2, new Point(825, 547) }, {  3, new Point(898, 547) }, {  4, new Point(971, 547) }   // 0º
             };
         }
-
         public void AlterarEstadoSetor(int posicaoSetor)
         {
             setoresDisponiveis[posicaoSetor] = true;
@@ -67,59 +57,37 @@ namespace sistema_autonomo.Classes
         public bool verificarSetorDisponivel(int setor)
         {
             bool posicaoDisponivel = false;
-            switch (setor)
+            if(setor == 1)
             {
-                case 1:
-                    setor = 5;
-                    for (int i = setor; i <= 8; i++)
-                    {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
-                        if(posicaoDisponivel == false)
-                            return posicaoDisponivel;
-                    }
+                setor = 5;
+            }
+            else if(setor == 2)
+            {
+                setor = 9;
+            }
+            else if (setor == 3)
+            {
+                setor = 13;
+            }
+            else if (setor == 4)
+            {
+                setor = 17;
+            }
+            else if (setor == 5)
+            {
+                setor = 21;
+            }
+            else if (setor == 10) //Setor do Rei
+            {
+                return posicaoDisponivel = false;
+            }
+            for (int i = setor; i <= setor+3; i++)
+            {
+                posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
+                if (posicaoDisponivel == false)
+                {
                     return posicaoDisponivel;
-                case 2:
-                    setor = 9;
-                    for (int i = setor; i <= 12; i++)
-                    {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
-                        if (posicaoDisponivel == false)
-                            return posicaoDisponivel;
-                    }
-                    return posicaoDisponivel;
-                case 3:
-                    setor = 13;
-                    for (int i = setor; i <= 16; i++)
-                    {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
-                        if (posicaoDisponivel == false)
-                            return posicaoDisponivel;
-                    }
-                    return posicaoDisponivel;
-                case 4:
-                    setor = 17;
-                    for (int i = setor; i <= 20; i++)
-                    {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
-                        if (posicaoDisponivel == false)
-                            return posicaoDisponivel;
-                    }
-                    return posicaoDisponivel;
-                case 5:
-                    setor = 21;
-                    for (int i = setor; i <= 24; i++)
-                    {
-                        posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
-                        if (posicaoDisponivel == false)
-                            return posicaoDisponivel;
-                    }
-                    return posicaoDisponivel;
-                case 10:
-                    setor = 25;
-                    posicaoDisponivel = verificarPosicaoSetorDisponivel(setor);
-                    if (posicaoDisponivel == false)
-                        return posicaoDisponivel;
-                    return posicaoDisponivel;
+                }
             }
             return posicaoDisponivel;
         }
@@ -135,149 +103,26 @@ namespace sistema_autonomo.Classes
             {
                 if (estadoTabuleiro[i] != null)
                 {
-                    switch (estadoTabuleiro[i].Substring(0, 1))
+                    foreach (var personagem in personagensPosicionados)
                     {
-                        case "A":
-                            if (personagensPosicionados[0].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[0].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[0].personagemPosicionado = true;
-                            }
-                            break;
-                        case "B":
-                            if (personagensPosicionados[1].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[1].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[1].personagemPosicionado = true;
-                            }
-                            break;
-                        case "C":
-                            if (personagensPosicionados[2].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[2].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[2].personagemPosicionado = true;
-                            }
-                            break;
-                        case "D":
-                            if (personagensPosicionados[3].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[3].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[3].personagemPosicionado = true;
-                            }
-                            break;
-                        case "E":
-                            if (personagensPosicionados[4].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[4].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[4].personagemPosicionado = true;
-                            }
-                            break;
-                        case "G":
-                            if (personagensPosicionados[5].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[5].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[5].personagemPosicionado = true;
-                            }
-                            break;
-                        case "H":
-                            if (personagensPosicionados[6].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[6].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[6].personagemPosicionado = true;
-                            }
-                            break;
-                        case "K":
-                            if (personagensPosicionados[7].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[7].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[7].personagemPosicionado = true;
-                            }
-                            break;
-                        case "L":
-                            if (personagensPosicionados[8].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[8].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[8].personagemPosicionado = true;
-                            }
-                            break;
-                        case "M":
-                            if (personagensPosicionados[9].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[9].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[9].personagemPosicionado = true;
-                            }
-                            break;
-                        case "Q":
-                            if (personagensPosicionados[10].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[10].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[10].personagemPosicionado = true;
-                            }
-                            break;
-                        case "R":
-                            if (personagensPosicionados[11].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[11].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[11].personagemPosicionado = true;
-                            }
-                            break;
-                        case "T":
-                            if (personagensPosicionados[12].personagemPosicionado == false)
-                            {
-                                novaPosicaoPersonagem = posicaoSetor(i);
-                                personagensPosicionados[12].cardPersonagem.Location = novaPosicaoPersonagem;
-                                personagensPosicionados[12].personagemPosicionado = true;
-                            }
-                            break;
+                        if (personagem.nome.Substring(0, 1) == estadoTabuleiro[i].Substring(0, 1))
+                        {
+                            novaPosicaoPersonagem = posicaoSetor(i);
+                            personagem.cardPersonagem.Location = novaPosicaoPersonagem;
+                            personagem.personagemPosicionado = true;
+                        }
                     }
                 }
             }
             return personagensPosicionados;
         }
-        public bool personagemEstaPosicionado(List<Personagem> personagensRecebidos, char inicialPersonagem)
+        public bool personagemEstaPosicionado(List<Personagem> personagensRecebidos, string inicialPersonagem)
         {
-            for (int i = 0; i < personagensRecebidos.Count; i++)
+            foreach (var personagem in personagensRecebidos)
             {
-                switch (inicialPersonagem)
+                if(personagem.nome.Substring(0,1) == inicialPersonagem)
                 {
-                    case 'A':
-                        return personagensRecebidos[0].personagemPosicionado;
-                    case 'B':
-                        return personagensRecebidos[1].personagemPosicionado;
-                    case 'C':
-                        return personagensRecebidos[2].personagemPosicionado;
-                    case 'D':
-                        return personagensRecebidos[3].personagemPosicionado;
-                    case 'E':
-                        return personagensRecebidos[4].personagemPosicionado;
-                    case 'G':
-                        return personagensRecebidos[5].personagemPosicionado;
-                    case 'H':
-                        return personagensRecebidos[6].personagemPosicionado;
-                    case 'K':
-                        return personagensRecebidos[7].personagemPosicionado;
-                    case 'L':
-                        return personagensRecebidos[8].personagemPosicionado;
-                    case 'M':
-                        return personagensRecebidos[9].personagemPosicionado;
-                    case 'Q':
-                        return personagensRecebidos[10].personagemPosicionado;
-                    case 'R':
-                        return personagensRecebidos[11].personagemPosicionado;
-                    case 'T':
-                        return personagensRecebidos[12].personagemPosicionado;
+                    return personagem.personagemPosicionado;
                 }
             }
             return false;
@@ -335,7 +180,6 @@ namespace sistema_autonomo.Classes
         {
             string[] tabuleiroSala = BancoAuxiliar.EstadoDoTabuleiro(idPartida);
             List<Personagem> personagensPosicionados = personagensRecebidos;
-
             //Percorre todo estado do tabuleiro e atribui os valores
             for (int i = 1; i < tabuleiroSala.Length - 1; i++)
             {
@@ -346,7 +190,6 @@ namespace sistema_autonomo.Classes
                 int posicaoDisponivelNoSetor = VerificarPosicaoDisponivelNoSetor(VerificarPrimeiraPosicaoDoSetor(setorPersonagemSelecionado));
                 ColocarPersonagemNaPosicaoDoSetor(posicaoDisponivelNoSetor, nomePersonagemSelecionado.Substring(0, 1));
             }
-
             return estadoSetorPersonagem;
         }
         public Dictionary<int, string> LimparTabuleiro(Dictionary<int, string> estadoTabuleiro)
@@ -358,70 +201,19 @@ namespace sistema_autonomo.Classes
                 setoresDisponiveis[i] = false;
                 estadoTabuleiroRecebido[i] = null;
             }
-
             return estadoTabuleiroRecebido;
         }
         public List<Personagem> LimparPosicaoDoPersonagem(List<Personagem> personagensRecebidos)
         {
             List<Personagem> listaDePersonagens = personagensRecebidos;
+            List<Point> pointInicial = new List<Point>();
+            Personagem pointDosPersonagens = new Personagem();
+            pointInicial = pointDosPersonagens.PointInicial;
             //Limpa posição de todos os personagens
             for (int i = 0; i < listaDePersonagens.Count; i++)
             {
-                switch (listaDePersonagens[i].nome)
-                {
-                    case "Adilson Konrad":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(26, 399);
-                        break;
-                    case "Beatriz Paiva":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(99, 399);
-                        break;
-                    case "Claro":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(99, 572);
-                        break;
-                    case "Douglas Baquiao":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(172, 486);
-                        break;
-                    case "Eduardo Takeo":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(172, 399);
-                        break;
-                    case "Guilherme Rey":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(172, 572);
-                        break;
-                    case "Heredia":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(327, 485);
-                        break;
-                    case "Kelly Kiyumi":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(245, 573);
-                        break;
-                    case "Leonardo Takuno":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(245, 486);
-                        break;
-                    case "Mario Toledo":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(26, 485);
-                        break;
-                    case "Quintas":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(245, 399);
-                        break;
-                    case "Ranulfo":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(26, 572);
-                        break;
-                    case "Toshio":
-                        listaDePersonagens[i].personagemPosicionado = false;
-                        listaDePersonagens[i].cardPersonagem.Location = new Point(99, 486);
-                        break;
-                }
+                listaDePersonagens[i].personagemPosicionado = false;
+                listaDePersonagens[i].cardPersonagem.Location = pointInicial[i];
             }
             return listaDePersonagens;
         }
@@ -444,5 +236,4 @@ namespace sistema_autonomo.Classes
                 return "Erro!";
         }
     }
-
 }

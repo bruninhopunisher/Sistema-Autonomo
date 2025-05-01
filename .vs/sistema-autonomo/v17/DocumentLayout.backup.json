@@ -1,26 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\",
+  "WorkspaceRootPath": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\t-gamer\\onedrive\\documentos\\estudos faculdade\\pi3\\sistema-autonomo\\sistema-autonomo\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\classes\\automacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\automacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\classes\\bancoauxiliar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\classes\\bancoauxiliar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\lucas\\source\\repos\\sistemaautonomo-pi-lll\\sistema-autonomo\\telas\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,77 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Automacao.cs",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Automacao.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Automacao.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Automacao.cs",
-              "RelativeToolTip": "sistema-autonomo\\Classes\\Automacao.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAWwCUAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T15:19:02.809Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Sala.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs [Design]",
-              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T15:16:49.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BancoAuxiliar.cs",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\BancoAuxiliar.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\BancoAuxiliar.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\BancoAuxiliar.cs",
-              "RelativeToolTip": "sistema-autonomo\\Classes\\BancoAuxiliar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T14:37:06.747Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Sala.cs",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Sala.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\Sala.cs",
-              "RelativeToolTip": "sistema-autonomo\\Telas\\Sala.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwHsBAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T15:16:52.263Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Tabuleiro.cs",
-              "DocumentMoniker": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Tabuleiro.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Classes\\Tabuleiro.cs",
-              "ToolTip": "C:\\Users\\T-GAMER\\OneDrive\\Documentos\\Estudos Faculdade\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Classes\\Tabuleiro.cs",
-              "RelativeToolTip": "sistema-autonomo\\Classes\\Tabuleiro.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAwGkBAAAMAAAAAAAAAA==",
+              "Title": "Lobby.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\Lobby.cs",
+              "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\Lobby.cs",
+              "ToolTip": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\Lobby.cs [Design]",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\Lobby.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T14:25:17.544Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 9,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2025-05-01T02:34:37.513Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
