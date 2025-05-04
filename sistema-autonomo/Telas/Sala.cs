@@ -91,7 +91,7 @@ namespace sistema_autonomo
             }
 
             //Atualiza estado do tabuleiro
-            estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
+            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
 
             //Exibir cartas jogador
             string cartasSorteadas = Jogo.ListarCartas(jogadorSelecionado.Id, jogadorSelecionado.Senha);
@@ -157,8 +157,8 @@ namespace sistema_autonomo
             listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
             estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
             //Atualiza o estado do tabuleiro
-            estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
-            listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
+            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
+            listaDePersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
         }
         private void btnPosicionar_Click(object sender, EventArgs e)
         {
@@ -193,7 +193,6 @@ namespace sistema_autonomo
                 MessageBox.Show("Selecione um personagem para posicionar!");
             }
         }
-
         // Botão de atualizar tabuleiro
         private void btnAtualizarTabuleiro_Click(object sender, EventArgs e)
         {
@@ -261,7 +260,7 @@ namespace sistema_autonomo
             string rodadaPassada = "0";
             tmrPosicionarPersonagem.Enabled = false;
             string faseDaPartida = BancoAuxiliar.VerificarFase(partidaSelecionada.Id);
-            string RodadaAtual = VerificarRodada();
+            string RodadaAtual = BancoAuxiliar.VerificarRodada(partidaSelecionada.Id);
             if (RodadaAtual != rodadaPassada)
             {
                 ResetarPosicaoCartas();
@@ -357,8 +356,8 @@ namespace sistema_autonomo
                 //Faz a limpeza do estado do tabuleiro
                 estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
                 //Posiciona personagens
-                estadoDoTabuleiro = tabuleiro.atualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
-                listaDePersonagens = tabuleiro.posicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
+                estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partidaSelecionada.Id, listaDePersonagens);
+                listaDePersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
 
                 tabuleiroRecebido = verificarVez.Split('\n');
 
@@ -402,21 +401,8 @@ namespace sistema_autonomo
 
             tmrPosicionarPersonagem.Enabled = true;
         }
-       
-        public string VerificarRodada()
-        {
-            string fase = Jogo.VerificarVez(partidaSelecionada.Id);
-            fase = fase.Replace("\r\n", "");
-            string[] Fase = fase.Split(',');
-
-            //MessageBox.Show(Fase[2]);
-            string n = Fase[2];
-            return n;
-        }
-
         public void ResetarPosicaoCartas()
         {
-
                 Personagem p = new Personagem();
                 List<Point> ListaInicial = new List<Point>();
                 ListaInicial = p.PointInicial;
@@ -424,13 +410,7 @@ namespace sistema_autonomo
                 {
                     p = Personagem.personagenInstanciado[i];
                     p.cardPersonagem.Location = ListaInicial[i];
-                    
-                    
                 }
-            
-            
-
         }
     }
-
 }

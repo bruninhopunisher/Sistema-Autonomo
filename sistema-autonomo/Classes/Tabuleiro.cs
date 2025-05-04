@@ -11,8 +11,8 @@ namespace sistema_autonomo.Classes
     {
         private const int DISTANCIA_ULTIMA_POSICAO = 3;
         //Partida partidaSelecionada;
-        private Dictionary<int, Point> setoresPosicoes; // Mapeia setores para coordenadas X:Y
-        private Dictionary<int, bool> setoresDisponiveis = new Dictionary<int, bool>
+        private Dictionary<int, Point> posicoesDeCadaSetor; // Mapeia setores para coordenadas X:Y
+        private Dictionary<int, bool> estadoDasPosicoesDoSetor = new Dictionary<int, bool>
             { //TALVEZ POSSA SER UM FOR, MAS VERIFICAR MAIS PARA FRENTE, POIS DESSA FORMA ESTA VISIVELMENTE MELHOR
                 { 25, false },   // 6º
                 { 21, false }, { 22, false }, { 23, false }, { 24, false },  // 5º
@@ -22,7 +22,7 @@ namespace sistema_autonomo.Classes
                 { 5, false }, { 6, false }, { 7, false }, { 8, false },  // 1º
                 { 1, false }, {  2, false }, {  3, false }, {  4, false }  // 0º
             };
-        private Dictionary<int, string> estadoSetorPersonagem = new Dictionary<int, string>
+        private Dictionary<int, string> posicaoDosPersonagens = new Dictionary<int, string>
             { //TALVEZ POSSA SER UM FOR, MAS VERIFICAR MAIS PARA FRENTE, POIS DESSA FORMA ESTA VISIVELMENTE MELHOR
                 { 25, null },   // 6º
                 { 21, null }, { 22, null }, { 23, null }, { 24, null },  // 5º
@@ -35,7 +35,7 @@ namespace sistema_autonomo.Classes
         public Tabuleiro()
         {
             // Mapeamento das coordenadas dos setores
-            setoresPosicoes = new Dictionary<int, Point>
+            posicoesDeCadaSetor = new Dictionary<int, Point>
             {
                 { 25, new Point(852, 36) },   // 6º
                 { 21, new Point(752, 131) }, { 22, new Point(825, 131) }, { 23, new Point(898, 131) }, { 24, new Point(971, 131) },  // 5º
@@ -48,42 +48,25 @@ namespace sistema_autonomo.Classes
         }
         public void AlterarEstadoSetor(int posicaoSetor)
         {
-            setoresDisponiveis[posicaoSetor] = true;
+            estadoDasPosicoesDoSetor[posicaoSetor] = true;
         }
-        public Point posicaoSetor(int posicaoSetor)
+        public Point PosicaoDoSetor(int posicaoSetor)
         {
-            return setoresPosicoes[posicaoSetor];
+            return posicoesDeCadaSetor[posicaoSetor];
         }
-        public bool verificarSetorDisponivel(int setor)
+        public bool VerificarSetorDisponivel(int setor)
         {
+            int[] primeiraPosicaoSetor = { 5, 9, 13, 17, 21 };
+
             bool posicaoDisponivel = false;
-            if(setor == 1)
-            {
-                setor = 5;
-            }
-            else if(setor == 2)
-            {
-                setor = 9;
-            }
-            else if (setor == 3)
-            {
-                setor = 13;
-            }
-            else if (setor == 4)
-            {
-                setor = 17;
-            }
-            else if (setor == 5)
-            {
-                setor = 21;
-            }
-            else if (setor == 10) //Setor do Rei
+            
+            if (setor == 10) //Setor do Rei
             {
                 return posicaoDisponivel = false;
             }
-            for (int i = setor; i <= setor+3; i++)
+            for (int i = primeiraPosicaoSetor[setor - 1]; i <= primeiraPosicaoSetor[setor - 1] + DISTANCIA_ULTIMA_POSICAO; i++)
             {
-                posicaoDisponivel = verificarPosicaoSetorDisponivel(i);
+                posicaoDisponivel = VerificarPosicaoSetorDisponivel(i);
                 if (posicaoDisponivel == false)
                 {
                     return posicaoDisponivel;
@@ -91,11 +74,11 @@ namespace sistema_autonomo.Classes
             }
             return posicaoDisponivel;
         }
-        public bool verificarPosicaoSetorDisponivel(int posicaoSetor)
+        public bool VerificarPosicaoSetorDisponivel(int posicaoSetor)
         {
-            return setoresDisponiveis[posicaoSetor];
+            return estadoDasPosicoesDoSetor[posicaoSetor];
         }
-        public List<Personagem> posicionarPersonagem(Dictionary<int, string> estadoTabuleiro, List<Personagem> personagensRecebidos)
+        public List<Personagem> PosicionarPersonagem(Dictionary<int, string> estadoTabuleiro, List<Personagem> personagensRecebidos)
         {
             List<Personagem> personagensPosicionados = personagensRecebidos;
             Point novaPosicaoPersonagem;
@@ -107,7 +90,7 @@ namespace sistema_autonomo.Classes
                     {
                         if (personagem.nome.Substring(0, 1) == estadoTabuleiro[i].Substring(0, 1))
                         {
-                            novaPosicaoPersonagem = posicaoSetor(i);
+                            novaPosicaoPersonagem = PosicaoDoSetor(i);
                             personagem.cardPersonagem.Location = novaPosicaoPersonagem;
                             personagem.personagemPosicionado = true;
                         }
@@ -135,7 +118,7 @@ namespace sistema_autonomo.Classes
             {
                 if (posicaoSetorRecebida <= posicaoSetor + DISTANCIA_ULTIMA_POSICAO)
                 {
-                    posicaoSetorEstaOcupada = verificarPosicaoSetorDisponivel(posicaoSetorRecebida);
+                    posicaoSetorEstaOcupada = VerificarPosicaoSetorDisponivel(posicaoSetorRecebida);
                     if(posicaoSetorEstaOcupada == true) 
                         posicaoSetorRecebida++;
                 }
@@ -148,10 +131,10 @@ namespace sistema_autonomo.Classes
         }
         public void ColocarPersonagemNaPosicaoDoSetor(int posicaoDisponivelNoSetor, string nomePersonagemSelecionado)
         {
-            setoresDisponiveis[posicaoDisponivelNoSetor] = true;
-            if (estadoSetorPersonagem[posicaoDisponivelNoSetor] == null)
+            estadoDasPosicoesDoSetor[posicaoDisponivelNoSetor] = true;
+            if (posicaoDosPersonagens[posicaoDisponivelNoSetor] == null)
             {
-                estadoSetorPersonagem[posicaoDisponivelNoSetor] = nomePersonagemSelecionado;
+                posicaoDosPersonagens[posicaoDisponivelNoSetor] = nomePersonagemSelecionado;
             }
         }
         public int VerificarPrimeiraPosicaoDoSetor(int setor)
@@ -176,7 +159,7 @@ namespace sistema_autonomo.Classes
                     return -1;
             }
         }
-        public Dictionary<int, string> atualizarEstadoTabuleiro(int idPartida, List<Personagem> personagensRecebidos)
+        public Dictionary<int, string> AtualizarEstadoTabuleiro(int idPartida, List<Personagem> personagensRecebidos)
         {
             string[] tabuleiroSala = BancoAuxiliar.EstadoDoTabuleiro(idPartida);
             List<Personagem> personagensPosicionados = personagensRecebidos;
@@ -190,7 +173,7 @@ namespace sistema_autonomo.Classes
                 int posicaoDisponivelNoSetor = VerificarPosicaoDisponivelNoSetor(VerificarPrimeiraPosicaoDoSetor(setorPersonagemSelecionado));
                 ColocarPersonagemNaPosicaoDoSetor(posicaoDisponivelNoSetor, nomePersonagemSelecionado.Substring(0, 1));
             }
-            return estadoSetorPersonagem;
+            return posicaoDosPersonagens;
         }
         public Dictionary<int, string> LimparTabuleiro(Dictionary<int, string> estadoTabuleiro)
         {
@@ -198,7 +181,7 @@ namespace sistema_autonomo.Classes
             //Percorre todas as posições do tabuleiro e transforma em nulo o estado do tabuleiro
             for (int i = 1; i <= 25; i++)
             {
-                setoresDisponiveis[i] = false;
+                estadoDasPosicoesDoSetor[i] = false;
                 estadoTabuleiroRecebido[i] = null;
             }
             return estadoTabuleiroRecebido;
@@ -221,17 +204,17 @@ namespace sistema_autonomo.Classes
         {
             for (int i = 25; i > 1; i--)
             {
-                if (estadoSetorPersonagem[i] != null)
+                if (posicaoDosPersonagens[i] != null)
                 {
-                    return estadoSetorPersonagem[i].Substring(0,1);
+                    return posicaoDosPersonagens[i].Substring(0,1);
                 }
             }
             return "Erro!";
         }
         public string VerificarPersonagemDaVotacao()
         {
-            if (estadoSetorPersonagem[25].Substring(0, 1) != null)
-                return estadoSetorPersonagem[25].Substring(0, 1);
+            if (posicaoDosPersonagens[25].Substring(0, 1) != null)
+                return posicaoDosPersonagens[25].Substring(0, 1);
             else
                 return "Erro!";
         }
