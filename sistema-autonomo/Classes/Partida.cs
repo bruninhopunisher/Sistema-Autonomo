@@ -17,7 +17,8 @@ namespace sistema_autonomo.Classes
         private string senha;
         private string data;
         private string status;
-        
+        public string NomeGrupo { get { return "Estudantes de Bolonha"; } }
+
         public int Id
         {
             get { return id; }

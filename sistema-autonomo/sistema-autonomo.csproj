@@ -57,43 +57,43 @@
     <Compile Include="Classes\Tabuleiro.cs" />
     <Compile Include="Classes\Partida.cs" />
     <Compile Include="Classes\Lobby.cs" />
-    <Compile Include="Telas\Login.cs">
+    <Compile Include="Telas\1 - Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Telas\1 - Login.Designer.cs">
+      <DependentUpon>1 - Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Jogador.cs" />
-    <Compile Include="Telas\Inicio.cs">
+    <Compile Include="Telas\0 - Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="Telas\0 - Inicio.Designer.cs">
+      <DependentUpon>0 - Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Personagem.cs" />
-    <Compile Include="Telas\Lobby.cs">
+    <Compile Include="Telas\2 - Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Lobby.Designer.cs">
-      <DependentUpon>Lobby.cs</DependentUpon>
+    <Compile Include="Telas\2 - Lobby.Designer.cs">
+      <DependentUpon>2 - Lobby.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Telas\Sala.cs">
+    <Compile Include="Telas\3 - Sala.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Sala.Designer.cs">
-      <DependentUpon>Sala.cs</DependentUpon>
+    <Compile Include="Telas\3 - Sala.Designer.cs">
+      <DependentUpon>3 - Sala.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Telas\Lobby.resx">
-      <DependentUpon>Lobby.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\2 - Lobby.resx">
+      <DependentUpon>2 - Lobby.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\1 - Login.resx">
+      <DependentUpon>1 - Login.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\0 - Inicio.resx">
+      <DependentUpon>0 - Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,8 +105,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Telas\Sala.resx">
-      <DependentUpon>Sala.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\3 - Sala.resx">
+      <DependentUpon>3 - Sala.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Jogador.datasource" />
     <None Include="Properties\DataSources\KingMeServer.Jogo.datasource" />

@@ -72,7 +72,6 @@ namespace sistema_autonomo
                     break;
             }
             //Fim
-
             //Informações dos jogadores presentes na partida selecionada
             string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
             lstJogadores.Items.Clear();
