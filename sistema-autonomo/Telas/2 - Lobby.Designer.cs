@@ -56,7 +56,7 @@
             this.lblIdPartida.BackColor = System.Drawing.Color.Transparent;
             this.lblIdPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdPartida.ForeColor = System.Drawing.Color.White;
-            this.lblIdPartida.Location = new System.Drawing.Point(261, 94);
+            this.lblIdPartida.Location = new System.Drawing.Point(261, 120);
             this.lblIdPartida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIdPartida.Name = "lblIdPartida";
             this.lblIdPartida.Size = new System.Drawing.Size(55, 24);
@@ -69,7 +69,7 @@
             this.lblConstSenhaJogadorLogado.AutoSize = true;
             this.lblConstSenhaJogadorLogado.BackColor = System.Drawing.Color.Transparent;
             this.lblConstSenhaJogadorLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblConstSenhaJogadorLogado.Location = new System.Drawing.Point(241, 199);
+            this.lblConstSenhaJogadorLogado.Location = new System.Drawing.Point(241, 225);
             this.lblConstSenhaJogadorLogado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConstSenhaJogadorLogado.Name = "lblConstSenhaJogadorLogado";
             this.lblConstSenhaJogadorLogado.Size = new System.Drawing.Size(50, 24);
@@ -87,7 +87,7 @@
             this.btnIniciarPartida.ForeColor = System.Drawing.Color.Transparent;
             this.btnIniciarPartida.Image = ((System.Drawing.Image)(resources.GetObject("btnIniciarPartida.Image")));
             this.btnIniciarPartida.Location = new System.Drawing.Point(660, 533);
-            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
             this.btnIniciarPartida.Size = new System.Drawing.Size(133, 47);
             this.btnIniciarPartida.TabIndex = 2;
@@ -120,7 +120,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Location = new System.Drawing.Point(163, 97);
+            this.pictureBox3.Location = new System.Drawing.Point(163, 123);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(93, 21);
             this.pictureBox3.TabIndex = 16;
@@ -130,7 +130,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(163, 203);
+            this.pictureBox5.Location = new System.Drawing.Point(163, 229);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(73, 18);
             this.pictureBox5.TabIndex = 19;
@@ -140,7 +140,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.Location = new System.Drawing.Point(163, 168);
+            this.pictureBox6.Location = new System.Drawing.Point(163, 194);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(102, 18);
             this.pictureBox6.TabIndex = 18;
@@ -161,7 +161,7 @@
             this.lblNomeJogador.AutoSize = true;
             this.lblNomeJogador.BackColor = System.Drawing.Color.Transparent;
             this.lblNomeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeJogador.Location = new System.Drawing.Point(271, 165);
+            this.lblNomeJogador.Location = new System.Drawing.Point(271, 191);
             this.lblNomeJogador.Name = "lblNomeJogador";
             this.lblNomeJogador.Size = new System.Drawing.Size(50, 24);
             this.lblNomeJogador.TabIndex = 21;
@@ -172,7 +172,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(163, 134);
+            this.pictureBox4.Location = new System.Drawing.Point(163, 160);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(79, 19);
             this.pictureBox4.TabIndex = 22;
@@ -183,7 +183,7 @@
             this.lblStatusPartida.AutoSize = true;
             this.lblStatusPartida.BackColor = System.Drawing.Color.Transparent;
             this.lblStatusPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusPartida.Location = new System.Drawing.Point(247, 131);
+            this.lblStatusPartida.Location = new System.Drawing.Point(247, 157);
             this.lblStatusPartida.Name = "lblStatusPartida";
             this.lblStatusPartida.Size = new System.Drawing.Size(55, 24);
             this.lblStatusPartida.TabIndex = 23;
@@ -234,7 +234,7 @@
             this.Controls.Add(this.lblIdPartida);
             this.Controls.Add(this.btnIniciarPartida);
             this.ForeColor = System.Drawing.Color.Transparent;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1280, 718);
             this.MinimizeBox = false;
