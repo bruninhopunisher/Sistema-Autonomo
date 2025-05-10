@@ -106,7 +106,7 @@
             // lblSetoresSala
             // 
             this.lblSetoresSala.AutoSize = true;
-            this.lblSetoresSala.Location = new System.Drawing.Point(430, 118);
+            this.lblSetoresSala.Location = new System.Drawing.Point(430, 65);
             this.lblSetoresSala.Name = "lblSetoresSala";
             this.lblSetoresSala.Size = new System.Drawing.Size(43, 13);
             this.lblSetoresSala.TabIndex = 5;
@@ -115,7 +115,7 @@
             // lstSetoresSala
             // 
             this.lstSetoresSala.FormattingEnabled = true;
-            this.lstSetoresSala.Location = new System.Drawing.Point(399, 134);
+            this.lstSetoresSala.Location = new System.Drawing.Point(399, 81);
             this.lstSetoresSala.Name = "lstSetoresSala";
             this.lstSetoresSala.Size = new System.Drawing.Size(112, 160);
             this.lstSetoresSala.TabIndex = 6;
@@ -123,7 +123,7 @@
             // lblTabuleiro
             // 
             this.lblTabuleiro.AutoSize = true;
-            this.lblTabuleiro.Location = new System.Drawing.Point(277, 118);
+            this.lblTabuleiro.Location = new System.Drawing.Point(277, 65);
             this.lblTabuleiro.Name = "lblTabuleiro";
             this.lblTabuleiro.Size = new System.Drawing.Size(51, 13);
             this.lblTabuleiro.TabIndex = 7;
@@ -132,7 +132,7 @@
             // lstAltTabuleiroSala
             // 
             this.lstAltTabuleiroSala.FormattingEnabled = true;
-            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(245, 134);
+            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(245, 81);
             this.lstAltTabuleiroSala.Name = "lstAltTabuleiroSala";
             this.lstAltTabuleiroSala.Size = new System.Drawing.Size(116, 160);
             this.lstAltTabuleiroSala.TabIndex = 8;
@@ -140,7 +140,7 @@
             // lblConstStatusVezSala
             // 
             this.lblConstStatusVezSala.AutoSize = true;
-            this.lblConstStatusVezSala.Location = new System.Drawing.Point(304, 16);
+            this.lblConstStatusVezSala.Location = new System.Drawing.Point(342, 16);
             this.lblConstStatusVezSala.Name = "lblConstStatusVezSala";
             this.lblConstStatusVezSala.Size = new System.Drawing.Size(73, 13);
             this.lblConstStatusVezSala.TabIndex = 9;
@@ -149,7 +149,7 @@
             // lblAltStatusVezSala
             // 
             this.lblAltStatusVezSala.AutoSize = true;
-            this.lblAltStatusVezSala.Location = new System.Drawing.Point(383, 16);
+            this.lblAltStatusVezSala.Location = new System.Drawing.Point(421, 16);
             this.lblAltStatusVezSala.Name = "lblAltStatusVezSala";
             this.lblAltStatusVezSala.Size = new System.Drawing.Size(13, 13);
             this.lblAltStatusVezSala.TabIndex = 10;
@@ -294,8 +294,8 @@
             // lstCartas
             // 
             this.lstCartas.FormattingEnabled = true;
-            this.lstCartas.Location = new System.Drawing.Point(516, 134);
-            this.lstCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstCartas.Location = new System.Drawing.Point(516, 81);
+            this.lstCartas.Margin = new System.Windows.Forms.Padding(2);
             this.lstCartas.Name = "lstCartas";
             this.lstCartas.Size = new System.Drawing.Size(112, 160);
             this.lstCartas.TabIndex = 29;
@@ -440,7 +440,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 681);
+            this.ClientSize = new System.Drawing.Size(1267, 681);
             this.Controls.Add(this.lblAltFasePartida);
             this.Controls.Add(this.lblConstFasePartida);
             this.Controls.Add(this.lblQtdeVotos);

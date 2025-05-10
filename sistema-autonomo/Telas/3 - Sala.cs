@@ -19,12 +19,14 @@ namespace sistema_autonomo
         Automacao bot = new Automacao();
         List<Personagem> listaDePersonagens = new List<Personagem>();
         Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
-        
+
         Partida infosDaPartida;
         Jogador infosDoJogador;
-        
+
+        string numeroRodada;
         string verificarVez;
         string[] verificaVezTratado;
+        string[] numeroRodadaTratado;
 
         public Sala(Partida partidaRecebida, Jogador jogadorLocal)
         {
@@ -35,7 +37,17 @@ namespace sistema_autonomo
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
             lblQtdeVotos.Text = Convert.ToString(jogadorLocal.GetNao()); //Alterar futuramente para cada um
             tmrPosicionarPersonagem.Enabled = true;
-            
+
+            // Seta a quantidade de cartas 'Não' novamente após entrar em uma nova rodada
+            numeroRodada = Jogo.VerificarVez(2160);
+            numeroRodadaTratado = numeroRodada.Split(',');
+            if (Convert.ToInt32(numeroRodadaTratado[2]) > partidaRecebida.VerificadorPartida)
+            {
+                partidaRecebida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
+                Console.WriteLine(numeroRodadaTratado[2]);
+                partidaRecebida.QuantidadeJogadoresPartida(jogadorLocal);
+            }
+
             //Informações do jogador que esta logado
             lblAltNomeJogador.Text = infosDoJogador.Nome;
             lblAltSenhaJogador.Text = infosDoJogador.Senha;
@@ -236,7 +248,7 @@ namespace sistema_autonomo
 
             for (int i = 0; i < meusPersonagensRecebidos.Length - 1; i++)
             {
-                personagensDoJogadorLocal.Add(meusPersonagensRecebidos.Substring(i, 1));    
+                personagensDoJogadorLocal.Add(meusPersonagensRecebidos.Substring(i, 1));
             }
 
             if (qtdeVotosNao > 0 && !personagensDoJogadorLocal.Contains(personagemEleitoVotacao))
@@ -270,14 +282,15 @@ namespace sistema_autonomo
 
 
             lblAltFasePartida.Text = faseDaPartida;
-            
+
             if (faseDaPartida == "S")
             {
                 Personagem personagem = new Personagem();
-            
+
                 int jogadorVez;
                 string[] dadosPartida;
                 string[] tabuleiroRecebido;
+
                 verificarVez = Jogo.VerificarVez(infosDaPartida.Id);
                 verificarVez = verificarVez.Replace("\r", "");
                 verificaVezTratado = verificarVez.Split('\n');
@@ -398,19 +411,18 @@ namespace sistema_autonomo
                 LimparEAtualizarTabuleiro();
                 Votar();
             }
-
             tmrPosicionarPersonagem.Enabled = true;
         }
         public void ResetarPosicaoCartas()
         {
-                Personagem p = new Personagem();
-                List<Point> ListaInicial = new List<Point>();
-                ListaInicial = p.PointInicial;
-                for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
-                {
-                    p = Personagem.personagenInstanciado[i];
-                    p.cardPersonagem.Location = ListaInicial[i];
-                }
+            Personagem p = new Personagem();
+            List<Point> ListaInicial = new List<Point>();
+            ListaInicial = p.PointInicial;
+            for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
+            {
+                p = Personagem.personagenInstanciado[i];
+                p.cardPersonagem.Location = ListaInicial[i];
+            }
         }
     }
 }
