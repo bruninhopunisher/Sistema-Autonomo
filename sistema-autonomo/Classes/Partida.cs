@@ -17,6 +17,8 @@ namespace sistema_autonomo.Classes
         private string senha;
         private string data;
         private string status;
+        private int verificadorPartida;
+
         public string NomeGrupo { get { return "Estudantes de Bolonha"; } }
 
         public int Id
@@ -44,6 +46,13 @@ namespace sistema_autonomo.Classes
             get { return status; }
             set { this.status = value; }
         }
+
+        public int VerificadorPartida
+        {
+            get { return verificadorPartida; }
+            set { this.verificadorPartida = value; }
+        }
+
         public void QuantidadeJogadoresPartida(Jogador jogadorLocal)
         {
             List<int> ids = new List<int>();
@@ -85,9 +94,7 @@ namespace sistema_autonomo.Classes
                 jogadorLocal.SetNao(2);
                 Console.WriteLine($"Setado 2");
             }
-
             Console.WriteLine(ids);
         }
-
     }
 }

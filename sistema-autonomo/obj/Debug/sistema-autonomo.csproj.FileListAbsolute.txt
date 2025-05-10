@@ -104,7 +104,6 @@ C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\bin\Debug\sist
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\bin\Debug\sistema-autonomo.pdb
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.dll
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.AssemblyReference.cache
-C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.LobbyEspera.resources
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Login.resources
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Inicio.resources
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Properties.Resources.resources
@@ -155,3 +154,20 @@ C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Deb
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Login.resources
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Inicio.resources
 C:\Users\ironf\Desktop\SistemaAutonomo\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Sala.resources
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Lobby.resources
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\bin\Debug\sistema-autonomo.exe.config
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\bin\Debug\sistema-autonomo.exe
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\bin\Debug\sistema-autonomo.pdb
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\bin\Debug\KingMeServer.dll
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\bin\Debug\KingMeServer.xml
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.AssemblyReference.cache
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema_autonomo.Lobby.resources
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema_autonomo.Login.resources
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema_autonomo.Inicio.resources
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema_autonomo.Properties.Resources.resources
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema_autonomo.Sala.resources
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.GenerateResource.cache
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.exe
+C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.pdb

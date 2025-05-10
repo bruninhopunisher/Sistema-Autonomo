@@ -18,30 +18,30 @@ namespace sistema_autonomo
 {
     public partial class Lobby : Form
     {
-        Partida infosDaPartida;
-        Jogador jogador;       
+        Partida partida;
+        Jogador jogadorLocal;       
         public Lobby(Partida partidaRecebida, Jogador jogadorRecebido)
         {
             InitializeComponent();
-            infosDaPartida = partidaRecebida;
-            jogador = jogadorRecebido;
+            partida = partidaRecebida;
+            jogadorLocal = jogadorRecebido;
             btnAtualizarLobby_Click(null, null);
         }
         private void btnAtualizarLobby_Click(object sender, EventArgs e)
         {
             //Inicio - Preenche os dados da partida no Lobby
-            string[] dadosPartida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(infosDaPartida.Id));
-            lblIdPartida.Text = infosDaPartida.Id.ToString();
-            infosDaPartida.Status = (dadosPartida == null ? infosDaPartida.Status : dadosPartida[0].Split(',')[1]);
-            lblStatusPartida.Text = infosDaPartida.Status == "A" ? "Aberta" : "Em andamento";
-            lblNomeJogador.Text = jogador.Nome;
-            lblConstSenhaJogadorLogado.Text = jogador.Senha;
-            lblNomeDoGrupo.Text = infosDaPartida.NomeGrupo;
+            string[] dadosPartida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
+            lblIdPartida.Text = partida.Id.ToString();
+            partida.Status = (dadosPartida == null ? partida.Status : dadosPartida[0].Split(',')[1]);
+            lblStatusPartida.Text = partida.Status == "A" ? "Aberta" : "Em andamento";
+            lblNomeJogador.Text = jogadorLocal.Nome;
+            lblConstSenhaJogadorLogado.Text = jogadorLocal.Senha;
+            lblNomeDoGrupo.Text = partida.NomeGrupo;
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
             //Fim
             //Informações dos jogadores presentes no lobby
             lstJogadoresLobby.Items.Clear();
-            string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(infosDaPartida.Id));
+            string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
             if (jogadores == null)//Compara com null devido ao retorno do tratar dados
             {
                 lstJogadoresLobby.Items.Add("Erro ao atualizar lista");
@@ -57,13 +57,15 @@ namespace sistema_autonomo
         {
             string listaJogadores;
             string verificacaoInicio;
-            verificacaoInicio = Jogo.Iniciar(jogador.Id, jogador.Senha);
+            verificacaoInicio = Jogo.Iniciar(jogadorLocal.Id, jogadorLocal.Senha);
+
             if (verificacaoInicio.Substring(0, 1) != "E" || verificacaoInicio == "ERRO:Partida não está aberta")
             {
-                listaJogadores = Jogo.ListarJogadores(infosDaPartida.Id);
-                infosDaPartida.QuantidadeJogadoresPartida(jogador);
-                Sala sala = new Sala(infosDaPartida, jogador);
-                infosDaPartida.Status = "Jogando";
+                listaJogadores = Jogo.ListarJogadores(partida.Id);
+                partida.QuantidadeJogadoresPartida(jogadorLocal);
+                partida.VerificadorPartida = 1;
+                Sala sala = new Sala(partida, jogadorLocal);
+                partida.Status = "Jogando";
                 sala.ShowDialog();
                 this.Close();
             }
