@@ -60,7 +60,6 @@ namespace sistema_autonomo
 
             if (verificacaoInicio.Substring(0, 1) != "E" || verificacaoInicio == "ERRO:Partida não está aberta")
             {
-                partida.QuantidadeJogadoresPartida(jogadorLocal);
                 partida.VerificadorPartida = 1;
                 Sala sala = new Sala(partida, jogadorLocal);
                 partida.Status = "Jogando";

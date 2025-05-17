@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Classes\BancoAuxiliar.cs" />
     <Compile Include="Classes\Automacao.cs" />
+    <Compile Include="Classes\Estrategia.cs" />
+    <Compile Include="Classes\EstrategiaSimples.cs" />
     <Compile Include="Classes\Tabuleiro.cs" />
     <Compile Include="Classes\Partida.cs" />
     <Compile Include="Classes\Lobby.cs" />

@@ -172,3 +172,19 @@ C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\ob
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.exe
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.pdb
 C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema-autonomo.exe.config
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\bin\Debug\sistema-autonomo.exe.config
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\bin\Debug\sistema-autonomo.exe
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\bin\Debug\sistema-autonomo.pdb
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.dll
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\bin\Debug\KingMeServer.xml
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.AssemblyReference.cache
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Lobby.resources
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Login.resources
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Inicio.resources
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Properties.Resources.resources
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Sala.resources
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.GenerateResource.cache
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.csproj.CoreCompileInputs.cache
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.exe
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.pdb

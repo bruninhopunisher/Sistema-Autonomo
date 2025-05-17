@@ -33,121 +33,72 @@ namespace sistema_autonomo
             InitializeComponent();
             infosDaPartida = partidaRecebida;
             infosDoJogador = jogadorLocal;
+
             infosDaPartida.ListaDeJogadores.Add(infosDoJogador);
             infosDaPartida.ListarJogadores(infosDoJogador);
+            infosDaPartida.SetVotosNao();
             lblNomeDoGrupo.Text = infosDaPartida.NomeGrupo;
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
 
-            Console.WriteLine($"Jogador Local -----------------------{jogadorLocal.QtdNaos}");
-
-            lblAltNomeJogador1.Text = partidaRecebida.ListaDeJogadores[0].Nome;
-            lblAltPontosPlayer1.Text = partidaRecebida.ListaDeJogadores[0].Pontos.ToString();
-            lblAltQtdNaosJogador1.Text = partidaRecebida.ListaDeJogadores[0].QtdNaos.ToString();
-            // Lucas, esta comentado porque está dando erro no indice. também, a instância tem que ser a de partida recebida, pois se nao for, não funciona o verificar vez
-            //lblAltNomeJogador2.Text = partidaRecebida.ListaDeJogadores[1].Nome;
-            //lblAltPontosPlayer2.Text = partidaRecebida.ListaDeJogadores[1].Pontos.ToString();
-            //lblAltQtdNaosJogador2.Text = partidaRecebida.ListaDeJogadores[1].QtdNaos.ToString();
+            lblAltNomeJogador1.Text = infosDaPartida.ListaDeJogadores[0].Nome;
+            lblAltPontosPlayer1.Text = infosDaPartida.ListaDeJogadores[0].Pontos.ToString();
+            lblAltNomeJogador2.Text = infosDaPartida.ListaDeJogadores[1].Nome;
+            lblAltPontosPlayer2.Text = infosDaPartida.ListaDeJogadores[1].Pontos.ToString();
 
             tmrPosicionarPersonagem.Enabled = true;
 
             //Atribui personagens na lista assim que o programa e executado
-            listaDePersonagens = sistema_autonomo.Personagem.ListarPersonagem(0);
+            listaDePersonagens = Personagem.ListarPersonagem(0);
             //Adiciona Pictures na instancia do personagem
-            for (int i = 0; i < listaDePersonagens.Count; i++)
+            Dictionary<string, PictureBox> mapaPersonagens = new Dictionary<string, PictureBox>
             {
-                switch (listaDePersonagens[i].nome)
+                { "Adilson Konrad", picAdilson },
+                { "Beatriz Paiva", picBeatriz },
+                { "Claro", picClaro },
+                { "Douglas Baquiao", picDouglas },
+                { "Eduardo Takeo", picTakeo },
+                { "Guilherme Rey", picGui },
+                { "Heredia", picHeredia },
+                { "Kelly Kiyumi", picKelly },
+                { "Leonardo Takuno", picLeonardo },
+                { "Mario Toledo", picMario },
+                { "Quintas", picQuintas },
+                { "Ranulfo", picRanulfo },
+                { "Toshio", picToshio }
+            };
+            foreach (var personagem in listaDePersonagens)
+            {
+                if (mapaPersonagens.ContainsKey(personagem.nome))
                 {
-                    case "Adilson Konrad":
-                        listaDePersonagens[i].cardPersonagem = picAdilson;
-                        break;
-                    case "Beatriz Paiva":
-                        listaDePersonagens[i].cardPersonagem = picBeatriz;
-                        break;
-                    case "Claro":
-                        listaDePersonagens[i].cardPersonagem = picClaro;
-                        break;
-                    case "Douglas Baquiao":
-                        listaDePersonagens[i].cardPersonagem = picDouglas;
-                        break;
-                    case "Eduardo Takeo":
-                        listaDePersonagens[i].cardPersonagem = picTakeo;
-                        break;
-                    case "Guilherme Rey":
-                        listaDePersonagens[i].cardPersonagem = picGui;
-                        break;
-                    case "Heredia":
-                        listaDePersonagens[i].cardPersonagem = picHeredia;
-                        break;
-                    case "Kelly Kiyumi":
-                        listaDePersonagens[i].cardPersonagem = picKelly;
-                        break;
-                    case "Leonardo Takuno":
-                        listaDePersonagens[i].cardPersonagem = picLeonardo;
-                        break;
-                    case "Mario Toledo":
-                        listaDePersonagens[i].cardPersonagem = picMario;
-                        break;
-                    case "Quintas":
-                        listaDePersonagens[i].cardPersonagem = picQuintas;
-                        break;
-                    case "Ranulfo":
-                        listaDePersonagens[i].cardPersonagem = picRanulfo;
-                        break;
-                    case "Toshio":
-                        listaDePersonagens[i].cardPersonagem = picToshio;
-                        break;
+                    personagem.cardPersonagem = mapaPersonagens[personagem.nome];
                 }
             }
-
-            //Atualiza estado do tabuleiro
-            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(infosDaPartida.Id, listaDePersonagens);
 
             //Exibir cartas jogador
             string cartasSorteadas = Jogo.ListarCartas(infosDoJogador.Id, infosDoJogador.Senha);
             lstMinhasCartasSala.Items.Clear();
+            Dictionary<char, string> mapaCartas = new Dictionary<char, string>
+            {
+                { 'A', "Adilson Konrad" },
+                { 'B', "Beatriz Paiva" },
+                { 'C', "Claro" },
+                { 'D', "Douglas Baquiao" },
+                { 'E', "Eduardo Takeo" },
+                { 'G', "Guilherme Rey" },
+                { 'H', "Heredia" },
+                { 'K', "Kelly Kiyumi" },
+                { 'L', "Leonardo Takuno" },
+                { 'M', "Mario Toledo" },
+                { 'Q', "Quintas" },
+                { 'R', "Ranulfo" },
+                { 'T', "Toshio" }
+            };
             for (int i = 0; i < 6; i++)
             {
-                switch (cartasSorteadas.Substring(i, 1))
+                char letra = cartasSorteadas[i];
+                if (mapaCartas.ContainsKey(letra))
                 {
-                    case "A":
-                        lstMinhasCartasSala.Items.Add("Adilson Konrad");
-                        break;
-                    case "B":
-                        lstMinhasCartasSala.Items.Add("Beatriz Paiva");
-                        break;
-                    case "C":
-                        lstMinhasCartasSala.Items.Add("Claro");
-                        break;
-                    case "D":
-                        lstMinhasCartasSala.Items.Add("Douglas Baquiao");
-                        break;
-                    case "E":
-                        lstMinhasCartasSala.Items.Add("Eduardo Takeo");
-                        break;
-                    case "G":
-                        lstMinhasCartasSala.Items.Add("Guilherme Rey");
-                        break;
-                    case "H":
-                        lstMinhasCartasSala.Items.Add("Heredia");
-                        break;
-                    case "K":
-                        lstMinhasCartasSala.Items.Add("Kelly Kiyumi");
-                        break;
-                    case "L":
-                        lstMinhasCartasSala.Items.Add("Leonardo Takuno");
-                        break;
-                    case "M":
-                        lstMinhasCartasSala.Items.Add("Mario Toledo");
-                        break;
-                    case "Q":
-                        lstMinhasCartasSala.Items.Add("Quintas");
-                        break;
-                    case "R":
-                        lstMinhasCartasSala.Items.Add("Ranulfo");
-                        break;
-                    case "T":
-                        lstMinhasCartasSala.Items.Add("Toshio");
-                        break;
+                    lstMinhasCartasSala.Items.Add(mapaCartas[letra]);
                 }
             }
 
@@ -232,42 +183,58 @@ namespace sistema_autonomo
         }
         private void Votar()
         {
-            int qtdeVotosNao;
+            //Diminui votos todos os jogadores
+            string[] ultimasVotacoes = BancoAuxiliar.TratarDados(Jogo.ExibirUltimaVotacao(infosDaPartida.Id));
+            string[] infoVotos;
+            if (ultimasVotacoes != null)
+            {
+                for (int i = 0; i < ultimasVotacoes.Length - 1; i++)
+            {
+                infoVotos = ultimasVotacoes[i].Split(',');
+                foreach (Jogador jogador in infosDaPartida.ListaDeJogadores)
+                {
+                    if (Convert.ToInt32(infoVotos[1]) == jogador.Id)
+                    {
+                        if (infoVotos[2] == "N")
+                        {
+                            jogador.QtdNaos--;
+                        }
+                    }
+                }
+            }
+            }
+
             string personagemEleitoVotacao;
-            string retornoDaFuncao;
-            List<string> personagensDoJogadorLocal = new List<string>();
+            List<string> minhasCartas = new List<string>();
 
-            personagemEleitoVotacao = tabuleiro.VerificarPersonagemDaVotacao();
-            qtdeVotosNao = infosDoJogador.QtdNaos;
+            personagemEleitoVotacao = tabuleiro.VerificarPersonagemDaVotacao(); //Personagem do rei
 
+            //minha lista de personagem
             string meusPersonagensRecebidos = Jogo.ListarCartas(infosDoJogador.Id, infosDoJogador.Senha);
             meusPersonagensRecebidos = meusPersonagensRecebidos.Replace("\r\n", "");
 
             for (int i = 0; i < meusPersonagensRecebidos.Length - 1; i++)
             {
-                personagensDoJogadorLocal.Add(meusPersonagensRecebidos.Substring(i, 1));
+                minhasCartas.Add(meusPersonagensRecebidos.Substring(i, 1));
             }
 
-            if (qtdeVotosNao > 0 && !personagensDoJogadorLocal.Contains(personagemEleitoVotacao))
+            if (infosDoJogador.QtdNaos > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
             {
-                retornoDaFuncao = Jogo.Votar(infosDoJogador.Id, infosDoJogador.Senha, "N");
-                //MessageBox.Show(retornoDaFuncao);
-                if (retornoDaFuncao.Substring(0, 1) != "E")
-                {
-                    infosDoJogador.QtdNaos = (qtdeVotosNao - 1);
-                }
+                Jogo.Votar(infosDoJogador.Id, infosDoJogador.Senha, "N");
             }
             else
             {
                 Jogo.Votar(infosDoJogador.Id, infosDoJogador.Senha, "S");
             }
-            lblAltQtdNaosJogador1.Text = Convert.ToString(infosDoJogador.QtdNaos);
+            //lblAltQtdNaosJogador1.Text = Convert.ToString(infosDoJogador.QtdNaos);
         }
-        //aqui
         private void tmrPosicionarPersonagem_Tick(object sender, EventArgs e)
         {
-            string rodadaPassada = "0";
             tmrPosicionarPersonagem.Enabled = false;
+            lblAltQtdNaosJogador1.Text = infosDaPartida.ListaDeJogadores[0].QtdNaos.ToString();
+            lblAltQtdNaosJogador2.Text = infosDaPartida.ListaDeJogadores[1].QtdNaos.ToString();
+
+            string rodadaPassada = "0";
             string faseDaPartida = BancoAuxiliar.VerificarFase(infosDaPartida.Id);
             string RodadaAtual = BancoAuxiliar.VerificarRodada(infosDaPartida.Id);
             if (RodadaAtual != rodadaPassada)
@@ -282,12 +249,12 @@ namespace sistema_autonomo
             numeroRodada = Jogo.VerificarVez(infosDaPartida.Id);
             numeroRodadaTratado = numeroRodada.Split(',');
             lblAltRodadaPartida.Text = numeroRodadaTratado[2];
+
             if (Convert.ToInt32(numeroRodadaTratado[2]) > infosDaPartida.VerificadorPartida)
             {
                 Console.WriteLine("ENTROUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
                 infosDaPartida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
                 Console.WriteLine(numeroRodadaTratado[2]);
-                infosDaPartida.QuantidadeJogadoresPartida(infosDoJogador);
             }
 
             if (faseDaPartida == "S")
@@ -298,6 +265,7 @@ namespace sistema_autonomo
                 string[] dadosPartida;
                 string[] tabuleiroRecebido;
 
+                //Vira metodo
                 verificarVez = Jogo.VerificarVez(infosDaPartida.Id);
                 verificarVez = verificarVez.Replace("\r", "");
                 verificaVezTratado = verificarVez.Split('\n');
@@ -322,49 +290,27 @@ namespace sistema_autonomo
                     }
                 }
 
-                for (int i = 0; i < listaDePersonagens.Count; i++)
+                List<string> nomesParaDesposicionar = new List<string>
                 {
-                    switch (listaDePersonagens[i].nome)
+                    "Adilson Konrad",
+                    "Beatriz Paiva",
+                    "Claro",
+                    "Douglas Baquiao",
+                    "Eduardo Takeo",
+                    "Guilherme Rey",
+                    "Heredia",
+                    "Kelly Kiyumi",
+                    "Leonardo Takuno",
+                    "Mario Toledo",
+                    "Quintas",
+                    "Ranulfo",
+                    "Toshio"
+                };
+                foreach (Personagem p in listaDePersonagens)
+                {
+                    if (nomesParaDesposicionar.Contains(p.nome))
                     {
-                        case "Adilson Konrad":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Beatriz Paiva":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Claro":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Douglas Baquiao":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Eduardo Takeo":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Guilherme Rey":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Heredia":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Kelly Kiyumi":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Leonardo Takuno":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Mario Toledo":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Quintas":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Ranulfo":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
-                        case "Toshio":
-                            listaDePersonagens[i].personagemPosicionado = false;
-                            break;
+                        p.personagemPosicionado = false;
                     }
                 }
 
@@ -400,7 +346,6 @@ namespace sistema_autonomo
                 {
                     bot.Posicionar(infosDoJogador.Id, infosDoJogador.Senha, infosDaPartida.Id, tabuleiro);
                 }
-
             }
             else if (faseDaPartida == "P")
             {
@@ -413,6 +358,7 @@ namespace sistema_autonomo
                 LimparEAtualizarTabuleiro();
                 Votar();
             }
+
             tmrPosicionarPersonagem.Enabled = true;
         }
         public void ResetarPosicaoCartas()

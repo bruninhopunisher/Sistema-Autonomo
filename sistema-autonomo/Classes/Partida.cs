@@ -47,13 +47,11 @@ namespace sistema_autonomo.Classes
             get { return status; }
             set { this.status = value; }
         }
-
         public int VerificadorPartida
         {
             get { return verificadorPartida; }
             set { this.verificadorPartida = value; }
         }
-
         public List<Jogador> ListaDeJogadores
         {
             get { return listaDeJogadores; }
@@ -64,7 +62,7 @@ namespace sistema_autonomo.Classes
             string[] dadosJogador;
             if (jogadoresRecebidos != null)
             {
-                for (int i = 0; i < jogadoresRecebidos.Length - 1; i += 2)
+                for (int i = 0; i < jogadoresRecebidos.Length - 1; i++)
                 {
                     Jogador jogador = new Jogador();
                     dadosJogador = jogadoresRecebidos[i].Split(',');
@@ -79,43 +77,26 @@ namespace sistema_autonomo.Classes
             }
             return null;
         }
-
-        public void QuantidadeJogadoresPartida(Jogador jogadorLocal)
+        public void SetVotosNao()
         {
-            List<int> ids = new List<int>();
-
-            string listaJogadores = Jogo.ListarJogadores(id);
-            string[] linhas = listaJogadores.Split('\n');
-
-            // Retorna a quantidade de Id´s (jogadores) na partida
-            foreach (string linha in linhas)
+            foreach (Jogador jogador in listaDeJogadores)
             {
-                if (!string.IsNullOrWhiteSpace(linha))
+                if (listaDeJogadores.Count == 3)
                 {
-                    string[] partes = linha.Split(',');
-                    if (partes.Length > 0 && int.TryParse(partes[0], out int id))
-                    {
-                        ids.Add(id);
-                    }
+                    jogador.QtdNaos = 4;
+                    Console.WriteLine($"Setado 4");
+                }
+                else if (listaDeJogadores.Count == 4)
+                {
+                    jogador.QtdNaos = 3;
+                    Console.WriteLine($"Setado 3");
+                }
+                else
+                {
+                    jogador.QtdNaos = 2;
+                    Console.WriteLine($"Setado 2");
                 }
             }
-            //Seta a quatidade de cartas Nãos para o jogador local
-            if (ids.Count == 3)
-            {
-                jogadorLocal.QtdNaos = 4;
-                Console.WriteLine($"Setado 4");
-            }
-            else if (ids.Count == 4)
-            {
-                jogadorLocal.QtdNaos = 3;
-                Console.WriteLine($"Setado 3");
-            }
-            else
-            {
-                jogadorLocal.QtdNaos = 2;
-                Console.WriteLine($"Setado 2");
-            }
-            Console.WriteLine(ids);
         }
     }
 }
