@@ -16,9 +16,8 @@ namespace sistema_autonomo
         private string nome;
         private string senha;
         private int pontos;
-        private int qtdeNao;
-        List<Jogador> listaDeJogadores = new List<Jogador>();
-
+        private int qtdNaos;
+        private List<Jogador> listaDeJogadores = new List<Jogador>();
         public int Id
         {
             get { return id; }
@@ -34,50 +33,40 @@ namespace sistema_autonomo
             get { return senha; }
             set { this.senha = value; }
         }
-
-        public void SetPontos(int pontos)
+        public int Pontos
         {
-            this.pontos = pontos;
+            get { return pontos; }
+            set { this.pontos = value; }
         }
-
-        public int GetPontos()
+        public int QtdNaos
         {
-            return pontos;
+            get { return qtdNaos; }
+            set { this.qtdNaos = value; }
         }
-
-        public void SetNao(int num)
+        public List<Jogador> ListaDeJogadores
         {
-            this.qtdeNao = num;
+            get { return listaDeJogadores; }
         }
-
-        public int GetNao()
+        public List<Jogador> ListarJogadores(int IdPartida, Jogador jogadorLogado)
         {
-            return qtdeNao;
-        }
-
-        // 
-        public List<Jogador> QTDEJogadoresPartida(int IDPartida)
-        {
-
-            string listaJogadores;
-            string[] listaDeJogadoresTratados;
-            string[] linhasDeJogadores;
-
-            listaJogadores = Jogo.ListarJogadores(IDPartida);
-            listaJogadores = listaJogadores.Replace("\r", "");
-            listaJogadores = listaJogadores.Replace("\n", "");
-            listaDeJogadoresTratados = listaJogadores.Split(',');
-            listaJogadores = listaJogadores.Replace("\r", "");
-            linhasDeJogadores = listaJogadores.Split('\n');
-
-            for (int i = 0; i < listaDeJogadoresTratados.Length - 1; i += 2)
+            string[] jogadoresRecebidos = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(IdPartida));
+            string[] dadosJogador;
+            if(jogadoresRecebidos != null)
             {
-                Jogador novoJogador = new Jogador();
-                novoJogador.id = Convert.ToInt32(listaDeJogadoresTratados[i]);
-                novoJogador.nome = listaDeJogadoresTratados[i + 1];
-                listaDeJogadores.Add(novoJogador);
+                for (int i = 0; i < jogadoresRecebidos.Length - 1; i += 2)
+                {
+                    Jogador jogador = new Jogador();
+                    dadosJogador = jogadoresRecebidos[i].Split(',');
+                    if(Convert.ToInt32(dadosJogador[0]) != jogadorLogado.id)
+                    {
+                        jogador.Id = Convert.ToInt32(dadosJogador[0]);
+                        jogador.Nome = dadosJogador[1];
+                        listaDeJogadores.Add(jogador);
+                    }
+                }
+                return listaDeJogadores;
             }
-            return listaDeJogadores;
+            return null;
         }
     }
 }

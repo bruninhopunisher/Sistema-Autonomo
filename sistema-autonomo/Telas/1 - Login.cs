@@ -13,7 +13,6 @@ using System.Windows.Forms;
 
 namespace sistema_autonomo
 {
-
     public partial class Login : Form
     {
         public Partida partida = new Partida();
@@ -25,15 +24,13 @@ namespace sistema_autonomo
             cboFiltrarPartidas.Items.Add("Abertas");
             cboFiltrarPartidas.Items.Add("Jogando");
             cboFiltrarPartidas.Items.Add("Encerradas");
-            cboFiltrarPartidas.SelectedIndex = 0; //Define o filtro para "todos"
+            cboFiltrarPartidas.SelectedIndex = 0; //Define o filtro para "Todos"
             lblVersaoJogo.Text = Jogo.versao;
         }
         private void btnListarPartidas_Click(object sender, EventArgs e)
         {
-            //Armazena todas as partidas
-            string[] partidas = BancoAuxiliar.TratarDados(Jogo.ListarPartidas("T"));
-
             //Lógica para add partidas na lista e filtro de partidas
+            string[] partidas = BancoAuxiliar.TratarDados(Jogo.ListarPartidas("T"));
             lstPartidas.Items.Clear();
             for (int i = 0; i < partidas.Length - 1; i++)
             {
@@ -88,7 +85,7 @@ namespace sistema_autonomo
         }
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
-            partida.Nome = txtInputNomePartida.Text.Trim(); //Trim remove o espaço entre os caracteres
+            partida.Nome = txtInputNomePartida.Text.Trim();
             partida.Senha = txtInputSenhaPartida.Text.Trim();
 
             if (partida.Nome == "" || partida.Senha == "")

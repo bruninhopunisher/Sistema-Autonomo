@@ -33,28 +33,36 @@ namespace sistema_autonomo
             InitializeComponent();
             infosDaPartida = partidaRecebida;
             infosDoJogador = jogadorLocal;
+            infosDoJogador.ListaDeJogadores.Add(infosDoJogador);
+            infosDoJogador.ListarJogadores(infosDaPartida.Id, infosDoJogador);
             lblNomeDoGrupo.Text = infosDaPartida.NomeGrupo;
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
-            lblQtdeVotos.Text = Convert.ToString(jogadorLocal.GetNao()); //Alterar futuramente para cada um
+
+
+
+            lblAltNomeJogador1.Text = infosDoJogador.ListaDeJogadores[0].Nome;
+            lblAltPontosPlayer1.Text = infosDoJogador.ListaDeJogadores[0].Pontos.ToString();
+            lblAltQtdNaosJogador1.Text = infosDoJogador.ListaDeJogadores[0].QtdNaos.ToString();
+            lblAltNomeJogador2.Text = infosDoJogador.ListaDeJogadores[1].Nome;
+            lblAltPontosPlayer2.Text = infosDoJogador.ListaDeJogadores[1].Pontos.ToString();
+            lblAltQtdNaosJogador2.Text = infosDoJogador.ListaDeJogadores[1].QtdNaos.ToString();
             tmrPosicionarPersonagem.Enabled = true;
 
-            // Seta a quantidade de cartas 'Não' novamente após entrar em uma nova rodada
-            numeroRodada = Jogo.VerificarVez(2160);
-            numeroRodadaTratado = numeroRodada.Split(',');
-            if (Convert.ToInt32(numeroRodadaTratado[2]) > partidaRecebida.VerificadorPartida)
-            {
-                partidaRecebida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
-                Console.WriteLine(numeroRodadaTratado[2]);
-                partidaRecebida.QuantidadeJogadoresPartida(jogadorLocal);
-            }
 
-            //Informações do jogador que esta logado
-            lblAltNomeJogador.Text = infosDoJogador.Nome;
-            lblAltSenhaJogador.Text = infosDoJogador.Senha;
+
+            // Seta a quantidade de cartas 'Não' novamente após entrar em uma nova rodada
+            //numeroRodada = Jogo.VerificarVez(2160);
+            //numeroRodadaTratado = numeroRodada.Split(',');
+            //if (Convert.ToInt32(numeroRodadaTratado[2]) > partidaRecebida.VerificadorPartida)
+            //{
+            //    partidaRecebida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
+            //    Console.WriteLine(numeroRodadaTratado[2]);
+            //    partidaRecebida.QuantidadeJogadoresPartida(jogadorLocal);
+            //}
+
 
             //Atribui personagens na lista assim que o programa e executado
             listaDePersonagens = sistema_autonomo.Personagem.ListarPersonagem(0);
-
             //Adiciona Pictures na instancia do personagem
             for (int i = 0; i < listaDePersonagens.Count; i++)
             {
@@ -241,7 +249,7 @@ namespace sistema_autonomo
             List<string> personagensDoJogadorLocal = new List<string>();
 
             personagemEleitoVotacao = tabuleiro.VerificarPersonagemDaVotacao();
-            qtdeVotosNao = infosDoJogador.GetNao();
+            qtdeVotosNao = infosDoJogador.QtdNaos;
 
             string meusPersonagensRecebidos = Jogo.ListarCartas(infosDoJogador.Id, infosDoJogador.Senha);
             meusPersonagensRecebidos = meusPersonagensRecebidos.Replace("\r\n", "");
@@ -257,14 +265,14 @@ namespace sistema_autonomo
                 //MessageBox.Show(retornoDaFuncao);
                 if (retornoDaFuncao.Substring(0, 1) != "E")
                 {
-                    infosDoJogador.SetNao(qtdeVotosNao - 1);
+                    infosDoJogador.QtdNaos = (qtdeVotosNao - 1);
                 }
             }
             else
             {
                 Jogo.Votar(infosDoJogador.Id, infosDoJogador.Senha, "S");
             }
-            lblQtdeVotos.Text = Convert.ToString(infosDoJogador.GetNao());
+            lblAltQtdNaosJogador1.Text = Convert.ToString(infosDoJogador.QtdNaos);
         }
         //aqui
         private void tmrPosicionarPersonagem_Tick(object sender, EventArgs e)
@@ -281,7 +289,7 @@ namespace sistema_autonomo
             //MessageBox.Show(rodadaPassada.ToString() + " " + RodadaAtual.ToString());
 
 
-            lblAltFasePartida.Text = faseDaPartida;
+            lblAltRodadaPartida.Text = faseDaPartida;
 
             if (faseDaPartida == "S")
             {
@@ -294,16 +302,11 @@ namespace sistema_autonomo
                 verificarVez = Jogo.VerificarVez(infosDaPartida.Id);
                 verificarVez = verificarVez.Replace("\r", "");
                 verificaVezTratado = verificarVez.Split('\n');
-
-                List<Jogador> listaDeJogadoresNaPartida = infosDoJogador.QTDEJogadoresPartida(infosDaPartida.Id);
-
-
                 dadosPartida = verificaVezTratado[0].Split(',');
                 jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
-
                 if (verificarVez.Substring(0, 4) != "ERRO")
                 {
-                    foreach (Jogador j in listaDeJogadoresNaPartida)
+                    foreach (Jogador j in infosDoJogador.ListaDeJogadores)
                     {
                         Console.WriteLine($"Jogador: {j.Nome}, ID {j.Id}");
 
@@ -319,6 +322,9 @@ namespace sistema_autonomo
                         }
                     }
                 }
+
+
+
 
                 for (int i = 0; i < listaDePersonagens.Count; i++)
                 {

@@ -57,19 +57,25 @@
             this.btnAtualizarTabuleiro = new System.Windows.Forms.Button();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
             this.lblNomeDoGrupo = new System.Windows.Forms.Label();
-            this.lblConstNomeJogador = new System.Windows.Forms.Label();
-            this.lblConstSenhaJogador = new System.Windows.Forms.Label();
-            this.lblAltNomeJogador = new System.Windows.Forms.Label();
-            this.lblAltSenhaJogador = new System.Windows.Forms.Label();
+            this.lblConstNomeJogador1 = new System.Windows.Forms.Label();
+            this.lblAltNomeJogador1 = new System.Windows.Forms.Label();
             this.btnVotar = new System.Windows.Forms.Button();
             this.txtVotoJogador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lstVotacao = new System.Windows.Forms.ListView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblQtdeVotos = new System.Windows.Forms.Label();
+            this.lblConstQtdNaosPlayer1 = new System.Windows.Forms.Label();
             this.tmrPosicionarPersonagem = new System.Windows.Forms.Timer(this.components);
-            this.lblConstFasePartida = new System.Windows.Forms.Label();
-            this.lblAltFasePartida = new System.Windows.Forms.Label();
+            this.lblConstRodadaPartida = new System.Windows.Forms.Label();
+            this.lblAltRodadaPartida = new System.Windows.Forms.Label();
+            this.lblConstPontosPlayer1 = new System.Windows.Forms.Label();
+            this.lblAltPontosPlayer1 = new System.Windows.Forms.Label();
+            this.lblAltPontosPlayer2 = new System.Windows.Forms.Label();
+            this.lblConstPontosPlayer2 = new System.Windows.Forms.Label();
+            this.lblAltQtdNaosJogador2 = new System.Windows.Forms.Label();
+            this.lblConstQtdNaosPlayer2 = new System.Windows.Forms.Label();
+            this.lblAltNomeJogador2 = new System.Windows.Forms.Label();
+            this.lblConstNomeJogador2 = new System.Windows.Forms.Label();
+            this.lblAltQtdNaosJogador1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -140,20 +146,21 @@
             // lblConstStatusVezSala
             // 
             this.lblConstStatusVezSala.AutoSize = true;
-            this.lblConstStatusVezSala.Location = new System.Drawing.Point(342, 16);
+            this.lblConstStatusVezSala.Location = new System.Drawing.Point(342, 4);
             this.lblConstStatusVezSala.Name = "lblConstStatusVezSala";
-            this.lblConstStatusVezSala.Size = new System.Drawing.Size(73, 13);
+            this.lblConstStatusVezSala.Size = new System.Drawing.Size(28, 13);
             this.lblConstStatusVezSala.TabIndex = 9;
-            this.lblConstStatusVezSala.Text = "Status da Vez";
+            this.lblConstStatusVezSala.Text = "Vez:";
             // 
             // lblAltStatusVezSala
             // 
             this.lblAltStatusVezSala.AutoSize = true;
-            this.lblAltStatusVezSala.Location = new System.Drawing.Point(421, 16);
+            this.lblAltStatusVezSala.Location = new System.Drawing.Point(368, 4);
             this.lblAltStatusVezSala.Name = "lblAltStatusVezSala";
             this.lblAltStatusVezSala.Size = new System.Drawing.Size(13, 13);
             this.lblAltStatusVezSala.TabIndex = 10;
             this.lblAltStatusVezSala.Text = "1";
+            this.lblAltStatusVezSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picAdilson
             // 
@@ -325,41 +332,25 @@
             this.lblNomeDoGrupo.Size = new System.Drawing.Size(0, 13);
             this.lblNomeDoGrupo.TabIndex = 32;
             // 
-            // lblConstNomeJogador
+            // lblConstNomeJogador1
             // 
-            this.lblConstNomeJogador.AutoSize = true;
-            this.lblConstNomeJogador.Location = new System.Drawing.Point(20, 16);
-            this.lblConstNomeJogador.Name = "lblConstNomeJogador";
-            this.lblConstNomeJogador.Size = new System.Drawing.Size(45, 13);
-            this.lblConstNomeJogador.TabIndex = 34;
-            this.lblConstNomeJogador.Text = "Jogador";
+            this.lblConstNomeJogador1.AutoSize = true;
+            this.lblConstNomeJogador1.Location = new System.Drawing.Point(12, 10);
+            this.lblConstNomeJogador1.Name = "lblConstNomeJogador1";
+            this.lblConstNomeJogador1.Size = new System.Drawing.Size(54, 13);
+            this.lblConstNomeJogador1.TabIndex = 34;
+            this.lblConstNomeJogador1.Text = "Jogador1:";
+            this.lblConstNomeJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblConstSenhaJogador
+            // lblAltNomeJogador1
             // 
-            this.lblConstSenhaJogador.AutoSize = true;
-            this.lblConstSenhaJogador.Location = new System.Drawing.Point(20, 59);
-            this.lblConstSenhaJogador.Name = "lblConstSenhaJogador";
-            this.lblConstSenhaJogador.Size = new System.Drawing.Size(38, 13);
-            this.lblConstSenhaJogador.TabIndex = 36;
-            this.lblConstSenhaJogador.Text = "Senha";
-            // 
-            // lblAltNomeJogador
-            // 
-            this.lblAltNomeJogador.AutoSize = true;
-            this.lblAltNomeJogador.Location = new System.Drawing.Point(20, 37);
-            this.lblAltNomeJogador.Name = "lblAltNomeJogador";
-            this.lblAltNomeJogador.Size = new System.Drawing.Size(13, 13);
-            this.lblAltNomeJogador.TabIndex = 37;
-            this.lblAltNomeJogador.Text = "1";
-            // 
-            // lblAltSenhaJogador
-            // 
-            this.lblAltSenhaJogador.AutoSize = true;
-            this.lblAltSenhaJogador.Location = new System.Drawing.Point(20, 82);
-            this.lblAltSenhaJogador.Name = "lblAltSenhaJogador";
-            this.lblAltSenhaJogador.Size = new System.Drawing.Size(13, 13);
-            this.lblAltSenhaJogador.TabIndex = 38;
-            this.lblAltSenhaJogador.Text = "1";
+            this.lblAltNomeJogador1.AutoSize = true;
+            this.lblAltNomeJogador1.Location = new System.Drawing.Point(65, 10);
+            this.lblAltNomeJogador1.Name = "lblAltNomeJogador1";
+            this.lblAltNomeJogador1.Size = new System.Drawing.Size(13, 13);
+            this.lblAltNomeJogador1.TabIndex = 37;
+            this.lblAltNomeJogador1.Text = "1";
+            this.lblAltNomeJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnVotar
             // 
@@ -396,63 +387,153 @@
             this.lstVotacao.TabIndex = 43;
             this.lstVotacao.UseCompatibleStateImageBehavior = false;
             // 
-            // label2
+            // lblConstQtdNaosPlayer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1117, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 13);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Quantidade de Votos Nãos";
-            // 
-            // lblQtdeVotos
-            // 
-            this.lblQtdeVotos.AutoSize = true;
-            this.lblQtdeVotos.Location = new System.Drawing.Point(1155, 59);
-            this.lblQtdeVotos.Name = "lblQtdeVotos";
-            this.lblQtdeVotos.Size = new System.Drawing.Size(0, 13);
-            this.lblQtdeVotos.TabIndex = 45;
+            this.lblConstQtdNaosPlayer1.AutoSize = true;
+            this.lblConstQtdNaosPlayer1.Location = new System.Drawing.Point(12, 29);
+            this.lblConstQtdNaosPlayer1.Name = "lblConstQtdNaosPlayer1";
+            this.lblConstQtdNaosPlayer1.Size = new System.Drawing.Size(61, 13);
+            this.lblConstQtdNaosPlayer1.TabIndex = 44;
+            this.lblConstQtdNaosPlayer1.Text = "QTD Naos:";
+            this.lblConstQtdNaosPlayer1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tmrPosicionarPersonagem
             // 
             this.tmrPosicionarPersonagem.Interval = 5000;
             this.tmrPosicionarPersonagem.Tick += new System.EventHandler(this.tmrPosicionarPersonagem_Tick);
             // 
-            // lblConstFasePartida
+            // lblConstRodadaPartida
             // 
-            this.lblConstFasePartida.AutoSize = true;
-            this.lblConstFasePartida.Location = new System.Drawing.Point(20, 107);
-            this.lblConstFasePartida.Name = "lblConstFasePartida";
-            this.lblConstFasePartida.Size = new System.Drawing.Size(81, 13);
-            this.lblConstFasePartida.TabIndex = 46;
-            this.lblConstFasePartida.Text = "Fase da Partida";
+            this.lblConstRodadaPartida.AutoSize = true;
+            this.lblConstRodadaPartida.Location = new System.Drawing.Point(342, 24);
+            this.lblConstRodadaPartida.Name = "lblConstRodadaPartida";
+            this.lblConstRodadaPartida.Size = new System.Drawing.Size(48, 13);
+            this.lblConstRodadaPartida.TabIndex = 46;
+            this.lblConstRodadaPartida.Text = "Rodada:";
             // 
-            // lblAltFasePartida
+            // lblAltRodadaPartida
             // 
-            this.lblAltFasePartida.AutoSize = true;
-            this.lblAltFasePartida.Location = new System.Drawing.Point(20, 134);
-            this.lblAltFasePartida.Name = "lblAltFasePartida";
-            this.lblAltFasePartida.Size = new System.Drawing.Size(13, 13);
-            this.lblAltFasePartida.TabIndex = 48;
-            this.lblAltFasePartida.Text = "1";
+            this.lblAltRodadaPartida.AutoSize = true;
+            this.lblAltRodadaPartida.Location = new System.Drawing.Point(388, 24);
+            this.lblAltRodadaPartida.Name = "lblAltRodadaPartida";
+            this.lblAltRodadaPartida.Size = new System.Drawing.Size(13, 13);
+            this.lblAltRodadaPartida.TabIndex = 48;
+            this.lblAltRodadaPartida.Text = "1";
+            this.lblAltRodadaPartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblConstPontosPlayer1
+            // 
+            this.lblConstPontosPlayer1.AutoSize = true;
+            this.lblConstPontosPlayer1.Location = new System.Drawing.Point(12, 48);
+            this.lblConstPontosPlayer1.Name = "lblConstPontosPlayer1";
+            this.lblConstPontosPlayer1.Size = new System.Drawing.Size(43, 13);
+            this.lblConstPontosPlayer1.TabIndex = 49;
+            this.lblConstPontosPlayer1.Text = "Pontos:";
+            this.lblConstPontosPlayer1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAltPontosPlayer1
+            // 
+            this.lblAltPontosPlayer1.AutoSize = true;
+            this.lblAltPontosPlayer1.Location = new System.Drawing.Point(54, 49);
+            this.lblAltPontosPlayer1.Name = "lblAltPontosPlayer1";
+            this.lblAltPontosPlayer1.Size = new System.Drawing.Size(13, 13);
+            this.lblAltPontosPlayer1.TabIndex = 50;
+            this.lblAltPontosPlayer1.Text = "1";
+            this.lblAltPontosPlayer1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAltPontosPlayer2
+            // 
+            this.lblAltPontosPlayer2.AutoSize = true;
+            this.lblAltPontosPlayer2.Location = new System.Drawing.Point(54, 121);
+            this.lblAltPontosPlayer2.Name = "lblAltPontosPlayer2";
+            this.lblAltPontosPlayer2.Size = new System.Drawing.Size(13, 13);
+            this.lblAltPontosPlayer2.TabIndex = 56;
+            this.lblAltPontosPlayer2.Text = "1";
+            this.lblAltPontosPlayer2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblConstPontosPlayer2
+            // 
+            this.lblConstPontosPlayer2.AutoSize = true;
+            this.lblConstPontosPlayer2.Location = new System.Drawing.Point(12, 120);
+            this.lblConstPontosPlayer2.Name = "lblConstPontosPlayer2";
+            this.lblConstPontosPlayer2.Size = new System.Drawing.Size(43, 13);
+            this.lblConstPontosPlayer2.TabIndex = 55;
+            this.lblConstPontosPlayer2.Text = "Pontos:";
+            this.lblConstPontosPlayer2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAltQtdNaosJogador2
+            // 
+            this.lblAltQtdNaosJogador2.AutoSize = true;
+            this.lblAltQtdNaosJogador2.Location = new System.Drawing.Point(72, 102);
+            this.lblAltQtdNaosJogador2.Name = "lblAltQtdNaosJogador2";
+            this.lblAltQtdNaosJogador2.Size = new System.Drawing.Size(13, 13);
+            this.lblAltQtdNaosJogador2.TabIndex = 54;
+            this.lblAltQtdNaosJogador2.Text = "1";
+            this.lblAltQtdNaosJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblConstQtdNaosPlayer2
+            // 
+            this.lblConstQtdNaosPlayer2.AutoSize = true;
+            this.lblConstQtdNaosPlayer2.Location = new System.Drawing.Point(12, 101);
+            this.lblConstQtdNaosPlayer2.Name = "lblConstQtdNaosPlayer2";
+            this.lblConstQtdNaosPlayer2.Size = new System.Drawing.Size(61, 13);
+            this.lblConstQtdNaosPlayer2.TabIndex = 53;
+            this.lblConstQtdNaosPlayer2.Text = "QTD Naos:";
+            this.lblConstQtdNaosPlayer2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAltNomeJogador2
+            // 
+            this.lblAltNomeJogador2.AutoSize = true;
+            this.lblAltNomeJogador2.Location = new System.Drawing.Point(65, 82);
+            this.lblAltNomeJogador2.Name = "lblAltNomeJogador2";
+            this.lblAltNomeJogador2.Size = new System.Drawing.Size(13, 13);
+            this.lblAltNomeJogador2.TabIndex = 52;
+            this.lblAltNomeJogador2.Text = "1";
+            this.lblAltNomeJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblConstNomeJogador2
+            // 
+            this.lblConstNomeJogador2.AutoSize = true;
+            this.lblConstNomeJogador2.Location = new System.Drawing.Point(12, 82);
+            this.lblConstNomeJogador2.Name = "lblConstNomeJogador2";
+            this.lblConstNomeJogador2.Size = new System.Drawing.Size(54, 13);
+            this.lblConstNomeJogador2.TabIndex = 51;
+            this.lblConstNomeJogador2.Text = "Jogador2:";
+            this.lblConstNomeJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAltQtdNaosJogador1
+            // 
+            this.lblAltQtdNaosJogador1.AutoSize = true;
+            this.lblAltQtdNaosJogador1.Location = new System.Drawing.Point(72, 29);
+            this.lblAltQtdNaosJogador1.Name = "lblAltQtdNaosJogador1";
+            this.lblAltQtdNaosJogador1.Size = new System.Drawing.Size(13, 13);
+            this.lblAltQtdNaosJogador1.TabIndex = 57;
+            this.lblAltQtdNaosJogador1.Text = "1";
+            this.lblAltQtdNaosJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 681);
-            this.Controls.Add(this.lblAltFasePartida);
-            this.Controls.Add(this.lblConstFasePartida);
-            this.Controls.Add(this.lblQtdeVotos);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblAltQtdNaosJogador1);
+            this.Controls.Add(this.lblAltPontosPlayer2);
+            this.Controls.Add(this.lblConstPontosPlayer2);
+            this.Controls.Add(this.lblAltQtdNaosJogador2);
+            this.Controls.Add(this.lblConstQtdNaosPlayer2);
+            this.Controls.Add(this.lblAltNomeJogador2);
+            this.Controls.Add(this.lblConstNomeJogador2);
+            this.Controls.Add(this.lblAltPontosPlayer1);
+            this.Controls.Add(this.lblConstPontosPlayer1);
+            this.Controls.Add(this.lblAltRodadaPartida);
+            this.Controls.Add(this.lblConstRodadaPartida);
+            this.Controls.Add(this.lblConstQtdNaosPlayer1);
             this.Controls.Add(this.lstVotacao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtVotoJogador);
             this.Controls.Add(this.btnVotar);
-            this.Controls.Add(this.lblAltSenhaJogador);
-            this.Controls.Add(this.lblAltNomeJogador);
-            this.Controls.Add(this.lblConstSenhaJogador);
-            this.Controls.Add(this.lblConstNomeJogador);
+            this.Controls.Add(this.lblAltNomeJogador1);
+            this.Controls.Add(this.lblConstNomeJogador1);
             this.Controls.Add(this.lblNomeDoGrupo);
             this.Controls.Add(this.lblVersaoDoJogo);
             this.Controls.Add(this.btnAtualizarTabuleiro);
@@ -530,18 +611,24 @@
         private System.Windows.Forms.Button btnAtualizarTabuleiro;
         private System.Windows.Forms.Label lblVersaoDoJogo;
         private System.Windows.Forms.Label lblNomeDoGrupo;
-        private System.Windows.Forms.Label lblConstNomeJogador;
-        private System.Windows.Forms.Label lblConstSenhaJogador;
-        private System.Windows.Forms.Label lblAltNomeJogador;
-        private System.Windows.Forms.Label lblAltSenhaJogador;
+        private System.Windows.Forms.Label lblConstNomeJogador1;
+        private System.Windows.Forms.Label lblAltNomeJogador1;
         private System.Windows.Forms.Button btnVotar;
         private System.Windows.Forms.TextBox txtVotoJogador;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView lstVotacao;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblQtdeVotos;
+        private System.Windows.Forms.Label lblConstQtdNaosPlayer1;
         private System.Windows.Forms.Timer tmrPosicionarPersonagem;
-        private System.Windows.Forms.Label lblConstFasePartida;
-        private System.Windows.Forms.Label lblAltFasePartida;
+        private System.Windows.Forms.Label lblConstRodadaPartida;
+        private System.Windows.Forms.Label lblAltRodadaPartida;
+        private System.Windows.Forms.Label lblConstPontosPlayer1;
+        private System.Windows.Forms.Label lblAltPontosPlayer1;
+        private System.Windows.Forms.Label lblAltPontosPlayer2;
+        private System.Windows.Forms.Label lblConstPontosPlayer2;
+        private System.Windows.Forms.Label lblAltQtdNaosJogador2;
+        private System.Windows.Forms.Label lblConstQtdNaosPlayer2;
+        private System.Windows.Forms.Label lblAltNomeJogador2;
+        private System.Windows.Forms.Label lblConstNomeJogador2;
+        private System.Windows.Forms.Label lblAltQtdNaosJogador1;
     }
 }

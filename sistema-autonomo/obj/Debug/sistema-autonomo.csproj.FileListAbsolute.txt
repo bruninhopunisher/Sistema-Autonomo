@@ -171,3 +171,4 @@ C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\ob
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.exe
 C:\Users\bruno\Downloads\PI III\Sistema-Autonomo - Copia (2)\sistema-autonomo\obj\Debug\sistema-autonomo.pdb
+C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema-autonomo.exe.config

@@ -20,10 +20,6 @@ namespace sistema_autonomo
             InitializeComponent();
             lblVersaoJogo.Text = Jogo.versao.ToString();
             lblNomeGrupo.Text = partida.NomeGrupo;
-
-            string numeroRodada = Jogo.VerificarVez(2160);
-            string[] numeroRodadaTratado = numeroRodada.Split(',');
-            Console.WriteLine(numeroRodadaTratado[2]);
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {
