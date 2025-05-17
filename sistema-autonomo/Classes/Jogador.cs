@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,7 @@ namespace sistema_autonomo
         private string nome;
         private string senha;
         private int pontos;
-        private int qtdeNao;
-
-        List<Jogador> listaDeJogadores = new List<Jogador>();
+        private int qtdNaos;
 
         public int Id
         {
@@ -34,50 +33,15 @@ namespace sistema_autonomo
             get { return senha; }
             set { this.senha = value; }
         }
-
-        public void SetPontos(int pontos)
+        public int Pontos
         {
-            this.pontos = pontos;
+            get { return pontos; }
+            set { this.pontos = value; }
         }
-
-        public int GetPontos()
+        public int QtdNaos
         {
-            return pontos;
-        }
-
-        public void SetNao(int num)
-        {
-            this.qtdeNao = num;
-        }
-
-        public int GetNao()
-        {
-            return qtdeNao;
-        }
-
-        // 
-        public List<Jogador> QTDEJogadoresPartida(int IDPartida)
-        {
-
-            string listaJogadores;
-            string[] listaDeJogadoresTratados;
-            string[] linhasDeJogadores;
-
-            listaJogadores = Jogo.ListarJogadores(IDPartida);
-            listaJogadores = listaJogadores.Replace("\r", "");
-            listaJogadores = listaJogadores.Replace("\n", "");
-            listaDeJogadoresTratados = listaJogadores.Split(',');
-            listaJogadores = listaJogadores.Replace("\r", "");
-            linhasDeJogadores = listaJogadores.Split('\n');
-
-            for (int i = 0; i < listaDeJogadoresTratados.Length - 1; i += 2)
-            {
-                Jogador novoJogador = new Jogador();
-                novoJogador.id = Convert.ToInt32(listaDeJogadoresTratados[i]);
-                novoJogador.nome = listaDeJogadoresTratados[i + 1];
-                listaDeJogadores.Add(novoJogador);
-            }
-            return listaDeJogadores;
+            get { return qtdNaos; }
+            set { this.qtdNaos = value; }
         }
     }
 }

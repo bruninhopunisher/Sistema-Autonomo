@@ -14,16 +14,12 @@ namespace sistema_autonomo
 {
     public partial class Inicio : Form
     {
+        public Partida partida = new Partida();
         public Inicio()
         {
             InitializeComponent();
             lblVersaoJogo.Text = Jogo.versao.ToString();
-            lblNomeGrupo.Text = Classes.Lobby.GetNomeGrupo().ToString();
-            //string[] personagens = BancoAuxiliar.TratarDados(Jogo.ListarPersonagens());
-            //for (int i = 0; i < personagens.Length - 1; i++)
-            //{
-            //    MessageBox.Show(personagens[i]);
-            //}
+            lblNomeGrupo.Text = partida.NomeGrupo;
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {

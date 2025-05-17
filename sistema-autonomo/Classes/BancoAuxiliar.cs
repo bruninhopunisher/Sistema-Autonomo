@@ -28,7 +28,21 @@ namespace sistema_autonomo
             string fasePartida = dadosPartida[dadosPartida.Length - 1];
             return fasePartida;
         }
+        public static string VerificarRodada(int idPartida)
+        {
+            string fase = Jogo.VerificarVez(idPartida);
+            fase = fase.Replace("\r\n", "");
+            string[] Fase = fase.Split(',');
 
-
+            //MessageBox.Show(Fase[2]);
+            string n = Fase[2];
+            return n;
+        }
+        public static string[] EstadoDoTabuleiro(int idPartida) {
+            string tabuleiroRecebidoDll = Jogo.VerificarVez(idPartida);
+            tabuleiroRecebidoDll.Replace("\r", "");
+            string[] estadoDoTabuleiro = tabuleiroRecebidoDll.Split('\n');
+            return estadoDoTabuleiro;
+        }
     }
 }

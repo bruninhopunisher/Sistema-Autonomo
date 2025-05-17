@@ -11,12 +11,6 @@ namespace sistema_autonomo.Classes
 {
     public class Lobby
     {
-        public static string nomeGrupo { get { return "Estudantes de Bolonha";  } }
-
-        public static string GetNomeGrupo()
-        {
-            return nomeGrupo;
-        }
         public static string[] ListarPartidas()
         {
             string listaDePartidas = Jogo.ListarPartidas("T");

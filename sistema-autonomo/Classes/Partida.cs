@@ -17,7 +17,11 @@ namespace sistema_autonomo.Classes
         private string senha;
         private string data;
         private string status;
-        
+        private int verificadorPartida;
+        private List<Jogador> listaDeJogadores = new List<Jogador>();
+
+        public string NomeGrupo { get { return "Estudantes de Bolonha"; } }
+
         public int Id
         {
             get { return id; }
@@ -43,49 +47,56 @@ namespace sistema_autonomo.Classes
             get { return status; }
             set { this.status = value; }
         }
-        public void QuantidadeJogadoresPartida(Jogador jogadorLocal)
+        public int VerificadorPartida
         {
-            List<int> ids = new List<int>();
-
-            string listaJogadores = Jogo.ListarJogadores(id);
-            string[] linhas = listaJogadores.Split('\n');
-
-            // Retorna a quantidade de Id´s (jogadores) na partida
-            foreach (string linha in linhas)
+            get { return verificadorPartida; }
+            set { this.verificadorPartida = value; }
+        }
+        public List<Jogador> ListaDeJogadores
+        {
+            get { return listaDeJogadores; }
+        }
+        public List<Jogador> ListarJogadores(Jogador jogadorLogado)
+        {
+            string[] jogadoresRecebidos = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(id));
+            string[] dadosJogador;
+            if (jogadoresRecebidos != null)
             {
-                if (!string.IsNullOrWhiteSpace(linha))
+                for (int i = 0; i < jogadoresRecebidos.Length - 1; i++)
                 {
-                    string[] partes = linha.Split(',');
-                    if (partes.Length > 0 && int.TryParse(partes[0], out int id))
+                    Jogador jogador = new Jogador();
+                    dadosJogador = jogadoresRecebidos[i].Split(',');
+                    if (Convert.ToInt32(dadosJogador[0]) != jogadorLogado.Id)
                     {
-                        ids.Add(id);
+                        jogador.Id = Convert.ToInt32(dadosJogador[0]);
+                        jogador.Nome = dadosJogador[1];
+                        listaDeJogadores.Add(jogador);
                     }
                 }
+                return listaDeJogadores;
             }
-
-            //Seta a quatidade de cartas Nãos para o jogador local
-            if (ids.Count == 3)
+            return null;
+        }
+        public void SetVotosNao()
+        {
+            foreach (Jogador jogador in listaDeJogadores)
             {
-                jogadorLocal.SetNao(4);
-                Console.WriteLine($"Setado 4");
+                if (listaDeJogadores.Count == 3)
+                {
+                    jogador.QtdNaos = 4;
+                    Console.WriteLine($"Setado 4");
+                }
+                else if (listaDeJogadores.Count == 4)
+                {
+                    jogador.QtdNaos = 3;
+                    Console.WriteLine($"Setado 3");
+                }
+                else
+                {
+                    jogador.QtdNaos = 2;
+                    Console.WriteLine($"Setado 2");
+                }
             }
-            else if (ids.Count == 4)
-            {
-                jogadorLocal.SetNao(3);
-                Console.WriteLine($"Setado 3");
-            }
-            else if (ids.Count == 5)
-            {
-                jogadorLocal.SetNao(2);
-                Console.WriteLine($"Setado 2");
-            }
-            else
-            {
-                jogadorLocal.SetNao(2);
-                Console.WriteLine($"Setado 2");
-            }
-
-            Console.WriteLine(ids);
         }
     }
 }
