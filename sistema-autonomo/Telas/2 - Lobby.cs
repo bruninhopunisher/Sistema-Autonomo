@@ -55,13 +55,11 @@ namespace sistema_autonomo
         }
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-            string listaJogadores;
             string verificacaoInicio;
             verificacaoInicio = Jogo.Iniciar(jogadorLocal.Id, jogadorLocal.Senha);
 
             if (verificacaoInicio.Substring(0, 1) != "E" || verificacaoInicio == "ERRO:Partida não está aberta")
             {
-                listaJogadores = Jogo.ListarJogadores(partida.Id);
                 partida.QuantidadeJogadoresPartida(jogadorLocal);
                 partida.VerificadorPartida = 1;
                 Sala sala = new Sala(partida, jogadorLocal);

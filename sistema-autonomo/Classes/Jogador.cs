@@ -17,7 +17,7 @@ namespace sistema_autonomo
         private string senha;
         private int pontos;
         private int qtdNaos;
-        private List<Jogador> listaDeJogadores = new List<Jogador>();
+
         public int Id
         {
             get { return id; }
@@ -42,31 +42,6 @@ namespace sistema_autonomo
         {
             get { return qtdNaos; }
             set { this.qtdNaos = value; }
-        }
-        public List<Jogador> ListaDeJogadores
-        {
-            get { return listaDeJogadores; }
-        }
-        public List<Jogador> ListarJogadores(int IdPartida, Jogador jogadorLogado)
-        {
-            string[] jogadoresRecebidos = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(IdPartida));
-            string[] dadosJogador;
-            if(jogadoresRecebidos != null)
-            {
-                for (int i = 0; i < jogadoresRecebidos.Length - 1; i += 2)
-                {
-                    Jogador jogador = new Jogador();
-                    dadosJogador = jogadoresRecebidos[i].Split(',');
-                    if(Convert.ToInt32(dadosJogador[0]) != jogadorLogado.id)
-                    {
-                        jogador.Id = Convert.ToInt32(dadosJogador[0]);
-                        jogador.Nome = dadosJogador[1];
-                        listaDeJogadores.Add(jogador);
-                    }
-                }
-                return listaDeJogadores;
-            }
-            return null;
         }
     }
 }

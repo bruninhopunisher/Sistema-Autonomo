@@ -33,33 +33,22 @@ namespace sistema_autonomo
             InitializeComponent();
             infosDaPartida = partidaRecebida;
             infosDoJogador = jogadorLocal;
-            infosDoJogador.ListaDeJogadores.Add(infosDoJogador);
-            infosDoJogador.ListarJogadores(infosDaPartida.Id, infosDoJogador);
+            infosDaPartida.ListaDeJogadores.Add(infosDoJogador);
+            infosDaPartida.ListarJogadores(infosDoJogador);
             lblNomeDoGrupo.Text = infosDaPartida.NomeGrupo;
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
 
+            Console.WriteLine($"Jogador Local -----------------------{jogadorLocal.QtdNaos}");
 
+            lblAltNomeJogador1.Text = partidaRecebida.ListaDeJogadores[0].Nome;
+            lblAltPontosPlayer1.Text = partidaRecebida.ListaDeJogadores[0].Pontos.ToString();
+            lblAltQtdNaosJogador1.Text = partidaRecebida.ListaDeJogadores[0].QtdNaos.ToString();
+            // Lucas, esta comentado porque está dando erro no indice. também, a instância tem que ser a de partida recebida, pois se nao for, não funciona o verificar vez
+            //lblAltNomeJogador2.Text = partidaRecebida.ListaDeJogadores[1].Nome;
+            //lblAltPontosPlayer2.Text = partidaRecebida.ListaDeJogadores[1].Pontos.ToString();
+            //lblAltQtdNaosJogador2.Text = partidaRecebida.ListaDeJogadores[1].QtdNaos.ToString();
 
-            lblAltNomeJogador1.Text = infosDoJogador.ListaDeJogadores[0].Nome;
-            lblAltPontosPlayer1.Text = infosDoJogador.ListaDeJogadores[0].Pontos.ToString();
-            lblAltQtdNaosJogador1.Text = infosDoJogador.ListaDeJogadores[0].QtdNaos.ToString();
-            lblAltNomeJogador2.Text = infosDoJogador.ListaDeJogadores[1].Nome;
-            lblAltPontosPlayer2.Text = infosDoJogador.ListaDeJogadores[1].Pontos.ToString();
-            lblAltQtdNaosJogador2.Text = infosDoJogador.ListaDeJogadores[1].QtdNaos.ToString();
             tmrPosicionarPersonagem.Enabled = true;
-
-
-
-            // Seta a quantidade de cartas 'Não' novamente após entrar em uma nova rodada
-            //numeroRodada = Jogo.VerificarVez(2160);
-            //numeroRodadaTratado = numeroRodada.Split(',');
-            //if (Convert.ToInt32(numeroRodadaTratado[2]) > partidaRecebida.VerificadorPartida)
-            //{
-            //    partidaRecebida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
-            //    Console.WriteLine(numeroRodadaTratado[2]);
-            //    partidaRecebida.QuantidadeJogadoresPartida(jogadorLocal);
-            //}
-
 
             //Atribui personagens na lista assim que o programa e executado
             listaDePersonagens = sistema_autonomo.Personagem.ListarPersonagem(0);
@@ -288,8 +277,18 @@ namespace sistema_autonomo
             }
             //MessageBox.Show(rodadaPassada.ToString() + " " + RodadaAtual.ToString());
 
+            // Seta a quantidade de cartas 'Não' novamente após entrar em uma nova rodada
 
-            lblAltRodadaPartida.Text = faseDaPartida;
+            numeroRodada = Jogo.VerificarVez(infosDaPartida.Id);
+            numeroRodadaTratado = numeroRodada.Split(',');
+            lblAltRodadaPartida.Text = numeroRodadaTratado[2];
+            if (Convert.ToInt32(numeroRodadaTratado[2]) > infosDaPartida.VerificadorPartida)
+            {
+                Console.WriteLine("ENTROUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+                infosDaPartida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
+                Console.WriteLine(numeroRodadaTratado[2]);
+                infosDaPartida.QuantidadeJogadoresPartida(infosDoJogador);
+            }
 
             if (faseDaPartida == "S")
             {
@@ -306,7 +305,7 @@ namespace sistema_autonomo
                 jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
                 if (verificarVez.Substring(0, 4) != "ERRO")
                 {
-                    foreach (Jogador j in infosDoJogador.ListaDeJogadores)
+                    foreach (Jogador j in infosDaPartida.ListaDeJogadores)
                     {
                         Console.WriteLine($"Jogador: {j.Nome}, ID {j.Id}");
 
@@ -322,9 +321,6 @@ namespace sistema_autonomo
                         }
                     }
                 }
-
-
-
 
                 for (int i = 0; i < listaDePersonagens.Count; i++)
                 {
