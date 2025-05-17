@@ -18,6 +18,7 @@ namespace sistema_autonomo.Classes
         private string data;
         private string status;
         private int verificadorPartida;
+        private List<Jogador> listaDeJogadores = new List<Jogador>();
 
         public string NomeGrupo { get { return "Estudantes de Bolonha"; } }
 
@@ -51,6 +52,32 @@ namespace sistema_autonomo.Classes
         {
             get { return verificadorPartida; }
             set { this.verificadorPartida = value; }
+        }
+
+        public List<Jogador> ListaDeJogadores
+        {
+            get { return listaDeJogadores; }
+        }
+        public List<Jogador> ListarJogadores(Jogador jogadorLogado)
+        {
+            string[] jogadoresRecebidos = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(id));
+            string[] dadosJogador;
+            if (jogadoresRecebidos != null)
+            {
+                for (int i = 0; i < jogadoresRecebidos.Length - 1; i += 2)
+                {
+                    Jogador jogador = new Jogador();
+                    dadosJogador = jogadoresRecebidos[i].Split(',');
+                    if (Convert.ToInt32(dadosJogador[0]) != jogadorLogado.Id)
+                    {
+                        jogador.Id = Convert.ToInt32(dadosJogador[0]);
+                        jogador.Nome = dadosJogador[1];
+                        listaDeJogadores.Add(jogador);
+                    }
+                }
+                return listaDeJogadores;
+            }
+            return null;
         }
 
         public void QuantidadeJogadoresPartida(Jogador jogadorLocal)
