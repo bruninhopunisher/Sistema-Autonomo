@@ -72,26 +72,20 @@ namespace sistema_autonomo.Classes
                     }
                 }
             }
-
             //Seta a quatidade de cartas Nãos para o jogador local
             if (ids.Count == 3)
             {
-                jogadorLocal.SetNao(4);
+                jogadorLocal.QtdNaos = 4;
                 Console.WriteLine($"Setado 4");
             }
             else if (ids.Count == 4)
             {
-                jogadorLocal.SetNao(3);
+                jogadorLocal.QtdNaos = 3;
                 Console.WriteLine($"Setado 3");
-            }
-            else if (ids.Count == 5)
-            {
-                jogadorLocal.SetNao(2);
-                Console.WriteLine($"Setado 2");
             }
             else
             {
-                jogadorLocal.SetNao(2);
+                jogadorLocal.QtdNaos = 2;
                 Console.WriteLine($"Setado 2");
             }
             Console.WriteLine(ids);
