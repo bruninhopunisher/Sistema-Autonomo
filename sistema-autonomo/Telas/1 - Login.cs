@@ -53,21 +53,6 @@ namespace sistema_autonomo
             partida.Nome = (partidaSelecionada[1]);
             partida.Data = (partidaSelecionada[2]);
             partida.Status = (partidaSelecionada[3]);
-            lblIdPartidaSelecionada.Text = partida.Id.ToString();
-            lblNomePartidaSelecionada.Text = partida.Nome;
-            lblDataPartidaSelecionada.Text = partida.Data;
-            switch (partida.Status)
-            {
-                case "A":
-                    lblStatusPartidaSelecionada.Text = "Aberta";
-                    break;
-                case "J":
-                    lblStatusPartidaSelecionada.Text = "Jogando";
-                    break;
-                case "E":
-                    lblStatusPartidaSelecionada.Text = "Encerrada";
-                    break;
-            }
             //Fim
             //Informações dos jogadores presentes na partida selecionada
             string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));

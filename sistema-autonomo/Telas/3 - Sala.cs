@@ -154,24 +154,6 @@ namespace sistema_autonomo
             }
         }
         // Botão de atualizar tabuleiro
-        private void btnAtualizarTabuleiro_Click(object sender, EventArgs e)
-        {
-            string listaDeVotos = Jogo.ExibirUltimaVotacao(infosDaPartida.Id);
-            listaDeVotos.Replace("\r", "");
-            listaDeVotos.Split('\n');
-
-            if (listaDeVotos.Substring(0, 1) == "E")
-            {
-                MessageBox.Show(listaDeVotos);
-            }
-            else
-            {
-                for (int i = 0; i < listaDeVotos.Length - 1; i += 3)
-                {
-                    lstVotacao.Items.Add(listaDeVotos[i].ToString());
-                }
-            }
-        }
         private void PromoverPersonagem(string personagem)
         {
             //Dados recebidos para promover o personagem
@@ -189,19 +171,19 @@ namespace sistema_autonomo
             if (ultimasVotacoes != null)
             {
                 for (int i = 0; i < ultimasVotacoes.Length - 1; i++)
-            {
-                infoVotos = ultimasVotacoes[i].Split(',');
-                foreach (Jogador jogador in infosDaPartida.ListaDeJogadores)
                 {
-                    if (Convert.ToInt32(infoVotos[1]) == jogador.Id)
+                    infoVotos = ultimasVotacoes[i].Split(',');
+                    foreach (Jogador jogador in infosDaPartida.ListaDeJogadores)
                     {
-                        if (infoVotos[2] == "N")
+                        if (Convert.ToInt32(infoVotos[1]) == jogador.Id)
                         {
-                            jogador.QtdNaos--;
+                            if (infoVotos[2] == "N")
+                            {
+                                jogador.QtdNaos--;
+                            }
                         }
                     }
                 }
-            }
             }
 
             string personagemEleitoVotacao;
@@ -254,6 +236,7 @@ namespace sistema_autonomo
             {
                 Console.WriteLine("ENTROUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
                 infosDaPartida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
+                infosDaPartida.SetVotosNao();
                 Console.WriteLine(numeroRodadaTratado[2]);
             }
 
