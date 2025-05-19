@@ -84,17 +84,17 @@ namespace sistema_autonomo.Classes
                 if (listaDeJogadores.Count == 3)
                 {
                     jogador.QtdNaos = 4;
-                    Console.WriteLine($"Setado 4");
+                    Console.WriteLine("Setado 4");
                 }
                 else if (listaDeJogadores.Count == 4)
                 {
                     jogador.QtdNaos = 3;
-                    Console.WriteLine($"Setado 3");
+                    Console.WriteLine("Setado 3");
                 }
                 else
                 {
                     jogador.QtdNaos = 2;
-                    Console.WriteLine($"Setado 2");
+                    Console.WriteLine("Setado 2");
                 }
             }
         }

@@ -43,11 +43,15 @@
             this.lblStatusPartida = new System.Windows.Forms.Label();
             this.lstJogadoresLobby = new System.Windows.Forms.ListBox();
             this.btnAtualizarLobby = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdPartida
@@ -86,7 +90,7 @@
             this.btnIniciarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarPartida.ForeColor = System.Drawing.Color.Transparent;
             this.btnIniciarPartida.Image = ((System.Drawing.Image)(resources.GetObject("btnIniciarPartida.Image")));
-            this.btnIniciarPartida.Location = new System.Drawing.Point(660, 533);
+            this.btnIniciarPartida.Location = new System.Drawing.Point(660, 552);
             this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
             this.btnIniciarPartida.Size = new System.Drawing.Size(133, 47);
@@ -150,7 +154,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
-            this.pictureBox7.Location = new System.Drawing.Point(569, 112);
+            this.pictureBox7.Location = new System.Drawing.Point(590, 79);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(299, 26);
             this.pictureBox7.TabIndex = 20;
@@ -195,9 +199,9 @@
             this.lstJogadoresLobby.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstJogadoresLobby.FormattingEnabled = true;
             this.lstJogadoresLobby.ItemHeight = 24;
-            this.lstJogadoresLobby.Location = new System.Drawing.Point(569, 144);
+            this.lstJogadoresLobby.Location = new System.Drawing.Point(466, 137);
             this.lstJogadoresLobby.Name = "lstJogadoresLobby";
-            this.lstJogadoresLobby.Size = new System.Drawing.Size(299, 124);
+            this.lstJogadoresLobby.Size = new System.Drawing.Size(553, 340);
             this.lstJogadoresLobby.TabIndex = 24;
             // 
             // btnAtualizarLobby
@@ -205,7 +209,7 @@
             this.btnAtualizarLobby.BackColor = System.Drawing.Color.Transparent;
             this.btnAtualizarLobby.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizarLobby.ForeColor = System.Drawing.Color.Black;
-            this.btnAtualizarLobby.Location = new System.Drawing.Point(646, 294);
+            this.btnAtualizarLobby.Location = new System.Drawing.Point(901, 514);
             this.btnAtualizarLobby.Name = "btnAtualizarLobby";
             this.btnAtualizarLobby.Size = new System.Drawing.Size(144, 37);
             this.btnAtualizarLobby.TabIndex = 25;
@@ -213,12 +217,32 @@
             this.btnAtualizarLobby.UseVisualStyleBackColor = false;
             this.btnAtualizarLobby.Click += new System.EventHandler(this.btnAtualizarLobby_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(441, 111);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(604, 397);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(48, 616);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(273, 31);
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            // 
             // Lobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1155, 673);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnAtualizarLobby);
             this.Controls.Add(this.lstJogadoresLobby);
             this.Controls.Add(this.lblStatusPartida);
@@ -233,6 +257,7 @@
             this.Controls.Add(this.lblConstSenhaJogadorLogado);
             this.Controls.Add(this.lblIdPartida);
             this.Controls.Add(this.btnIniciarPartida);
+            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -247,6 +272,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +295,7 @@
         private System.Windows.Forms.Label lblStatusPartida;
         private System.Windows.Forms.ListBox lstJogadoresLobby;
         private System.Windows.Forms.Button btnAtualizarLobby;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

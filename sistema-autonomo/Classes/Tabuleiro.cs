@@ -37,13 +37,13 @@ namespace sistema_autonomo.Classes
             // Mapeamento das coordenadas dos setores
             posicoesDeCadaSetor = new Dictionary<int, Point>
             {
-                { 25, new Point(852, 36) },   // 6º
-                { 21, new Point(752, 131) }, { 22, new Point(825, 131) }, { 23, new Point(898, 131) }, { 24, new Point(971, 131) },  // 5º
-                { 17, new Point(738, 219) }, { 18, new Point(811, 219) }, { 19, new Point(889, 219) }, { 20, new Point(962, 219) },  // 4º
-                { 13, new Point(738, 306) }, { 14, new Point(811, 306) }, { 15, new Point(889, 306) }, { 16, new Point(962, 306) },  // 3º
-                { 9, new Point(738, 392) }, { 10, new Point(811, 392) }, { 11, new Point(889, 392) }, { 12, new Point(962, 392) },  // 2º
-                { 5, new Point(738, 479) }, { 6, new Point(811, 479) }, { 7, new Point(889, 479) }, { 8, new Point(962, 479) },  // 1º
-                {  1, new Point(752, 547) }, {  2, new Point(825, 547) }, {  3, new Point(898, 547) }, {  4, new Point(971, 547) }   // 0º
+                { 25, new Point(1072, 109) },  // 6º
+                { 21, new Point(937, 228) }, { 22, new Point(1030, 228) }, { 23, new Point(1124, 228) }, { 24, new Point(1218, 228) },  // 5º
+                { 17, new Point(913, 345) }, { 18, new Point(1018, 345) }, { 19, new Point(1123, 345) }, { 20, new Point(1223, 345) },  // 4º
+                { 13, new Point(928, 462) }, { 14, new Point(1033, 462) }, { 15, new Point(1138, 462) }, { 16, new Point(1238, 462) },  // 3º
+                { 9, new Point(928, 581) }, { 10, new Point(1033, 581) }, { 11, new Point(1138, 581) }, { 12, new Point(1238, 581) },  // 2º
+                { 5, new Point(928, 696) }, { 6, new Point(1033, 696) }, { 7, new Point(1138, 696) }, { 8, new Point(1238, 696) },  // 1º
+                { 1, new Point(928, 800) }, { 2, new Point(1033, 800) }, { 3, new Point(1138, 800) }, { 4, new Point(1238, 800) }   // 0º
             };
         }
         public void AlterarEstadoSetor(int posicaoSetor)
@@ -59,7 +59,7 @@ namespace sistema_autonomo.Classes
             int[] primeiraPosicaoSetor = { 5, 9, 13, 17, 21 };
 
             bool posicaoDisponivel = false;
-            
+
             if (setor == 10) //Setor do Rei
             {
                 return posicaoDisponivel = false;
@@ -103,7 +103,7 @@ namespace sistema_autonomo.Classes
         {
             foreach (var personagem in personagensRecebidos)
             {
-                if(personagem.nome.Substring(0,1) == inicialPersonagem)
+                if (personagem.nome.Substring(0, 1) == inicialPersonagem)
                 {
                     return personagem.personagemPosicionado;
                 }
@@ -119,7 +119,7 @@ namespace sistema_autonomo.Classes
                 if (posicaoSetorRecebida <= posicaoSetor + DISTANCIA_ULTIMA_POSICAO)
                 {
                     posicaoSetorEstaOcupada = VerificarPosicaoSetorDisponivel(posicaoSetorRecebida);
-                    if(posicaoSetorEstaOcupada == true) 
+                    if (posicaoSetorEstaOcupada == true)
                         posicaoSetorRecebida++;
                 }
                 else
@@ -143,7 +143,7 @@ namespace sistema_autonomo.Classes
             {
                 case 0:
                     return 1;
-                case 1: 
+                case 1:
                     return 5;
                 case 2:
                     return 9;
@@ -169,7 +169,7 @@ namespace sistema_autonomo.Classes
                 string[] personagemNoSetor = tabuleiroSala[i].Split(',');
                 int setorPersonagemSelecionado = Convert.ToInt32(personagemNoSetor[0]);
                 string nomePersonagemSelecionado = personagemNoSetor[1];//Arrumar substring 0,1
-                
+
                 int posicaoDisponivelNoSetor = VerificarPosicaoDisponivelNoSetor(VerificarPrimeiraPosicaoDoSetor(setorPersonagemSelecionado));
                 ColocarPersonagemNaPosicaoDoSetor(posicaoDisponivelNoSetor, nomePersonagemSelecionado.Substring(0, 1));
             }
@@ -206,7 +206,7 @@ namespace sistema_autonomo.Classes
             {
                 if (posicaoDosPersonagens[i] != null)
                 {
-                    return posicaoDosPersonagens[i].Substring(0,1);
+                    return posicaoDosPersonagens[i].Substring(0, 1);
                 }
             }
             return "Erro!";
