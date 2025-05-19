@@ -35,6 +35,8 @@
             this.btnAjudaInicio = new System.Windows.Forms.Button();
             this.lblVersaoJogo = new System.Windows.Forms.Label();
             this.lblNomeGrupo = new System.Windows.Forms.Label();
+            this.dgvSala = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInicio
@@ -106,6 +108,14 @@
             this.lblNomeGrupo.Size = new System.Drawing.Size(0, 13);
             this.lblNomeGrupo.TabIndex = 5;
             // 
+            // dgvSala
+            // 
+            this.dgvSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSala.Location = new System.Drawing.Point(43, 39);
+            this.dgvSala.Name = "dgvSala";
+            this.dgvSala.Size = new System.Drawing.Size(478, 268);
+            this.dgvSala.TabIndex = 6;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,6 +123,7 @@
             this.BackColor = System.Drawing.Color.IndianRed;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.dgvSala);
             this.Controls.Add(this.lblNomeGrupo);
             this.Controls.Add(this.lblVersaoJogo);
             this.Controls.Add(this.btnAjudaInicio);
@@ -123,6 +134,7 @@
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +148,6 @@
         private System.Windows.Forms.Button btnAjudaInicio;
         private System.Windows.Forms.Label lblVersaoJogo;
         private System.Windows.Forms.Label lblNomeGrupo;
+        private System.Windows.Forms.DataGridView dgvSala;
     }
 }
