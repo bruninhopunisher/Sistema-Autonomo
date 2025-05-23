@@ -16,7 +16,7 @@ namespace sistema_autonomo
     public partial class Login : Form
     {
         public Partida partida = new Partida();
-        public Jogador jogadorLogado = new Jogador();
+
         public Login()
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace sistema_autonomo
             cboFiltrarPartidas.SelectedIndex = 0; //Define o filtro para "Todos"
             lblVersaoJogo.Text = Jogo.versao;
         }
+
         private void btnListarPartidas_Click(object sender, EventArgs e)
         {
             //Lógica para add partidas na lista e filtro de partidas
@@ -45,6 +46,7 @@ namespace sistema_autonomo
                 }
             }
         }
+
         public void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Informações da Partida selecionada
@@ -68,6 +70,7 @@ namespace sistema_autonomo
             }
             //Fim
         }
+
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
             partida.Nome = txtInputNomePartida.Text.Trim();
@@ -83,17 +86,27 @@ namespace sistema_autonomo
                 MessageBox.Show($"Partida criada com sucesso!\nO ID da sua partida é {idPartidaCriada}");
             }
         }
+
         private void btnEntrarPartida_Click_1(object sender, EventArgs e)
         {
-            jogadorLogado.Nome = txtNomeDoJogador.Text.Trim();
-            jogadorLogado.Senha = txtSenhaEntrarPartida.Text.Trim();
-            string iniciarPartida = Jogo.Entrar(partida.Id, jogadorLogado.Nome, jogadorLogado.Senha);
+            string controller_nome = txtNomeDoJogador.Text.Trim();
+            string controller_senha_partida = txtSenhaEntrarPartida.Text.Trim();
+
+            // Instância única de jogador local
+            JogadorLocal jogadorLocal = new JogadorLocal(0, controller_nome, null, 0, 0);
+
+            string iniciarPartida = Jogo.Entrar(partida.Id, jogadorLocal.Nome, controller_senha_partida);
             string[] dadosTratados = iniciarPartida.Split(',');
+
             if (iniciarPartida.Substring(0, 1) != "E")
             {
-                jogadorLogado.Id = Convert.ToInt32(dadosTratados[0]);
-                jogadorLogado.Senha = dadosTratados[1];
-                Lobby telaLobby = new Lobby(partida, jogadorLogado);
+                int controller_id = Convert.ToInt32(dadosTratados[0]);
+                string controller_senha_jogador = dadosTratados[1];
+
+                jogadorLocal.Id = controller_id;
+                jogadorLocal.Senha = controller_senha_jogador;
+
+                Lobby telaLobby = new Lobby(partida, jogadorLocal);
                 telaLobby.ShowDialog();
                 this.Close();
             }
