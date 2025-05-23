@@ -17,7 +17,7 @@ namespace sistema_autonomo
     {
         Tabuleiro tabuleiro = new Tabuleiro();
         Automacao bot = new Automacao();
-        List<Personagem> listaDePersonagens = new List<Personagem>();
+        List<Personagem> listaPersonagens = new List<Personagem>();
         Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
 
         Partida partida;
@@ -49,7 +49,7 @@ namespace sistema_autonomo
             tmrPosicionarPersonagem.Enabled = true;
 
             //Atribui personagens na lista assim que o programa e executado
-            listaDePersonagens = Personagem.ListarPersonagem(0);
+            listaPersonagens = Personagem.ListarPersonagem(0);
             //Adiciona Pictures na instancia do personagem
             Dictionary<string, PictureBox> mapaPersonagens = new Dictionary<string, PictureBox>
             {
@@ -67,7 +67,7 @@ namespace sistema_autonomo
                 { "Ranulfo", picRanulfo },
                 { "Toshio", picToshio }
             };
-            foreach (var personagem in listaDePersonagens)
+            foreach (var personagem in listaPersonagens)
             {
                 if (mapaPersonagens.ContainsKey(personagem.nome))
                 {
@@ -115,11 +115,11 @@ namespace sistema_autonomo
         private void LimparEAtualizarTabuleiro()
         {
             //Faz a limpeza do estado do tabuleiro
-            listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
+            listaPersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaPersonagens);
             estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
             //Atualiza o estado do tabuleiro
-            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaDePersonagens);
-            listaDePersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
+            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
+            listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
         }
         private void btnPosicionar_Click(object sender, EventArgs e)
         {
@@ -158,7 +158,7 @@ namespace sistema_autonomo
         private void PromoverPersonagem(string personagem)
         {
             //Dados recebidos para promover o personagem
-            int idJogador = jogadorPartida.Id;
+            int idJogador = jogadorLocal.Id;
             string senhaJogador = jogadorLocal.Senha;
 
             Jogo.Promover(idJogador, senhaJogador, personagem);
@@ -176,7 +176,7 @@ namespace sistema_autonomo
                     infoVotos = ultimasVotacoes[i].Split(',');
                     foreach (JogadorPartida jogador in partida.ListaJogadoresPartida)
                     {
-                        if (Convert.ToInt32(infoVotos[1]) == jogador.Id)
+                        if (Convert.ToInt32(infoVotos[1]) == jogadorLocal.Id)
                         {
                             if (infoVotos[2] == "N")
                             {
@@ -201,7 +201,7 @@ namespace sistema_autonomo
                 minhasCartas.Add(meusPersonagensRecebidos.Substring(i, 1));
             }
 
-            if (jogadorPartida.Ponto > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
+            if (jogadorLocal.Ponto > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
             {
                 Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "N");
             }
@@ -290,7 +290,7 @@ namespace sistema_autonomo
                     "Ranulfo",
                     "Toshio"
                 };
-                foreach (Personagem p in listaDePersonagens)
+                foreach (Personagem p in listaPersonagens)
                 {
                     if (nomesParaDesposicionar.Contains(p.nome))
                     {
@@ -301,8 +301,8 @@ namespace sistema_autonomo
                 //Faz a limpeza do estado do tabuleiro
                 estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
                 //Posiciona personagens
-                estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaDePersonagens);
-                listaDePersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
+                estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
+                listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
 
                 tabuleiroRecebido = verificarVez.Split('\n');
 
@@ -321,12 +321,12 @@ namespace sistema_autonomo
 
                 lstCartas.Items.Clear();
                 // Colocando as cartas na lstbox
-                for (int i = 0; i < listaDePersonagens.Count; i++)
+                for (int i = 0; i < listaPersonagens.Count; i++)
                 {
-                    lstCartas.Items.Add(listaDePersonagens[i].nome);
+                    lstCartas.Items.Add(listaPersonagens[i].nome);
                 }
 
-                if (jogadorVez == jogadorPartida.Id)
+                if (jogadorVez == jogadorLocal.Id)
                 {
                     bot.Posicionar(jogadorLocal.Id, jogadorLocal.Senha, partida.Id, tabuleiro);
                 }
