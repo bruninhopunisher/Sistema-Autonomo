@@ -54,20 +54,32 @@
             this.tmrPosicionarPersonagem = new System.Windows.Forms.Timer(this.components);
             this.lblConstRodadaPartida = new System.Windows.Forms.Label();
             this.lblAltRodadaPartida = new System.Windows.Forms.Label();
-            this.lblAltPontosPlayer1 = new System.Windows.Forms.Label();
-            this.lblAltPontosPlayer2 = new System.Windows.Forms.Label();
-            this.lblConstPontosPlayer2 = new System.Windows.Forms.Label();
-            this.lblAltQtdNaosJogador2 = new System.Windows.Forms.Label();
-            this.lblConstQtdNaosPlayer2 = new System.Windows.Forms.Label();
-            this.lblAltNomeJogador2 = new System.Windows.Forms.Label();
-            this.lblConstNomeJogador2 = new System.Windows.Forms.Label();
+            this.lblAltPontosJogador1 = new System.Windows.Forms.Label();
             this.lblAltQtdNaosJogador1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picNomeJogador1 = new System.Windows.Forms.PictureBox();
+            this.picPontosJogador1 = new System.Windows.Forms.PictureBox();
+            this.picVotosJogador1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.jogoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvSala = new System.Windows.Forms.DataGridView();
+            this.picVotosJogador2 = new System.Windows.Forms.PictureBox();
+            this.picPontosJogador2 = new System.Windows.Forms.PictureBox();
+            this.picNomeJogador2 = new System.Windows.Forms.PictureBox();
+            this.lblAltQtdNaosJogador2 = new System.Windows.Forms.Label();
+            this.lblAltPontosJogador2 = new System.Windows.Forms.Label();
+            this.lblAltNomeJogador2 = new System.Windows.Forms.Label();
+            this.picVotosJogador3 = new System.Windows.Forms.PictureBox();
+            this.picPontosJogador3 = new System.Windows.Forms.PictureBox();
+            this.picNomeJogador3 = new System.Windows.Forms.PictureBox();
+            this.lblAltQtdNaosJogador3 = new System.Windows.Forms.Label();
+            this.lblAltPontosJogador3 = new System.Windows.Forms.Label();
+            this.lblAltNomeJogador3 = new System.Windows.Forms.Label();
+            this.picVotosJogador4 = new System.Windows.Forms.PictureBox();
+            this.picPontosJogador4 = new System.Windows.Forms.PictureBox();
+            this.picNomeJogador4 = new System.Windows.Forms.PictureBox();
+            this.lblAltQtdNaosJogador4 = new System.Windows.Forms.Label();
+            this.lblAltPontosJogador4 = new System.Windows.Forms.Label();
+            this.lblAltNomeJogador4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -82,18 +94,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLeonardo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picToshio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jogoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador4)).BeginInit();
             this.SuspendLayout();
             // 
             // txtConstMinhasCartasSala
             // 
             this.txtConstMinhasCartasSala.AutoSize = true;
-            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(630, 311);
+            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(648, 410);
             this.txtConstMinhasCartasSala.Name = "txtConstMinhasCartasSala";
             this.txtConstMinhasCartasSala.Size = new System.Drawing.Size(74, 13);
             this.txtConstMinhasCartasSala.TabIndex = 3;
@@ -102,7 +123,7 @@
             // lstMinhasCartasSala
             // 
             this.lstMinhasCartasSala.FormattingEnabled = true;
-            this.lstMinhasCartasSala.Location = new System.Drawing.Point(597, 328);
+            this.lstMinhasCartasSala.Location = new System.Drawing.Point(615, 427);
             this.lstMinhasCartasSala.Name = "lstMinhasCartasSala";
             this.lstMinhasCartasSala.Size = new System.Drawing.Size(140, 160);
             this.lstMinhasCartasSala.TabIndex = 4;
@@ -110,7 +131,7 @@
             // lblConstStatusVezSala
             // 
             this.lblConstStatusVezSala.AutoSize = true;
-            this.lblConstStatusVezSala.Location = new System.Drawing.Point(342, 4);
+            this.lblConstStatusVezSala.Location = new System.Drawing.Point(377, 14);
             this.lblConstStatusVezSala.Name = "lblConstStatusVezSala";
             this.lblConstStatusVezSala.Size = new System.Drawing.Size(28, 13);
             this.lblConstStatusVezSala.TabIndex = 9;
@@ -119,11 +140,12 @@
             // lblAltStatusVezSala
             // 
             this.lblAltStatusVezSala.AutoSize = true;
-            this.lblAltStatusVezSala.Location = new System.Drawing.Point(368, 4);
+            this.lblAltStatusVezSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltStatusVezSala.Location = new System.Drawing.Point(408, 14);
             this.lblAltStatusVezSala.Name = "lblAltStatusVezSala";
-            this.lblAltStatusVezSala.Size = new System.Drawing.Size(13, 13);
+            this.lblAltStatusVezSala.Size = new System.Drawing.Size(34, 13);
             this.lblAltStatusVezSala.TabIndex = 10;
-            this.lblAltStatusVezSala.Text = "1";
+            this.lblAltStatusVezSala.Text = "Texto";
             this.lblAltStatusVezSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picAdilson
@@ -271,11 +293,14 @@
             // lblAltNomeJogador1
             // 
             this.lblAltNomeJogador1.AutoSize = true;
-            this.lblAltNomeJogador1.Location = new System.Drawing.Point(103, 25);
+            this.lblAltNomeJogador1.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltNomeJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador1.ForeColor = System.Drawing.Color.White;
+            this.lblAltNomeJogador1.Location = new System.Drawing.Point(97, 14);
             this.lblAltNomeJogador1.Name = "lblAltNomeJogador1";
-            this.lblAltNomeJogador1.Size = new System.Drawing.Size(13, 13);
+            this.lblAltNomeJogador1.Size = new System.Drawing.Size(53, 20);
             this.lblAltNomeJogador1.TabIndex = 37;
-            this.lblAltNomeJogador1.Text = "1";
+            this.lblAltNomeJogador1.Text = "Texto";
             this.lblAltNomeJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tmrPosicionarPersonagem
@@ -286,7 +311,7 @@
             // lblConstRodadaPartida
             // 
             this.lblConstRodadaPartida.AutoSize = true;
-            this.lblConstRodadaPartida.Location = new System.Drawing.Point(342, 24);
+            this.lblConstRodadaPartida.Location = new System.Drawing.Point(377, 39);
             this.lblConstRodadaPartida.Name = "lblConstRodadaPartida";
             this.lblConstRodadaPartida.Size = new System.Drawing.Size(48, 13);
             this.lblConstRodadaPartida.TabIndex = 46;
@@ -295,124 +320,70 @@
             // lblAltRodadaPartida
             // 
             this.lblAltRodadaPartida.AutoSize = true;
-            this.lblAltRodadaPartida.Location = new System.Drawing.Point(388, 24);
+            this.lblAltRodadaPartida.Location = new System.Drawing.Point(428, 39);
             this.lblAltRodadaPartida.Name = "lblAltRodadaPartida";
-            this.lblAltRodadaPartida.Size = new System.Drawing.Size(13, 13);
+            this.lblAltRodadaPartida.Size = new System.Drawing.Size(34, 13);
             this.lblAltRodadaPartida.TabIndex = 48;
-            this.lblAltRodadaPartida.Text = "1";
+            this.lblAltRodadaPartida.Text = "Texto";
             this.lblAltRodadaPartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblAltPontosPlayer1
+            // lblAltPontosJogador1
             // 
-            this.lblAltPontosPlayer1.AutoSize = true;
-            this.lblAltPontosPlayer1.Location = new System.Drawing.Point(168, 123);
-            this.lblAltPontosPlayer1.Name = "lblAltPontosPlayer1";
-            this.lblAltPontosPlayer1.Size = new System.Drawing.Size(13, 13);
-            this.lblAltPontosPlayer1.TabIndex = 50;
-            this.lblAltPontosPlayer1.Text = "1";
-            this.lblAltPontosPlayer1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblAltPontosPlayer2
-            // 
-            this.lblAltPontosPlayer2.AutoSize = true;
-            this.lblAltPontosPlayer2.Location = new System.Drawing.Point(103, 297);
-            this.lblAltPontosPlayer2.Name = "lblAltPontosPlayer2";
-            this.lblAltPontosPlayer2.Size = new System.Drawing.Size(13, 13);
-            this.lblAltPontosPlayer2.TabIndex = 56;
-            this.lblAltPontosPlayer2.Text = "1";
-            this.lblAltPontosPlayer2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblConstPontosPlayer2
-            // 
-            this.lblConstPontosPlayer2.AutoSize = true;
-            this.lblConstPontosPlayer2.Location = new System.Drawing.Point(26, 297);
-            this.lblConstPontosPlayer2.Name = "lblConstPontosPlayer2";
-            this.lblConstPontosPlayer2.Size = new System.Drawing.Size(43, 13);
-            this.lblConstPontosPlayer2.TabIndex = 55;
-            this.lblConstPontosPlayer2.Text = "Pontos:";
-            this.lblConstPontosPlayer2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblAltQtdNaosJogador2
-            // 
-            this.lblAltQtdNaosJogador2.AutoSize = true;
-            this.lblAltQtdNaosJogador2.Location = new System.Drawing.Point(103, 278);
-            this.lblAltQtdNaosJogador2.Name = "lblAltQtdNaosJogador2";
-            this.lblAltQtdNaosJogador2.Size = new System.Drawing.Size(13, 13);
-            this.lblAltQtdNaosJogador2.TabIndex = 54;
-            this.lblAltQtdNaosJogador2.Text = "1";
-            this.lblAltQtdNaosJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblConstQtdNaosPlayer2
-            // 
-            this.lblConstQtdNaosPlayer2.AutoSize = true;
-            this.lblConstQtdNaosPlayer2.Location = new System.Drawing.Point(26, 278);
-            this.lblConstQtdNaosPlayer2.Name = "lblConstQtdNaosPlayer2";
-            this.lblConstQtdNaosPlayer2.Size = new System.Drawing.Size(61, 13);
-            this.lblConstQtdNaosPlayer2.TabIndex = 53;
-            this.lblConstQtdNaosPlayer2.Text = "QTD Naos:";
-            this.lblConstQtdNaosPlayer2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblAltNomeJogador2
-            // 
-            this.lblAltNomeJogador2.AutoSize = true;
-            this.lblAltNomeJogador2.Location = new System.Drawing.Point(103, 259);
-            this.lblAltNomeJogador2.Name = "lblAltNomeJogador2";
-            this.lblAltNomeJogador2.Size = new System.Drawing.Size(13, 13);
-            this.lblAltNomeJogador2.TabIndex = 52;
-            this.lblAltNomeJogador2.Text = "1";
-            this.lblAltNomeJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblConstNomeJogador2
-            // 
-            this.lblConstNomeJogador2.AutoSize = true;
-            this.lblConstNomeJogador2.Location = new System.Drawing.Point(26, 259);
-            this.lblConstNomeJogador2.Name = "lblConstNomeJogador2";
-            this.lblConstNomeJogador2.Size = new System.Drawing.Size(54, 13);
-            this.lblConstNomeJogador2.TabIndex = 51;
-            this.lblConstNomeJogador2.Text = "Jogador2:";
-            this.lblConstNomeJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltPontosJogador1.AutoSize = true;
+            this.lblAltPontosJogador1.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltPontosJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltPontosJogador1.ForeColor = System.Drawing.Color.White;
+            this.lblAltPontosJogador1.Location = new System.Drawing.Point(116, 77);
+            this.lblAltPontosJogador1.Name = "lblAltPontosJogador1";
+            this.lblAltPontosJogador1.Size = new System.Drawing.Size(53, 20);
+            this.lblAltPontosJogador1.TabIndex = 50;
+            this.lblAltPontosJogador1.Text = "Texto";
+            this.lblAltPontosJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAltQtdNaosJogador1
             // 
             this.lblAltQtdNaosJogador1.AutoSize = true;
-            this.lblAltQtdNaosJogador1.Location = new System.Drawing.Point(168, 81);
+            this.lblAltQtdNaosJogador1.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltQtdNaosJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltQtdNaosJogador1.ForeColor = System.Drawing.Color.White;
+            this.lblAltQtdNaosJogador1.Location = new System.Drawing.Point(151, 44);
             this.lblAltQtdNaosJogador1.Name = "lblAltQtdNaosJogador1";
-            this.lblAltQtdNaosJogador1.Size = new System.Drawing.Size(13, 13);
+            this.lblAltQtdNaosJogador1.Size = new System.Drawing.Size(53, 20);
             this.lblAltQtdNaosJogador1.TabIndex = 57;
-            this.lblAltQtdNaosJogador1.Text = "1";
+            this.lblAltQtdNaosJogador1.Text = "Texto";
             this.lblAltQtdNaosJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox2
+            // picNomeJogador1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 25);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(124, 26);
-            this.pictureBox2.TabIndex = 58;
-            this.pictureBox2.TabStop = false;
+            this.picNomeJogador1.BackColor = System.Drawing.Color.Transparent;
+            this.picNomeJogador1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNomeJogador1.BackgroundImage")));
+            this.picNomeJogador1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picNomeJogador1.Location = new System.Drawing.Point(13, 13);
+            this.picNomeJogador1.Margin = new System.Windows.Forms.Padding(4);
+            this.picNomeJogador1.Name = "picNomeJogador1";
+            this.picNomeJogador1.Size = new System.Drawing.Size(81, 26);
+            this.picNomeJogador1.TabIndex = 58;
+            this.picNomeJogador1.TabStop = false;
             // 
-            // pictureBox3
+            // picPontosJogador1
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(15, 108);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 28);
-            this.pictureBox3.TabIndex = 59;
-            this.pictureBox3.TabStop = false;
+            this.picPontosJogador1.BackColor = System.Drawing.Color.Transparent;
+            this.picPontosJogador1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPontosJogador1.BackgroundImage")));
+            this.picPontosJogador1.Location = new System.Drawing.Point(13, 75);
+            this.picPontosJogador1.Name = "picPontosJogador1";
+            this.picPontosJogador1.Size = new System.Drawing.Size(100, 28);
+            this.picPontosJogador1.TabIndex = 59;
+            this.picPontosJogador1.TabStop = false;
             // 
-            // pictureBox4
+            // picVotosJogador1
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(15, 65);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(135, 34);
-            this.pictureBox4.TabIndex = 60;
-            this.pictureBox4.TabStop = false;
+            this.picVotosJogador1.BackColor = System.Drawing.Color.Transparent;
+            this.picVotosJogador1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVotosJogador1.BackgroundImage")));
+            this.picVotosJogador1.Location = new System.Drawing.Point(13, 39);
+            this.picVotosJogador1.Name = "picVotosJogador1";
+            this.picVotosJogador1.Size = new System.Drawing.Size(135, 34);
+            this.picVotosJogador1.TabIndex = 60;
+            this.picVotosJogador1.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -431,30 +402,267 @@
             // dgvSala
             // 
             this.dgvSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSala.Location = new System.Drawing.Point(209, 65);
+            this.dgvSala.Location = new System.Drawing.Point(341, 150);
             this.dgvSala.Name = "dgvSala";
-            this.dgvSala.Size = new System.Drawing.Size(528, 201);
+            this.dgvSala.Size = new System.Drawing.Size(381, 201);
             this.dgvSala.TabIndex = 63;
+            // 
+            // picVotosJogador2
+            // 
+            this.picVotosJogador2.BackColor = System.Drawing.Color.Transparent;
+            this.picVotosJogador2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVotosJogador2.BackgroundImage")));
+            this.picVotosJogador2.Location = new System.Drawing.Point(13, 160);
+            this.picVotosJogador2.Name = "picVotosJogador2";
+            this.picVotosJogador2.Size = new System.Drawing.Size(135, 34);
+            this.picVotosJogador2.TabIndex = 69;
+            this.picVotosJogador2.TabStop = false;
+            // 
+            // picPontosJogador2
+            // 
+            this.picPontosJogador2.BackColor = System.Drawing.Color.Transparent;
+            this.picPontosJogador2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPontosJogador2.BackgroundImage")));
+            this.picPontosJogador2.Location = new System.Drawing.Point(13, 196);
+            this.picPontosJogador2.Name = "picPontosJogador2";
+            this.picPontosJogador2.Size = new System.Drawing.Size(100, 28);
+            this.picPontosJogador2.TabIndex = 68;
+            this.picPontosJogador2.TabStop = false;
+            // 
+            // picNomeJogador2
+            // 
+            this.picNomeJogador2.BackColor = System.Drawing.Color.Transparent;
+            this.picNomeJogador2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNomeJogador2.BackgroundImage")));
+            this.picNomeJogador2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picNomeJogador2.Location = new System.Drawing.Point(13, 134);
+            this.picNomeJogador2.Margin = new System.Windows.Forms.Padding(4);
+            this.picNomeJogador2.Name = "picNomeJogador2";
+            this.picNomeJogador2.Size = new System.Drawing.Size(81, 26);
+            this.picNomeJogador2.TabIndex = 67;
+            this.picNomeJogador2.TabStop = false;
+            // 
+            // lblAltQtdNaosJogador2
+            // 
+            this.lblAltQtdNaosJogador2.AutoSize = true;
+            this.lblAltQtdNaosJogador2.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltQtdNaosJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltQtdNaosJogador2.ForeColor = System.Drawing.Color.White;
+            this.lblAltQtdNaosJogador2.Location = new System.Drawing.Point(151, 165);
+            this.lblAltQtdNaosJogador2.Name = "lblAltQtdNaosJogador2";
+            this.lblAltQtdNaosJogador2.Size = new System.Drawing.Size(53, 20);
+            this.lblAltQtdNaosJogador2.TabIndex = 66;
+            this.lblAltQtdNaosJogador2.Text = "Texto";
+            this.lblAltQtdNaosJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAltPontosJogador2
+            // 
+            this.lblAltPontosJogador2.AutoSize = true;
+            this.lblAltPontosJogador2.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltPontosJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltPontosJogador2.ForeColor = System.Drawing.Color.White;
+            this.lblAltPontosJogador2.Location = new System.Drawing.Point(116, 198);
+            this.lblAltPontosJogador2.Name = "lblAltPontosJogador2";
+            this.lblAltPontosJogador2.Size = new System.Drawing.Size(53, 20);
+            this.lblAltPontosJogador2.TabIndex = 65;
+            this.lblAltPontosJogador2.Text = "Texto";
+            this.lblAltPontosJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAltNomeJogador2
+            // 
+            this.lblAltNomeJogador2.AutoSize = true;
+            this.lblAltNomeJogador2.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltNomeJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador2.ForeColor = System.Drawing.Color.White;
+            this.lblAltNomeJogador2.Location = new System.Drawing.Point(97, 135);
+            this.lblAltNomeJogador2.Name = "lblAltNomeJogador2";
+            this.lblAltNomeJogador2.Size = new System.Drawing.Size(53, 20);
+            this.lblAltNomeJogador2.TabIndex = 64;
+            this.lblAltNomeJogador2.Text = "Texto";
+            this.lblAltNomeJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picVotosJogador3
+            // 
+            this.picVotosJogador3.BackColor = System.Drawing.Color.Transparent;
+            this.picVotosJogador3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVotosJogador3.BackgroundImage")));
+            this.picVotosJogador3.Location = new System.Drawing.Point(13, 280);
+            this.picVotosJogador3.Name = "picVotosJogador3";
+            this.picVotosJogador3.Size = new System.Drawing.Size(135, 34);
+            this.picVotosJogador3.TabIndex = 75;
+            this.picVotosJogador3.TabStop = false;
+            this.picVotosJogador3.Visible = false;
+            // 
+            // picPontosJogador3
+            // 
+            this.picPontosJogador3.BackColor = System.Drawing.Color.Transparent;
+            this.picPontosJogador3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPontosJogador3.BackgroundImage")));
+            this.picPontosJogador3.Location = new System.Drawing.Point(13, 316);
+            this.picPontosJogador3.Name = "picPontosJogador3";
+            this.picPontosJogador3.Size = new System.Drawing.Size(100, 28);
+            this.picPontosJogador3.TabIndex = 74;
+            this.picPontosJogador3.TabStop = false;
+            this.picPontosJogador3.Visible = false;
+            // 
+            // picNomeJogador3
+            // 
+            this.picNomeJogador3.BackColor = System.Drawing.Color.Transparent;
+            this.picNomeJogador3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNomeJogador3.BackgroundImage")));
+            this.picNomeJogador3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picNomeJogador3.Location = new System.Drawing.Point(13, 254);
+            this.picNomeJogador3.Margin = new System.Windows.Forms.Padding(4);
+            this.picNomeJogador3.Name = "picNomeJogador3";
+            this.picNomeJogador3.Size = new System.Drawing.Size(81, 26);
+            this.picNomeJogador3.TabIndex = 73;
+            this.picNomeJogador3.TabStop = false;
+            this.picNomeJogador3.Visible = false;
+            // 
+            // lblAltQtdNaosJogador3
+            // 
+            this.lblAltQtdNaosJogador3.AutoSize = true;
+            this.lblAltQtdNaosJogador3.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltQtdNaosJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltQtdNaosJogador3.ForeColor = System.Drawing.Color.White;
+            this.lblAltQtdNaosJogador3.Location = new System.Drawing.Point(151, 285);
+            this.lblAltQtdNaosJogador3.Name = "lblAltQtdNaosJogador3";
+            this.lblAltQtdNaosJogador3.Size = new System.Drawing.Size(53, 20);
+            this.lblAltQtdNaosJogador3.TabIndex = 72;
+            this.lblAltQtdNaosJogador3.Text = "Texto";
+            this.lblAltQtdNaosJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltQtdNaosJogador3.Visible = false;
+            // 
+            // lblAltPontosJogador3
+            // 
+            this.lblAltPontosJogador3.AutoSize = true;
+            this.lblAltPontosJogador3.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltPontosJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltPontosJogador3.ForeColor = System.Drawing.Color.White;
+            this.lblAltPontosJogador3.Location = new System.Drawing.Point(116, 318);
+            this.lblAltPontosJogador3.Name = "lblAltPontosJogador3";
+            this.lblAltPontosJogador3.Size = new System.Drawing.Size(53, 20);
+            this.lblAltPontosJogador3.TabIndex = 71;
+            this.lblAltPontosJogador3.Text = "Texto";
+            this.lblAltPontosJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltPontosJogador3.Visible = false;
+            // 
+            // lblAltNomeJogador3
+            // 
+            this.lblAltNomeJogador3.AutoSize = true;
+            this.lblAltNomeJogador3.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltNomeJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador3.ForeColor = System.Drawing.Color.White;
+            this.lblAltNomeJogador3.Location = new System.Drawing.Point(97, 255);
+            this.lblAltNomeJogador3.Name = "lblAltNomeJogador3";
+            this.lblAltNomeJogador3.Size = new System.Drawing.Size(53, 20);
+            this.lblAltNomeJogador3.TabIndex = 70;
+            this.lblAltNomeJogador3.Text = "Texto";
+            this.lblAltNomeJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltNomeJogador3.Visible = false;
+            // 
+            // picVotosJogador4
+            // 
+            this.picVotosJogador4.BackColor = System.Drawing.Color.Transparent;
+            this.picVotosJogador4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVotosJogador4.BackgroundImage")));
+            this.picVotosJogador4.Location = new System.Drawing.Point(13, 400);
+            this.picVotosJogador4.Name = "picVotosJogador4";
+            this.picVotosJogador4.Size = new System.Drawing.Size(135, 34);
+            this.picVotosJogador4.TabIndex = 81;
+            this.picVotosJogador4.TabStop = false;
+            this.picVotosJogador4.Visible = false;
+            // 
+            // picPontosJogador4
+            // 
+            this.picPontosJogador4.BackColor = System.Drawing.Color.Transparent;
+            this.picPontosJogador4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPontosJogador4.BackgroundImage")));
+            this.picPontosJogador4.Location = new System.Drawing.Point(13, 436);
+            this.picPontosJogador4.Name = "picPontosJogador4";
+            this.picPontosJogador4.Size = new System.Drawing.Size(100, 28);
+            this.picPontosJogador4.TabIndex = 80;
+            this.picPontosJogador4.TabStop = false;
+            this.picPontosJogador4.Visible = false;
+            // 
+            // picNomeJogador4
+            // 
+            this.picNomeJogador4.BackColor = System.Drawing.Color.Transparent;
+            this.picNomeJogador4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNomeJogador4.BackgroundImage")));
+            this.picNomeJogador4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picNomeJogador4.Location = new System.Drawing.Point(13, 374);
+            this.picNomeJogador4.Margin = new System.Windows.Forms.Padding(4);
+            this.picNomeJogador4.Name = "picNomeJogador4";
+            this.picNomeJogador4.Size = new System.Drawing.Size(81, 26);
+            this.picNomeJogador4.TabIndex = 79;
+            this.picNomeJogador4.TabStop = false;
+            this.picNomeJogador4.Visible = false;
+            // 
+            // lblAltQtdNaosJogador4
+            // 
+            this.lblAltQtdNaosJogador4.AutoSize = true;
+            this.lblAltQtdNaosJogador4.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltQtdNaosJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltQtdNaosJogador4.ForeColor = System.Drawing.Color.White;
+            this.lblAltQtdNaosJogador4.Location = new System.Drawing.Point(151, 405);
+            this.lblAltQtdNaosJogador4.Name = "lblAltQtdNaosJogador4";
+            this.lblAltQtdNaosJogador4.Size = new System.Drawing.Size(53, 20);
+            this.lblAltQtdNaosJogador4.TabIndex = 78;
+            this.lblAltQtdNaosJogador4.Text = "Texto";
+            this.lblAltQtdNaosJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltQtdNaosJogador4.Visible = false;
+            // 
+            // lblAltPontosJogador4
+            // 
+            this.lblAltPontosJogador4.AutoSize = true;
+            this.lblAltPontosJogador4.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltPontosJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltPontosJogador4.ForeColor = System.Drawing.Color.White;
+            this.lblAltPontosJogador4.Location = new System.Drawing.Point(116, 438);
+            this.lblAltPontosJogador4.Name = "lblAltPontosJogador4";
+            this.lblAltPontosJogador4.Size = new System.Drawing.Size(53, 20);
+            this.lblAltPontosJogador4.TabIndex = 77;
+            this.lblAltPontosJogador4.Text = "Texto";
+            this.lblAltPontosJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltPontosJogador4.Visible = false;
+            // 
+            // lblAltNomeJogador4
+            // 
+            this.lblAltNomeJogador4.AutoSize = true;
+            this.lblAltNomeJogador4.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltNomeJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador4.ForeColor = System.Drawing.Color.White;
+            this.lblAltNomeJogador4.Location = new System.Drawing.Point(97, 375);
+            this.lblAltNomeJogador4.Name = "lblAltNomeJogador4";
+            this.lblAltNomeJogador4.Size = new System.Drawing.Size(53, 20);
+            this.lblAltNomeJogador4.TabIndex = 76;
+            this.lblAltNomeJogador4.Text = "Texto";
+            this.lblAltNomeJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltNomeJogador4.Visible = false;
             // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1464, 981);
+            this.ClientSize = new System.Drawing.Size(1464, 845);
+            this.Controls.Add(this.picVotosJogador4);
+            this.Controls.Add(this.picPontosJogador4);
+            this.Controls.Add(this.picNomeJogador4);
+            this.Controls.Add(this.lblAltQtdNaosJogador4);
+            this.Controls.Add(this.lblAltPontosJogador4);
+            this.Controls.Add(this.lblAltNomeJogador4);
+            this.Controls.Add(this.picVotosJogador3);
+            this.Controls.Add(this.picPontosJogador3);
+            this.Controls.Add(this.picNomeJogador3);
+            this.Controls.Add(this.lblAltQtdNaosJogador3);
+            this.Controls.Add(this.lblAltPontosJogador3);
+            this.Controls.Add(this.lblAltNomeJogador3);
+            this.Controls.Add(this.picVotosJogador2);
+            this.Controls.Add(this.picPontosJogador2);
+            this.Controls.Add(this.picNomeJogador2);
+            this.Controls.Add(this.lblAltQtdNaosJogador2);
+            this.Controls.Add(this.lblAltPontosJogador2);
+            this.Controls.Add(this.lblAltNomeJogador2);
             this.Controls.Add(this.dgvSala);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.picVotosJogador1);
+            this.Controls.Add(this.picPontosJogador1);
+            this.Controls.Add(this.picNomeJogador1);
             this.Controls.Add(this.lblAltQtdNaosJogador1);
-            this.Controls.Add(this.lblAltPontosPlayer2);
-            this.Controls.Add(this.lblConstPontosPlayer2);
-            this.Controls.Add(this.lblAltQtdNaosJogador2);
-            this.Controls.Add(this.lblConstQtdNaosPlayer2);
-            this.Controls.Add(this.lblAltNomeJogador2);
-            this.Controls.Add(this.lblConstNomeJogador2);
-            this.Controls.Add(this.lblAltPontosPlayer1);
+            this.Controls.Add(this.lblAltPontosJogador1);
             this.Controls.Add(this.lblAltRodadaPartida);
             this.Controls.Add(this.lblConstRodadaPartida);
             this.Controls.Add(this.lblAltNomeJogador1);
@@ -496,12 +704,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLeonardo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picToshio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jogoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,19 +749,31 @@
         private System.Windows.Forms.Timer tmrPosicionarPersonagem;
         private System.Windows.Forms.Label lblConstRodadaPartida;
         private System.Windows.Forms.Label lblAltRodadaPartida;
-        private System.Windows.Forms.Label lblAltPontosPlayer1;
-        private System.Windows.Forms.Label lblAltPontosPlayer2;
-        private System.Windows.Forms.Label lblConstPontosPlayer2;
-        private System.Windows.Forms.Label lblAltQtdNaosJogador2;
-        private System.Windows.Forms.Label lblConstQtdNaosPlayer2;
-        private System.Windows.Forms.Label lblAltNomeJogador2;
-        private System.Windows.Forms.Label lblConstNomeJogador2;
+        private System.Windows.Forms.Label lblAltPontosJogador1;
         private System.Windows.Forms.Label lblAltQtdNaosJogador1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox picNomeJogador1;
+        private System.Windows.Forms.PictureBox picPontosJogador1;
+        private System.Windows.Forms.PictureBox picVotosJogador1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.BindingSource jogoBindingSource;
         private System.Windows.Forms.DataGridView dgvSala;
+        private System.Windows.Forms.PictureBox picVotosJogador2;
+        private System.Windows.Forms.PictureBox picPontosJogador2;
+        private System.Windows.Forms.PictureBox picNomeJogador2;
+        private System.Windows.Forms.Label lblAltQtdNaosJogador2;
+        private System.Windows.Forms.Label lblAltPontosJogador2;
+        private System.Windows.Forms.Label lblAltNomeJogador2;
+        private System.Windows.Forms.PictureBox picVotosJogador3;
+        private System.Windows.Forms.PictureBox picPontosJogador3;
+        private System.Windows.Forms.PictureBox picNomeJogador3;
+        private System.Windows.Forms.Label lblAltQtdNaosJogador3;
+        private System.Windows.Forms.Label lblAltPontosJogador3;
+        private System.Windows.Forms.Label lblAltNomeJogador3;
+        private System.Windows.Forms.PictureBox picVotosJogador4;
+        private System.Windows.Forms.PictureBox picPontosJogador4;
+        private System.Windows.Forms.PictureBox picNomeJogador4;
+        private System.Windows.Forms.Label lblAltQtdNaosJogador4;
+        private System.Windows.Forms.Label lblAltPontosJogador4;
+        private System.Windows.Forms.Label lblAltNomeJogador4;
     }
 }

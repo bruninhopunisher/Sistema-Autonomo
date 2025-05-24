@@ -29,16 +29,12 @@ namespace sistema_autonomo
         }
         private void btnAtualizarLobby_Click(object sender, EventArgs e)
         {
-            //Inicio - Preenche os dados da partida no Lobby
-            string[] dadosPartida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
+            //Dados do lobby
+            string[] dadosDoLobby = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
             lblIdPartida.Text = partida.Id.ToString();
-            partida.Status = (dadosPartida == null ? partida.Status : dadosPartida[0].Split(',')[1]);
+            partida.Status = (dadosDoLobby == null ? partida.Status : dadosDoLobby[0].Split(',')[1]);
             lblStatusPartida.Text = partida.Status == "A" ? "Aberta" : "Em andamento";
-            lblNomeJogador.Text = jogadorLocal.Nome;
-            lblConstSenhaJogadorLogado.Text = jogadorLocal.Senha;
-            lblNomeDoGrupo.Text = partida.NomeGrupo;
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
-            //Fim
             //Informações dos jogadores presentes no lobby
             lstJogadoresLobby.Items.Clear();
             string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
@@ -51,13 +47,10 @@ namespace sistema_autonomo
             {
                 lstJogadoresLobby.Items.Add(jogadores[i]);
             }
-            //Fim
         }
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-            string verificacaoInicio;
-            verificacaoInicio = Jogo.Iniciar(jogadorLocal.Id, jogadorLocal.Senha);
-
+            string verificacaoInicio = Jogo.Iniciar(jogadorLocal.Id, jogadorLocal.Senha);
             if (verificacaoInicio.Substring(0, 1) != "E" || verificacaoInicio == "ERRO:Partida não está aberta")
             {
                 partida.VerificadorPartida = 1;

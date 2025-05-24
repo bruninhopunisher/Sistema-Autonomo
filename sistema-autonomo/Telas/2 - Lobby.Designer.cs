@@ -30,15 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lobby));
             this.lblIdPartida = new System.Windows.Forms.Label();
-            this.lblConstSenhaJogadorLogado = new System.Windows.Forms.Label();
             this.btnIniciarPartida = new System.Windows.Forms.Button();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
-            this.lblNomeDoGrupo = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.lblNomeJogador = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblStatusPartida = new System.Windows.Forms.Label();
             this.lstJogadoresLobby = new System.Windows.Forms.ListBox();
@@ -46,8 +41,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,19 +60,6 @@
             this.lblIdPartida.TabIndex = 0;
             this.lblIdPartida.Text = "texto";
             this.lblIdPartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblConstSenhaJogadorLogado
-            // 
-            this.lblConstSenhaJogadorLogado.AutoSize = true;
-            this.lblConstSenhaJogadorLogado.BackColor = System.Drawing.Color.Transparent;
-            this.lblConstSenhaJogadorLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblConstSenhaJogadorLogado.Location = new System.Drawing.Point(241, 225);
-            this.lblConstSenhaJogadorLogado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblConstSenhaJogadorLogado.Name = "lblConstSenhaJogadorLogado";
-            this.lblConstSenhaJogadorLogado.Size = new System.Drawing.Size(50, 24);
-            this.lblConstSenhaJogadorLogado.TabIndex = 1;
-            this.lblConstSenhaJogadorLogado.Text = "texto";
-            this.lblConstSenhaJogadorLogado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnIniciarPartida
             // 
@@ -109,16 +89,6 @@
             this.lblVersaoDoJogo.TabIndex = 12;
             this.lblVersaoDoJogo.Text = "texto";
             // 
-            // lblNomeDoGrupo
-            // 
-            this.lblNomeDoGrupo.AutoSize = true;
-            this.lblNomeDoGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeDoGrupo.Location = new System.Drawing.Point(1015, 634);
-            this.lblNomeDoGrupo.Name = "lblNomeDoGrupo";
-            this.lblNomeDoGrupo.Size = new System.Drawing.Size(30, 13);
-            this.lblNomeDoGrupo.TabIndex = 13;
-            this.lblNomeDoGrupo.Text = "texto";
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -130,26 +100,6 @@
             this.pictureBox3.TabIndex = 16;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(163, 229);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(73, 18);
-            this.pictureBox5.TabIndex = 19;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.Location = new System.Drawing.Point(163, 194);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(102, 18);
-            this.pictureBox6.TabIndex = 18;
-            this.pictureBox6.TabStop = false;
-            // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
@@ -159,18 +109,6 @@
             this.pictureBox7.Size = new System.Drawing.Size(299, 26);
             this.pictureBox7.TabIndex = 20;
             this.pictureBox7.TabStop = false;
-            // 
-            // lblNomeJogador
-            // 
-            this.lblNomeJogador.AutoSize = true;
-            this.lblNomeJogador.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeJogador.Location = new System.Drawing.Point(271, 191);
-            this.lblNomeJogador.Name = "lblNomeJogador";
-            this.lblNomeJogador.Size = new System.Drawing.Size(50, 24);
-            this.lblNomeJogador.TabIndex = 21;
-            this.lblNomeJogador.Text = "texto";
-            this.lblNomeJogador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox4
             // 
@@ -247,14 +185,9 @@
             this.Controls.Add(this.lstJogadoresLobby);
             this.Controls.Add(this.lblStatusPartida);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.lblNomeJogador);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.lblNomeDoGrupo);
             this.Controls.Add(this.lblVersaoDoJogo);
-            this.Controls.Add(this.lblConstSenhaJogadorLogado);
             this.Controls.Add(this.lblIdPartida);
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.pictureBox1);
@@ -268,8 +201,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LobbyPartida";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -282,15 +213,10 @@
         #endregion
 
         private System.Windows.Forms.Label lblIdPartida;
-        private System.Windows.Forms.Label lblConstSenhaJogadorLogado;
         private System.Windows.Forms.Button btnIniciarPartida;
         private System.Windows.Forms.Label lblVersaoDoJogo;
-        private System.Windows.Forms.Label lblNomeDoGrupo;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label lblNomeJogador;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblStatusPartida;
         private System.Windows.Forms.ListBox lstJogadoresLobby;
