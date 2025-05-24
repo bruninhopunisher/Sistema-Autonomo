@@ -18,10 +18,7 @@ namespace sistema_autonomo.Classes
         private string data;
         private string status;
         private int verificadorPartida;
-
-        private List<JogadorPartida> listaJogadoresPartida = new List<JogadorPartida>();
-        private List<JogadorLocal> listaJogadoresLocais = new List<JogadorLocal>();
-
+        private List<Jogador> listaDeJogadores = new List<Jogador>();
         public string NomeGrupo { get { return "Estudantes de Bolonha"; } }
 
         public int Id
@@ -54,45 +51,48 @@ namespace sistema_autonomo.Classes
             get { return verificadorPartida; }
             set { this.verificadorPartida = value; }
         }
-        public List<JogadorPartida> ListaJogadoresPartida
+        public List<Jogador> ListaDeJogadores
         {
-            get { return listaJogadoresPartida; }
+            get { return listaDeJogadores; }
         }
-        public List<JogadorPartida> ListarJogadores(int idJogadorLocal)
+        public List<Jogador> ListarJogadores(JogadorLocal jogadorLocal)
         {
             string[] jogadoresRecebidos = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(id));
-
             if (jogadoresRecebidos != null)
             {
+                listaDeJogadores.Add(jogadorLocal);
                 for (int i = 0; i < jogadoresRecebidos.Length - 1; i++)
                 {
                     string jogador = jogadoresRecebidos[i];
                     string[] dados = jogador.Split(',');
-
-                    listaJogadoresPartida.Add(new JogadorPartida(Convert.ToInt32(dados[0]), dados[1], Convert.ToInt32(dados[2]), 0));
+                    if (Convert.ToInt32(dados[0]) != jogadorLocal.Id)
+                    {
+                        listaDeJogadores.Add(new JogadorPartida(Convert.ToInt32(dados[0]), dados[1], Convert.ToInt32(dados[2]), 0));
+                    }
                 }
-                return listaJogadoresPartida;
+                return listaDeJogadores;
             }
             return null;
         }
         public void SetVotosNao()
         {
-            foreach (JogadorLocal jogadorLocal in listaJogadoresLocais)
+            foreach (Jogador jogador in listaDeJogadores)
             {
-                if (listaJogadoresLocais.Count == 3)
+                if (listaDeJogadores.Count == 2)
                 {
-                    jogadorLocal.QtdeNao = 4;
-                    Console.WriteLine("Setado 4");
+                    jogador.QtdDeNao = 3;
                 }
-                else if (listaJogadoresLocais.Count == 4)
+                else if (listaDeJogadores.Count == 3)
                 {
-                    jogadorLocal.QtdeNao = 3;
-                    Console.WriteLine("Setado 3");
+                    jogador.QtdDeNao = 4;
+                }
+                else if (listaDeJogadores.Count == 4)
+                {
+                    jogador.QtdDeNao = 3;
                 }
                 else
                 {
-                    jogadorLocal.QtdeNao = 2;
-                    Console.WriteLine("Setado 2");
+                    jogador.QtdDeNao = 2;
                 }
             }
         }
@@ -101,7 +101,7 @@ namespace sistema_autonomo.Classes
             string[] dadosDaPartida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(this.id));
             string[] dadosDaPartidaTratado = dadosDaPartida[0].Split(',');
             int idJogador = Convert.ToInt32(dadosDaPartidaTratado[0]);
-            foreach(JogadorPartida jogador in listaJogadoresPartida)
+            foreach(Jogador jogador in listaDeJogadores)
             {
                 if(jogador.Id == idJogador)
                 {

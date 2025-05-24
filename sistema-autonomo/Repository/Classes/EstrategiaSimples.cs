@@ -106,7 +106,7 @@ namespace sistema_autonomo.Classes
                 minhasCartas.Add(meusPersonagensRecebidos.Substring(i, 1));
             }
 
-            if (jogadorLocal.QtdeNao > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
+            if (jogadorLocal.QtdDeNao > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
             {
                 Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "N");
             }

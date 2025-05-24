@@ -58,13 +58,5 @@ namespace sistema_autonomo.Classes
             }
             return dadosJogador;
         }
-        public static string[] ListarJogadores(Partida partidaSelecionada)
-        {
-            string jogadoresRecebidos = Jogo.ListarJogadores(partidaSelecionada.Id);
-            jogadoresRecebidos = jogadoresRecebidos.Replace("\r", "");
-            string[] jogadores = jogadoresRecebidos.Split('\n');
-            return jogadores;
-        }
-
     }
 }
