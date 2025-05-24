@@ -52,7 +52,6 @@
             this.picLeonardo = new System.Windows.Forms.PictureBox();
             this.picToshio = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnPosicionar = new System.Windows.Forms.Button();
             this.lstCartas = new System.Windows.Forms.ListBox();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
             this.lblNomeDoGrupo = new System.Windows.Forms.Label();
@@ -73,6 +72,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.jogoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvSala = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -92,6 +93,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jogoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).BeginInit();
             this.SuspendLayout();
             // 
             // txtConstMinhasCartasSala
@@ -114,7 +117,7 @@
             // lblSetoresSala
             // 
             this.lblSetoresSala.AutoSize = true;
-            this.lblSetoresSala.Location = new System.Drawing.Point(430, 65);
+            this.lblSetoresSala.Location = new System.Drawing.Point(385, 295);
             this.lblSetoresSala.Name = "lblSetoresSala";
             this.lblSetoresSala.Size = new System.Drawing.Size(43, 13);
             this.lblSetoresSala.TabIndex = 5;
@@ -123,7 +126,7 @@
             // lstSetoresSala
             // 
             this.lstSetoresSala.FormattingEnabled = true;
-            this.lstSetoresSala.Location = new System.Drawing.Point(399, 81);
+            this.lstSetoresSala.Location = new System.Drawing.Point(354, 311);
             this.lstSetoresSala.Name = "lstSetoresSala";
             this.lstSetoresSala.Size = new System.Drawing.Size(112, 160);
             this.lstSetoresSala.TabIndex = 6;
@@ -131,7 +134,7 @@
             // lblTabuleiro
             // 
             this.lblTabuleiro.AutoSize = true;
-            this.lblTabuleiro.Location = new System.Drawing.Point(277, 65);
+            this.lblTabuleiro.Location = new System.Drawing.Point(232, 295);
             this.lblTabuleiro.Name = "lblTabuleiro";
             this.lblTabuleiro.Size = new System.Drawing.Size(51, 13);
             this.lblTabuleiro.TabIndex = 7;
@@ -140,7 +143,7 @@
             // lstAltTabuleiroSala
             // 
             this.lstAltTabuleiroSala.FormattingEnabled = true;
-            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(245, 81);
+            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(200, 311);
             this.lstAltTabuleiroSala.Name = "lstAltTabuleiroSala";
             this.lstAltTabuleiroSala.Size = new System.Drawing.Size(116, 160);
             this.lstAltTabuleiroSala.TabIndex = 8;
@@ -290,20 +293,10 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // btnPosicionar
-            // 
-            this.btnPosicionar.Location = new System.Drawing.Point(604, 259);
-            this.btnPosicionar.Name = "btnPosicionar";
-            this.btnPosicionar.Size = new System.Drawing.Size(133, 32);
-            this.btnPosicionar.TabIndex = 26;
-            this.btnPosicionar.Text = "Colocar personagem";
-            this.btnPosicionar.UseVisualStyleBackColor = true;
-            this.btnPosicionar.Click += new System.EventHandler(this.btnPosicionar_Click);
-            // 
             // lstCartas
             // 
             this.lstCartas.FormattingEnabled = true;
-            this.lstCartas.Location = new System.Drawing.Point(516, 81);
+            this.lstCartas.Location = new System.Drawing.Point(471, 311);
             this.lstCartas.Margin = new System.Windows.Forms.Padding(2);
             this.lstCartas.Name = "lstCartas";
             this.lstCartas.Size = new System.Drawing.Size(112, 160);
@@ -486,11 +479,24 @@
             this.pictureBox6.TabIndex = 62;
             this.pictureBox6.TabStop = false;
             // 
+            // jogoBindingSource
+            // 
+            this.jogoBindingSource.DataSource = typeof(KingMeServer.Jogo);
+            // 
+            // dgvSala
+            // 
+            this.dgvSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSala.Location = new System.Drawing.Point(209, 65);
+            this.dgvSala.Name = "dgvSala";
+            this.dgvSala.Size = new System.Drawing.Size(528, 201);
+            this.dgvSala.TabIndex = 63;
+            // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1464, 981);
+            this.Controls.Add(this.dgvSala);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -509,7 +515,6 @@
             this.Controls.Add(this.lblNomeDoGrupo);
             this.Controls.Add(this.lblVersaoDoJogo);
             this.Controls.Add(this.lstCartas);
-            this.Controls.Add(this.btnPosicionar);
             this.Controls.Add(this.picToshio);
             this.Controls.Add(this.picTakeo);
             this.Controls.Add(this.picGui);
@@ -556,6 +561,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jogoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,7 +591,6 @@
         private System.Windows.Forms.PictureBox picLeonardo;
         private System.Windows.Forms.PictureBox picToshio;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnPosicionar;
         private System.Windows.Forms.ListBox lstCartas;
         private System.Windows.Forms.Label lblVersaoDoJogo;
         private System.Windows.Forms.Label lblNomeDoGrupo;
@@ -605,5 +611,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.BindingSource jogoBindingSource;
+        private System.Windows.Forms.DataGridView dgvSala;
     }
 }

@@ -52,28 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\BancoAuxiliar.cs" />
-    <Compile Include="Classes\Automacao.cs" />
-    <Compile Include="Classes\Estrategia.cs" />
-    <Compile Include="Classes\EstrategiaSimples.cs" />
-    <Compile Include="Classes\JogadoresPartida.cs" />
-    <Compile Include="Classes\Tabuleiro.cs" />
-    <Compile Include="Classes\Partida.cs" />
-    <Compile Include="Classes\Lobby.cs" />
+    <Compile Include="Repository\Utils\BancoAuxiliar.cs" />
+    <Compile Include="Repository\Utils\Automacao.cs" />
+    <Compile Include="Repository\Classes\Abstratas\Estrategia.cs" />
+    <Compile Include="Repository\Classes\EstrategiaSimples.cs" />
+    <Compile Include="Repository\Classes\Abstratas\Jogador.cs" />
+    <Compile Include="Repository\Classes\JogadorPartida.cs" />
+    <Compile Include="Repository\Classes\Tabuleiro.cs" />
+    <Compile Include="Repository\Classes\Partida.cs" />
+    <Compile Include="Repository\Classes\Lobby.cs" />
     <Compile Include="Telas\1 - Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\1 - Login.Designer.cs">
       <DependentUpon>1 - Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Jogador.cs" />
+    <Compile Include="Repository\Classes\JogadorLocal.cs" />
     <Compile Include="Telas\0 - Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\0 - Inicio.Designer.cs">
       <DependentUpon>0 - Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Personagem.cs" />
+    <Compile Include="Repository\Classes\Personagem.cs" />
     <Compile Include="Telas\2 - Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,7 +140,9 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Repository\Interfaces\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

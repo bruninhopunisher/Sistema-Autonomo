@@ -19,8 +19,8 @@ namespace sistema_autonomo
     public partial class Lobby : Form
     {
         Partida partida;
-        Jogador jogadorLocal;       
-        public Lobby(Partida partidaRecebida, Jogador jogadorRecebido)
+        JogadorLocal jogadorLocal;       
+        public Lobby(Partida partidaRecebida, JogadorLocal jogadorRecebido)
         {
             InitializeComponent();
             partida = partidaRecebida;

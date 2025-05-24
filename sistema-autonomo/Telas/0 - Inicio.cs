@@ -20,28 +20,6 @@ namespace sistema_autonomo
             InitializeComponent();
             lblVersaoJogo.Text = Jogo.versao.ToString();
             lblNomeGrupo.Text = partida.NomeGrupo;
-
-            string retorno = Jogo.ListarJogadores(5);
-
-            retorno = retorno.Replace("\r", "");
-            string[] jogadores = retorno.Split('\n');
-
-            List<JogadoresPartida> listaJogadores = new List<JogadoresPartida>(); 
-            
-            for (int i = 0; i < jogadores.Length - 1; i++)
-            {
-                JogadoresPartida j = new JogadoresPartida();
-
-                string jogador = jogadores[i];
-                string[] dados = jogador.Split(',');
-
-                j.Nome = dados[1];
-                j.Pontos = Convert.ToInt32(dados[2]);
-
-                listaJogadores.Add(j);
-            }
-
-            dgvSala.DataSource = listaJogadores;
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {

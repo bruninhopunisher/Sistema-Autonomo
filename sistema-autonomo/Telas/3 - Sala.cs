@@ -17,38 +17,39 @@ namespace sistema_autonomo
     {
         Tabuleiro tabuleiro = new Tabuleiro();
         Automacao bot = new Automacao();
-        List<Personagem> listaDePersonagens = new List<Personagem>();
+        
+        List<JogadorPartida> listaJogadores;
+        List<Personagem> listaPersonagens = new List<Personagem>();
         Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
 
-        Partida infosDaPartida;
-        Jogador infosDoJogador;
+        Partida partida;
+        JogadorPartida jogadorPartida;
+        JogadorLocal jogadorLocal;
 
         string numeroRodada;
         string verificarVez;
         string[] verificaVezTratado;
         string[] numeroRodadaTratado;
-
-        public Sala(Partida partidaRecebida, Jogador jogadorLocal)
+        public Sala(Partida partidaRecebida, JogadorLocal jogadorLocal)
         {
             InitializeComponent();
-            infosDaPartida = partidaRecebida;
-            infosDoJogador = jogadorLocal;
+            partida = partidaRecebida;
 
-            infosDaPartida.ListaDeJogadores.Add(infosDoJogador);
-            infosDaPartida.ListarJogadores(infosDoJogador);
-            infosDaPartida.SetVotosNao();
-            lblNomeDoGrupo.Text = infosDaPartida.NomeGrupo;
+            this.jogadorLocal = jogadorLocal;
+            
+            partidaRecebida.SetVotosNao();
+            lblNomeDoGrupo.Text = partidaRecebida.NomeGrupo;
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
 
-            lblAltNomeJogador1.Text = infosDaPartida.ListaDeJogadores[0].Nome;
-            lblAltPontosPlayer1.Text = infosDaPartida.ListaDeJogadores[0].Pontos.ToString();
-            lblAltNomeJogador2.Text = infosDaPartida.ListaDeJogadores[1].Nome;
-            lblAltPontosPlayer2.Text = infosDaPartida.ListaDeJogadores[1].Pontos.ToString();
+            //lblAltNomeJogador1.Text = partida.ListaJogadoresPartida[0].Nome;
+            //lblAltPontosPlayer1.Text = partida.ListaJogadoresPartida[0].Ponto.ToString();
+            //lblAltNomeJogador2.Text = partida.ListaJogadoresPartida[1].Nome;
+            //lblAltPontosPlayer2.Text = partida.ListaJogadoresPartida[1].Ponto.ToString();
 
             tmrPosicionarPersonagem.Enabled = true;
 
             //Atribui personagens na lista assim que o programa e executado
-            listaDePersonagens = Personagem.ListarPersonagem(0);
+            listaPersonagens = Personagem.ListarPersonagem(0);
             //Adiciona Pictures na instancia do personagem
             Dictionary<string, PictureBox> mapaPersonagens = new Dictionary<string, PictureBox>
             {
@@ -66,7 +67,7 @@ namespace sistema_autonomo
                 { "Ranulfo", picRanulfo },
                 { "Toshio", picToshio }
             };
-            foreach (var personagem in listaDePersonagens)
+            foreach (var personagem in listaPersonagens)
             {
                 if (mapaPersonagens.ContainsKey(personagem.nome))
                 {
@@ -75,7 +76,7 @@ namespace sistema_autonomo
             }
 
             //Exibir cartas jogador
-            string cartasSorteadas = Jogo.ListarCartas(infosDoJogador.Id, infosDoJogador.Senha);
+            string cartasSorteadas = Jogo.ListarCartas(jogadorLocal.Id, jogadorLocal.Senha);
             lstMinhasCartasSala.Items.Clear();
             Dictionary<char, string> mapaCartas = new Dictionary<char, string>
             {
@@ -114,11 +115,11 @@ namespace sistema_autonomo
         private void LimparEAtualizarTabuleiro()
         {
             //Faz a limpeza do estado do tabuleiro
-            listaDePersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaDePersonagens);
+            listaPersonagens = tabuleiro.LimparPosicaoDoPersonagem(listaPersonagens);
             estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
             //Atualiza o estado do tabuleiro
-            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(infosDaPartida.Id, listaDePersonagens);
-            listaDePersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
+            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
+            listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
         }
         private void btnPosicionar_Click(object sender, EventArgs e)
         {
@@ -133,7 +134,7 @@ namespace sistema_autonomo
                     int numeroSetorSelecionado = Convert.ToInt32(nomeSetor.Substring(0, 1));
                     //MessageBox.Show(numeroSetorSelecionado.ToString());
 
-                    string retornoColocar = Jogo.ColocarPersonagem(infosDoJogador.Id, infosDoJogador.Senha, numeroSetorSelecionado, NomeRecortado);
+                    string retornoColocar = Jogo.ColocarPersonagem(jogadorLocal.Id, jogadorLocal.Senha, numeroSetorSelecionado, NomeRecortado);
                     if (retornoColocar.Substring(0, 4) == "ERRO")
                     {
                         MessageBox.Show(retornoColocar);
@@ -157,8 +158,8 @@ namespace sistema_autonomo
         private void PromoverPersonagem(string personagem)
         {
             //Dados recebidos para promover o personagem
-            int idJogador = infosDoJogador.Id;
-            string senhaJogador = infosDoJogador.Senha;
+            int idJogador = jogadorLocal.Id;
+            string senhaJogador = jogadorLocal.Senha;
 
             Jogo.Promover(idJogador, senhaJogador, personagem);
             LimparEAtualizarTabuleiro();
@@ -166,20 +167,20 @@ namespace sistema_autonomo
         private void Votar()
         {
             //Diminui votos todos os jogadores
-            string[] ultimasVotacoes = BancoAuxiliar.TratarDados(Jogo.ExibirUltimaVotacao(infosDaPartida.Id));
+            string[] ultimasVotacoes = BancoAuxiliar.TratarDados(Jogo.ExibirUltimaVotacao(partida.Id));
             string[] infoVotos;
             if (ultimasVotacoes != null)
             {
                 for (int i = 0; i < ultimasVotacoes.Length - 1; i++)
                 {
                     infoVotos = ultimasVotacoes[i].Split(',');
-                    foreach (Jogador jogador in infosDaPartida.ListaDeJogadores)
+                    foreach (JogadorPartida jogador in partida.ListaJogadoresPartida)
                     {
-                        if (Convert.ToInt32(infoVotos[1]) == jogador.Id)
+                        if (Convert.ToInt32(infoVotos[1]) == jogadorLocal.Id)
                         {
                             if (infoVotos[2] == "N")
                             {
-                                jogador.QtdNaos--;
+                                jogadorLocal.Ponto--;
                             }
                         }
                     }
@@ -192,7 +193,7 @@ namespace sistema_autonomo
             personagemEleitoVotacao = tabuleiro.VerificarPersonagemDaVotacao(); //Personagem do rei
 
             //minha lista de personagem
-            string meusPersonagensRecebidos = Jogo.ListarCartas(infosDoJogador.Id, infosDoJogador.Senha);
+            string meusPersonagensRecebidos = Jogo.ListarCartas(jogadorLocal.Id, jogadorLocal.Senha);
             meusPersonagensRecebidos = meusPersonagensRecebidos.Replace("\r\n", "");
 
             for (int i = 0; i < meusPersonagensRecebidos.Length - 1; i++)
@@ -200,43 +201,45 @@ namespace sistema_autonomo
                 minhasCartas.Add(meusPersonagensRecebidos.Substring(i, 1));
             }
 
-            if (infosDoJogador.QtdNaos > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
+            if (jogadorLocal.Ponto > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
             {
-                Jogo.Votar(infosDoJogador.Id, infosDoJogador.Senha, "N");
+                Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "N");
             }
             else
             {
-                Jogo.Votar(infosDoJogador.Id, infosDoJogador.Senha, "S");
+                Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "S");
             }
-            //lblAltQtdNaosJogador1.Text = Convert.ToString(infosDoJogador.QtdNaos);
+            //lblAltQtdNaosJogador1.Text = Convert.ToString(jogadorPartida.QtdNaos);
+        }
+
+        private void AtualizarDataGridView()
+        {
+            dgvSala.DataSource = partida.ListarJogadores(jogadorLocal.Id);
         }
         private void tmrPosicionarPersonagem_Tick(object sender, EventArgs e)
         {
             tmrPosicionarPersonagem.Enabled = false;
-            lblAltQtdNaosJogador1.Text = infosDaPartida.ListaDeJogadores[0].QtdNaos.ToString();
-            lblAltQtdNaosJogador2.Text = infosDaPartida.ListaDeJogadores[1].QtdNaos.ToString();
+            //lblAltQtdNaosJogador1.Text = partida.ListaJogadoresPartida[0].QtdeNao.ToString();
+            //lblAltQtdNaosJogador2.Text = partida.ListaJogadoresPartida[1].QtdeNao.ToString();
 
             string rodadaPassada = "0";
-            string faseDaPartida = BancoAuxiliar.VerificarFase(infosDaPartida.Id);
-            string RodadaAtual = BancoAuxiliar.VerificarRodada(infosDaPartida.Id);
+            string faseDaPartida = BancoAuxiliar.VerificarFase(partida.Id);
+            string RodadaAtual = BancoAuxiliar.VerificarRodada(partida.Id);
             if (RodadaAtual != rodadaPassada)
             {
                 ResetarPosicaoCartas();
                 rodadaPassada = RodadaAtual;
             }
-            //MessageBox.Show(rodadaPassada.ToString() + " " + RodadaAtual.ToString());
-
             // Seta a quantidade de cartas 'Não' novamente após entrar em uma nova rodada
-
-            numeroRodada = Jogo.VerificarVez(infosDaPartida.Id);
+            numeroRodada = Jogo.VerificarVez(partida.Id);
             numeroRodadaTratado = numeroRodada.Split(',');
             lblAltRodadaPartida.Text = numeroRodadaTratado[2];
 
-            if (Convert.ToInt32(numeroRodadaTratado[2]) > infosDaPartida.VerificadorPartida)
+            if (Convert.ToInt32(numeroRodadaTratado[2]) > partida.VerificadorPartida)
             {
                 Console.WriteLine("ENTROUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
-                infosDaPartida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
-                infosDaPartida.SetVotosNao();
+                partida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
+                partida.SetVotosNao();
                 Console.WriteLine(numeroRodadaTratado[2]);
             }
 
@@ -248,30 +251,33 @@ namespace sistema_autonomo
                 string[] dadosPartida;
                 string[] tabuleiroRecebido;
 
+                // Atualiza o DGW
+                AtualizarDataGridView();
+
                 //Vira metodo
-                verificarVez = Jogo.VerificarVez(infosDaPartida.Id);
+                verificarVez = Jogo.VerificarVez(partida.Id);
                 verificarVez = verificarVez.Replace("\r", "");
                 verificaVezTratado = verificarVez.Split('\n');
                 dadosPartida = verificaVezTratado[0].Split(',');
                 jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
-                if (verificarVez.Substring(0, 4) != "ERRO")
-                {
-                    foreach (Jogador j in infosDaPartida.ListaDeJogadores)
-                    {
-                        Console.WriteLine($"Jogador: {j.Nome}, ID {j.Id}");
+                //if (verificarVez.Substring(0, 4) != "ERRO")
+                //{
+                //    foreach (JogadorPartida item in listaJogadores)
+                //    {
+                //        Console.WriteLine($"Jogador: {item.Nome}, ID {item.Id}");
 
-                        if (infosDoJogador.Id == jogadorVez)
-                        {
-                            lblAltStatusVezSala.Text = $"É a sua vez ID {infosDoJogador.Id} - {infosDoJogador.Nome}";
-                            break;
-                        }
-                        if (j.Id == jogadorVez)
-                        {
-                            lblAltStatusVezSala.Text = $"É a vez do ID {j.Id} - {j.Nome}";
-                            break;
-                        }
-                    }
-                }
+                //        if (jogadorLocal.Id == jogadorVez)
+                //        {
+                //            lblAltStatusVezSala.Text = $"É a sua vez ID {jogadorPartida.Id} - {jogadorPartida.Nome}";
+                //            break;
+                //        }
+                //        if (item.Id == jogadorVez)
+                //        {
+                //            lblAltStatusVezSala.Text = $"É a vez do ID {item.Id} - {item.Nome}";
+                //            break;
+                //        }
+                //    }
+                //}
 
                 List<string> nomesParaDesposicionar = new List<string>
                 {
@@ -289,7 +295,7 @@ namespace sistema_autonomo
                     "Ranulfo",
                     "Toshio"
                 };
-                foreach (Personagem p in listaDePersonagens)
+                foreach (Personagem p in listaPersonagens)
                 {
                     if (nomesParaDesposicionar.Contains(p.nome))
                     {
@@ -300,8 +306,8 @@ namespace sistema_autonomo
                 //Faz a limpeza do estado do tabuleiro
                 estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
                 //Posiciona personagens
-                estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(infosDaPartida.Id, listaDePersonagens);
-                listaDePersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaDePersonagens);
+                estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
+                listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
 
                 tabuleiroRecebido = verificarVez.Split('\n');
 
@@ -320,14 +326,14 @@ namespace sistema_autonomo
 
                 lstCartas.Items.Clear();
                 // Colocando as cartas na lstbox
-                for (int i = 0; i < listaDePersonagens.Count; i++)
+                for (int i = 0; i < listaPersonagens.Count; i++)
                 {
-                    lstCartas.Items.Add(listaDePersonagens[i].nome);
+                    lstCartas.Items.Add(listaPersonagens[i].nome);
                 }
 
-                if (jogadorVez == infosDoJogador.Id)
+                if (jogadorVez == jogadorLocal.Id)
                 {
-                    bot.Posicionar(infosDoJogador.Id, infosDoJogador.Senha, infosDaPartida.Id, tabuleiro);
+                    bot.Posicionar(jogadorLocal.Id, jogadorLocal.Senha, partida.Id, tabuleiro);
                 }
             }
             else if (faseDaPartida == "P")
