@@ -65,5 +65,6 @@ namespace sistema_autonomo.Classes
             string[] jogadores = jogadoresRecebidos.Split('\n');
             return jogadores;
         }
+
     }
 }

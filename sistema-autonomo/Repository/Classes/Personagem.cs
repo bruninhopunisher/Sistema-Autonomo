@@ -66,20 +66,5 @@ namespace sistema_autonomo
             }
             return personagens_instancia;
         }
-
-        public void AlterarSetorPersonagem(string nome, int setor)
-        {
-            List<Personagem> personagens = ListarPersonagem(this.setor);
-            this.nome = nome;
-            this.setor = setor;
-
-            for (int i = 0; i < personagens.Count; i++)
-            {
-                if (nome == personagens[i].nome)
-                {
-                    personagens[i].setor = setor;
-                }
-            }
-        }
     }
 }

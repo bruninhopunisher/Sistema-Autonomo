@@ -200,6 +200,34 @@ namespace sistema_autonomo.Classes
             }
             return listaDePersonagens;
         }
+        public List<Personagem> DesposicionarPersonagens(List<Personagem> personagensRecebidos)
+        {
+            List<Personagem> personagensDesposicionados = personagensRecebidos;
+            List<string> nomesParaDesposicionar = new List<string>
+                {
+                    "Adilson Konrad",
+                    "Beatriz Paiva",
+                    "Claro",
+                    "Douglas Baquiao",
+                    "Eduardo Takeo",
+                    "Guilherme Rey",
+                    "Heredia",
+                    "Kelly Kiyumi",
+                    "Leonardo Takuno",
+                    "Mario Toledo",
+                    "Quintas",
+                    "Ranulfo",
+                    "Toshio"
+                };
+            foreach (Personagem p in personagensDesposicionados)
+            {
+                if (nomesParaDesposicionar.Contains(p.nome))
+                {
+                    p.personagemPosicionado = false;
+                }
+            }
+            return personagensDesposicionados;
+        }
         public string VerificarPersonagemMaisAlto()
         {
             for (int i = 25; i > 1; i--)

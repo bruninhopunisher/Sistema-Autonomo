@@ -96,5 +96,19 @@ namespace sistema_autonomo.Classes
                 }
             }
         }
+        public string VerificarNomeJogadorDaVez()
+        {
+            string[] dadosDaPartida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(this.id));
+            string[] dadosDaPartidaTratado = dadosDaPartida[0].Split(',');
+            int idJogador = Convert.ToInt32(dadosDaPartidaTratado[0]);
+            foreach(JogadorPartida jogador in listaJogadoresPartida)
+            {
+                if(jogador.Id == idJogador)
+                {
+                    return jogador.Nome;
+                }
+            }
+            return null;
+        }
     }
 }

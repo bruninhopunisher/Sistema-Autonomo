@@ -21,6 +21,8 @@ namespace sistema_autonomo
             }
             return null; //Retorna nulo caso dê erro;
         }
+
+        //Vai para Partida
         public static string VerificarFase(int idPartida)
         {
             string[] dados = TratarDados(Jogo.VerificarVez(idPartida));
@@ -38,6 +40,8 @@ namespace sistema_autonomo
             string n = Fase[2];
             return n;
         }
+
+
         public static string[] EstadoDoTabuleiro(int idPartida) {
             string tabuleiroRecebidoDll = Jogo.VerificarVez(idPartida);
             tabuleiroRecebidoDll.Replace("\r", "");

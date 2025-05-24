@@ -20,6 +20,7 @@ namespace sistema_autonomo
         public Login()
         {
             InitializeComponent();
+            
             cboFiltrarPartidas.Items.Add("Todos");
             cboFiltrarPartidas.Items.Add("Abertas");
             cboFiltrarPartidas.Items.Add("Jogando");
@@ -93,9 +94,9 @@ namespace sistema_autonomo
             string controller_senha_partida = txtSenhaEntrarPartida.Text.Trim();
 
             // Instância única de jogador local
-            JogadorLocal jogadorLocal = new JogadorLocal(0, controller_nome, null, 0, 0);
+            JogadorLocal jogadorLocal;
 
-            string iniciarPartida = Jogo.Entrar(partida.Id, jogadorLocal.Nome, controller_senha_partida);
+            string iniciarPartida = Jogo.Entrar(partida.Id, controller_nome, controller_senha_partida);
             string[] dadosTratados = iniciarPartida.Split(',');
 
             if (iniciarPartida.Substring(0, 1) != "E")
@@ -103,9 +104,9 @@ namespace sistema_autonomo
                 int controller_id = Convert.ToInt32(dadosTratados[0]);
                 string controller_senha_jogador = dadosTratados[1];
 
-                jogadorLocal.Id = controller_id;
-                jogadorLocal.Senha = controller_senha_jogador;
+                jogadorLocal = new JogadorLocal(controller_id, controller_nome, controller_senha_jogador, 0, 3);
 
+                this.Hide();
                 Lobby telaLobby = new Lobby(partida, jogadorLocal);
                 telaLobby.ShowDialog();
                 this.Close();

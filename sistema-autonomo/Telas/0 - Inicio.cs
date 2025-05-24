@@ -23,6 +23,7 @@ namespace sistema_autonomo
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Login telaLogin = new Login();
             telaLogin.ShowDialog();
             this.Close();

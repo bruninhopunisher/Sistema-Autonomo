@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sala));
             this.txtConstMinhasCartasSala = new System.Windows.Forms.Label();
             this.lstMinhasCartasSala = new System.Windows.Forms.ListBox();
-            this.lblSetoresSala = new System.Windows.Forms.Label();
-            this.lstSetoresSala = new System.Windows.Forms.ListBox();
-            this.lblTabuleiro = new System.Windows.Forms.Label();
-            this.lstAltTabuleiroSala = new System.Windows.Forms.ListBox();
             this.lblConstStatusVezSala = new System.Windows.Forms.Label();
             this.lblAltStatusVezSala = new System.Windows.Forms.Label();
             this.picAdilson = new System.Windows.Forms.PictureBox();
@@ -52,7 +48,6 @@
             this.picLeonardo = new System.Windows.Forms.PictureBox();
             this.picToshio = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lstCartas = new System.Windows.Forms.ListBox();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
             this.lblNomeDoGrupo = new System.Windows.Forms.Label();
             this.lblAltNomeJogador1 = new System.Windows.Forms.Label();
@@ -71,7 +66,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.jogoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvSala = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
@@ -92,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jogoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).BeginInit();
             this.SuspendLayout();
@@ -113,40 +106,6 @@
             this.lstMinhasCartasSala.Name = "lstMinhasCartasSala";
             this.lstMinhasCartasSala.Size = new System.Drawing.Size(140, 160);
             this.lstMinhasCartasSala.TabIndex = 4;
-            // 
-            // lblSetoresSala
-            // 
-            this.lblSetoresSala.AutoSize = true;
-            this.lblSetoresSala.Location = new System.Drawing.Point(385, 295);
-            this.lblSetoresSala.Name = "lblSetoresSala";
-            this.lblSetoresSala.Size = new System.Drawing.Size(43, 13);
-            this.lblSetoresSala.TabIndex = 5;
-            this.lblSetoresSala.Text = "Setores";
-            // 
-            // lstSetoresSala
-            // 
-            this.lstSetoresSala.FormattingEnabled = true;
-            this.lstSetoresSala.Location = new System.Drawing.Point(354, 311);
-            this.lstSetoresSala.Name = "lstSetoresSala";
-            this.lstSetoresSala.Size = new System.Drawing.Size(112, 160);
-            this.lstSetoresSala.TabIndex = 6;
-            // 
-            // lblTabuleiro
-            // 
-            this.lblTabuleiro.AutoSize = true;
-            this.lblTabuleiro.Location = new System.Drawing.Point(232, 295);
-            this.lblTabuleiro.Name = "lblTabuleiro";
-            this.lblTabuleiro.Size = new System.Drawing.Size(51, 13);
-            this.lblTabuleiro.TabIndex = 7;
-            this.lblTabuleiro.Text = "Tabuleiro";
-            // 
-            // lstAltTabuleiroSala
-            // 
-            this.lstAltTabuleiroSala.FormattingEnabled = true;
-            this.lstAltTabuleiroSala.Location = new System.Drawing.Point(200, 311);
-            this.lstAltTabuleiroSala.Name = "lstAltTabuleiroSala";
-            this.lstAltTabuleiroSala.Size = new System.Drawing.Size(116, 160);
-            this.lstAltTabuleiroSala.TabIndex = 8;
             // 
             // lblConstStatusVezSala
             // 
@@ -293,15 +252,6 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // lstCartas
-            // 
-            this.lstCartas.FormattingEnabled = true;
-            this.lstCartas.Location = new System.Drawing.Point(471, 311);
-            this.lstCartas.Margin = new System.Windows.Forms.Padding(2);
-            this.lstCartas.Name = "lstCartas";
-            this.lstCartas.Size = new System.Drawing.Size(112, 160);
-            this.lstCartas.TabIndex = 29;
-            // 
             // lblVersaoDoJogo
             // 
             this.lblVersaoDoJogo.AutoSize = true;
@@ -321,7 +271,7 @@
             // lblAltNomeJogador1
             // 
             this.lblAltNomeJogador1.AutoSize = true;
-            this.lblAltNomeJogador1.Location = new System.Drawing.Point(168, 25);
+            this.lblAltNomeJogador1.Location = new System.Drawing.Point(103, 25);
             this.lblAltNomeJogador1.Name = "lblAltNomeJogador1";
             this.lblAltNomeJogador1.Size = new System.Drawing.Size(13, 13);
             this.lblAltNomeJogador1.TabIndex = 37;
@@ -436,14 +386,17 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Location = new System.Drawing.Point(15, 25);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(81, 28);
+            this.pictureBox2.Size = new System.Drawing.Size(124, 26);
             this.pictureBox2.TabIndex = 58;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.Location = new System.Drawing.Point(15, 108);
             this.pictureBox3.Name = "pictureBox3";
@@ -453,6 +406,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.Location = new System.Drawing.Point(15, 65);
             this.pictureBox4.Name = "pictureBox4";
@@ -470,15 +424,6 @@
             this.pictureBox5.TabIndex = 61;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1, 4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(1463, 977);
-            this.pictureBox6.TabIndex = 62;
-            this.pictureBox6.TabStop = false;
-            // 
             // jogoBindingSource
             // 
             this.jogoBindingSource.DataSource = typeof(KingMeServer.Jogo);
@@ -495,6 +440,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1464, 981);
             this.Controls.Add(this.dgvSala);
             this.Controls.Add(this.pictureBox5);
@@ -514,7 +460,6 @@
             this.Controls.Add(this.lblAltNomeJogador1);
             this.Controls.Add(this.lblNomeDoGrupo);
             this.Controls.Add(this.lblVersaoDoJogo);
-            this.Controls.Add(this.lstCartas);
             this.Controls.Add(this.picToshio);
             this.Controls.Add(this.picTakeo);
             this.Controls.Add(this.picGui);
@@ -531,13 +476,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblAltStatusVezSala);
             this.Controls.Add(this.lblConstStatusVezSala);
-            this.Controls.Add(this.lstAltTabuleiroSala);
-            this.Controls.Add(this.lblTabuleiro);
-            this.Controls.Add(this.lstSetoresSala);
-            this.Controls.Add(this.lblSetoresSala);
             this.Controls.Add(this.lstMinhasCartasSala);
             this.Controls.Add(this.txtConstMinhasCartasSala);
-            this.Controls.Add(this.pictureBox6);
             this.Name = "Sala";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -560,7 +500,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jogoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).EndInit();
             this.ResumeLayout(false);
@@ -571,10 +510,6 @@
         #endregion
         private System.Windows.Forms.Label txtConstMinhasCartasSala;
         private System.Windows.Forms.ListBox lstMinhasCartasSala;
-        private System.Windows.Forms.Label lblSetoresSala;
-        private System.Windows.Forms.ListBox lstSetoresSala;
-        private System.Windows.Forms.Label lblTabuleiro;
-        private System.Windows.Forms.ListBox lstAltTabuleiroSala;
         private System.Windows.Forms.Label lblConstStatusVezSala;
         private System.Windows.Forms.Label lblAltStatusVezSala;
         private System.Windows.Forms.PictureBox picAdilson;
@@ -591,7 +526,6 @@
         private System.Windows.Forms.PictureBox picLeonardo;
         private System.Windows.Forms.PictureBox picToshio;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListBox lstCartas;
         private System.Windows.Forms.Label lblVersaoDoJogo;
         private System.Windows.Forms.Label lblNomeDoGrupo;
         private System.Windows.Forms.Label lblAltNomeJogador1;
@@ -610,7 +544,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.BindingSource jogoBindingSource;
         private System.Windows.Forms.DataGridView dgvSala;
     }
