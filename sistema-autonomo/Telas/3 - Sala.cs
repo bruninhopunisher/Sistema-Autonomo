@@ -17,6 +17,8 @@ namespace sistema_autonomo
     {
         Tabuleiro tabuleiro = new Tabuleiro();
         Automacao bot = new Automacao();
+        
+        List<JogadorPartida> listaJogadores;
         List<Personagem> listaPersonagens = new List<Personagem>();
         Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
 
@@ -28,17 +30,15 @@ namespace sistema_autonomo
         string verificarVez;
         string[] verificaVezTratado;
         string[] numeroRodadaTratado;
-
         public Sala(Partida partidaRecebida, JogadorLocal jogadorLocal)
         {
             InitializeComponent();
             partida = partidaRecebida;
-            this.jogadorLocal = jogadorLocal;
 
-            partida.ListaJogadoresPartida.Add(jogadorPartida);
-            //partida.ListarJogadores(jogadorLocal.Id);
-            partida.SetVotosNao();
-            lblNomeDoGrupo.Text = partida.NomeGrupo;
+            this.jogadorLocal = jogadorLocal;
+            
+            partidaRecebida.SetVotosNao();
+            lblNomeDoGrupo.Text = partidaRecebida.NomeGrupo;
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
 
             //lblAltNomeJogador1.Text = partida.ListaJogadoresPartida[0].Nome;
@@ -211,6 +211,11 @@ namespace sistema_autonomo
             }
             //lblAltQtdNaosJogador1.Text = Convert.ToString(jogadorPartida.QtdNaos);
         }
+
+        private void AtualizarDataGridView()
+        {
+            dgvSala.DataSource = partida.ListarJogadores(jogadorLocal.Id);
+        }
         private void tmrPosicionarPersonagem_Tick(object sender, EventArgs e)
         {
             tmrPosicionarPersonagem.Enabled = false;
@@ -225,10 +230,7 @@ namespace sistema_autonomo
                 ResetarPosicaoCartas();
                 rodadaPassada = RodadaAtual;
             }
-            //MessageBox.Show(rodadaPassada.ToString() + " " + RodadaAtual.ToString());
-
             // Seta a quantidade de cartas 'Não' novamente após entrar em uma nova rodada
-
             numeroRodada = Jogo.VerificarVez(partida.Id);
             numeroRodadaTratado = numeroRodada.Split(',');
             lblAltRodadaPartida.Text = numeroRodadaTratado[2];
@@ -249,6 +251,9 @@ namespace sistema_autonomo
                 string[] dadosPartida;
                 string[] tabuleiroRecebido;
 
+                // Atualiza o DGW
+                AtualizarDataGridView();
+
                 //Vira metodo
                 verificarVez = Jogo.VerificarVez(partida.Id);
                 verificarVez = verificarVez.Replace("\r", "");
@@ -257,18 +262,18 @@ namespace sistema_autonomo
                 jogadorVez = Convert.ToInt32(dadosPartida[0]); //ID do jogador da vez
                 //if (verificarVez.Substring(0, 4) != "ERRO")
                 //{
-                //    foreach (JogadorPartida j in partida.ListaJogadoresPartida)
+                //    foreach (JogadorPartida item in listaJogadores)
                 //    {
-                //        Console.WriteLine($"Jogador: {j.Nome}, ID {j.Id}");
+                //        Console.WriteLine($"Jogador: {item.Nome}, ID {item.Id}");
 
-                //        if (jogadorPartida.Id == jogadorVez)
+                //        if (jogadorLocal.Id == jogadorVez)
                 //        {
                 //            lblAltStatusVezSala.Text = $"É a sua vez ID {jogadorPartida.Id} - {jogadorPartida.Nome}";
                 //            break;
                 //        }
-                //        if (j.Id == jogadorVez)
+                //        if (item.Id == jogadorVez)
                 //        {
-                //            lblAltStatusVezSala.Text = $"É a vez do ID {j.Id} - {j.Nome}";
+                //            lblAltStatusVezSala.Text = $"É a vez do ID {item.Id} - {item.Nome}";
                 //            break;
                 //        }
                 //    }
