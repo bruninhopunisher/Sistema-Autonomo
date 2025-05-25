@@ -3,15 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\lucas\\source\\repos\\sistemaautonomo-pi-lll\\sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\repository\\classes\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\repository\\classes\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\lucas\\source\\repos\\sistemaautonomo-pi-lll\\sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -22,43 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Partida.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Repository\\Classes\\Partida.cs",
-              "RelativeDocumentMoniker": "sistema-autonomo\\Repository\\Classes\\Partida.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Repository\\Classes\\Partida.cs",
-              "RelativeToolTip": "sistema-autonomo\\Repository\\Classes\\Partida.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAywDIAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T17:44:28.516Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "3 - Sala.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\3 - Sala.cs",
               "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\3 - Sala.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\3 - Sala.cs",
-              "RelativeToolTip": "sistema-autonomo\\Telas\\3 - Sala.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAiwCgAAABMAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\3 - Sala.cs*",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\3 - Sala.cs*",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAgwDYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T16:46:30.865Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "3 - Sala.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\3 - Sala.cs",
               "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\3 - Sala.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\3 - Sala.cs [Design]",
-              "RelativeToolTip": "sistema-autonomo\\Telas\\3 - Sala.cs [Design]",
+              "ToolTip": "C:\\Users\\lucas\\source\\repos\\SistemaAutonomo-PI-lll\\sistema-autonomo\\Telas\\3 - Sala.cs [Design]*",
+              "RelativeToolTip": "sistema-autonomo\\Telas\\3 - Sala.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:45:22.184Z"
+              "WhenOpened": "2025-05-24T16:45:22.184Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

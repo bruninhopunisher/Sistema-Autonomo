@@ -18,7 +18,7 @@ namespace sistema_autonomo.Classes
         private string data;
         private string status;
         private int verificadorPartida;
-        private List<Jogador> listaDeJogadores = new List<Jogador>();
+        private List<Jogador> listaJogadores = new List<Jogador>();
         public string NomeGrupo { get { return "Estudantes de Bolonha"; } }
 
         public int Id
@@ -51,48 +51,44 @@ namespace sistema_autonomo.Classes
             get { return verificadorPartida; }
             set { this.verificadorPartida = value; }
         }
-        public List<Jogador> ListaDeJogadores
+        public List<Jogador> ListaJogadores
         {
-            get { return listaDeJogadores; }
+            get { return listaJogadores; }
         }
         public List<Jogador> ListarJogadores(JogadorLocal jogadorLocal)
         {
             string[] jogadoresRecebidos = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(id));
             if (jogadoresRecebidos != null)
             {
-                listaDeJogadores.Add(jogadorLocal);
+                listaJogadores.Add(jogadorLocal);
                 for (int i = 0; i < jogadoresRecebidos.Length - 1; i++)
                 {
                     string jogador = jogadoresRecebidos[i];
                     string[] dados = jogador.Split(',');
                     if (Convert.ToInt32(dados[0]) != jogadorLocal.Id)
                     {
-                        listaDeJogadores.Add(new JogadorPartida(Convert.ToInt32(dados[0]), dados[1], Convert.ToInt32(dados[2]), 0));
+                        listaJogadores.Add(new JogadorPartida(Convert.ToInt32(dados[0]), dados[1], Convert.ToInt32(dados[2]), 0));
                     }
                 }
-                return listaDeJogadores;
+                return listaJogadores;
             }
             return null;
         }
         public void SetVotosNao()
         {
-            foreach (Jogador jogador in listaDeJogadores)
+            foreach (Jogador jogador in listaJogadores)
             {
-                if (listaDeJogadores.Count == 2)
+                if (listaJogadores.Count <= 3)
                 {
-                    jogador.QtdDeNao = 3;
+                    jogador.QtdNao = 4;
                 }
-                else if (listaDeJogadores.Count == 3)
+                else if (listaJogadores.Count == 4)
                 {
-                    jogador.QtdDeNao = 4;
-                }
-                else if (listaDeJogadores.Count == 4)
-                {
-                    jogador.QtdDeNao = 3;
+                    jogador.QtdNao = 3;
                 }
                 else
                 {
-                    jogador.QtdDeNao = 2;
+                    jogador.QtdNao = 2;
                 }
             }
         }
@@ -101,7 +97,7 @@ namespace sistema_autonomo.Classes
             string[] dadosDaPartida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(this.id));
             string[] dadosDaPartidaTratado = dadosDaPartida[0].Split(',');
             int idJogador = Convert.ToInt32(dadosDaPartidaTratado[0]);
-            foreach(Jogador jogador in listaDeJogadores)
+            foreach(Jogador jogador in listaJogadores)
             {
                 if(jogador.Id == idJogador)
                 {

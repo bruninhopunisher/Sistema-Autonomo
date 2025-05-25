@@ -11,14 +11,14 @@ namespace sistema_autonomo.Classes
     {
         protected int id;
         protected string nome;
-        protected int pontos;
-        protected int qtdDeNao;
+        protected int qtdPonto;
+        protected int qtdNao;
         public Jogador(int id, string nome, int ponto, int qtdeNao)
         {
             this.id = id;
             this.nome = nome;
-            this.pontos = ponto;
-            this.qtdDeNao = qtdeNao;
+            this.qtdPonto = ponto;
+            this.qtdNao = qtdeNao;
         }
         public int Id
         {
@@ -28,15 +28,15 @@ namespace sistema_autonomo.Classes
         {
             get { return this.nome; }
         }
-        public int Pontos
+        public int QtdPonto
         {
-            get { return this.pontos; }
-            set { this.pontos = value; }
+            get { return this.qtdPonto; }
+            set { this.qtdPonto = value; }
         }
-        public int QtdDeNao
+        public int QtdNao
         {
-            get { return this.qtdDeNao; }
-            set { this.qtdDeNao = value; }
+            get { return this.qtdNao; }
+            set { this.qtdNao = value; }
         }
     }
 }
