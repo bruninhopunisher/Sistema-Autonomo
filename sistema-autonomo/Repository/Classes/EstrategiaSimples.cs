@@ -71,27 +71,6 @@ namespace sistema_autonomo.Classes
         }
         public override void Votar(Tabuleiro tabuleiro, JogadorLocal jogadorLocal)
         {
-            ////Diminui votos todos os jogadores
-            //string[] ultimasVotacoes = BancoAuxiliar.TratarDados(Jogo.ExibirUltimaVotacao(partida.Id));
-            //string[] infoVotos;
-            //if (ultimasVotacoes != null)
-            //{
-            //    for (int i = 0; i < ultimasVotacoes.Length - 1; i++)
-            //    {
-            //        infoVotos = ultimasVotacoes[i].Split(',');
-            //        foreach (JogadorPartida jogador in partida.ListaJogadoresPartida)
-            //        {
-            //            if (Convert.ToInt32(infoVotos[1]) == jogadorLocal.Id)
-            //            {
-            //                if (infoVotos[2] == "N")
-            //                {
-            //                    jogadorLocal.QtdNao--;
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-
             string personagemEleitoVotacao;
             List<string> minhasCartas = new List<string>();
 
@@ -106,7 +85,7 @@ namespace sistema_autonomo.Classes
                 minhasCartas.Add(meusPersonagensRecebidos.Substring(i, 1));
             }
 
-            if (jogadorLocal.QtdDeNao > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
+            if (jogadorLocal.QtdNao > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
             {
                 Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "N");
             }

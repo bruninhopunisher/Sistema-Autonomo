@@ -16,9 +16,17 @@ namespace sistema_autonomo
 {
     public partial class Sala : Form
     {
-        Partida partida;
-        JogadorLocal meuJogador;
-
+        private Partida partida;
+        private JogadorLocal meuJogador;
+        private Label[] lblsNome;
+        private Label[] lblsNaos;
+        private Label[] lblsPontos;
+        private PictureBox[] picsNome;
+        private PictureBox[] picsNaos;
+        private PictureBox[] picsPontos;
+        private string rodadaPassada = "0";
+        private bool decrementoProcessado;
+        private bool autenticarVotacao;
 
 
         Tabuleiro tabuleiro = new Tabuleiro();
@@ -37,41 +45,18 @@ namespace sistema_autonomo
             partida = partidaRecebida;
             partida.ListarJogadores(jogadorLocal);
             partida.SetVotosNao();
+            lblsNome = new[] { lblAltNomeJogador1, lblAltNomeJogador2, lblAltNomeJogador3, lblAltNomeJogador4 };
+            lblsNaos = new[] { lblAltQtdNaosJogador1, lblAltQtdNaosJogador2, lblAltQtdNaosJogador3, lblAltQtdNaosJogador4 };
+            lblsPontos = new[] { lblAltPontosJogador1, lblAltPontosJogador2, lblAltPontosJogador3, lblAltPontosJogador4 };
+            picsNome = new[] { picNomeJogador1, picNomeJogador2, picNomeJogador3, picNomeJogador4 };
+            picsNaos = new[] { picVotosJogador1, picVotosJogador2, picVotosJogador3, picVotosJogador4 };
+            picsPontos = new[] { picPontosJogador1, picPontosJogador2, picPontosJogador3, picPontosJogador4 };
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
-            //lblAltStatusVezSala.Text = Precisa ajeitar, eu ia mexer mas tive que sair
-            lblAltRodadaPartida.Text = partida.VerificadorPartida.ToString();
-
-            lblAltNomeJogador1.Text = partida.ListaDeJogadores[0].Nome;
-            lblAltQtdNaosJogador1.Text = partida.ListaDeJogadores[0].QtdDeNao.ToString();
-            lblAltPontosJogador1.Text = partida.ListaDeJogadores[0].Pontos.ToString();
-            lblAltNomeJogador2.Text = partida.ListaDeJogadores[1].Nome;
-            lblAltQtdNaosJogador2.Text = partida.ListaDeJogadores[1].QtdDeNao.ToString();
-            lblAltPontosJogador2.Text = partida.ListaDeJogadores[1].Pontos.ToString();
-            if(partida.ListaDeJogadores.Count > 2)
-            {
-                picNomeJogador3.Visible = true;
-                picVotosJogador3.Visible = true;
-                picPontosJogador3.Visible = true;
-                lblAltNomeJogador3.Visible = true;
-                lblAltQtdNaosJogador3.Visible = true;
-                lblAltPontosJogador3.Visible = true;
-                lblAltNomeJogador3.Text = partida.ListaDeJogadores[2].Nome;
-                lblAltQtdNaosJogador3.Text = partida.ListaDeJogadores[2].QtdDeNao.ToString();
-                lblAltPontosJogador3.Text = partida.ListaDeJogadores[2].Pontos.ToString();
-            }
-            if (partida.ListaDeJogadores.Count > 3)
-            {
-                picNomeJogador4.Visible = true;
-                picVotosJogador4.Visible = true;
-                picPontosJogador4.Visible = true;
-                lblAltNomeJogador4.Visible = true;
-                lblAltQtdNaosJogador4.Visible = true;
-                lblAltPontosJogador4.Visible = true;
-                lblAltNomeJogador4.Text = partida.ListaDeJogadores[3].Nome;
-                lblAltQtdNaosJogador4.Text = partida.ListaDeJogadores[3].QtdDeNao.ToString();
-                lblAltPontosJogador4.Text = partida.ListaDeJogadores[3].Pontos.ToString();
-            }
+            decrementoProcessado = false;
+            autenticarVotacao = false;
             tmrPosicionarPersonagem.Enabled = true;
+            AtualizarInformacoes();
+
 
             //Atribui personagens na lista assim que o programa e executado
             listaPersonagens = Personagem.ListarPersonagem(0);
@@ -128,6 +113,24 @@ namespace sistema_autonomo
                 }
             }
         }
+
+        public void AtualizarInformacoes()
+        { 
+            for (int i = 0; i < partida.ListaJogadores.Count; i++)
+            {
+                lblsNome[i].Visible = true;
+                lblsNaos[i].Visible = true;
+                lblsPontos[i].Visible = true;
+                picsNome[i].Visible = true;
+                picsNaos[i].Visible = true;
+                picsPontos[i].Visible = true;
+                lblsNome[i].Text = partida.ListaJogadores[i].Nome;
+                lblsNaos[i].Text = partida.ListaJogadores[i].QtdNao.ToString();
+                lblsPontos[i].Text = partida.ListaJogadores[i].QtdPonto.ToString();
+                lblAltStatusVezSala.Text = partida.VerificarNomeJogadorDaVez();
+                lblAltRodadaPartida.Text = partida.VerificadorPartida.ToString();
+            }
+        }
         private void LimparEAtualizarTabuleiro()
         {
             listaPersonagens = tabuleiro.DesposicionarPersonagens(listaPersonagens);
@@ -137,13 +140,13 @@ namespace sistema_autonomo
         }
         private void AtualizarDataGridView()
         {
-            dgvSala.DataSource = partida.ListaDeJogadores;
+            dgvSala.DataSource = partida.ListaJogadores;
         }
         private void tmrPosicionarPersonagem_Tick(object sender, EventArgs e)
         {
             tmrPosicionarPersonagem.Enabled = false;
+            AtualizarInformacoes();
 
-            string rodadaPassada = "0";
             string faseDaPartida = BancoAuxiliar.VerificarFase(partida.Id);
             string RodadaAtual = BancoAuxiliar.VerificarRodada(partida.Id);
             if (RodadaAtual != rodadaPassada)
@@ -161,10 +164,8 @@ namespace sistema_autonomo
 
             if (Convert.ToInt32(numeroRodadaTratado[2]) > partida.VerificadorPartida)
             {
-                Console.WriteLine("ENTROUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
                 partida.VerificadorPartida = Convert.ToInt32(numeroRodadaTratado[2]);
                 partida.SetVotosNao();
-                Console.WriteLine(numeroRodadaTratado[2]);
             }
 
             if (faseDaPartida == "S")
@@ -184,13 +185,45 @@ namespace sistema_autonomo
                 string personagemPromover = tabuleiro.VerificarPersonagemMaisAlto();
                 estrategia.Promover(personagemPromover, meuJogador);
                 LimparEAtualizarTabuleiro();
+                decrementoProcessado = false;
             }
             else if (faseDaPartida == "V")
             {
                 LimparEAtualizarTabuleiro();
                 estrategia.Votar(tabuleiro, meuJogador);
+                autenticarVotacao = true;
             }
+            // Diminui votos todos os jogadores
+            Console.WriteLine($"autenticarVotacao e {autenticarVotacao.ToString()}");
+            Console.WriteLine($"decrementoProcessado e {decrementoProcessado.ToString()}");
+            
 
+            //CORRIGIR AQUI, TEM VEZ QUE ESTA DECREMENTANDO 2 VEZES
+            if (!decrementoProcessado && autenticarVotacao)
+            {
+                string[] voto = BancoAuxiliar.TratarDados(Jogo.ExibirUltimaVotacao(partida.Id));
+                string[] infoVoto;
+                if (voto != null)
+                {
+                    for (int i = 0; i < voto.Length - 1; i++)
+                    {
+                        infoVoto = voto[i].Split(',');
+                        foreach (Jogador jogador in partida.ListaJogadores)
+                        {
+                            if (Convert.ToInt32(infoVoto[1]) == jogador.Id)
+                            {
+                                if (infoVoto[2] == "N")
+                                {
+                                    jogador.QtdNao--;
+                                }
+                            }
+                        }
+                    }
+                    Console.WriteLine($"Entrou aqui");
+                    autenticarVotacao = false;
+                    decrementoProcessado = true; // agora sim, evita executar de novo
+                }
+            }
             tmrPosicionarPersonagem.Enabled = true;
         }
         public void ResetarPosicaoCartas()
