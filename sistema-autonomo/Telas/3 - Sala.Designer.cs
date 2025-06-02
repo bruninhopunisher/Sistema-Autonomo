@@ -51,7 +51,6 @@
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
             this.lblNomeDoGrupo = new System.Windows.Forms.Label();
             this.lblAltNomeJogador1 = new System.Windows.Forms.Label();
-            this.tmrPosicionarPersonagem = new System.Windows.Forms.Timer(this.components);
             this.lblConstRodadaPartida = new System.Windows.Forms.Label();
             this.lblAltRodadaPartida = new System.Windows.Forms.Label();
             this.lblAltPontosJogador1 = new System.Windows.Forms.Label();
@@ -60,7 +59,6 @@
             this.picPontosJogador1 = new System.Windows.Forms.PictureBox();
             this.picVotosJogador1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.jogoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvSala = new System.Windows.Forms.DataGridView();
             this.picVotosJogador2 = new System.Windows.Forms.PictureBox();
             this.picPontosJogador2 = new System.Windows.Forms.PictureBox();
@@ -80,6 +78,7 @@
             this.lblAltQtdNaosJogador4 = new System.Windows.Forms.Label();
             this.lblAltPontosJogador4 = new System.Windows.Forms.Label();
             this.lblAltNomeJogador4 = new System.Windows.Forms.Label();
+            this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -98,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jogoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador2)).BeginInit();
@@ -303,11 +301,6 @@
             this.lblAltNomeJogador1.Text = "Texto";
             this.lblAltNomeJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tmrPosicionarPersonagem
-            // 
-            this.tmrPosicionarPersonagem.Interval = 5000;
-            this.tmrPosicionarPersonagem.Tick += new System.EventHandler(this.tmrPosicionarPersonagem_Tick);
-            // 
             // lblConstRodadaPartida
             // 
             this.lblConstRodadaPartida.AutoSize = true;
@@ -394,10 +387,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(273, 31);
             this.pictureBox5.TabIndex = 61;
             this.pictureBox5.TabStop = false;
-            // 
-            // jogoBindingSource
-            // 
-            this.jogoBindingSource.DataSource = typeof(KingMeServer.Jogo);
             // 
             // dgvSala
             // 
@@ -632,6 +621,11 @@
             this.lblAltNomeJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAltNomeJogador4.Visible = false;
             // 
+            // tmrVerificarVez
+            // 
+            this.tmrVerificarVez.Interval = 5000;
+            this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
+            // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -708,7 +702,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jogoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador2)).EndInit();
@@ -746,7 +739,6 @@
         private System.Windows.Forms.Label lblVersaoDoJogo;
         private System.Windows.Forms.Label lblNomeDoGrupo;
         private System.Windows.Forms.Label lblAltNomeJogador1;
-        private System.Windows.Forms.Timer tmrPosicionarPersonagem;
         private System.Windows.Forms.Label lblConstRodadaPartida;
         private System.Windows.Forms.Label lblAltRodadaPartida;
         private System.Windows.Forms.Label lblAltPontosJogador1;
@@ -755,7 +747,6 @@
         private System.Windows.Forms.PictureBox picPontosJogador1;
         private System.Windows.Forms.PictureBox picVotosJogador1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.BindingSource jogoBindingSource;
         private System.Windows.Forms.DataGridView dgvSala;
         private System.Windows.Forms.PictureBox picVotosJogador2;
         private System.Windows.Forms.PictureBox picPontosJogador2;
@@ -775,5 +766,6 @@
         private System.Windows.Forms.Label lblAltQtdNaosJogador4;
         private System.Windows.Forms.Label lblAltPontosJogador4;
         private System.Windows.Forms.Label lblAltNomeJogador4;
+        private System.Windows.Forms.Timer tmrVerificarVez;
     }
 }

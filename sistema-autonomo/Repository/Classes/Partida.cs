@@ -17,7 +17,7 @@ namespace sistema_autonomo.Classes
         private string senha;
         private string data;
         private string status;
-        private int verificadorPartida;
+        private int rodada;
         private List<Jogador> listaJogadores = new List<Jogador>();
         public string NomeGrupo { get { return "Estudantes de Bolonha"; } }
 
@@ -46,10 +46,10 @@ namespace sistema_autonomo.Classes
             get { return status; }
             set { this.status = value; }
         }
-        public int VerificadorPartida
+        public int Rodada
         {
-            get { return verificadorPartida; }
-            set { this.verificadorPartida = value; }
+            get { return rodada; }
+            set { this.rodada = value; }
         }
         public List<Jogador> ListaJogadores
         {
@@ -74,7 +74,7 @@ namespace sistema_autonomo.Classes
             }
             return null;
         }
-        public void SetVotosNao()
+        public void SetQtdVotoNao()
         {
             foreach (Jogador jogador in listaJogadores)
             {
@@ -89,6 +89,42 @@ namespace sistema_autonomo.Classes
                 else
                 {
                     jogador.QtdNao = 2;
+                }
+            }
+        }
+        public void AtualizarPontuacao()
+        {
+            string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(this.id));
+            string[] infoJogador;
+            for (int i = 0; i < jogadores.Length - 1; i++)
+            {
+                infoJogador = jogadores[i].Split(',');
+                foreach (Jogador jogador in listaJogadores)
+                {
+                    if (Convert.ToInt32(infoJogador[0]) == jogador.Id)
+                    {
+                        jogador.QtdPonto = Convert.ToInt32(infoJogador[2]);
+                    }
+                }
+            }
+        }
+        public void AtualizarVoto()
+        {
+            string dadosRecebidos = Jogo.ExibirUltimaVotacao(this.id);
+            dadosRecebidos = dadosRecebidos.Replace("\r", "");
+            string[] votos = dadosRecebidos.Split('\n');
+            string[] infoVoto;
+            for (int i = 0; i < votos.Length - 1; i++)
+            {
+                infoVoto = votos[i].Split(',');
+                foreach (Jogador jogador in ListaJogadores)
+                {
+                    if (Convert.ToInt32(infoVoto[1]) == jogador.Id && infoVoto[2] == "N")
+                    {
+                        jogador.QtdNao--;
+                        Console.WriteLine($"{jogador.Nome} - DECREMENTOU");
+                        break;
+                    }
                 }
             }
         }
