@@ -53,7 +53,7 @@ namespace sistema_autonomo
             string verificacaoInicio = Jogo.Iniciar(jogadorLocal.Id, jogadorLocal.Senha);
             if (verificacaoInicio.Substring(0, 1) != "E" || verificacaoInicio == "ERRO:Partida não está aberta")
             {
-                partida.VerificadorPartida = 1;
+                partida.Rodada = 1;
                 partida.Status = "Jogando";
                 this.Hide();
                 Sala sala = new Sala(partida, jogadorLocal);
