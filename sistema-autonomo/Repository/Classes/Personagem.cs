@@ -17,30 +17,42 @@ namespace sistema_autonomo
         public bool foiDeBase { get; set; }
         public PictureBox cardPersonagem { get; set; }
         public bool personagemPosicionado { get; set; }
-        private List<Point> point;
+        private List<Point> pointPersonagens;
+        private List<Point> pointMinhasCartas;
         public static List<Personagem> personagenInstanciado = new List<Personagem>();
        
         public Personagem()
         {
-            this.point = new List<Point>();
-            point.Add(new Point(50, 500));
-            point.Add(new Point(200, 500));
-            point.Add(new Point(350, 500));
-            point.Add(new Point(500, 500));
-            point.Add(new Point(50, 650));
-            point.Add(new Point(200, 650));
-            point.Add(new Point(350, 650));
-            point.Add(new Point(500, 650));
-            point.Add(new Point(650, 650));
-            point.Add(new Point(50, 800));
-            point.Add(new Point(200, 800));
-            point.Add(new Point(350, 800));
-            point.Add(new Point(500, 800));
+            this.pointPersonagens = new List<Point>();
+            pointPersonagens.Add(new Point(355, 431));
+            pointPersonagens.Add(new Point(419, 431));
+            pointPersonagens.Add(new Point(483, 431));
+            pointPersonagens.Add(new Point(547, 431));
+            pointPersonagens.Add(new Point(611, 431));
+            pointPersonagens.Add(new Point(675, 431));
+            pointPersonagens.Add(new Point(739, 431));
+            pointPersonagens.Add(new Point(355, 513));
+            pointPersonagens.Add(new Point(419, 513));
+            pointPersonagens.Add(new Point(483, 513));
+            pointPersonagens.Add(new Point(547, 513));
+            pointPersonagens.Add(new Point(611, 513));
+            pointPersonagens.Add(new Point(675, 513));
+            this.pointMinhasCartas = new List<Point>();
+            pointMinhasCartas.Add(new Point(376, 253));
+            pointMinhasCartas.Add(new Point(444, 253));
+            pointMinhasCartas.Add(new Point(512, 253));
+            pointMinhasCartas.Add(new Point(580, 253));
+            pointMinhasCartas.Add(new Point(647, 253));
+            pointMinhasCartas.Add(new Point(715, 253));
         }
 
-        public List<Point> PointInicial
+        public List<Point> PointPersonagens
         {
-            get { return point; }
+            get { return pointPersonagens; }
+        }
+        public List<Point> PointMinhasCartas
+        {
+            get { return pointMinhasCartas; }
         }
 
         public static List<Personagem> ListarPersonagem(int setor)

@@ -33,7 +33,7 @@ namespace sistema_autonomo
         private int rodadaPassada;
         private string faseDaPartida;
         public int qtdPersonagensPosicionados = 0;
-        private string[] teste;
+        private string[] qtdPersonagensRecebida;
 
 
         Tabuleiro tabuleiro = new Tabuleiro();
@@ -103,7 +103,7 @@ namespace sistema_autonomo
                     personagem.cardPersonagem = mapaPersonagens[personagem.nome];
                 }
             }
-            teste = new string[15];
+            qtdPersonagensRecebida = new string[15];
 
             AtualizarInfoDaTela();
             tmrVerificarVez.Enabled = true;
@@ -112,18 +112,12 @@ namespace sistema_autonomo
         {
 
             //NÃO MEXER NESTE IF PELO AMOR
-            //Console.WriteLine($"QTD POSICIONADA: {qtdPersonagensPosicionados}");
-            //Console.WriteLine($"TAM TESTE: {teste.Length - 2}");
-            if (qtdPersonagensPosicionados > teste.Length - 2)
+            if (qtdPersonagensPosicionados > qtdPersonagensRecebida.Length - 2)
             {
                 partida.AtualizarVoto();
                 qtdPersonagensPosicionados--;
-               // Console.WriteLine($"DECREMENTOUUUUUUUUUUUU");
-               // Console.WriteLine($"QTD POSICIONADA: {qtdPersonagensPosicionados}");
-               // Console.WriteLine($"TAM TESTE: {teste.Length - 2}");
             }
             //ATE AQUI
-
 
             partida.AtualizarPontuacao();
             for (int i = 0; i < partida.ListaJogadores.Count; i++)
@@ -137,34 +131,41 @@ namespace sistema_autonomo
                 lblsNome[i].Text = partida.ListaJogadores[i].Nome;
                 lblsNaos[i].Text = partida.ListaJogadores[i].QtdNao.ToString();
                 lblsPontos[i].Text = partida.ListaJogadores[i].QtdPonto.ToString();
-                lblAltStatusVezSala.Text = partida.VerificarNomeJogadorDaVez();
-                lblAltRodadaPartida.Text = partida.Rodada.ToString();
+            }
+            lblAltStatusVezSala.Text = partida.VerificarNomeJogadorDaVez();
+            lblAltRodadaPartida.Text = partida.Rodada.ToString();
+            if(faseDaPartida == "S")
+            {
+                lblAltFasePartida.Text = "Posicionar";
+            }
+            else if (faseDaPartida == "P")
+            {
+                lblAltFasePartida.Text = "Promoção";
+            }
+            else
+            {
+                lblAltFasePartida.Text = "Votação";
             }
             LimparEAtualizarTabuleiro();
         }
         private void Jogar()
         {
-            // Atualiza o DGW
-            AtualizarDataGridView();
-            faseDaPartida = BancoAuxiliar.VerificarFase(partida.Id);
+            LimparEAtualizarTabuleiro();
             if (faseDaPartida == "S") //Em posicionar
             {
-                LimparEAtualizarTabuleiro();
                 partida.Rodada = Convert.ToInt32(BancoAuxiliar.VerificarRodada(partida.Id));
                 estrategia.Posicionar(meuJogador.Id, meuJogador.Senha, partida.Id, tabuleiro);
             }
             else if (faseDaPartida == "P") //Em promoçao
             {
-                LimparEAtualizarTabuleiro();
                 string personagemPromover = tabuleiro.VerificarPersonagemMaisAlto();
                 estrategia.Promover(personagemPromover, meuJogador);
-                teste = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
+                qtdPersonagensRecebida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
             }
             else if (faseDaPartida == "V") //Em votação
             {
-                LimparEAtualizarTabuleiro();
                 estrategia.Votar(tabuleiro, meuJogador);
-                qtdPersonagensPosicionados = teste.Length - 2;
+                qtdPersonagensPosicionados = qtdPersonagensRecebida.Length - 2;
             }
         }
         private void LimparEAtualizarTabuleiro()
@@ -174,23 +175,20 @@ namespace sistema_autonomo
             estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
             listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
         }
-        private void AtualizarDataGridView()
-        {
-            dgvSala.DataSource = partida.ListaJogadores;
-        }
         public void ResetarPosicaoCartas()
         {
             Personagem p = new Personagem();
             for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
             {
                 p = Personagem.personagenInstanciado[i];
-                p.cardPersonagem.Location = p.PointInicial[i];
+                p.cardPersonagem.Location = p.PointPersonagens[i];
                 p.cardPersonagem.Visible = true;
             }
         }
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
-            if (partida.Rodada != rodadaPassada)
+            faseDaPartida = BancoAuxiliar.VerificarFase(partida.Id);
+            if (faseDaPartida != null && partida.Rodada != rodadaPassada)
             {
                 rodadaPassada = partida.Rodada;
                 ResetarPosicaoCartas();
