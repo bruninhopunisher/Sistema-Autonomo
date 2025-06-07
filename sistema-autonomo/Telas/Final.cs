@@ -18,17 +18,19 @@ namespace sistema_autonomo.Telas
         {
             InitializeComponent();
             partidaRecebida.AtualizarPontuacao();
-            //partidaRecebida.ListaJogadores = partidaRecebida.ListaJogadores.OrderByDescending(j => j.QtdPonto).ToList();
+
+
+
             partidaRecebida.ListaJogadores.Sort((a,b) => b.QtdPonto.CompareTo(a.QtdPonto));
 
             lblAltNomeVencedor1.Text = partidaRecebida.ListaJogadores[0].Nome;
             lblAltPontosVencedor1.Text = partidaRecebida.ListaJogadores[0].QtdPonto.ToString();
-            lblAltNomeVencedor1.Text = partidaRecebida.ListaJogadores[1].Nome;
-            lblAltPontosVencedor1.Text = partidaRecebida.ListaJogadores[1].QtdPonto.ToString();
+            lblAltNomeVencedor2.Text = partidaRecebida.ListaJogadores[1].Nome;
+            lblAltPontosVencedor2.Text = partidaRecebida.ListaJogadores[1].QtdPonto.ToString();
             if (partidaRecebida.ListaJogadores.Count > 2)
             {
-                lblAltNomeVencedor1.Text = partidaRecebida.ListaJogadores[2].Nome;
-                lblAltPontosVencedor1.Text = partidaRecebida.ListaJogadores[2].QtdPonto.ToString();
+                lblAltNomeVencedor3.Text = partidaRecebida.ListaJogadores[2].Nome;
+                lblAltPontosVencedor3.Text = partidaRecebida.ListaJogadores[2].QtdPonto.ToString();
             }
         }
     }

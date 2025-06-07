@@ -33,7 +33,7 @@ namespace sistema_autonomo
             string[] dadosDoLobby = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
             lblIdPartida.Text = partida.Id.ToString();
             partida.Status = (dadosDoLobby == null ? partida.Status : dadosDoLobby[0].Split(',')[1]);
-            lblStatusPartida.Text = partida.Status == "A" ? "Aberta" : "Em andamento";
+            lblStatusPartida.Text = partida.Status == "Aberta" ? "Aberta" : "Jogando";
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
             //Informações dos jogadores presentes no lobby
             lstJogadoresLobby.Items.Clear();

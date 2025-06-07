@@ -95,7 +95,6 @@ namespace sistema_autonomo
             faseDaPartida = "";
             rodadaPassada = 0;
             qtdPersonagensPosicionados = 13;
-
             //VER COM O CAUA A LISTA
             listaPersonagens = Personagem.ListarPersonagem(0);
             foreach (var personagem in listaPersonagens)
@@ -105,15 +104,12 @@ namespace sistema_autonomo
                     personagem.cardPersonagem = mapaPersonagens[personagem.nome];
                 }
             }
-
             qtdPersonagensRecebida = new string[15];
             AtualizarInfoDaTela();
-            Console.WriteLine("PAssou no constr");
             tmrVerificarVez.Enabled = true;
         }
         public void AtualizarInfoDaTela()
         {
-
             //NÃO MEXER NESTE IF PELO AMOR
             if (qtdPersonagensPosicionados > qtdPersonagensRecebida.Length - 2)
             {
@@ -210,7 +206,6 @@ namespace sistema_autonomo
             }
             else if(faseDaPartida == "E")
             {
-                Console.WriteLine("aaa");
                 this.Hide();
                 Final final = new Final(partida);
                 tmrVerificarVez.Enabled = false;

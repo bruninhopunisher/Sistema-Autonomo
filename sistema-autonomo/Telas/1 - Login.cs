@@ -16,6 +16,7 @@ namespace sistema_autonomo
     public partial class Login : Form
     {
         public Partida partida = new Partida();
+        private DataGridViewRow linhaSelecDgvPartidas;
         public Login()
         {
             InitializeComponent();
@@ -29,46 +30,77 @@ namespace sistema_autonomo
         private void btnListarPartidas_Click(object sender, EventArgs e)
         {
             //Lógica para add partidas na lista e filtro de partidas
+            List<Partida> listaPartidas = new List<Partida>();
             string[] partidas = BancoAuxiliar.TratarDados(Jogo.ListarPartidas("T"));
-            lstPartidas.Items.Clear();
-            if(partidas == null)
+            if (partidas == null)
             {
                 return;
             }
-            for (int i = 0; i < partidas.Length - 1; i++)
+            listaPartidas.Clear();
+            if (cboFiltrarPartidas.Text.Substring(0, 1) == "T")
             {
-                if (cboFiltrarPartidas.Text.Substring(0, 1) == "T")
+                for (int i = 0; i < partidas.Length - 1; i++)
                 {
-                    lstPartidas.Items.Add(partidas[i]);
-                }
-                //Pega a última letra das info. da partida do servidor para determinar o filtro.
-                else if (cboFiltrarPartidas.Text.Substring(0, 1) == partidas[i].Substring(partidas[i].Length - 1, 1))
-                {
-                    lstPartidas.Items.Add(partidas[i]);
+                    string[] dadosPartida = partidas[i].Split(',');
+                    Partida novaPartida = new Partida();
+                    novaPartida.Id = Convert.ToInt32(dadosPartida[0]);
+                    novaPartida.Nome = dadosPartida[1];
+                    novaPartida.Data = dadosPartida[2];
+                    novaPartida.Status = dadosPartida[3];
+                    listaPartidas.Add(novaPartida);
                 }
             }
+            else 
+            {
+                for (int i = 0; i < partidas.Length - 1; i++)
+                {
+                    if(cboFiltrarPartidas.Text.Substring(0, 1) == partidas[i].Substring(partidas[i].Length - 1, 1))
+                    {
+                        string[] dadosPartida = partidas[i].Split(',');
+                        Partida novaPartida = new Partida();
+                        novaPartida.Id = Convert.ToInt32(dadosPartida[0]);
+                        novaPartida.Nome = dadosPartida[1];
+                        novaPartida.Status = dadosPartida[3];
+                        listaPartidas.Add(novaPartida);
+                    }
+                }
+            }
+            dgvPartidas.Rows.Clear();
+            foreach (Partida partida in listaPartidas)
+            {
+                dgvPartidas.Rows.Add(
+                    partida.Id,
+                    partida.Nome,
+                    partida.Status
+                );
+            }
+
+
         }
-        public void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvPartidas_SelectionChanged(object sender, EventArgs e)
         {
             //Informações da Partida selecionada
-            string[] partidaSelecionada = lstPartidas.SelectedItem.ToString().Split(',');
-            partida.Id = (Convert.ToInt32(partidaSelecionada[0]));
-            partida.Nome = (partidaSelecionada[1]);
-            partida.Data = (partidaSelecionada[2]);
-            partida.Status = (partidaSelecionada[3]);
-            //Informações dos jogadores presentes na partida selecionada
-            string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
-            lstJogadores.Items.Clear();
-            if (jogadores == null)//Compara com null devido ao retorno do tratar dados
+             linhaSelecDgvPartidas = dgvPartidas.CurrentRow;
+            if (linhaSelecDgvPartidas != null)
             {
-                lstJogadores.Items.Add("Nenhum jogador na partida!");
-                return;
+                partida.Id = Convert.ToInt32(linhaSelecDgvPartidas.Cells["ID"].Value);
+                partida.Nome = linhaSelecDgvPartidas.Cells["NOME"].Value.ToString();
+                partida.Status = linhaSelecDgvPartidas.Cells["STATUS"].Value.ToString();
+                //Informações dos jogadores presentes na partida selecionada
+                string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
+                lstJogadores.Items.Clear();
+                if (jogadores == null)//Compara com null devido ao retorno do tratar dados
+                {
+                    lstJogadores.Items.Add("Nenhum jogador na partida!");
+                    return;
+                }
+                for (int i = 0; i < jogadores.Length - 1; i++)
+                {
+                    string[] dadosJogadorSeparado = jogadores[i].Split(',');
+                    lstJogadores.Items.Add(dadosJogadorSeparado[1]);
+                }
+                //Fim
             }
-            for (int i = 0; i < jogadores.Length; i++)
-            {
-                lstJogadores.Items.Add(jogadores[i]);
-            }
-            //Fim
         }
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
@@ -107,5 +139,7 @@ namespace sistema_autonomo
                 MessageBox.Show(iniciarPartida);
             }
         }
+
+
     }
 }

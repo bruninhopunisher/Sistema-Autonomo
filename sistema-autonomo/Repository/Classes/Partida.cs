@@ -44,7 +44,21 @@ namespace sistema_autonomo.Classes
         public string Status
         {
             get { return status; }
-            set { this.status = value; }
+            set
+            {
+                if(value.Substring(0,1) == "A")
+                {
+                    this.status = "Aberta";
+                }
+                else if (value.Substring(0, 1) == "J")
+                {
+                    this.status = "Jogando";
+                }
+                else
+                {
+                    this.status = "Encerrada";
+                }
+            }
         }
         public int Rodada
         {
