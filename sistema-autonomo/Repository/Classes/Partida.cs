@@ -114,16 +114,30 @@ namespace sistema_autonomo.Classes
             dadosRecebidos = dadosRecebidos.Replace("\r", "");
             string[] votos = dadosRecebidos.Split('\n');
             string[] infoVoto;
+            bool evisivel = true;
             for (int i = 0; i < votos.Length - 1; i++)
             {
                 infoVoto = votos[i].Split(',');
                 foreach (Jogador jogador in ListaJogadores)
                 {
+                    
                     if (Convert.ToInt32(infoVoto[1]) == jogador.Id && infoVoto[2] == "N")
                     {
                         jogador.QtdNao--;
                         Console.WriteLine($"{jogador.Nome} - DECREMENTOU");
-                        break;
+                        if (evisivel)
+                        {
+                            for (int j = 0; j < Personagem.personagenInstanciado.Count; j++)
+                            {                       
+                                if (Personagem.personagenInstanciado[j].nome.Substring(0, 1) == infoVoto[0])
+                                {
+                                    Personagem.personagenInstanciado[j].cardPersonagem.Visible = false;
+                                    evisivel = false;
+                                    break;
+                                }
+                            }
+                        }
+
                     }
                 }
             }

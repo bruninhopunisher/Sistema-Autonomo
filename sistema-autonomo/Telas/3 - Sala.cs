@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
@@ -32,11 +34,11 @@ namespace sistema_autonomo
         private string faseDaPartida;
         public int qtdPersonagensPosicionados = 0;
         private string[] teste;
-        
+
 
         Tabuleiro tabuleiro = new Tabuleiro();
         EstrategiaSimples estrategia = new EstrategiaSimples();
-        
+
         List<Personagem> listaPersonagens = new List<Personagem>();
         Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
 
@@ -110,15 +112,15 @@ namespace sistema_autonomo
         {
 
             //NÃO MEXER NESTE IF PELO AMOR
-            Console.WriteLine($"QTD POSICIONADA: {qtdPersonagensPosicionados}");
-            Console.WriteLine($"TAM TESTE: {teste.Length-2}");
-            if (qtdPersonagensPosicionados > teste.Length-2)
+            //Console.WriteLine($"QTD POSICIONADA: {qtdPersonagensPosicionados}");
+            //Console.WriteLine($"TAM TESTE: {teste.Length - 2}");
+            if (qtdPersonagensPosicionados > teste.Length - 2)
             {
                 partida.AtualizarVoto();
                 qtdPersonagensPosicionados--;
-                Console.WriteLine($"DECREMENTOUUUUUUUUUUUU");
-                Console.WriteLine($"QTD POSICIONADA: {qtdPersonagensPosicionados}");
-                Console.WriteLine($"TAM TESTE: {teste.Length - 2}");
+               // Console.WriteLine($"DECREMENTOUUUUUUUUUUUU");
+               // Console.WriteLine($"QTD POSICIONADA: {qtdPersonagensPosicionados}");
+               // Console.WriteLine($"TAM TESTE: {teste.Length - 2}");
             }
             //ATE AQUI
 
@@ -138,6 +140,7 @@ namespace sistema_autonomo
                 lblAltStatusVezSala.Text = partida.VerificarNomeJogadorDaVez();
                 lblAltRodadaPartida.Text = partida.Rodada.ToString();
             }
+            LimparEAtualizarTabuleiro();
         }
         private void Jogar()
         {
@@ -178,12 +181,11 @@ namespace sistema_autonomo
         public void ResetarPosicaoCartas()
         {
             Personagem p = new Personagem();
-            List<Point> listaInicial = new List<Point>();
-            listaInicial = p.PointInicial;
             for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
             {
                 p = Personagem.personagenInstanciado[i];
-                p.cardPersonagem.Location = listaInicial[i];
+                p.cardPersonagem.Location = p.PointInicial[i];
+                p.cardPersonagem.Visible = true;
             }
         }
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
@@ -212,7 +214,6 @@ namespace sistema_autonomo
                 Jogar();
             }
             //ATUALIZAR INFOS DA TELA
-            LimparEAtualizarTabuleiro();
             AtualizarInfoDaTela();
         }
     }

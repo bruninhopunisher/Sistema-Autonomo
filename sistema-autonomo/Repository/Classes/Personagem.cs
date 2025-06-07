@@ -23,19 +23,19 @@ namespace sistema_autonomo
         public Personagem()
         {
             this.point = new List<Point>();
-            point.Add(new Point(26, 399));
-            point.Add(new Point(99, 399));
-            point.Add(new Point(99, 572));
-            point.Add(new Point(172, 486));
-            point.Add(new Point(172, 399));
-            point.Add(new Point(172, 572));
-            point.Add(new Point(327, 485));
-            point.Add(new Point(245, 573));
-            point.Add(new Point(245, 486));
-            point.Add(new Point(26, 485));
-            point.Add(new Point(245, 399));
-            point.Add(new Point(26, 572));
-            point.Add(new Point(99, 486));
+            point.Add(new Point(50, 500));
+            point.Add(new Point(200, 500));
+            point.Add(new Point(350, 500));
+            point.Add(new Point(500, 500));
+            point.Add(new Point(50, 650));
+            point.Add(new Point(200, 650));
+            point.Add(new Point(350, 650));
+            point.Add(new Point(500, 650));
+            point.Add(new Point(650, 650));
+            point.Add(new Point(50, 800));
+            point.Add(new Point(200, 800));
+            point.Add(new Point(350, 800));
+            point.Add(new Point(500, 800));
         }
 
         public List<Point> PointInicial

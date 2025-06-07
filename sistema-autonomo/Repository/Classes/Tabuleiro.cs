@@ -186,20 +186,7 @@ namespace sistema_autonomo.Classes
             }
             return estadoTabuleiroRecebido;
         }
-        public List<Personagem> LimparPosicaoDoPersonagem(List<Personagem> personagensRecebidos)
-        {
-            List<Personagem> listaDePersonagens = personagensRecebidos;
-            List<Point> pointInicial = new List<Point>();
-            Personagem pointDosPersonagens = new Personagem();
-            pointInicial = pointDosPersonagens.PointInicial;
-            //Limpa posição de todos os personagens
-            for (int i = 0; i < listaDePersonagens.Count; i++)
-            {
-                listaDePersonagens[i].personagemPosicionado = false;
-                listaDePersonagens[i].cardPersonagem.Location = pointInicial[i];
-            }
-            return listaDePersonagens;
-        }
+       
         public List<Personagem> DesposicionarPersonagens(List<Personagem> personagensRecebidos)
         {
             List<Personagem> personagensDesposicionados = personagensRecebidos;

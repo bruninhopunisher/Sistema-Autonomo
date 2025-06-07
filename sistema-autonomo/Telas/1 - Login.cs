@@ -31,6 +31,10 @@ namespace sistema_autonomo
             //Lógica para add partidas na lista e filtro de partidas
             string[] partidas = BancoAuxiliar.TratarDados(Jogo.ListarPartidas("T"));
             lstPartidas.Items.Clear();
+            if(partidas == null)
+            {
+                return;
+            }
             for (int i = 0; i < partidas.Length - 1; i++)
             {
                 if (cboFiltrarPartidas.Text.Substring(0, 1) == "T")
