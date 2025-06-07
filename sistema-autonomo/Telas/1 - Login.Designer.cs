@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnListarPartidas = new System.Windows.Forms.Button();
             this.lstJogadores = new System.Windows.Forms.ListBox();
             this.lblVersaoJogo = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.lstJogadores.FormattingEnabled = true;
             this.lstJogadores.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lstJogadores.ItemHeight = 22;
-            this.lstJogadores.Location = new System.Drawing.Point(776, 423);
+            this.lstJogadores.Location = new System.Drawing.Point(779, 423);
             this.lstJogadores.Name = "lstJogadores";
             this.lstJogadores.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lstJogadores.Size = new System.Drawing.Size(289, 92);
@@ -123,7 +123,7 @@
             this.txtNomeDoJogador.Multiline = true;
             this.txtNomeDoJogador.Name = "txtNomeDoJogador";
             this.txtNomeDoJogador.Size = new System.Drawing.Size(137, 31);
-            this.txtNomeDoJogador.TabIndex = 25;
+            this.txtNomeDoJogador.TabIndex = 4;
             // 
             // txtSenhaEntrarPartida
             // 
@@ -133,7 +133,7 @@
             this.txtSenhaEntrarPartida.Multiline = true;
             this.txtSenhaEntrarPartida.Name = "txtSenhaEntrarPartida";
             this.txtSenhaEntrarPartida.Size = new System.Drawing.Size(137, 31);
-            this.txtSenhaEntrarPartida.TabIndex = 27;
+            this.txtSenhaEntrarPartida.TabIndex = 5;
             // 
             // btnCriarPartida
             // 
@@ -157,7 +157,7 @@
             this.txtInputSenhaPartida.Multiline = true;
             this.txtInputSenhaPartida.Name = "txtInputSenhaPartida";
             this.txtInputSenhaPartida.Size = new System.Drawing.Size(137, 31);
-            this.txtInputSenhaPartida.TabIndex = 19;
+            this.txtInputSenhaPartida.TabIndex = 3;
             // 
             // txtInputNomePartida
             // 
@@ -180,40 +180,40 @@
             this.dgvPartidas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPartidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvPartidas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NOME,
             this.STATUS});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Baskerville Old Face", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartidas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Baskerville Old Face", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartidas.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPartidas.GridColor = System.Drawing.Color.White;
             this.dgvPartidas.Location = new System.Drawing.Point(744, 283);
             this.dgvPartidas.MultiSelect = false;
             this.dgvPartidas.Name = "dgvPartidas";
             this.dgvPartidas.ReadOnly = true;
             this.dgvPartidas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvPartidas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvPartidas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPartidas.RowHeadersVisible = false;
             this.dgvPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPartidas.ShowCellErrors = false;

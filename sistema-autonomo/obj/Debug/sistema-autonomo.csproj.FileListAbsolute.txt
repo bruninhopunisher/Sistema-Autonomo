@@ -204,3 +204,5 @@ C:\Users\ironf\Desktop\pisistemaa\Sistema-Autonomo\sistema-autonomo\obj\Debug\si
 C:\Users\ironf\Desktop\pisistemaa\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-.387CB394.Up2Date
 C:\Users\ironf\Desktop\pisistemaa\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.exe
 C:\Users\ironf\Desktop\pisistemaa\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema-autonomo.pdb
+C:\Users\T-GAMER\OneDrive\Documentos\Estudos Faculdade\PI\Sistema-Autonomo\sistema-autonomo\obj\Debug\sistema_autonomo.Telas.Final.resources
+C:\Users\lucas\source\repos\SistemaAutonomo-PI-lll\sistema-autonomo\obj\Debug\sistema_autonomo.Telas.Final.resources

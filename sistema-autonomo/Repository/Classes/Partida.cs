@@ -46,11 +46,11 @@ namespace sistema_autonomo.Classes
             get { return status; }
             set
             {
-                if(value == "A")
+                if(value.Substring(0,1) == "A")
                 {
                     this.status = "Aberta";
                 }
-                else if (value == "J")
+                else if (value.Substring(0, 1) == "J")
                 {
                     this.status = "Jogando";
                 }
@@ -68,6 +68,7 @@ namespace sistema_autonomo.Classes
         public List<Jogador> ListaJogadores
         {
             get { return listaJogadores; }
+            set { this.listaJogadores = value; }
         }
         public List<Jogador> ListarJogadores(JogadorLocal jogadorLocal)
         {

@@ -1,5 +1,6 @@
 ﻿using KingMeServer;
 using sistema_autonomo.Classes;
+using sistema_autonomo.Telas;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,7 +43,6 @@ namespace sistema_autonomo
 
         List<Personagem> listaPersonagens = new List<Personagem>();
         Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
-
 
 
         public Sala(Partida partidaRecebida, JogadorLocal jogadorLocal)
@@ -95,7 +95,6 @@ namespace sistema_autonomo
             faseDaPartida = "";
             rodadaPassada = 0;
             qtdPersonagensPosicionados = 13;
-
             //VER COM O CAUA A LISTA
             listaPersonagens = Personagem.ListarPersonagem(0);
             foreach (var personagem in listaPersonagens)
@@ -105,14 +104,12 @@ namespace sistema_autonomo
                     personagem.cardPersonagem = mapaPersonagens[personagem.nome];
                 }
             }
-
             qtdPersonagensRecebida = new string[15];
             AtualizarInfoDaTela();
             tmrVerificarVez.Enabled = true;
         }
         public void AtualizarInfoDaTela()
         {
-
             //NÃO MEXER NESTE IF PELO AMOR
             if (qtdPersonagensPosicionados > qtdPersonagensRecebida.Length - 2)
             {
@@ -206,6 +203,14 @@ namespace sistema_autonomo
                         picsMinhasCartas[i].Image = mapaPersonagens[mapaCartas[letra]].Image;
                     }
                 }
+            }
+            else if(faseDaPartida == "E")
+            {
+                this.Hide();
+                Final final = new Final(partida);
+                tmrVerificarVez.Enabled = false;
+                final.ShowDialog();
+                this.Close();
             }
             string jogadorDaVez = partida.VerificarNomeJogadorDaVez();
             if (jogadorDaVez == meuJogador.Nome)

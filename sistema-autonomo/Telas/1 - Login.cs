@@ -16,6 +16,7 @@ namespace sistema_autonomo
     public partial class Login : Form
     {
         public Partida partida = new Partida();
+        private DataGridViewRow linhaSelecDgvPartidas;
         public Login()
         {
             InitializeComponent();
@@ -79,12 +80,12 @@ namespace sistema_autonomo
         private void dgvPartidas_SelectionChanged(object sender, EventArgs e)
         {
             //Informações da Partida selecionada
-            DataGridViewRow row = dgvPartidas.CurrentRow;
-            if (row != null)
+             linhaSelecDgvPartidas = dgvPartidas.CurrentRow;
+            if (linhaSelecDgvPartidas != null)
             {
-                partida.Id = Convert.ToInt32(row.Cells["ID"].Value);
-                partida.Nome = row.Cells["NOME"].Value.ToString();
-                partida.Status = row.Cells["STATUS"].Value.ToString();
+                partida.Id = Convert.ToInt32(linhaSelecDgvPartidas.Cells["ID"].Value);
+                partida.Nome = linhaSelecDgvPartidas.Cells["NOME"].Value.ToString();
+                partida.Status = linhaSelecDgvPartidas.Cells["STATUS"].Value.ToString();
                 //Informações dos jogadores presentes na partida selecionada
                 string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
                 lstJogadores.Items.Clear();

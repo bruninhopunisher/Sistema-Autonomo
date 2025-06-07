@@ -38,11 +38,11 @@
             // btnCreditos
             // 
             this.btnCreditos.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreditos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreditos.BackgroundImage")));
             this.btnCreditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCreditos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreditos.FlatAppearance.BorderSize = 0;
             this.btnCreditos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreditos.Image = ((System.Drawing.Image)(resources.GetObject("btnCreditos.Image")));
             this.btnCreditos.Location = new System.Drawing.Point(523, 483);
             this.btnCreditos.Name = "btnCreditos";
             this.btnCreditos.Size = new System.Drawing.Size(250, 61);
@@ -62,11 +62,11 @@
             // btnJogar
             // 
             this.btnJogar.BackColor = System.Drawing.Color.Transparent;
+            this.btnJogar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnJogar.BackgroundImage")));
             this.btnJogar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnJogar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJogar.FlatAppearance.BorderSize = 0;
             this.btnJogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJogar.Image = ((System.Drawing.Image)(resources.GetObject("btnJogar.Image")));
             this.btnJogar.Location = new System.Drawing.Point(497, 317);
             this.btnJogar.Name = "btnJogar";
             this.btnJogar.Size = new System.Drawing.Size(300, 80);
@@ -77,11 +77,11 @@
             // btnAjuda
             // 
             this.btnAjuda.BackColor = System.Drawing.Color.Transparent;
+            this.btnAjuda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAjuda.BackgroundImage")));
             this.btnAjuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAjuda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAjuda.FlatAppearance.BorderSize = 0;
             this.btnAjuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAjuda.Image")));
             this.btnAjuda.Location = new System.Drawing.Point(513, 403);
             this.btnAjuda.Name = "btnAjuda";
             this.btnAjuda.Size = new System.Drawing.Size(270, 70);
