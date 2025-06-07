@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sala));
-            this.txtConstMinhasCartasSala = new System.Windows.Forms.Label();
-            this.lstMinhasCartasSala = new System.Windows.Forms.ListBox();
             this.lblAltStatusVezSala = new System.Windows.Forms.Label();
             this.picAdilson = new System.Windows.Forms.PictureBox();
             this.picBeatriz = new System.Windows.Forms.PictureBox();
@@ -75,12 +73,12 @@
             this.lblAltPontosJogador4 = new System.Windows.Forms.Label();
             this.lblAltNomeJogador4 = new System.Windows.Forms.Label();
             this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
-            this.pic5 = new System.Windows.Forms.PictureBox();
-            this.pic6 = new System.Windows.Forms.PictureBox();
-            this.pic4 = new System.Windows.Forms.PictureBox();
-            this.pic3 = new System.Windows.Forms.PictureBox();
-            this.pic2 = new System.Windows.Forms.PictureBox();
-            this.pic1 = new System.Windows.Forms.PictureBox();
+            this.picMinhaCarta5 = new System.Windows.Forms.PictureBox();
+            this.picMinhaCarta6 = new System.Windows.Forms.PictureBox();
+            this.picMinhaCarta4 = new System.Windows.Forms.PictureBox();
+            this.picMinhaCarta3 = new System.Windows.Forms.PictureBox();
+            this.picMinhaCarta2 = new System.Windows.Forms.PictureBox();
+            this.picMinhaCarta1 = new System.Windows.Forms.PictureBox();
             this.lblAltFasePartida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
@@ -108,30 +106,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtConstMinhasCartasSala
-            // 
-            this.txtConstMinhasCartasSala.AutoSize = true;
-            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(355, 37);
-            this.txtConstMinhasCartasSala.Name = "txtConstMinhasCartasSala";
-            this.txtConstMinhasCartasSala.Size = new System.Drawing.Size(74, 13);
-            this.txtConstMinhasCartasSala.TabIndex = 3;
-            this.txtConstMinhasCartasSala.Text = "Minhas Cartas";
-            // 
-            // lstMinhasCartasSala
-            // 
-            this.lstMinhasCartasSala.FormattingEnabled = true;
-            this.lstMinhasCartasSala.Location = new System.Drawing.Point(322, 54);
-            this.lstMinhasCartasSala.Name = "lstMinhasCartasSala";
-            this.lstMinhasCartasSala.Size = new System.Drawing.Size(140, 160);
-            this.lstMinhasCartasSala.TabIndex = 4;
             // 
             // lblAltStatusVezSala
             // 
@@ -619,60 +600,60 @@
             this.tmrVerificarVez.Interval = 5000;
             this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
-            // pic5
+            // picMinhaCarta5
             // 
-            this.pic5.Image = ((System.Drawing.Image)(resources.GetObject("pic5.Image")));
-            this.pic5.Location = new System.Drawing.Point(647, 253);
-            this.pic5.Name = "pic5";
-            this.pic5.Size = new System.Drawing.Size(54, 76);
-            this.pic5.TabIndex = 91;
-            this.pic5.TabStop = false;
+            this.picMinhaCarta5.Image = ((System.Drawing.Image)(resources.GetObject("picMinhaCarta5.Image")));
+            this.picMinhaCarta5.Location = new System.Drawing.Point(647, 253);
+            this.picMinhaCarta5.Name = "picMinhaCarta5";
+            this.picMinhaCarta5.Size = new System.Drawing.Size(54, 76);
+            this.picMinhaCarta5.TabIndex = 91;
+            this.picMinhaCarta5.TabStop = false;
             // 
-            // pic6
+            // picMinhaCarta6
             // 
-            this.pic6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pic6.Image = ((System.Drawing.Image)(resources.GetObject("pic6.Image")));
-            this.pic6.Location = new System.Drawing.Point(715, 253);
-            this.pic6.Name = "pic6";
-            this.pic6.Size = new System.Drawing.Size(54, 76);
-            this.pic6.TabIndex = 90;
-            this.pic6.TabStop = false;
+            this.picMinhaCarta6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picMinhaCarta6.Image = ((System.Drawing.Image)(resources.GetObject("picMinhaCarta6.Image")));
+            this.picMinhaCarta6.Location = new System.Drawing.Point(715, 253);
+            this.picMinhaCarta6.Name = "picMinhaCarta6";
+            this.picMinhaCarta6.Size = new System.Drawing.Size(54, 76);
+            this.picMinhaCarta6.TabIndex = 90;
+            this.picMinhaCarta6.TabStop = false;
             // 
-            // pic4
+            // picMinhaCarta4
             // 
-            this.pic4.Image = ((System.Drawing.Image)(resources.GetObject("pic4.Image")));
-            this.pic4.Location = new System.Drawing.Point(580, 253);
-            this.pic4.Name = "pic4";
-            this.pic4.Size = new System.Drawing.Size(54, 76);
-            this.pic4.TabIndex = 89;
-            this.pic4.TabStop = false;
+            this.picMinhaCarta4.Image = ((System.Drawing.Image)(resources.GetObject("picMinhaCarta4.Image")));
+            this.picMinhaCarta4.Location = new System.Drawing.Point(580, 253);
+            this.picMinhaCarta4.Name = "picMinhaCarta4";
+            this.picMinhaCarta4.Size = new System.Drawing.Size(54, 76);
+            this.picMinhaCarta4.TabIndex = 89;
+            this.picMinhaCarta4.TabStop = false;
             // 
-            // pic3
+            // picMinhaCarta3
             // 
-            this.pic3.Image = ((System.Drawing.Image)(resources.GetObject("pic3.Image")));
-            this.pic3.Location = new System.Drawing.Point(512, 253);
-            this.pic3.Name = "pic3";
-            this.pic3.Size = new System.Drawing.Size(54, 76);
-            this.pic3.TabIndex = 88;
-            this.pic3.TabStop = false;
+            this.picMinhaCarta3.Image = ((System.Drawing.Image)(resources.GetObject("picMinhaCarta3.Image")));
+            this.picMinhaCarta3.Location = new System.Drawing.Point(512, 253);
+            this.picMinhaCarta3.Name = "picMinhaCarta3";
+            this.picMinhaCarta3.Size = new System.Drawing.Size(54, 76);
+            this.picMinhaCarta3.TabIndex = 88;
+            this.picMinhaCarta3.TabStop = false;
             // 
-            // pic2
+            // picMinhaCarta2
             // 
-            this.pic2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic2.BackgroundImage")));
-            this.pic2.Location = new System.Drawing.Point(444, 253);
-            this.pic2.Name = "pic2";
-            this.pic2.Size = new System.Drawing.Size(54, 76);
-            this.pic2.TabIndex = 87;
-            this.pic2.TabStop = false;
+            this.picMinhaCarta2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picMinhaCarta2.BackgroundImage")));
+            this.picMinhaCarta2.Location = new System.Drawing.Point(444, 253);
+            this.picMinhaCarta2.Name = "picMinhaCarta2";
+            this.picMinhaCarta2.Size = new System.Drawing.Size(54, 76);
+            this.picMinhaCarta2.TabIndex = 87;
+            this.picMinhaCarta2.TabStop = false;
             // 
-            // pic1
+            // picMinhaCarta1
             // 
-            this.pic1.Image = ((System.Drawing.Image)(resources.GetObject("pic1.Image")));
-            this.pic1.Location = new System.Drawing.Point(376, 253);
-            this.pic1.Name = "pic1";
-            this.pic1.Size = new System.Drawing.Size(54, 76);
-            this.pic1.TabIndex = 86;
-            this.pic1.TabStop = false;
+            this.picMinhaCarta1.Image = ((System.Drawing.Image)(resources.GetObject("picMinhaCarta1.Image")));
+            this.picMinhaCarta1.Location = new System.Drawing.Point(376, 253);
+            this.picMinhaCarta1.Name = "picMinhaCarta1";
+            this.picMinhaCarta1.Size = new System.Drawing.Size(54, 76);
+            this.picMinhaCarta1.TabIndex = 86;
+            this.picMinhaCarta1.TabStop = false;
             // 
             // lblAltFasePartida
             // 
@@ -696,12 +677,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.lblAltFasePartida);
-            this.Controls.Add(this.pic5);
-            this.Controls.Add(this.pic6);
-            this.Controls.Add(this.pic4);
-            this.Controls.Add(this.pic3);
-            this.Controls.Add(this.pic2);
-            this.Controls.Add(this.pic1);
+            this.Controls.Add(this.picMinhaCarta5);
+            this.Controls.Add(this.picMinhaCarta6);
+            this.Controls.Add(this.picMinhaCarta4);
+            this.Controls.Add(this.picMinhaCarta3);
+            this.Controls.Add(this.picMinhaCarta2);
+            this.Controls.Add(this.picMinhaCarta1);
             this.Controls.Add(this.picVotosJogador4);
             this.Controls.Add(this.picPontosJogador4);
             this.Controls.Add(this.picNomeJogador4);
@@ -744,9 +725,11 @@
             this.Controls.Add(this.picBeatriz);
             this.Controls.Add(this.picAdilson);
             this.Controls.Add(this.lblAltStatusVezSala);
-            this.Controls.Add(this.lstMinhasCartasSala);
-            this.Controls.Add(this.txtConstMinhasCartasSala);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "Sala";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -777,20 +760,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinhaCarta1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label txtConstMinhasCartasSala;
-        private System.Windows.Forms.ListBox lstMinhasCartasSala;
         private System.Windows.Forms.Label lblAltStatusVezSala;
         private System.Windows.Forms.PictureBox picAdilson;
         private System.Windows.Forms.PictureBox picBeatriz;
@@ -834,12 +815,12 @@
         private System.Windows.Forms.Label lblAltPontosJogador4;
         private System.Windows.Forms.Label lblAltNomeJogador4;
         private System.Windows.Forms.Timer tmrVerificarVez;
-        private System.Windows.Forms.PictureBox pic5;
-        private System.Windows.Forms.PictureBox pic6;
-        private System.Windows.Forms.PictureBox pic4;
-        private System.Windows.Forms.PictureBox pic3;
-        private System.Windows.Forms.PictureBox pic2;
-        private System.Windows.Forms.PictureBox pic1;
+        private System.Windows.Forms.PictureBox picMinhaCarta5;
+        private System.Windows.Forms.PictureBox picMinhaCarta6;
+        private System.Windows.Forms.PictureBox picMinhaCarta4;
+        private System.Windows.Forms.PictureBox picMinhaCarta3;
+        private System.Windows.Forms.PictureBox picMinhaCarta2;
+        private System.Windows.Forms.PictureBox picMinhaCarta1;
         private System.Windows.Forms.Label lblAltFasePartida;
     }
 }

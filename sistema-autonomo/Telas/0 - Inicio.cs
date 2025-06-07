@@ -14,12 +14,10 @@ namespace sistema_autonomo
 {
     public partial class Inicio : Form
     {
-        public Partida partida = new Partida();
         public Inicio()
         {
             InitializeComponent();
             lblVersaoJogo.Text = Jogo.versao.ToString();
-            lblNomeGrupo.Text = partida.NomeGrupo;
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {
