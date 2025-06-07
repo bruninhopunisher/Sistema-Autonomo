@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sala));
             this.txtConstMinhasCartasSala = new System.Windows.Forms.Label();
             this.lstMinhasCartasSala = new System.Windows.Forms.ListBox();
-            this.lblConstStatusVezSala = new System.Windows.Forms.Label();
             this.lblAltStatusVezSala = new System.Windows.Forms.Label();
             this.picAdilson = new System.Windows.Forms.PictureBox();
             this.picBeatriz = new System.Windows.Forms.PictureBox();
@@ -47,11 +46,9 @@
             this.picMario = new System.Windows.Forms.PictureBox();
             this.picLeonardo = new System.Windows.Forms.PictureBox();
             this.picToshio = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
             this.lblNomeDoGrupo = new System.Windows.Forms.Label();
             this.lblAltNomeJogador1 = new System.Windows.Forms.Label();
-            this.lblConstRodadaPartida = new System.Windows.Forms.Label();
             this.lblAltRodadaPartida = new System.Windows.Forms.Label();
             this.lblAltPontosJogador1 = new System.Windows.Forms.Label();
             this.lblAltQtdNaosJogador1 = new System.Windows.Forms.Label();
@@ -59,7 +56,6 @@
             this.picPontosJogador1 = new System.Windows.Forms.PictureBox();
             this.picVotosJogador1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.dgvSala = new System.Windows.Forms.DataGridView();
             this.picVotosJogador2 = new System.Windows.Forms.PictureBox();
             this.picPontosJogador2 = new System.Windows.Forms.PictureBox();
             this.picNomeJogador2 = new System.Windows.Forms.PictureBox();
@@ -79,6 +75,13 @@
             this.lblAltPontosJogador4 = new System.Windows.Forms.Label();
             this.lblAltNomeJogador4 = new System.Windows.Forms.Label();
             this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
+            this.pic5 = new System.Windows.Forms.PictureBox();
+            this.pic6 = new System.Windows.Forms.PictureBox();
+            this.pic4 = new System.Windows.Forms.PictureBox();
+            this.pic3 = new System.Windows.Forms.PictureBox();
+            this.pic2 = new System.Windows.Forms.PictureBox();
+            this.pic1 = new System.Windows.Forms.PictureBox();
+            this.lblAltFasePartida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAdilson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBeatriz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClaro)).BeginInit();
@@ -92,12 +95,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeonardo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picToshio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador2)).BeginInit();
@@ -107,12 +108,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtConstMinhasCartasSala
             // 
             this.txtConstMinhasCartasSala.AutoSize = true;
-            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(648, 410);
+            this.txtConstMinhasCartasSala.Location = new System.Drawing.Point(355, 37);
             this.txtConstMinhasCartasSala.Name = "txtConstMinhasCartasSala";
             this.txtConstMinhasCartasSala.Size = new System.Drawing.Size(74, 13);
             this.txtConstMinhasCartasSala.TabIndex = 3;
@@ -121,156 +128,155 @@
             // lstMinhasCartasSala
             // 
             this.lstMinhasCartasSala.FormattingEnabled = true;
-            this.lstMinhasCartasSala.Location = new System.Drawing.Point(615, 427);
+            this.lstMinhasCartasSala.Location = new System.Drawing.Point(322, 54);
             this.lstMinhasCartasSala.Name = "lstMinhasCartasSala";
             this.lstMinhasCartasSala.Size = new System.Drawing.Size(140, 160);
             this.lstMinhasCartasSala.TabIndex = 4;
             // 
-            // lblConstStatusVezSala
-            // 
-            this.lblConstStatusVezSala.AutoSize = true;
-            this.lblConstStatusVezSala.Location = new System.Drawing.Point(377, 14);
-            this.lblConstStatusVezSala.Name = "lblConstStatusVezSala";
-            this.lblConstStatusVezSala.Size = new System.Drawing.Size(28, 13);
-            this.lblConstStatusVezSala.TabIndex = 9;
-            this.lblConstStatusVezSala.Text = "Vez:";
-            // 
             // lblAltStatusVezSala
             // 
             this.lblAltStatusVezSala.AutoSize = true;
+            this.lblAltStatusVezSala.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltStatusVezSala.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltStatusVezSala.ForeColor = System.Drawing.Color.White;
             this.lblAltStatusVezSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAltStatusVezSala.Location = new System.Drawing.Point(408, 14);
+            this.lblAltStatusVezSala.Location = new System.Drawing.Point(628, 102);
             this.lblAltStatusVezSala.Name = "lblAltStatusVezSala";
-            this.lblAltStatusVezSala.Size = new System.Drawing.Size(34, 13);
+            this.lblAltStatusVezSala.Size = new System.Drawing.Size(60, 22);
             this.lblAltStatusVezSala.TabIndex = 10;
             this.lblAltStatusVezSala.Text = "Texto";
             this.lblAltStatusVezSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picAdilson
             // 
+            this.picAdilson.BackColor = System.Drawing.Color.Transparent;
             this.picAdilson.Image = ((System.Drawing.Image)(resources.GetObject("picAdilson.Image")));
-            this.picAdilson.Location = new System.Drawing.Point(50, 500);
+            this.picAdilson.Location = new System.Drawing.Point(355, 431);
             this.picAdilson.Name = "picAdilson";
-            this.picAdilson.Size = new System.Drawing.Size(78, 96);
+            this.picAdilson.Size = new System.Drawing.Size(54, 76);
             this.picAdilson.TabIndex = 13;
             this.picAdilson.TabStop = false;
             // 
             // picBeatriz
             // 
+            this.picBeatriz.BackColor = System.Drawing.Color.Transparent;
             this.picBeatriz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBeatriz.BackgroundImage")));
-            this.picBeatriz.Location = new System.Drawing.Point(200, 500);
+            this.picBeatriz.Image = ((System.Drawing.Image)(resources.GetObject("picBeatriz.Image")));
+            this.picBeatriz.Location = new System.Drawing.Point(419, 431);
             this.picBeatriz.Name = "picBeatriz";
-            this.picBeatriz.Size = new System.Drawing.Size(78, 96);
+            this.picBeatriz.Size = new System.Drawing.Size(54, 76);
             this.picBeatriz.TabIndex = 14;
             this.picBeatriz.TabStop = false;
             // 
             // picClaro
             // 
+            this.picClaro.BackColor = System.Drawing.Color.Transparent;
             this.picClaro.Image = ((System.Drawing.Image)(resources.GetObject("picClaro.Image")));
-            this.picClaro.Location = new System.Drawing.Point(350, 500);
+            this.picClaro.Location = new System.Drawing.Point(483, 431);
             this.picClaro.Name = "picClaro";
-            this.picClaro.Size = new System.Drawing.Size(78, 96);
+            this.picClaro.Size = new System.Drawing.Size(54, 76);
             this.picClaro.TabIndex = 15;
             this.picClaro.TabStop = false;
             // 
             // picDouglas
             // 
+            this.picDouglas.BackColor = System.Drawing.Color.Transparent;
             this.picDouglas.Image = ((System.Drawing.Image)(resources.GetObject("picDouglas.Image")));
-            this.picDouglas.Location = new System.Drawing.Point(500, 500);
+            this.picDouglas.Location = new System.Drawing.Point(547, 431);
             this.picDouglas.Name = "picDouglas";
-            this.picDouglas.Size = new System.Drawing.Size(78, 96);
+            this.picDouglas.Size = new System.Drawing.Size(54, 76);
             this.picDouglas.TabIndex = 16;
             this.picDouglas.TabStop = false;
             // 
             // picHeredia
             // 
+            this.picHeredia.BackColor = System.Drawing.Color.Transparent;
             this.picHeredia.Image = ((System.Drawing.Image)(resources.GetObject("picHeredia.Image")));
-            this.picHeredia.Location = new System.Drawing.Point(350, 650);
+            this.picHeredia.Location = new System.Drawing.Point(739, 431);
             this.picHeredia.Name = "picHeredia";
-            this.picHeredia.Size = new System.Drawing.Size(78, 96);
+            this.picHeredia.Size = new System.Drawing.Size(54, 76);
             this.picHeredia.TabIndex = 17;
             this.picHeredia.TabStop = false;
             // 
             // picKelly
             // 
+            this.picKelly.BackColor = System.Drawing.Color.Transparent;
             this.picKelly.Image = ((System.Drawing.Image)(resources.GetObject("picKelly.Image")));
-            this.picKelly.Location = new System.Drawing.Point(200, 800);
+            this.picKelly.Location = new System.Drawing.Point(355, 513);
             this.picKelly.Name = "picKelly";
-            this.picKelly.Size = new System.Drawing.Size(78, 96);
+            this.picKelly.Size = new System.Drawing.Size(54, 76);
             this.picKelly.TabIndex = 18;
             this.picKelly.TabStop = false;
             // 
             // picTakeo
             // 
+            this.picTakeo.BackColor = System.Drawing.Color.Transparent;
             this.picTakeo.Image = ((System.Drawing.Image)(resources.GetObject("picTakeo.Image")));
-            this.picTakeo.Location = new System.Drawing.Point(50, 650);
+            this.picTakeo.Location = new System.Drawing.Point(611, 431);
             this.picTakeo.Name = "picTakeo";
-            this.picTakeo.Size = new System.Drawing.Size(78, 96);
+            this.picTakeo.Size = new System.Drawing.Size(54, 76);
             this.picTakeo.TabIndex = 24;
             this.picTakeo.TabStop = false;
             // 
             // picGui
             // 
+            this.picGui.BackColor = System.Drawing.Color.Transparent;
             this.picGui.Image = ((System.Drawing.Image)(resources.GetObject("picGui.Image")));
-            this.picGui.Location = new System.Drawing.Point(200, 650);
+            this.picGui.Location = new System.Drawing.Point(675, 431);
             this.picGui.Name = "picGui";
-            this.picGui.Size = new System.Drawing.Size(78, 96);
+            this.picGui.Size = new System.Drawing.Size(54, 76);
             this.picGui.TabIndex = 23;
             this.picGui.TabStop = false;
             // 
             // picRanulfo
             // 
+            this.picRanulfo.BackColor = System.Drawing.Color.Transparent;
             this.picRanulfo.Image = ((System.Drawing.Image)(resources.GetObject("picRanulfo.Image")));
-            this.picRanulfo.Location = new System.Drawing.Point(500, 800);
+            this.picRanulfo.Location = new System.Drawing.Point(611, 513);
             this.picRanulfo.Name = "picRanulfo";
-            this.picRanulfo.Size = new System.Drawing.Size(78, 96);
+            this.picRanulfo.Size = new System.Drawing.Size(54, 76);
             this.picRanulfo.TabIndex = 22;
             this.picRanulfo.TabStop = false;
             // 
             // picQuintas
             // 
+            this.picQuintas.BackColor = System.Drawing.Color.Transparent;
             this.picQuintas.Image = ((System.Drawing.Image)(resources.GetObject("picQuintas.Image")));
-            this.picQuintas.Location = new System.Drawing.Point(350, 800);
+            this.picQuintas.Location = new System.Drawing.Point(547, 513);
             this.picQuintas.Name = "picQuintas";
-            this.picQuintas.Size = new System.Drawing.Size(78, 96);
+            this.picQuintas.Size = new System.Drawing.Size(54, 76);
             this.picQuintas.TabIndex = 21;
             this.picQuintas.TabStop = false;
             // 
             // picMario
             // 
+            this.picMario.BackColor = System.Drawing.Color.Transparent;
             this.picMario.Image = ((System.Drawing.Image)(resources.GetObject("picMario.Image")));
-            this.picMario.Location = new System.Drawing.Point(50, 800);
+            this.picMario.Location = new System.Drawing.Point(483, 513);
             this.picMario.Name = "picMario";
-            this.picMario.Size = new System.Drawing.Size(78, 96);
+            this.picMario.Size = new System.Drawing.Size(54, 76);
             this.picMario.TabIndex = 20;
             this.picMario.TabStop = false;
             // 
             // picLeonardo
             // 
+            this.picLeonardo.BackColor = System.Drawing.Color.Transparent;
             this.picLeonardo.Image = ((System.Drawing.Image)(resources.GetObject("picLeonardo.Image")));
-            this.picLeonardo.Location = new System.Drawing.Point(500, 650);
+            this.picLeonardo.Location = new System.Drawing.Point(419, 513);
             this.picLeonardo.Name = "picLeonardo";
-            this.picLeonardo.Size = new System.Drawing.Size(78, 96);
+            this.picLeonardo.Size = new System.Drawing.Size(54, 76);
             this.picLeonardo.TabIndex = 19;
             this.picLeonardo.TabStop = false;
             // 
             // picToshio
             // 
+            this.picToshio.BackColor = System.Drawing.Color.Transparent;
             this.picToshio.Image = ((System.Drawing.Image)(resources.GetObject("picToshio.Image")));
-            this.picToshio.Location = new System.Drawing.Point(650, 650);
+            this.picToshio.Location = new System.Drawing.Point(675, 513);
             this.picToshio.Name = "picToshio";
-            this.picToshio.Size = new System.Drawing.Size(78, 96);
+            this.picToshio.Size = new System.Drawing.Size(54, 76);
             this.picToshio.TabIndex = 25;
             this.picToshio.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(761, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(691, 920);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // lblVersaoDoJogo
             // 
@@ -292,30 +298,25 @@
             // 
             this.lblAltNomeJogador1.AutoSize = true;
             this.lblAltNomeJogador1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltNomeJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador1.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAltNomeJogador1.ForeColor = System.Drawing.Color.White;
-            this.lblAltNomeJogador1.Location = new System.Drawing.Point(97, 14);
+            this.lblAltNomeJogador1.Location = new System.Drawing.Point(95, 112);
             this.lblAltNomeJogador1.Name = "lblAltNomeJogador1";
-            this.lblAltNomeJogador1.Size = new System.Drawing.Size(53, 20);
+            this.lblAltNomeJogador1.Size = new System.Drawing.Size(210, 22);
             this.lblAltNomeJogador1.TabIndex = 37;
-            this.lblAltNomeJogador1.Text = "Texto";
+            this.lblAltNomeJogador1.Text = "LucasLucasLucasLucas";
             this.lblAltNomeJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblConstRodadaPartida
-            // 
-            this.lblConstRodadaPartida.AutoSize = true;
-            this.lblConstRodadaPartida.Location = new System.Drawing.Point(377, 39);
-            this.lblConstRodadaPartida.Name = "lblConstRodadaPartida";
-            this.lblConstRodadaPartida.Size = new System.Drawing.Size(48, 13);
-            this.lblConstRodadaPartida.TabIndex = 46;
-            this.lblConstRodadaPartida.Text = "Rodada:";
             // 
             // lblAltRodadaPartida
             // 
             this.lblAltRodadaPartida.AutoSize = true;
-            this.lblAltRodadaPartida.Location = new System.Drawing.Point(428, 39);
+            this.lblAltRodadaPartida.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltRodadaPartida.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltRodadaPartida.ForeColor = System.Drawing.Color.White;
+            this.lblAltRodadaPartida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltRodadaPartida.Location = new System.Drawing.Point(588, 130);
             this.lblAltRodadaPartida.Name = "lblAltRodadaPartida";
-            this.lblAltRodadaPartida.Size = new System.Drawing.Size(34, 13);
+            this.lblAltRodadaPartida.Size = new System.Drawing.Size(60, 22);
             this.lblAltRodadaPartida.TabIndex = 48;
             this.lblAltRodadaPartida.Text = "Texto";
             this.lblAltRodadaPartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -324,11 +325,11 @@
             // 
             this.lblAltPontosJogador1.AutoSize = true;
             this.lblAltPontosJogador1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltPontosJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltPontosJogador1.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltPontosJogador1.ForeColor = System.Drawing.Color.White;
-            this.lblAltPontosJogador1.Location = new System.Drawing.Point(116, 77);
+            this.lblAltPontosJogador1.Location = new System.Drawing.Point(116, 138);
             this.lblAltPontosJogador1.Name = "lblAltPontosJogador1";
-            this.lblAltPontosJogador1.Size = new System.Drawing.Size(53, 20);
+            this.lblAltPontosJogador1.Size = new System.Drawing.Size(60, 22);
             this.lblAltPontosJogador1.TabIndex = 50;
             this.lblAltPontosJogador1.Text = "Texto";
             this.lblAltPontosJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -337,11 +338,11 @@
             // 
             this.lblAltQtdNaosJogador1.AutoSize = true;
             this.lblAltQtdNaosJogador1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltQtdNaosJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltQtdNaosJogador1.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltQtdNaosJogador1.ForeColor = System.Drawing.Color.White;
-            this.lblAltQtdNaosJogador1.Location = new System.Drawing.Point(151, 44);
+            this.lblAltQtdNaosJogador1.Location = new System.Drawing.Point(151, 168);
             this.lblAltQtdNaosJogador1.Name = "lblAltQtdNaosJogador1";
-            this.lblAltQtdNaosJogador1.Size = new System.Drawing.Size(53, 20);
+            this.lblAltQtdNaosJogador1.Size = new System.Drawing.Size(60, 22);
             this.lblAltQtdNaosJogador1.TabIndex = 57;
             this.lblAltQtdNaosJogador1.Text = "Texto";
             this.lblAltQtdNaosJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -351,10 +352,10 @@
             this.picNomeJogador1.BackColor = System.Drawing.Color.Transparent;
             this.picNomeJogador1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNomeJogador1.BackgroundImage")));
             this.picNomeJogador1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picNomeJogador1.Location = new System.Drawing.Point(13, 13);
+            this.picNomeJogador1.Location = new System.Drawing.Point(31, 115);
             this.picNomeJogador1.Margin = new System.Windows.Forms.Padding(4);
             this.picNomeJogador1.Name = "picNomeJogador1";
-            this.picNomeJogador1.Size = new System.Drawing.Size(81, 26);
+            this.picNomeJogador1.Size = new System.Drawing.Size(63, 18);
             this.picNomeJogador1.TabIndex = 58;
             this.picNomeJogador1.TabStop = false;
             // 
@@ -362,9 +363,9 @@
             // 
             this.picPontosJogador1.BackColor = System.Drawing.Color.Transparent;
             this.picPontosJogador1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPontosJogador1.BackgroundImage")));
-            this.picPontosJogador1.Location = new System.Drawing.Point(13, 75);
+            this.picPontosJogador1.Location = new System.Drawing.Point(31, 141);
             this.picPontosJogador1.Name = "picPontosJogador1";
-            this.picPontosJogador1.Size = new System.Drawing.Size(100, 28);
+            this.picPontosJogador1.Size = new System.Drawing.Size(84, 15);
             this.picPontosJogador1.TabIndex = 59;
             this.picPontosJogador1.TabStop = false;
             // 
@@ -372,9 +373,9 @@
             // 
             this.picVotosJogador1.BackColor = System.Drawing.Color.Transparent;
             this.picVotosJogador1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVotosJogador1.BackgroundImage")));
-            this.picVotosJogador1.Location = new System.Drawing.Point(13, 39);
+            this.picVotosJogador1.Location = new System.Drawing.Point(31, 167);
             this.picVotosJogador1.Name = "picVotosJogador1";
-            this.picVotosJogador1.Size = new System.Drawing.Size(135, 34);
+            this.picVotosJogador1.Size = new System.Drawing.Size(120, 20);
             this.picVotosJogador1.TabIndex = 60;
             this.picVotosJogador1.TabStop = false;
             // 
@@ -388,21 +389,13 @@
             this.pictureBox5.TabIndex = 61;
             this.pictureBox5.TabStop = false;
             // 
-            // dgvSala
-            // 
-            this.dgvSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSala.Location = new System.Drawing.Point(341, 150);
-            this.dgvSala.Name = "dgvSala";
-            this.dgvSala.Size = new System.Drawing.Size(381, 201);
-            this.dgvSala.TabIndex = 63;
-            // 
             // picVotosJogador2
             // 
             this.picVotosJogador2.BackColor = System.Drawing.Color.Transparent;
             this.picVotosJogador2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVotosJogador2.BackgroundImage")));
-            this.picVotosJogador2.Location = new System.Drawing.Point(13, 160);
+            this.picVotosJogador2.Location = new System.Drawing.Point(31, 279);
             this.picVotosJogador2.Name = "picVotosJogador2";
-            this.picVotosJogador2.Size = new System.Drawing.Size(135, 34);
+            this.picVotosJogador2.Size = new System.Drawing.Size(120, 20);
             this.picVotosJogador2.TabIndex = 69;
             this.picVotosJogador2.TabStop = false;
             // 
@@ -410,9 +403,9 @@
             // 
             this.picPontosJogador2.BackColor = System.Drawing.Color.Transparent;
             this.picPontosJogador2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPontosJogador2.BackgroundImage")));
-            this.picPontosJogador2.Location = new System.Drawing.Point(13, 196);
+            this.picPontosJogador2.Location = new System.Drawing.Point(31, 253);
             this.picPontosJogador2.Name = "picPontosJogador2";
-            this.picPontosJogador2.Size = new System.Drawing.Size(100, 28);
+            this.picPontosJogador2.Size = new System.Drawing.Size(84, 15);
             this.picPontosJogador2.TabIndex = 68;
             this.picPontosJogador2.TabStop = false;
             // 
@@ -421,10 +414,10 @@
             this.picNomeJogador2.BackColor = System.Drawing.Color.Transparent;
             this.picNomeJogador2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNomeJogador2.BackgroundImage")));
             this.picNomeJogador2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picNomeJogador2.Location = new System.Drawing.Point(13, 134);
+            this.picNomeJogador2.Location = new System.Drawing.Point(31, 227);
             this.picNomeJogador2.Margin = new System.Windows.Forms.Padding(4);
             this.picNomeJogador2.Name = "picNomeJogador2";
-            this.picNomeJogador2.Size = new System.Drawing.Size(81, 26);
+            this.picNomeJogador2.Size = new System.Drawing.Size(63, 18);
             this.picNomeJogador2.TabIndex = 67;
             this.picNomeJogador2.TabStop = false;
             // 
@@ -432,11 +425,11 @@
             // 
             this.lblAltQtdNaosJogador2.AutoSize = true;
             this.lblAltQtdNaosJogador2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltQtdNaosJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltQtdNaosJogador2.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltQtdNaosJogador2.ForeColor = System.Drawing.Color.White;
-            this.lblAltQtdNaosJogador2.Location = new System.Drawing.Point(151, 165);
+            this.lblAltQtdNaosJogador2.Location = new System.Drawing.Point(151, 280);
             this.lblAltQtdNaosJogador2.Name = "lblAltQtdNaosJogador2";
-            this.lblAltQtdNaosJogador2.Size = new System.Drawing.Size(53, 20);
+            this.lblAltQtdNaosJogador2.Size = new System.Drawing.Size(60, 22);
             this.lblAltQtdNaosJogador2.TabIndex = 66;
             this.lblAltQtdNaosJogador2.Text = "Texto";
             this.lblAltQtdNaosJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -445,11 +438,11 @@
             // 
             this.lblAltPontosJogador2.AutoSize = true;
             this.lblAltPontosJogador2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltPontosJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltPontosJogador2.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltPontosJogador2.ForeColor = System.Drawing.Color.White;
-            this.lblAltPontosJogador2.Location = new System.Drawing.Point(116, 198);
+            this.lblAltPontosJogador2.Location = new System.Drawing.Point(116, 250);
             this.lblAltPontosJogador2.Name = "lblAltPontosJogador2";
-            this.lblAltPontosJogador2.Size = new System.Drawing.Size(53, 20);
+            this.lblAltPontosJogador2.Size = new System.Drawing.Size(60, 22);
             this.lblAltPontosJogador2.TabIndex = 65;
             this.lblAltPontosJogador2.Text = "Texto";
             this.lblAltPontosJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -458,22 +451,22 @@
             // 
             this.lblAltNomeJogador2.AutoSize = true;
             this.lblAltNomeJogador2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltNomeJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador2.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltNomeJogador2.ForeColor = System.Drawing.Color.White;
-            this.lblAltNomeJogador2.Location = new System.Drawing.Point(97, 135);
+            this.lblAltNomeJogador2.Location = new System.Drawing.Point(95, 224);
             this.lblAltNomeJogador2.Name = "lblAltNomeJogador2";
-            this.lblAltNomeJogador2.Size = new System.Drawing.Size(53, 20);
+            this.lblAltNomeJogador2.Size = new System.Drawing.Size(210, 22);
             this.lblAltNomeJogador2.TabIndex = 64;
-            this.lblAltNomeJogador2.Text = "Texto";
+            this.lblAltNomeJogador2.Text = "LucasLucasLucasLucas";
             this.lblAltNomeJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picVotosJogador3
             // 
             this.picVotosJogador3.BackColor = System.Drawing.Color.Transparent;
             this.picVotosJogador3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVotosJogador3.BackgroundImage")));
-            this.picVotosJogador3.Location = new System.Drawing.Point(13, 280);
+            this.picVotosJogador3.Location = new System.Drawing.Point(31, 391);
             this.picVotosJogador3.Name = "picVotosJogador3";
-            this.picVotosJogador3.Size = new System.Drawing.Size(135, 34);
+            this.picVotosJogador3.Size = new System.Drawing.Size(120, 20);
             this.picVotosJogador3.TabIndex = 75;
             this.picVotosJogador3.TabStop = false;
             this.picVotosJogador3.Visible = false;
@@ -482,9 +475,9 @@
             // 
             this.picPontosJogador3.BackColor = System.Drawing.Color.Transparent;
             this.picPontosJogador3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPontosJogador3.BackgroundImage")));
-            this.picPontosJogador3.Location = new System.Drawing.Point(13, 316);
+            this.picPontosJogador3.Location = new System.Drawing.Point(31, 365);
             this.picPontosJogador3.Name = "picPontosJogador3";
-            this.picPontosJogador3.Size = new System.Drawing.Size(100, 28);
+            this.picPontosJogador3.Size = new System.Drawing.Size(84, 15);
             this.picPontosJogador3.TabIndex = 74;
             this.picPontosJogador3.TabStop = false;
             this.picPontosJogador3.Visible = false;
@@ -494,10 +487,10 @@
             this.picNomeJogador3.BackColor = System.Drawing.Color.Transparent;
             this.picNomeJogador3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNomeJogador3.BackgroundImage")));
             this.picNomeJogador3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picNomeJogador3.Location = new System.Drawing.Point(13, 254);
+            this.picNomeJogador3.Location = new System.Drawing.Point(31, 339);
             this.picNomeJogador3.Margin = new System.Windows.Forms.Padding(4);
             this.picNomeJogador3.Name = "picNomeJogador3";
-            this.picNomeJogador3.Size = new System.Drawing.Size(81, 26);
+            this.picNomeJogador3.Size = new System.Drawing.Size(63, 18);
             this.picNomeJogador3.TabIndex = 73;
             this.picNomeJogador3.TabStop = false;
             this.picNomeJogador3.Visible = false;
@@ -506,11 +499,11 @@
             // 
             this.lblAltQtdNaosJogador3.AutoSize = true;
             this.lblAltQtdNaosJogador3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltQtdNaosJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltQtdNaosJogador3.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltQtdNaosJogador3.ForeColor = System.Drawing.Color.White;
-            this.lblAltQtdNaosJogador3.Location = new System.Drawing.Point(151, 285);
+            this.lblAltQtdNaosJogador3.Location = new System.Drawing.Point(151, 391);
             this.lblAltQtdNaosJogador3.Name = "lblAltQtdNaosJogador3";
-            this.lblAltQtdNaosJogador3.Size = new System.Drawing.Size(53, 20);
+            this.lblAltQtdNaosJogador3.Size = new System.Drawing.Size(60, 22);
             this.lblAltQtdNaosJogador3.TabIndex = 72;
             this.lblAltQtdNaosJogador3.Text = "Texto";
             this.lblAltQtdNaosJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -520,11 +513,11 @@
             // 
             this.lblAltPontosJogador3.AutoSize = true;
             this.lblAltPontosJogador3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltPontosJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltPontosJogador3.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltPontosJogador3.ForeColor = System.Drawing.Color.White;
-            this.lblAltPontosJogador3.Location = new System.Drawing.Point(116, 318);
+            this.lblAltPontosJogador3.Location = new System.Drawing.Point(116, 361);
             this.lblAltPontosJogador3.Name = "lblAltPontosJogador3";
-            this.lblAltPontosJogador3.Size = new System.Drawing.Size(53, 20);
+            this.lblAltPontosJogador3.Size = new System.Drawing.Size(60, 22);
             this.lblAltPontosJogador3.TabIndex = 71;
             this.lblAltPontosJogador3.Text = "Texto";
             this.lblAltPontosJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -534,13 +527,13 @@
             // 
             this.lblAltNomeJogador3.AutoSize = true;
             this.lblAltNomeJogador3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltNomeJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador3.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltNomeJogador3.ForeColor = System.Drawing.Color.White;
-            this.lblAltNomeJogador3.Location = new System.Drawing.Point(97, 255);
+            this.lblAltNomeJogador3.Location = new System.Drawing.Point(95, 335);
             this.lblAltNomeJogador3.Name = "lblAltNomeJogador3";
-            this.lblAltNomeJogador3.Size = new System.Drawing.Size(53, 20);
+            this.lblAltNomeJogador3.Size = new System.Drawing.Size(210, 22);
             this.lblAltNomeJogador3.TabIndex = 70;
-            this.lblAltNomeJogador3.Text = "Texto";
+            this.lblAltNomeJogador3.Text = "LucasLucasLucasLucas";
             this.lblAltNomeJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAltNomeJogador3.Visible = false;
             // 
@@ -548,9 +541,9 @@
             // 
             this.picVotosJogador4.BackColor = System.Drawing.Color.Transparent;
             this.picVotosJogador4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVotosJogador4.BackgroundImage")));
-            this.picVotosJogador4.Location = new System.Drawing.Point(13, 400);
+            this.picVotosJogador4.Location = new System.Drawing.Point(31, 503);
             this.picVotosJogador4.Name = "picVotosJogador4";
-            this.picVotosJogador4.Size = new System.Drawing.Size(135, 34);
+            this.picVotosJogador4.Size = new System.Drawing.Size(120, 20);
             this.picVotosJogador4.TabIndex = 81;
             this.picVotosJogador4.TabStop = false;
             this.picVotosJogador4.Visible = false;
@@ -559,9 +552,9 @@
             // 
             this.picPontosJogador4.BackColor = System.Drawing.Color.Transparent;
             this.picPontosJogador4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPontosJogador4.BackgroundImage")));
-            this.picPontosJogador4.Location = new System.Drawing.Point(13, 436);
+            this.picPontosJogador4.Location = new System.Drawing.Point(31, 477);
             this.picPontosJogador4.Name = "picPontosJogador4";
-            this.picPontosJogador4.Size = new System.Drawing.Size(100, 28);
+            this.picPontosJogador4.Size = new System.Drawing.Size(84, 15);
             this.picPontosJogador4.TabIndex = 80;
             this.picPontosJogador4.TabStop = false;
             this.picPontosJogador4.Visible = false;
@@ -571,10 +564,10 @@
             this.picNomeJogador4.BackColor = System.Drawing.Color.Transparent;
             this.picNomeJogador4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNomeJogador4.BackgroundImage")));
             this.picNomeJogador4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picNomeJogador4.Location = new System.Drawing.Point(13, 374);
+            this.picNomeJogador4.Location = new System.Drawing.Point(31, 451);
             this.picNomeJogador4.Margin = new System.Windows.Forms.Padding(4);
             this.picNomeJogador4.Name = "picNomeJogador4";
-            this.picNomeJogador4.Size = new System.Drawing.Size(81, 26);
+            this.picNomeJogador4.Size = new System.Drawing.Size(63, 18);
             this.picNomeJogador4.TabIndex = 79;
             this.picNomeJogador4.TabStop = false;
             this.picNomeJogador4.Visible = false;
@@ -583,11 +576,11 @@
             // 
             this.lblAltQtdNaosJogador4.AutoSize = true;
             this.lblAltQtdNaosJogador4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltQtdNaosJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltQtdNaosJogador4.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltQtdNaosJogador4.ForeColor = System.Drawing.Color.White;
-            this.lblAltQtdNaosJogador4.Location = new System.Drawing.Point(151, 405);
+            this.lblAltQtdNaosJogador4.Location = new System.Drawing.Point(151, 503);
             this.lblAltQtdNaosJogador4.Name = "lblAltQtdNaosJogador4";
-            this.lblAltQtdNaosJogador4.Size = new System.Drawing.Size(53, 20);
+            this.lblAltQtdNaosJogador4.Size = new System.Drawing.Size(60, 22);
             this.lblAltQtdNaosJogador4.TabIndex = 78;
             this.lblAltQtdNaosJogador4.Text = "Texto";
             this.lblAltQtdNaosJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -597,11 +590,11 @@
             // 
             this.lblAltPontosJogador4.AutoSize = true;
             this.lblAltPontosJogador4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltPontosJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltPontosJogador4.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltPontosJogador4.ForeColor = System.Drawing.Color.White;
-            this.lblAltPontosJogador4.Location = new System.Drawing.Point(116, 438);
+            this.lblAltPontosJogador4.Location = new System.Drawing.Point(116, 473);
             this.lblAltPontosJogador4.Name = "lblAltPontosJogador4";
-            this.lblAltPontosJogador4.Size = new System.Drawing.Size(53, 20);
+            this.lblAltPontosJogador4.Size = new System.Drawing.Size(60, 22);
             this.lblAltPontosJogador4.TabIndex = 77;
             this.lblAltPontosJogador4.Text = "Texto";
             this.lblAltPontosJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -611,13 +604,13 @@
             // 
             this.lblAltNomeJogador4.AutoSize = true;
             this.lblAltNomeJogador4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltNomeJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador4.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltNomeJogador4.ForeColor = System.Drawing.Color.White;
-            this.lblAltNomeJogador4.Location = new System.Drawing.Point(97, 375);
+            this.lblAltNomeJogador4.Location = new System.Drawing.Point(95, 449);
             this.lblAltNomeJogador4.Name = "lblAltNomeJogador4";
-            this.lblAltNomeJogador4.Size = new System.Drawing.Size(53, 20);
+            this.lblAltNomeJogador4.Size = new System.Drawing.Size(210, 22);
             this.lblAltNomeJogador4.TabIndex = 76;
-            this.lblAltNomeJogador4.Text = "Texto";
+            this.lblAltNomeJogador4.Text = "LucasLucasLucasLucas";
             this.lblAltNomeJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAltNomeJogador4.Visible = false;
             // 
@@ -626,12 +619,89 @@
             this.tmrVerificarVez.Interval = 5000;
             this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
+            // pic5
+            // 
+            this.pic5.Image = ((System.Drawing.Image)(resources.GetObject("pic5.Image")));
+            this.pic5.Location = new System.Drawing.Point(647, 253);
+            this.pic5.Name = "pic5";
+            this.pic5.Size = new System.Drawing.Size(54, 76);
+            this.pic5.TabIndex = 91;
+            this.pic5.TabStop = false;
+            // 
+            // pic6
+            // 
+            this.pic6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pic6.Image = ((System.Drawing.Image)(resources.GetObject("pic6.Image")));
+            this.pic6.Location = new System.Drawing.Point(715, 253);
+            this.pic6.Name = "pic6";
+            this.pic6.Size = new System.Drawing.Size(54, 76);
+            this.pic6.TabIndex = 90;
+            this.pic6.TabStop = false;
+            // 
+            // pic4
+            // 
+            this.pic4.Image = ((System.Drawing.Image)(resources.GetObject("pic4.Image")));
+            this.pic4.Location = new System.Drawing.Point(580, 253);
+            this.pic4.Name = "pic4";
+            this.pic4.Size = new System.Drawing.Size(54, 76);
+            this.pic4.TabIndex = 89;
+            this.pic4.TabStop = false;
+            // 
+            // pic3
+            // 
+            this.pic3.Image = ((System.Drawing.Image)(resources.GetObject("pic3.Image")));
+            this.pic3.Location = new System.Drawing.Point(512, 253);
+            this.pic3.Name = "pic3";
+            this.pic3.Size = new System.Drawing.Size(54, 76);
+            this.pic3.TabIndex = 88;
+            this.pic3.TabStop = false;
+            // 
+            // pic2
+            // 
+            this.pic2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic2.BackgroundImage")));
+            this.pic2.Location = new System.Drawing.Point(444, 253);
+            this.pic2.Name = "pic2";
+            this.pic2.Size = new System.Drawing.Size(54, 76);
+            this.pic2.TabIndex = 87;
+            this.pic2.TabStop = false;
+            // 
+            // pic1
+            // 
+            this.pic1.Image = ((System.Drawing.Image)(resources.GetObject("pic1.Image")));
+            this.pic1.Location = new System.Drawing.Point(376, 253);
+            this.pic1.Name = "pic1";
+            this.pic1.Size = new System.Drawing.Size(54, 76);
+            this.pic1.TabIndex = 86;
+            this.pic1.TabStop = false;
+            // 
+            // lblAltFasePartida
+            // 
+            this.lblAltFasePartida.AutoSize = true;
+            this.lblAltFasePartida.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltFasePartida.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltFasePartida.ForeColor = System.Drawing.Color.White;
+            this.lblAltFasePartida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAltFasePartida.Location = new System.Drawing.Point(573, 158);
+            this.lblAltFasePartida.Name = "lblAltFasePartida";
+            this.lblAltFasePartida.Size = new System.Drawing.Size(60, 22);
+            this.lblAltFasePartida.TabIndex = 92;
+            this.lblAltFasePartida.Text = "Texto";
+            this.lblAltFasePartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Sala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1464, 845);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblAltFasePartida);
+            this.Controls.Add(this.pic5);
+            this.Controls.Add(this.pic6);
+            this.Controls.Add(this.pic4);
+            this.Controls.Add(this.pic3);
+            this.Controls.Add(this.pic2);
+            this.Controls.Add(this.pic1);
             this.Controls.Add(this.picVotosJogador4);
             this.Controls.Add(this.picPontosJogador4);
             this.Controls.Add(this.picNomeJogador4);
@@ -650,7 +720,6 @@
             this.Controls.Add(this.lblAltQtdNaosJogador2);
             this.Controls.Add(this.lblAltPontosJogador2);
             this.Controls.Add(this.lblAltNomeJogador2);
-            this.Controls.Add(this.dgvSala);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.picVotosJogador1);
             this.Controls.Add(this.picPontosJogador1);
@@ -658,7 +727,6 @@
             this.Controls.Add(this.lblAltQtdNaosJogador1);
             this.Controls.Add(this.lblAltPontosJogador1);
             this.Controls.Add(this.lblAltRodadaPartida);
-            this.Controls.Add(this.lblConstRodadaPartida);
             this.Controls.Add(this.lblAltNomeJogador1);
             this.Controls.Add(this.lblNomeDoGrupo);
             this.Controls.Add(this.lblVersaoDoJogo);
@@ -675,11 +743,10 @@
             this.Controls.Add(this.picClaro);
             this.Controls.Add(this.picBeatriz);
             this.Controls.Add(this.picAdilson);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblAltStatusVezSala);
-            this.Controls.Add(this.lblConstStatusVezSala);
             this.Controls.Add(this.lstMinhasCartasSala);
             this.Controls.Add(this.txtConstMinhasCartasSala);
+            this.DoubleBuffered = true;
             this.Name = "Sala";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -697,12 +764,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeonardo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picToshio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador2)).EndInit();
@@ -712,6 +777,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picVotosJogador4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPontosJogador4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNomeJogador4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -720,7 +791,6 @@
         #endregion
         private System.Windows.Forms.Label txtConstMinhasCartasSala;
         private System.Windows.Forms.ListBox lstMinhasCartasSala;
-        private System.Windows.Forms.Label lblConstStatusVezSala;
         private System.Windows.Forms.Label lblAltStatusVezSala;
         private System.Windows.Forms.PictureBox picAdilson;
         private System.Windows.Forms.PictureBox picBeatriz;
@@ -735,11 +805,9 @@
         private System.Windows.Forms.PictureBox picMario;
         private System.Windows.Forms.PictureBox picLeonardo;
         private System.Windows.Forms.PictureBox picToshio;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblVersaoDoJogo;
         private System.Windows.Forms.Label lblNomeDoGrupo;
         private System.Windows.Forms.Label lblAltNomeJogador1;
-        private System.Windows.Forms.Label lblConstRodadaPartida;
         private System.Windows.Forms.Label lblAltRodadaPartida;
         private System.Windows.Forms.Label lblAltPontosJogador1;
         private System.Windows.Forms.Label lblAltQtdNaosJogador1;
@@ -747,7 +815,6 @@
         private System.Windows.Forms.PictureBox picPontosJogador1;
         private System.Windows.Forms.PictureBox picVotosJogador1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.DataGridView dgvSala;
         private System.Windows.Forms.PictureBox picVotosJogador2;
         private System.Windows.Forms.PictureBox picPontosJogador2;
         private System.Windows.Forms.PictureBox picNomeJogador2;
@@ -767,5 +834,12 @@
         private System.Windows.Forms.Label lblAltPontosJogador4;
         private System.Windows.Forms.Label lblAltNomeJogador4;
         private System.Windows.Forms.Timer tmrVerificarVez;
+        private System.Windows.Forms.PictureBox pic5;
+        private System.Windows.Forms.PictureBox pic6;
+        private System.Windows.Forms.PictureBox pic4;
+        private System.Windows.Forms.PictureBox pic3;
+        private System.Windows.Forms.PictureBox pic2;
+        private System.Windows.Forms.PictureBox pic1;
+        private System.Windows.Forms.Label lblAltFasePartida;
     }
 }

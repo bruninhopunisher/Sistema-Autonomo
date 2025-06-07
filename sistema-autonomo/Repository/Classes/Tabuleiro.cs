@@ -37,13 +37,13 @@ namespace sistema_autonomo.Classes
             // Mapeamento das coordenadas dos setores
             posicoesDeCadaSetor = new Dictionary<int, Point>
             {
-                { 25, new Point(1072, 109) },  // 6º
-                { 21, new Point(937, 228) }, { 22, new Point(1030, 228) }, { 23, new Point(1124, 228) }, { 24, new Point(1218, 228) },  // 5º
-                { 17, new Point(913, 345) }, { 18, new Point(1018, 345) }, { 19, new Point(1123, 345) }, { 20, new Point(1223, 345) },  // 4º
-                { 13, new Point(928, 462) }, { 14, new Point(1033, 462) }, { 15, new Point(1138, 462) }, { 16, new Point(1238, 462) },  // 3º
-                { 9, new Point(928, 581) }, { 10, new Point(1033, 581) }, { 11, new Point(1138, 581) }, { 12, new Point(1238, 581) },  // 2º
-                { 5, new Point(928, 696) }, { 6, new Point(1033, 696) }, { 7, new Point(1138, 696) }, { 8, new Point(1238, 696) },  // 1º
-                { 1, new Point(928, 800) }, { 2, new Point(1033, 800) }, { 3, new Point(1138, 800) }, { 4, new Point(1238, 800) }   // 0º
+                { 25, new Point(1005, 62) },  // 6º
+                { 21, new Point(923, 149) }, { 22, new Point(983, 149) }, { 23, new Point(1043, 149) }, { 24, new Point(1103, 149) },  // 5º
+                { 17, new Point(923, 235) }, { 18, new Point(983, 235) }, { 19, new Point(1043, 235) }, { 20, new Point(1103, 235) },  // 4º
+                { 13, new Point(923, 315) }, { 14, new Point(983, 315) }, { 15, new Point(1043, 315) }, { 16, new Point(1103, 315) },  // 3º
+                { 9, new Point(923, 404) }, { 10, new Point(983, 404) }, { 11, new Point(1043, 404) }, { 12, new Point(1103, 404) },  // 2º
+                { 5, new Point(923, 491) }, { 6, new Point(983, 491) }, { 7, new Point(1043, 491) }, { 8, new Point(1103, 491) },  // 1º
+                { 1, new Point(923, 572) }, { 2, new Point(983, 572) }, { 3, new Point(1043, 572) }, { 4, new Point(1103, 572) }   // 0º
             };
         }
         public void AlterarEstadoSetor(int posicaoSetor)
