@@ -89,6 +89,12 @@
     <Compile Include="Telas\3 - Sala.Designer.cs">
       <DependentUpon>3 - Sala.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Final.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Final.Designer.cs">
+      <DependentUpon>Final.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Telas\2 - Lobby.resx">
       <DependentUpon>2 - Lobby.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="Telas\3 - Sala.resx">
       <DependentUpon>3 - Sala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Final.resx">
+      <DependentUpon>Final.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Jogador.datasource" />
     <None Include="Properties\DataSources\KingMeServer.Jogo.datasource" />

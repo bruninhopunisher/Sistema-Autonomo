@@ -1,5 +1,6 @@
 ﻿using KingMeServer;
 using sistema_autonomo.Classes;
+using sistema_autonomo.Telas;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,7 +43,6 @@ namespace sistema_autonomo
 
         List<Personagem> listaPersonagens = new List<Personagem>();
         Dictionary<int, string> estadoDoTabuleiro = new Dictionary<int, string>();
-
 
 
         public Sala(Partida partidaRecebida, JogadorLocal jogadorLocal)
@@ -108,6 +108,7 @@ namespace sistema_autonomo
 
             qtdPersonagensRecebida = new string[15];
             AtualizarInfoDaTela();
+            Console.WriteLine("PAssou no constr");
             tmrVerificarVez.Enabled = true;
         }
         public void AtualizarInfoDaTela()
@@ -206,6 +207,15 @@ namespace sistema_autonomo
                         picsMinhasCartas[i].Image = mapaPersonagens[mapaCartas[letra]].Image;
                     }
                 }
+            }
+            else if(faseDaPartida == "E")
+            {
+                Console.WriteLine("aaa");
+                this.Hide();
+                Final final = new Final(partida);
+                tmrVerificarVez.Enabled = false;
+                final.ShowDialog();
+                this.Close();
             }
             string jogadorDaVez = partida.VerificarNomeJogadorDaVez();
             if (jogadorDaVez == meuJogador.Nome)

@@ -54,6 +54,7 @@ namespace sistema_autonomo.Classes
         public List<Jogador> ListaJogadores
         {
             get { return listaJogadores; }
+            set { this.listaJogadores = value; }
         }
         public List<Jogador> ListarJogadores(JogadorLocal jogadorLocal)
         {
