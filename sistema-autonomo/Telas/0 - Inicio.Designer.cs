@@ -29,35 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
-            this.btnInicio = new System.Windows.Forms.Button();
             this.btnCreditosInicio = new System.Windows.Forms.Button();
             this.btnConfiguracaoInicio = new System.Windows.Forms.Button();
             this.btnAjudaInicio = new System.Windows.Forms.Button();
             this.lblVersaoJogo = new System.Windows.Forms.Label();
-            this.lblNomeGrupo = new System.Windows.Forms.Label();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnInicio
-            // 
-            this.btnInicio.BackColor = System.Drawing.Color.Transparent;
-            this.btnInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInicio.BackgroundImage")));
-            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInicio.FlatAppearance.BorderSize = 0;
-            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicio.Location = new System.Drawing.Point(497, 313);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(272, 66);
-            this.btnInicio.TabIndex = 0;
-            this.btnInicio.UseVisualStyleBackColor = false;
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // btnCreditosInicio
             // 
             this.btnCreditosInicio.BackColor = System.Drawing.Color.Transparent;
-            this.btnCreditosInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreditosInicio.BackgroundImage")));
             this.btnCreditosInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreditosInicio.FlatAppearance.BorderSize = 0;
             this.btnCreditosInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreditosInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnCreditosInicio.Image")));
             this.btnCreditosInicio.Location = new System.Drawing.Point(460, 410);
             this.btnCreditosInicio.Name = "btnCreditosInicio";
             this.btnCreditosInicio.Size = new System.Drawing.Size(341, 78);
@@ -93,33 +78,43 @@
             // lblVersaoJogo
             // 
             this.lblVersaoJogo.AutoSize = true;
-            this.lblVersaoJogo.Location = new System.Drawing.Point(1187, 646);
+            this.lblVersaoJogo.BackColor = System.Drawing.Color.Transparent;
+            this.lblVersaoJogo.Location = new System.Drawing.Point(1178, 640);
             this.lblVersaoJogo.Name = "lblVersaoJogo";
-            this.lblVersaoJogo.Size = new System.Drawing.Size(0, 13);
+            this.lblVersaoJogo.Size = new System.Drawing.Size(34, 13);
             this.lblVersaoJogo.TabIndex = 4;
+            this.lblVersaoJogo.Text = "Texto";
             // 
-            // lblNomeGrupo
+            // btnInicio
             // 
-            this.lblNomeGrupo.AutoSize = true;
-            this.lblNomeGrupo.Location = new System.Drawing.Point(1052, 646);
-            this.lblNomeGrupo.Name = "lblNomeGrupo";
-            this.lblNomeGrupo.Size = new System.Drawing.Size(0, 13);
-            this.lblNomeGrupo.TabIndex = 5;
+            this.btnInicio.BackColor = System.Drawing.Color.Transparent;
+            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInicio.FlatAppearance.BorderSize = 0;
+            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
+            this.btnInicio.Location = new System.Drawing.Point(497, 313);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(272, 66);
+            this.btnInicio.TabIndex = 0;
+            this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.IndianRed;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.lblNomeGrupo);
             this.Controls.Add(this.lblVersaoJogo);
             this.Controls.Add(this.btnAjudaInicio);
             this.Controls.Add(this.btnConfiguracaoInicio);
             this.Controls.Add(this.btnCreditosInicio);
             this.Controls.Add(this.btnInicio);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ForeColor = System.Drawing.Color.Transparent;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
@@ -129,12 +124,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnCreditosInicio;
         private System.Windows.Forms.Button btnConfiguracaoInicio;
         private System.Windows.Forms.Button btnAjudaInicio;
         private System.Windows.Forms.Label lblVersaoJogo;
-        private System.Windows.Forms.Label lblNomeGrupo;
+        private System.Windows.Forms.Button btnInicio;
     }
 }

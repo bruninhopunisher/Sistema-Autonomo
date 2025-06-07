@@ -27,6 +27,7 @@ namespace sistema_autonomo
         private PictureBox[] picsNome;
         private PictureBox[] picsNaos;
         private PictureBox[] picsPontos;
+        private PictureBox[] picsMinhasCartas;
         private Dictionary<string, PictureBox> mapaPersonagens;
         private Dictionary<char, string> mapaCartas;
         private string cartasSorteadas;
@@ -82,6 +83,7 @@ namespace sistema_autonomo
             picsNome = new[] { picNomeJogador1, picNomeJogador2, picNomeJogador3, picNomeJogador4 };
             picsNaos = new[] { picVotosJogador1, picVotosJogador2, picVotosJogador3, picVotosJogador4 };
             picsPontos = new[] { picPontosJogador1, picPontosJogador2, picPontosJogador3, picPontosJogador4 };
+            picsMinhasCartas = new[] { picMinhaCarta1, picMinhaCarta2, picMinhaCarta3, picMinhaCarta4, picMinhaCarta5, picMinhaCarta6 };
             lblsNome = new[] { lblAltNomeJogador1, lblAltNomeJogador2, lblAltNomeJogador3, lblAltNomeJogador4 };
             lblsNaos = new[] { lblAltQtdNaosJogador1, lblAltQtdNaosJogador2, lblAltQtdNaosJogador3, lblAltQtdNaosJogador4 };
             lblsPontos = new[] { lblAltPontosJogador1, lblAltPontosJogador2, lblAltPontosJogador3, lblAltPontosJogador4 };
@@ -103,8 +105,8 @@ namespace sistema_autonomo
                     personagem.cardPersonagem = mapaPersonagens[personagem.nome];
                 }
             }
-            qtdPersonagensRecebida = new string[15];
 
+            qtdPersonagensRecebida = new string[15];
             AtualizarInfoDaTela();
             tmrVerificarVez.Enabled = true;
         }
@@ -148,6 +150,23 @@ namespace sistema_autonomo
             }
             LimparEAtualizarTabuleiro();
         }
+        private void LimparEAtualizarTabuleiro()
+        {
+            listaPersonagens = tabuleiro.DesposicionarPersonagens(listaPersonagens);
+            estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
+            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
+            listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
+        }
+        public void ResetarPosicaoCartas()
+        {
+            Personagem p = new Personagem();
+            for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
+            {
+                p = Personagem.personagenInstanciado[i];
+                p.cardPersonagem.Location = p.PointPersonagens[i];
+                p.cardPersonagem.Visible = true;
+            }
+        }
         private void Jogar()
         {
             LimparEAtualizarTabuleiro();
@@ -168,23 +187,6 @@ namespace sistema_autonomo
                 qtdPersonagensPosicionados = qtdPersonagensRecebida.Length - 2;
             }
         }
-        private void LimparEAtualizarTabuleiro()
-        {
-            listaPersonagens = tabuleiro.DesposicionarPersonagens(listaPersonagens);
-            estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
-            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
-            listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
-        }
-        public void ResetarPosicaoCartas()
-        {
-            Personagem p = new Personagem();
-            for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
-            {
-                p = Personagem.personagenInstanciado[i];
-                p.cardPersonagem.Location = p.PointPersonagens[i];
-                p.cardPersonagem.Visible = true;
-            }
-        }
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
             faseDaPartida = BancoAuxiliar.VerificarFase(partida.Id);
@@ -195,14 +197,13 @@ namespace sistema_autonomo
                 partida.SetQtdVotoNao();
                 qtdPersonagensPosicionados = 13;
                 //Atualiza as cartas do jogador
-                lstMinhasCartasSala.Items.Clear();
                 cartasSorteadas = Jogo.ListarCartas(meuJogador.Id, meuJogador.Senha);
-                for (int j = 0; j < 6; j++)
+                for (int i = 0; i < 6; i++)
                 {
-                    char letra = cartasSorteadas[j];
+                    char letra = cartasSorteadas[i];
                     if (mapaCartas.ContainsKey(letra))
                     {
-                        lstMinhasCartasSala.Items.Add(mapaCartas[letra]);
+                        picsMinhasCartas[i].Image = mapaPersonagens[mapaCartas[letra]].Image;
                     }
                 }
             }
@@ -211,7 +212,6 @@ namespace sistema_autonomo
             {
                 Jogar();
             }
-            //ATUALIZAR INFOS DA TELA
             AtualizarInfoDaTela();
         }
     }

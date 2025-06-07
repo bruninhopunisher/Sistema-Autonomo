@@ -18,7 +18,6 @@ namespace sistema_autonomo
         public PictureBox cardPersonagem { get; set; }
         public bool personagemPosicionado { get; set; }
         private List<Point> pointPersonagens;
-        private List<Point> pointMinhasCartas;
         public static List<Personagem> personagenInstanciado = new List<Personagem>();
        
         public Personagem()
@@ -37,24 +36,12 @@ namespace sistema_autonomo
             pointPersonagens.Add(new Point(547, 513));
             pointPersonagens.Add(new Point(611, 513));
             pointPersonagens.Add(new Point(675, 513));
-            this.pointMinhasCartas = new List<Point>();
-            pointMinhasCartas.Add(new Point(376, 253));
-            pointMinhasCartas.Add(new Point(444, 253));
-            pointMinhasCartas.Add(new Point(512, 253));
-            pointMinhasCartas.Add(new Point(580, 253));
-            pointMinhasCartas.Add(new Point(647, 253));
-            pointMinhasCartas.Add(new Point(715, 253));
         }
 
         public List<Point> PointPersonagens
         {
             get { return pointPersonagens; }
         }
-        public List<Point> PointMinhasCartas
-        {
-            get { return pointMinhasCartas; }
-        }
-
         public static List<Personagem> ListarPersonagem(int setor)
         {
             string listaPersonagens = Jogo.ListarPersonagens();
