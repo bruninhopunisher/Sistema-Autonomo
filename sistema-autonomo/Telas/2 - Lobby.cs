@@ -10,16 +10,16 @@ namespace sistema_autonomo
     {
         Partida partida;
         JogadorLocal jogadorLocal;
-        private DataGridViewRow dgvListaLobby;
 
         public Lobby(Partida partidaRecebida, JogadorLocal jogadorRecebido)
         {
             InitializeComponent();
             partida = partidaRecebida;
             jogadorLocal = jogadorRecebido;
-            btnAtualizarLobby_Click(null, null);
+            tmrAtualizarLobby.Enabled = true;
         }
-        private void btnAtualizarLobby_Click(object sender, EventArgs e)
+
+        private void tmrAtualizarLobby_Tick(object sender, EventArgs e)
         {
             //Dados do lobby
             string[] dadosDoLobby = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
@@ -39,7 +39,7 @@ namespace sistema_autonomo
             }
 
             dgvLobby.Rows.Clear();
-            foreach (Jogador jogador in listaJogadores)
+            foreach (JogadorPartida jogador in listaJogadores)
             {
                 dgvLobby.Rows.Add(
                     jogador.Id,
@@ -55,6 +55,7 @@ namespace sistema_autonomo
             {
                 partida.Rodada = 1;
                 partida.Status = "Jogando";
+                tmrAtualizarLobby.Stop();
                 this.Hide();
                 Sala sala = new Sala(partida, jogadorLocal);
                 sala.ShowDialog();
@@ -65,5 +66,7 @@ namespace sistema_autonomo
                 MessageBox.Show(verificacaoInicio);
             }
         }
+
+
     }
 }

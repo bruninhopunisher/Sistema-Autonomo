@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lobby));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblIdPartida = new System.Windows.Forms.Label();
             this.btnIniciarPartida = new System.Windows.Forms.Button();
             this.lblVersaoDoJogo = new System.Windows.Forms.Label();
@@ -39,12 +41,12 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblStatusPartida = new System.Windows.Forms.Label();
-            this.btnAtualizarLobby = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dgvLobby = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLobby = new System.Windows.Forms.DataGridView();
+            this.tmrAtualizarLobby = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -76,7 +78,7 @@
             this.btnIniciarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarPartida.ForeColor = System.Drawing.Color.Transparent;
             this.btnIniciarPartida.Image = ((System.Drawing.Image)(resources.GetObject("btnIniciarPartida.Image")));
-            this.btnIniciarPartida.Location = new System.Drawing.Point(660, 552);
+            this.btnIniciarPartida.Location = new System.Drawing.Point(681, 536);
             this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
             this.btnIniciarPartida.Size = new System.Drawing.Size(133, 47);
@@ -138,19 +140,6 @@
             this.lblStatusPartida.Text = "texto";
             this.lblStatusPartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnAtualizarLobby
-            // 
-            this.btnAtualizarLobby.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtualizarLobby.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarLobby.ForeColor = System.Drawing.Color.Black;
-            this.btnAtualizarLobby.Location = new System.Drawing.Point(901, 514);
-            this.btnAtualizarLobby.Name = "btnAtualizarLobby";
-            this.btnAtualizarLobby.Size = new System.Drawing.Size(144, 37);
-            this.btnAtualizarLobby.TabIndex = 25;
-            this.btnAtualizarLobby.Text = "Atualizar";
-            this.btnAtualizarLobby.UseVisualStyleBackColor = false;
-            this.btnAtualizarLobby.Click += new System.EventHandler(this.btnAtualizarLobby_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -169,6 +158,26 @@
             this.pictureBox2.Size = new System.Drawing.Size(273, 31);
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
+            // 
+            // NOME
+            // 
+            this.NOME.Frozen = true;
+            this.NOME.HeaderText = "NOME";
+            this.NOME.MaxInputLength = 19;
+            this.NOME.Name = "NOME";
+            this.NOME.ReadOnly = true;
+            this.NOME.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NOME.Width = 470;
+            // 
+            // ID
+            // 
+            this.ID.Frozen = true;
+            this.ID.HeaderText = "ID";
+            this.ID.MaxInputLength = 5;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID.Width = 90;
             // 
             // dgvLobby
             // 
@@ -194,14 +203,15 @@
             this.NOME});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvLobby.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLobby.GridColor = System.Drawing.Color.White;
-            this.dgvLobby.Location = new System.Drawing.Point(462, 132);
+            this.dgvLobby.Location = new System.Drawing.Point(460, 131);
+            this.dgvLobby.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLobby.MultiSelect = false;
             this.dgvLobby.Name = "dgvLobby";
             this.dgvLobby.ReadOnly = true;
@@ -210,35 +220,30 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvLobby.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLobby.RowHeadersVisible = false;
+            this.dgvLobby.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLobby.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvLobby.RowTemplate.Height = 40;
             this.dgvLobby.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLobby.ShowCellErrors = false;
             this.dgvLobby.ShowCellToolTips = false;
-            this.dgvLobby.Size = new System.Drawing.Size(562, 354);
+            this.dgvLobby.Size = new System.Drawing.Size(561, 354);
             this.dgvLobby.TabIndex = 29;
             // 
-            // ID
+            // tmrAtualizarLobby
             // 
-            this.ID.Frozen = true;
-            this.ID.HeaderText = "ID";
-            this.ID.MaxInputLength = 5;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID.Width = 90;
-            // 
-            // NOME
-            // 
-            this.NOME.Frozen = true;
-            this.NOME.HeaderText = "NOME";
-            this.NOME.MaxInputLength = 19;
-            this.NOME.Name = "NOME";
-            this.NOME.ReadOnly = true;
-            this.NOME.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NOME.Width = 470;
+            this.tmrAtualizarLobby.Interval = 250;
+            this.tmrAtualizarLobby.Tick += new System.EventHandler(this.tmrAtualizarLobby_Tick);
             // 
             // Lobby
             // 
@@ -248,7 +253,6 @@
             this.ClientSize = new System.Drawing.Size(1155, 673);
             this.Controls.Add(this.dgvLobby);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnAtualizarLobby);
             this.Controls.Add(this.lblStatusPartida);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -286,11 +290,11 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblStatusPartida;
-        private System.Windows.Forms.Button btnAtualizarLobby;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView dgvLobby;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridView dgvLobby;
+        private System.Windows.Forms.Timer tmrAtualizarLobby;
     }
 }
