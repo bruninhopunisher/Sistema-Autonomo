@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 namespace sistema_autonomo.Classes
 {
@@ -42,22 +43,60 @@ namespace sistema_autonomo.Classes
                 { 1, new Point(923, 572) }, { 2, new Point(983, 572) }, { 3, new Point(1043, 572) }, { 4, new Point(1103, 572) }   // 0º
             };
         }
-        public int VerificarQtdPersonagensEstrategia(string minhasCartas)
+        public string VerificarQtdPersonagensEstrategia(string minhasCartas)
         {
-            int qtdPersonagensNaEstrategia = 0;
+            //int qtdPersonagensNaEstrategia = 0;
+            List<string> minhasCartasRecebidas = new List<string>();
+            for (int i = 0; i < minhasCartas.Length; i++)
+            {
+                minhasCartasRecebidas.Add(minhasCartas[i].ToString());
+            }
 
-            for(int i = 13; i <= 24; i++)
+            for (int i = 24; i > 9; i--)
+            {
+                if (!minhasCartasRecebidas.Contains(posicaoDosPersonagens[i]) && posicaoDosPersonagens[i] != null)
+                {
+                    Console.WriteLine("carta retornada: " + posicaoDosPersonagens[i]);
+                    return posicaoDosPersonagens[i];
+                }
+            }
+            Console.WriteLine("Deu errooooooooooooooooooooooooooooooooooo");
+            return "ERRO";
+
+            /*
+            string cartaPromover = "";
+
+            for(int i = 9; i <= 24; i++)
             {
                 for (int j = 0; j < minhasCartas.Length - 1; j++)
                 {
                     if (minhasCartas[j].ToString() == posicaoDosPersonagens[i])
                     {
-                        qtdPersonagensNaEstrategia++;
+                        ehMinhaCarta = true;
                     }
                 }
+                if (!ehMinhaCarta)
+                {
+                    Console.WriteLine("Acarta que deveria ser promovida é " + cartaPromover);
+                    cartaPromover = posicaoDosPersonagens[i];
+                    break;
+                }
             }
-
-            return qtdPersonagensNaEstrategia;
+            return cartaPromover;
+            */
+        }
+        public string PromoverPrimeira()
+        {
+            string retorno = "";
+            for (int i = 24; i >= 1; i--)
+            {
+                if (posicaoDosPersonagens[i] != null)
+                {
+                    retorno = posicaoDosPersonagens[i];
+                    break;
+                }
+            }
+            return retorno;
         }
 
         public Point PosicaoDoSetor(int posicaoSetor)
