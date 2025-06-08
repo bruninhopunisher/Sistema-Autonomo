@@ -85,8 +85,6 @@ namespace sistema_autonomo
             faseDaPartida = "";
             rodadaPassada = 0;
             qtdPersonagensPosicionados = 13;
-            qtdPersonagensRecebida = new string[15];
-
 
             //VER COM O CAUA A LISTA
             listaPersonagens = Personagem.ListarPersonagem(0);
@@ -97,60 +95,9 @@ namespace sistema_autonomo
                     personagem.cardPersonagem = mapaPersonagens[personagem.nome];
                 }
             }
+            qtdPersonagensRecebida = new string[15];
             AtualizarInfoDaTela();
             tmrVerificarVez.Enabled = true;
-        }
-        private void tmrVerificarVez_Tick(object sender, EventArgs e)
-        {
-            faseDaPartida = BancoAuxiliar.VerificarFase(partida.Id);
-            if (faseDaPartida != null && partida.Rodada != rodadaPassada)
-            {
-                rodadaPassada = partida.Rodada;
-                ResetarPosicaoCartas();
-                partida.SetQtdVotoNao();
-                qtdPersonagensPosicionados = 13;
-                qtdPersonagensRecebida = new string[15];
-                //Atualiza as cartas do jogador
-                cartasSorteadas = Jogo.ListarCartas(meuJogador.Id, meuJogador.Senha);
-                for (int i = 0; i < 6; i++)
-                {
-                    char letra = cartasSorteadas[i];
-                    if (mapaCartas.ContainsKey(letra))
-                    {
-                        picsMinhasCartas[i].Image = mapaPersonagens[mapaCartas[letra]].Image;
-                    }
-                }
-            }
-            else if (faseDaPartida == "E")
-            {
-                this.Hide();
-                Final final = new Final(partida);
-                tmrVerificarVez.Enabled = false;
-                final.ShowDialog();
-                this.Close();
-            }
-            if (partida.VerificarNomeJogadorDaVez() == meuJogador.Nome)
-            {
-                Jogar();
-            }
-            AtualizarInfoDaTela();
-        }
-        private void LimparEAtualizarTabuleiro()
-        {
-            listaPersonagens = tabuleiro.DesposicionarPersonagens(listaPersonagens);
-            estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
-            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
-            listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
-        }
-        public void ResetarPosicaoCartas()
-        {
-            Personagem p = new Personagem();
-            for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
-            {
-                p = Personagem.personagenInstanciado[i];
-                p.cardPersonagem.Location = p.PointPersonagens[i];
-                p.cardPersonagem.Visible = true;
-            }
         }
         public void AtualizarInfoDaTela()
         {
@@ -191,6 +138,23 @@ namespace sistema_autonomo
             }
             LimparEAtualizarTabuleiro();
         }
+        private void LimparEAtualizarTabuleiro()
+        {
+            listaPersonagens = tabuleiro.DesposicionarPersonagens(listaPersonagens);
+            estadoDoTabuleiro = tabuleiro.LimparTabuleiro(estadoDoTabuleiro);
+            estadoDoTabuleiro = tabuleiro.AtualizarEstadoTabuleiro(partida.Id, listaPersonagens);
+            listaPersonagens = tabuleiro.PosicionarPersonagem(estadoDoTabuleiro, listaPersonagens);
+        }
+        public void ResetarPosicaoCartas()
+        {
+            Personagem p = new Personagem();
+            for (int i = 0; i < Personagem.personagenInstanciado.Count(); i++)
+            {
+                p = Personagem.personagenInstanciado[i];
+                p.cardPersonagem.Location = p.PointPersonagens[i];
+                p.cardPersonagem.Visible = true;
+            }
+        }
         private void Jogar()
         {
             LimparEAtualizarTabuleiro();
@@ -210,6 +174,45 @@ namespace sistema_autonomo
                 estrategia.Votar(tabuleiro, meuJogador);
                 qtdPersonagensPosicionados = qtdPersonagensRecebida.Length - 2;
             }
+        }
+
+        private void tmrVerificarVez_Tick(object sender, EventArgs e)
+        {
+            faseDaPartida = BancoAuxiliar.VerificarFase(partida.Id);
+            if (faseDaPartida != null && partida.Rodada != rodadaPassada)
+            {
+
+                estrategia.qtdVotacoesOcorridas = 0;
+                rodadaPassada = partida.Rodada;
+                ResetarPosicaoCartas();
+                partida.SetQtdVotoNao();
+                qtdPersonagensPosicionados = 13;
+                qtdPersonagensRecebida = new string[15];
+                //Atualiza as cartas do jogador
+                cartasSorteadas = Jogo.ListarCartas(meuJogador.Id, meuJogador.Senha);
+                for (int i = 0; i < 6; i++)
+                {
+                    char letra = cartasSorteadas[i];
+                    if (mapaCartas.ContainsKey(letra))
+                    {
+                        picsMinhasCartas[i].Image = mapaPersonagens[mapaCartas[letra]].Image;
+                    }
+                }
+            }
+            else if (faseDaPartida == "E")
+            {
+                this.Hide();
+                Final final = new Final(partida);
+                tmrVerificarVez.Enabled = false;
+                final.ShowDialog();
+                this.Close();
+            }
+            string jogadorDaVez = partida.VerificarNomeJogadorDaVez();
+            if (jogadorDaVez == meuJogador.Nome)
+            {
+                Jogar();
+            }
+            AtualizarInfoDaTela();
         }
     }
 }

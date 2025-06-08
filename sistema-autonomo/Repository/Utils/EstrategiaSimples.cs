@@ -6,6 +6,7 @@ namespace sistema_autonomo.Classes
 {
     public class EstrategiaSimples : Estrategia
     {
+        public int qtdVotacoesOcorridas = 0;
         public override void Posicionar(int jogador, string senha, int id, Tabuleiro tabuleiroRecebido)
         {
             int setor;
@@ -26,7 +27,7 @@ namespace sistema_autonomo.Classes
             for (int i = 1; i < tabuleiroTratado.Length - 1; i++)
             {
                 CartasJogadas.Add(tabuleiroTratado[i].Substring(2, 1));
-            } 
+            }
 
             //posicionar personagens das cartas (Com estrategia)
             for (int i = 0; i < cartasDoJogador.Length; i++)
@@ -43,7 +44,7 @@ namespace sistema_autonomo.Classes
                         Jogo.ColocarPersonagem(jogador, senha, setor, cartasDoJogador.Substring(i, 1));
                         posicionouPersonagem = true;
                     }
-                    if(posicionouPersonagem == false)
+                    if (posicionouPersonagem == false)
                     {
                         setor = 1;
                         while (tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor < 5)
@@ -60,18 +61,18 @@ namespace sistema_autonomo.Classes
             }
 
             //posicionar restante dos personagens
-            if(posicionouPersonagem == false)
+            if (posicionouPersonagem == false)
             {
                 for (int i = 0; i < personagens.Length - 1; i++)
                 {
                     if (!(CartasJogadas.Contains(personagens[i].Substring(0, 1))))
                     {
                         setor = 4;
-                        while(tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor > 0)
+                        while (tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor > 0)
                         {
                             setor--;
                         }
-                        if(setor > 0)
+                        if (setor > 0)
                         {
                             Jogo.ColocarPersonagem(jogador, senha, setor, personagens[i].Substring(0, 1));
                         }
@@ -93,9 +94,16 @@ namespace sistema_autonomo.Classes
             int idJogador = jogadorLocal.Id;
             string senhaJogador = jogadorLocal.Senha;
 
-            int retornoQtdPersonagens = tabuleiroRecebido.VerificarQtdPersonagensEstrategia(minhasCartas);
+            string retornoPersonagens = tabuleiroRecebido.VerificarQtdPersonagensEstrategia(minhasCartas);
+            string retornoServer;
 
-            Jogo.Promover(idJogador, senhaJogador, "A");
+            retornoServer = Jogo.Promover(idJogador, senhaJogador, retornoPersonagens);
+            if (retornoServer.Substring(0, 4) == "ERRO")
+            {
+                retornoPersonagens = tabuleiroRecebido.PromoverPrimeira();
+                Jogo.Promover(idJogador, senhaJogador, retornoPersonagens);
+
+            }
         }
         public override void Votar(Tabuleiro tabuleiro, JogadorLocal jogadorLocal)
         {
@@ -113,12 +121,13 @@ namespace sistema_autonomo.Classes
                 minhasCartas.Add(meusPersonagensRecebidos.Substring(i, 1));
             }
 
-            if (jogadorLocal.QtdNao > 0 && !minhasCartas.Contains(personagemEleitoVotacao))
+            if (jogadorLocal.QtdNao > 0 && !minhasCartas.Contains(personagemEleitoVotacao) && qtdVotacoesOcorridas > 3)
             {
                 Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "N");
             }
             else
             {
+                qtdVotacoesOcorridas++;
                 Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "S");
             }
         }
