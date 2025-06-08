@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using KingMeServer;
+using sistema_autonomo.Repository.Interfaces;
 
 namespace sistema_autonomo.Classes
 {

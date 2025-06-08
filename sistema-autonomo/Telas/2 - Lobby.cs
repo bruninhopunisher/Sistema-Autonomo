@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using KingMeServer;
 using sistema_autonomo.Classes;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace sistema_autonomo
 {
     public partial class Lobby : Form
     {
         Partida partida;
-        JogadorLocal jogadorLocal;       
+        JogadorLocal jogadorLocal;
+        private DataGridViewRow dgvListaLobby;
+
         public Lobby(Partida partidaRecebida, JogadorLocal jogadorRecebido)
         {
             InitializeComponent();
@@ -36,16 +28,24 @@ namespace sistema_autonomo
             lblStatusPartida.Text = partida.Status == "Aberta" ? "Aberta" : "Jogando";
             lblVersaoDoJogo.Text = Jogo.versao.ToString();
             //Informações dos jogadores presentes no lobby
-            lstJogadoresLobby.Items.Clear();
             string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
-            if (jogadores == null)//Compara com null devido ao retorno do tratar dados
+            List<Jogador> listaJogadores = new List<Jogador>();
+            listaJogadores.Clear();
+            for (int i = 0; i < jogadores.Length - 1; i++)
             {
-                lstJogadoresLobby.Items.Add("Erro ao atualizar lista");
-                return;
+                string[] jogadoresSplit = jogadores[i].Split(',');
+                JogadorPartida novoJogador = new JogadorPartida(Convert.ToInt32(jogadoresSplit[0]), jogadoresSplit[1], 0, 0);
+                listaJogadores.Add(novoJogador);
             }
-            for (int i = 0; i < jogadores.Length; i++)
+
+            dgvLobby.Rows.Clear();
+            foreach (Jogador jogador in listaJogadores)
             {
-                lstJogadoresLobby.Items.Add(jogadores[i]);
+                dgvLobby.Rows.Add(
+                    jogador.Id,
+                    jogador.Nome
+                );
+
             }
         }
         private void btnIniciarPartida_Click(object sender, EventArgs e)

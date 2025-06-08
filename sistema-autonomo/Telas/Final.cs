@@ -18,9 +18,6 @@ namespace sistema_autonomo.Telas
         {
             InitializeComponent();
             partidaRecebida.AtualizarPontuacao();
-
-
-
             partidaRecebida.ListaJogadores.Sort((a,b) => b.QtdPonto.CompareTo(a.QtdPonto));
 
             lblAltNomeVencedor1.Text = partidaRecebida.ListaJogadores[0].Nome;

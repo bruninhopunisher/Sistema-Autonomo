@@ -65,6 +65,7 @@ namespace sistema_autonomo
                     }
                 }
             }
+            listaPartidas.Sort((a, b) => b.Id.CompareTo(a.Id));
             dgvPartidas.Rows.Clear();
             foreach (Partida partida in listaPartidas)
             {
@@ -74,8 +75,6 @@ namespace sistema_autonomo
                     partida.Status
                 );
             }
-
-
         }
         private void dgvPartidas_SelectionChanged(object sender, EventArgs e)
         {
@@ -139,7 +138,5 @@ namespace sistema_autonomo
                 MessageBox.Show(iniciarPartida);
             }
         }
-
-
     }
 }
