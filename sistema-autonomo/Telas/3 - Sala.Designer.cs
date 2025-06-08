@@ -118,12 +118,12 @@
             // 
             this.lblAltStatusVezSala.AutoSize = true;
             this.lblAltStatusVezSala.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltStatusVezSala.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltStatusVezSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltStatusVezSala.ForeColor = System.Drawing.Color.White;
             this.lblAltStatusVezSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAltStatusVezSala.Location = new System.Drawing.Point(628, 102);
             this.lblAltStatusVezSala.Name = "lblAltStatusVezSala";
-            this.lblAltStatusVezSala.Size = new System.Drawing.Size(60, 22);
+            this.lblAltStatusVezSala.Size = new System.Drawing.Size(63, 24);
             this.lblAltStatusVezSala.TabIndex = 10;
             this.lblAltStatusVezSala.Text = "Texto";
             this.lblAltStatusVezSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,11 +279,11 @@
             // 
             this.lblAltNomeJogador1.AutoSize = true;
             this.lblAltNomeJogador1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltNomeJogador1.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltNomeJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAltNomeJogador1.ForeColor = System.Drawing.Color.White;
             this.lblAltNomeJogador1.Location = new System.Drawing.Point(95, 112);
             this.lblAltNomeJogador1.Name = "lblAltNomeJogador1";
-            this.lblAltNomeJogador1.Size = new System.Drawing.Size(210, 22);
+            this.lblAltNomeJogador1.Size = new System.Drawing.Size(230, 24);
             this.lblAltNomeJogador1.TabIndex = 37;
             this.lblAltNomeJogador1.Text = "LucasLucasLucasLucas";
             this.lblAltNomeJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -292,12 +292,12 @@
             // 
             this.lblAltRodadaPartida.AutoSize = true;
             this.lblAltRodadaPartida.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltRodadaPartida.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltRodadaPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltRodadaPartida.ForeColor = System.Drawing.Color.White;
             this.lblAltRodadaPartida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAltRodadaPartida.Location = new System.Drawing.Point(588, 130);
             this.lblAltRodadaPartida.Name = "lblAltRodadaPartida";
-            this.lblAltRodadaPartida.Size = new System.Drawing.Size(60, 22);
+            this.lblAltRodadaPartida.Size = new System.Drawing.Size(63, 24);
             this.lblAltRodadaPartida.TabIndex = 48;
             this.lblAltRodadaPartida.Text = "Texto";
             this.lblAltRodadaPartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,11 +306,11 @@
             // 
             this.lblAltPontosJogador1.AutoSize = true;
             this.lblAltPontosJogador1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltPontosJogador1.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltPontosJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltPontosJogador1.ForeColor = System.Drawing.Color.White;
             this.lblAltPontosJogador1.Location = new System.Drawing.Point(116, 138);
             this.lblAltPontosJogador1.Name = "lblAltPontosJogador1";
-            this.lblAltPontosJogador1.Size = new System.Drawing.Size(60, 22);
+            this.lblAltPontosJogador1.Size = new System.Drawing.Size(63, 24);
             this.lblAltPontosJogador1.TabIndex = 50;
             this.lblAltPontosJogador1.Text = "Texto";
             this.lblAltPontosJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,11 +319,11 @@
             // 
             this.lblAltQtdNaosJogador1.AutoSize = true;
             this.lblAltQtdNaosJogador1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltQtdNaosJogador1.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltQtdNaosJogador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltQtdNaosJogador1.ForeColor = System.Drawing.Color.White;
             this.lblAltQtdNaosJogador1.Location = new System.Drawing.Point(151, 168);
             this.lblAltQtdNaosJogador1.Name = "lblAltQtdNaosJogador1";
-            this.lblAltQtdNaosJogador1.Size = new System.Drawing.Size(60, 22);
+            this.lblAltQtdNaosJogador1.Size = new System.Drawing.Size(63, 24);
             this.lblAltQtdNaosJogador1.TabIndex = 57;
             this.lblAltQtdNaosJogador1.Text = "Texto";
             this.lblAltQtdNaosJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -406,11 +406,11 @@
             // 
             this.lblAltQtdNaosJogador2.AutoSize = true;
             this.lblAltQtdNaosJogador2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltQtdNaosJogador2.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltQtdNaosJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltQtdNaosJogador2.ForeColor = System.Drawing.Color.White;
             this.lblAltQtdNaosJogador2.Location = new System.Drawing.Point(151, 280);
             this.lblAltQtdNaosJogador2.Name = "lblAltQtdNaosJogador2";
-            this.lblAltQtdNaosJogador2.Size = new System.Drawing.Size(60, 22);
+            this.lblAltQtdNaosJogador2.Size = new System.Drawing.Size(63, 24);
             this.lblAltQtdNaosJogador2.TabIndex = 66;
             this.lblAltQtdNaosJogador2.Text = "Texto";
             this.lblAltQtdNaosJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -419,11 +419,11 @@
             // 
             this.lblAltPontosJogador2.AutoSize = true;
             this.lblAltPontosJogador2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltPontosJogador2.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltPontosJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltPontosJogador2.ForeColor = System.Drawing.Color.White;
             this.lblAltPontosJogador2.Location = new System.Drawing.Point(116, 250);
             this.lblAltPontosJogador2.Name = "lblAltPontosJogador2";
-            this.lblAltPontosJogador2.Size = new System.Drawing.Size(60, 22);
+            this.lblAltPontosJogador2.Size = new System.Drawing.Size(63, 24);
             this.lblAltPontosJogador2.TabIndex = 65;
             this.lblAltPontosJogador2.Text = "Texto";
             this.lblAltPontosJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -432,11 +432,11 @@
             // 
             this.lblAltNomeJogador2.AutoSize = true;
             this.lblAltNomeJogador2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltNomeJogador2.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltNomeJogador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltNomeJogador2.ForeColor = System.Drawing.Color.White;
             this.lblAltNomeJogador2.Location = new System.Drawing.Point(95, 224);
             this.lblAltNomeJogador2.Name = "lblAltNomeJogador2";
-            this.lblAltNomeJogador2.Size = new System.Drawing.Size(210, 22);
+            this.lblAltNomeJogador2.Size = new System.Drawing.Size(230, 24);
             this.lblAltNomeJogador2.TabIndex = 64;
             this.lblAltNomeJogador2.Text = "LucasLucasLucasLucas";
             this.lblAltNomeJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -480,11 +480,11 @@
             // 
             this.lblAltQtdNaosJogador3.AutoSize = true;
             this.lblAltQtdNaosJogador3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltQtdNaosJogador3.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltQtdNaosJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltQtdNaosJogador3.ForeColor = System.Drawing.Color.White;
             this.lblAltQtdNaosJogador3.Location = new System.Drawing.Point(151, 391);
             this.lblAltQtdNaosJogador3.Name = "lblAltQtdNaosJogador3";
-            this.lblAltQtdNaosJogador3.Size = new System.Drawing.Size(60, 22);
+            this.lblAltQtdNaosJogador3.Size = new System.Drawing.Size(63, 24);
             this.lblAltQtdNaosJogador3.TabIndex = 72;
             this.lblAltQtdNaosJogador3.Text = "Texto";
             this.lblAltQtdNaosJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -494,11 +494,11 @@
             // 
             this.lblAltPontosJogador3.AutoSize = true;
             this.lblAltPontosJogador3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltPontosJogador3.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltPontosJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltPontosJogador3.ForeColor = System.Drawing.Color.White;
             this.lblAltPontosJogador3.Location = new System.Drawing.Point(116, 361);
             this.lblAltPontosJogador3.Name = "lblAltPontosJogador3";
-            this.lblAltPontosJogador3.Size = new System.Drawing.Size(60, 22);
+            this.lblAltPontosJogador3.Size = new System.Drawing.Size(63, 24);
             this.lblAltPontosJogador3.TabIndex = 71;
             this.lblAltPontosJogador3.Text = "Texto";
             this.lblAltPontosJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -508,11 +508,11 @@
             // 
             this.lblAltNomeJogador3.AutoSize = true;
             this.lblAltNomeJogador3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltNomeJogador3.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltNomeJogador3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltNomeJogador3.ForeColor = System.Drawing.Color.White;
             this.lblAltNomeJogador3.Location = new System.Drawing.Point(95, 335);
             this.lblAltNomeJogador3.Name = "lblAltNomeJogador3";
-            this.lblAltNomeJogador3.Size = new System.Drawing.Size(210, 22);
+            this.lblAltNomeJogador3.Size = new System.Drawing.Size(230, 24);
             this.lblAltNomeJogador3.TabIndex = 70;
             this.lblAltNomeJogador3.Text = "LucasLucasLucasLucas";
             this.lblAltNomeJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -557,11 +557,11 @@
             // 
             this.lblAltQtdNaosJogador4.AutoSize = true;
             this.lblAltQtdNaosJogador4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltQtdNaosJogador4.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltQtdNaosJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltQtdNaosJogador4.ForeColor = System.Drawing.Color.White;
             this.lblAltQtdNaosJogador4.Location = new System.Drawing.Point(151, 503);
             this.lblAltQtdNaosJogador4.Name = "lblAltQtdNaosJogador4";
-            this.lblAltQtdNaosJogador4.Size = new System.Drawing.Size(60, 22);
+            this.lblAltQtdNaosJogador4.Size = new System.Drawing.Size(63, 24);
             this.lblAltQtdNaosJogador4.TabIndex = 78;
             this.lblAltQtdNaosJogador4.Text = "Texto";
             this.lblAltQtdNaosJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -571,11 +571,11 @@
             // 
             this.lblAltPontosJogador4.AutoSize = true;
             this.lblAltPontosJogador4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltPontosJogador4.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltPontosJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltPontosJogador4.ForeColor = System.Drawing.Color.White;
             this.lblAltPontosJogador4.Location = new System.Drawing.Point(116, 473);
             this.lblAltPontosJogador4.Name = "lblAltPontosJogador4";
-            this.lblAltPontosJogador4.Size = new System.Drawing.Size(60, 22);
+            this.lblAltPontosJogador4.Size = new System.Drawing.Size(63, 24);
             this.lblAltPontosJogador4.TabIndex = 77;
             this.lblAltPontosJogador4.Text = "Texto";
             this.lblAltPontosJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -585,11 +585,11 @@
             // 
             this.lblAltNomeJogador4.AutoSize = true;
             this.lblAltNomeJogador4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltNomeJogador4.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltNomeJogador4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltNomeJogador4.ForeColor = System.Drawing.Color.White;
             this.lblAltNomeJogador4.Location = new System.Drawing.Point(95, 449);
             this.lblAltNomeJogador4.Name = "lblAltNomeJogador4";
-            this.lblAltNomeJogador4.Size = new System.Drawing.Size(210, 22);
+            this.lblAltNomeJogador4.Size = new System.Drawing.Size(230, 24);
             this.lblAltNomeJogador4.TabIndex = 76;
             this.lblAltNomeJogador4.Text = "LucasLucasLucasLucas";
             this.lblAltNomeJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -597,7 +597,7 @@
             // 
             // tmrVerificarVez
             // 
-            this.tmrVerificarVez.Interval = 3000;
+            this.tmrVerificarVez.Interval = 6000;
             this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
             // picMinhaCarta5
@@ -659,12 +659,12 @@
             // 
             this.lblAltFasePartida.AutoSize = true;
             this.lblAltFasePartida.BackColor = System.Drawing.Color.Transparent;
-            this.lblAltFasePartida.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAltFasePartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblAltFasePartida.ForeColor = System.Drawing.Color.White;
             this.lblAltFasePartida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAltFasePartida.Location = new System.Drawing.Point(573, 158);
             this.lblAltFasePartida.Name = "lblAltFasePartida";
-            this.lblAltFasePartida.Size = new System.Drawing.Size(60, 22);
+            this.lblAltFasePartida.Size = new System.Drawing.Size(63, 24);
             this.lblAltFasePartida.TabIndex = 92;
             this.lblAltFasePartida.Text = "Texto";
             this.lblAltFasePartida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
