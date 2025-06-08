@@ -10,6 +10,7 @@ namespace sistema_autonomo.Classes
     {
         public abstract void Posicionar(int jogador, string senha, int id, Tabuleiro tabuleiroRecebido);
         public abstract void Promover(string personagem, JogadorLocal jogadorLocal);
+        public abstract void Promover(JogadorLocal jogadorLocal, Tabuleiro tabuleiroRecebido, string minhasCartas);
         public abstract void Votar(Tabuleiro tabuleiro, JogadorLocal jogadorLocal);
     }
 }

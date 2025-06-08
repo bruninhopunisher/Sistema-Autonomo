@@ -147,6 +147,7 @@ namespace sistema_autonomo.Classes
                                 if (Personagem.personagenInstanciado[j].nome.Substring(0, 1) == infoVoto[0])
                                 {
                                     Personagem.personagenInstanciado[j].cardPersonagem.Visible = false;
+                                    Personagem.personagenInstanciado[j].foiDeBase = true;
                                     evisivel = false;
                                     break;
                                 }

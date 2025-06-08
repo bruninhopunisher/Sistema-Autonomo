@@ -46,10 +46,24 @@ namespace sistema_autonomo.Classes
                 { 1, new Point(923, 572) }, { 2, new Point(983, 572) }, { 3, new Point(1043, 572) }, { 4, new Point(1103, 572) }   // 0º
             };
         }
-        public void AlterarEstadoSetor(int posicaoSetor)
+        public int VerificarQtdPersonagensEstrategia(string minhasCartas)
         {
-            estadoDasPosicoesDoSetor[posicaoSetor] = true;
+            int qtdPersonagensNaEstrategia = 0;
+
+            for(int i = 13; i <= 24; i++)
+            {
+                for (int j = 0; j < minhasCartas.Length - 1; j++)
+                {
+                    if (minhasCartas[j].ToString() == posicaoDosPersonagens[i])
+                    {
+                        qtdPersonagensNaEstrategia++;
+                    }
+                }
+            }
+
+            return qtdPersonagensNaEstrategia;
         }
+
         public Point PosicaoDoSetor(int posicaoSetor)
         {
             return posicoesDeCadaSetor[posicaoSetor];
@@ -62,7 +76,7 @@ namespace sistema_autonomo.Classes
 
             if (setor == 10) //Setor do Rei
             {
-                return posicaoDisponivel = false;
+                return posicaoDisponivel;
             }
             for (int i = primeiraPosicaoSetor[setor - 1]; i <= primeiraPosicaoSetor[setor - 1] + DISTANCIA_ULTIMA_POSICAO; i++)
             {
@@ -98,17 +112,6 @@ namespace sistema_autonomo.Classes
                 }
             }
             return personagensPosicionados;
-        }
-        public bool personagemEstaPosicionado(List<Personagem> personagensRecebidos, string inicialPersonagem)
-        {
-            foreach (var personagem in personagensRecebidos)
-            {
-                if (personagem.nome.Substring(0, 1) == inicialPersonagem)
-                {
-                    return personagem.personagemPosicionado;
-                }
-            }
-            return false;
         }
         public int VerificarPosicaoDisponivelNoSetor(int posicaoSetor)
         {
@@ -186,7 +189,6 @@ namespace sistema_autonomo.Classes
             }
             return estadoTabuleiroRecebido;
         }
-       
         public List<Personagem> DesposicionarPersonagens(List<Personagem> personagensRecebidos)
         {
             List<Personagem> personagensDesposicionados = personagensRecebidos;
@@ -214,17 +216,6 @@ namespace sistema_autonomo.Classes
                 }
             }
             return personagensDesposicionados;
-        }
-        public string VerificarPersonagemMaisAlto()
-        {
-            for (int i = 25; i > 1; i--)
-            {
-                if (posicaoDosPersonagens[i] != null)
-                {
-                    return posicaoDosPersonagens[i].Substring(0, 1);
-                }
-            }
-            return "Erro!";
         }
         public string VerificarPersonagemDaVotacao()
         {

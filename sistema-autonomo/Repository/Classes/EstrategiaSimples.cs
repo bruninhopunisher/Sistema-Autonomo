@@ -9,22 +9,23 @@ namespace sistema_autonomo.Classes
 {
     public class EstrategiaSimples : Estrategia
     {
-        private const int PRIMEIRA_POSICAO_SETOR2 = 9;
-        private const int ULTIMA_POSICAO_SETOR3 = 16;
-        private const int PRIMEIRA_POSICAO_SETOR1 = 5;
-        private const int ULTIMA_POSICAO_SETOR4 = 20;
         public override void Posicionar(int jogador, string senha, int id, Tabuleiro tabuleiroRecebido)
         {
+            int setor;
+            bool posicionouPersonagem = false;
             string[] personagens = BancoAuxiliar.TratarDados(Jogo.ListarPersonagens());
+
             string cartasDoJogador = Jogo.ListarCartas(jogador, senha);
             cartasDoJogador = cartasDoJogador.Replace("\r\n", "");
-            bool posicionouPersonagem = false;
+
             string tabuleiro = Jogo.VerificarVez(id);
             tabuleiro = tabuleiro.Replace("\r", "");
             string[] tabuleiroTratado;
             tabuleiroTratado = tabuleiro.Split('\n');
+
             List<string> CartasJogadas = new List<string>();
 
+            //adiciona personagens que ja foram colocados no tabuleiro na lista
             for (int i = 1; i < tabuleiroTratado.Length - 1; i++)
             {
                 CartasJogadas.Add(tabuleiroTratado[i].Substring(2, 1));
@@ -35,59 +36,52 @@ namespace sistema_autonomo.Classes
             {
                 if (!(CartasJogadas.Contains(cartasDoJogador.Substring(i, 1))))
                 {
-                    for(int j = ULTIMA_POSICAO_SETOR3; j >= PRIMEIRA_POSICAO_SETOR2; j--)
+                    setor = 3;
+                    while (tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor > 1)
                     {
-                        if (tabuleiroRecebido.VerificarPosicaoSetorDisponivel(j) == false)
-                        {
-                            if(j >= 13 && j <= 16)
-                                Jogo.ColocarPersonagem(jogador, senha, 3, cartasDoJogador.Substring(i, 1));
-                            else
-                                Jogo.ColocarPersonagem(jogador, senha, 2, cartasDoJogador.Substring(i, 1));
-
-                            posicionouPersonagem = true;
-                            break;
-                        }
+                        setor--;
+                    }
+                    if (setor > 1)
+                    {
+                        Jogo.ColocarPersonagem(jogador, senha, setor, cartasDoJogador.Substring(i, 1));
+                        posicionouPersonagem = true;
                     }
                     if(posicionouPersonagem == false)
                     {
-                        for(int j = PRIMEIRA_POSICAO_SETOR1; j <= ULTIMA_POSICAO_SETOR4; j++)
+                        setor = 1;
+                        while (tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor < 5)
                         {
-                            if (tabuleiroRecebido.VerificarPosicaoSetorDisponivel(j) == false)
-                            {
-                                if(j >= 5 && j <= 8)
-                                    Jogo.ColocarPersonagem(jogador, senha, 1, cartasDoJogador.Substring(i, 1));
-                                else if(j >= 9 && j <= 12)
-                                    Jogo.ColocarPersonagem(jogador, senha, 2, cartasDoJogador.Substring(i, 1));
-                                else if (j >= 13 && j <= 16)
-                                    Jogo.ColocarPersonagem(jogador, senha, 3, cartasDoJogador.Substring(i, 1));
-                                else if (j >= 17 && j <= 20)
-                                    Jogo.ColocarPersonagem(jogador, senha, 4, cartasDoJogador.Substring(i, 1));
-                            }
+                            setor++;
+                        }
+                        if (setor < 5)
+                        {
+                            Jogo.ColocarPersonagem(jogador, senha, setor, cartasDoJogador.Substring(i, 1));
+                            posicionouPersonagem = true;
                         }
                     }
                 }
             }
 
             //posicionar restante dos personagens
-            for (int i = 0; i < personagens.Length - 1; i++)
+            if(posicionouPersonagem == false)
             {
-                if (!(CartasJogadas.Contains(personagens[i].Substring(0, 1))))
+                for (int i = 0; i < personagens.Length - 1; i++)
                 {
-                    int j = 0;
-                    do
+                    if (!(CartasJogadas.Contains(personagens[i].Substring(0, 1))))
                     {
-                        j++;
-                    }
-                    while (tabuleiroRecebido.VerificarSetorDisponivel(j) == true);
-                    if (j < 5)
-                    {
-                        Jogo.ColocarPersonagem(jogador, senha, j, personagens[i].Substring(0, 1));
+                        setor = 4;
+                        while(tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor > 0)
+                        {
+                            setor--;
+                        }
+                        if(setor > 0)
+                        {
+                            Jogo.ColocarPersonagem(jogador, senha, setor, personagens[i].Substring(0, 1));
+                        }
                     }
                 }
             }
         }
-
-
         public override void Promover(string personagem, JogadorLocal jogadorLocal)
         {
             //Dados recebidos para promover o personagem
@@ -95,6 +89,16 @@ namespace sistema_autonomo.Classes
             string senhaJogador = jogadorLocal.Senha;
 
             Jogo.Promover(idJogador, senhaJogador, personagem);
+        }
+        public override void Promover(JogadorLocal jogadorLocal, Tabuleiro tabuleiroRecebido, string minhasCartas)
+        {
+            //Dados recebidos para promover o personagem
+            int idJogador = jogadorLocal.Id;
+            string senhaJogador = jogadorLocal.Senha;
+
+            int retornoQtdPersonagens = tabuleiroRecebido.VerificarQtdPersonagensEstrategia(minhasCartas);
+
+            Jogo.Promover(idJogador, senhaJogador, "A");
         }
         public override void Votar(Tabuleiro tabuleiro, JogadorLocal jogadorLocal)
         {

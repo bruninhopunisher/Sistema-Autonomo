@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\repository\\classes\\estrategiasimples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\stephanie travensolo\\documents\\caua estudos\\pi3\\sistema-autonomo\\sistema-autonomo\\repository\\classes\\estrategiasimples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\repository\\classes\\estrategiasimples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|c:\\users\\stephanie travensolo\\documents\\caua estudos\\pi3\\sistema-autonomo\\sistema-autonomo\\repository\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\repository\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\repository\\classes\\tabuleiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E50AF40E-A183-470A-B6C7-4EA11E468CA7}|sistema-autonomo\\sistema-autonomo.csproj|solutionrelative:sistema-autonomo\\telas\\3 - sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,43 +32,43 @@
         },
         {
           "DockedWidth": 357,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "3 - Sala.cs",
               "DocumentMoniker": "C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\3 - Sala.cs",
               "RelativeDocumentMoniker": "sistema-autonomo\\Telas\\3 - Sala.cs",
               "ToolTip": "C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Telas\\3 - Sala.cs",
               "RelativeToolTip": "sistema-autonomo\\Telas\\3 - Sala.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAowKwAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAA5wKwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-08T01:53:03.161Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EstrategiaSimples.cs",
               "DocumentMoniker": "C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Repository\\Classes\\EstrategiaSimples.cs",
               "RelativeDocumentMoniker": "sistema-autonomo\\Repository\\Classes\\EstrategiaSimples.cs",
               "ToolTip": "C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Repository\\Classes\\EstrategiaSimples.cs",
               "RelativeToolTip": "sistema-autonomo\\Repository\\Classes\\EstrategiaSimples.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAqwCcAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-08T01:53:26.053Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Tabuleiro.cs",
               "DocumentMoniker": "C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Repository\\Classes\\Tabuleiro.cs",
               "RelativeDocumentMoniker": "sistema-autonomo\\Repository\\Classes\\Tabuleiro.cs",
               "ToolTip": "C:\\Users\\Stephanie Travensolo\\Documents\\Caua Estudos\\PI3\\Sistema-Autonomo\\sistema-autonomo\\Repository\\Classes\\Tabuleiro.cs",
               "RelativeToolTip": "sistema-autonomo\\Repository\\Classes\\Tabuleiro.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAOYAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAewE4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-08T02:30:37.873Z",
               "EditorCaption": ""

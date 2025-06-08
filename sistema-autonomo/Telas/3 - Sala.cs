@@ -95,6 +95,7 @@ namespace sistema_autonomo
             faseDaPartida = "";
             rodadaPassada = 0;
             qtdPersonagensPosicionados = 13;
+
             //VER COM O CAUA A LISTA
             listaPersonagens = Personagem.ListarPersonagem(0);
             foreach (var personagem in listaPersonagens)
@@ -174,8 +175,8 @@ namespace sistema_autonomo
             }
             else if (faseDaPartida == "P") //Em promoçao
             {
-                string personagemPromover = tabuleiro.VerificarPersonagemMaisAlto();
-                estrategia.Promover(personagemPromover, meuJogador);
+                //string personagemPromover = tabuleiro.VerificarPersonagemMaisAlto();
+                estrategia.Promover(meuJogador, tabuleiro, cartasSorteadas.Replace("\r\n", ""));
                 qtdPersonagensRecebida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
             }
             else if (faseDaPartida == "V") //Em votação
