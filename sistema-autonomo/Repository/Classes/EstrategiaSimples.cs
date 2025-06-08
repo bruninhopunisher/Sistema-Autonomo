@@ -9,11 +9,16 @@ namespace sistema_autonomo.Classes
 {
     public class EstrategiaSimples : Estrategia
     {
+        private const int PRIMEIRA_POSICAO_SETOR2 = 9;
+        private const int ULTIMA_POSICAO_SETOR3 = 16;
+        private const int PRIMEIRA_POSICAO_SETOR1 = 5;
+        private const int ULTIMA_POSICAO_SETOR4 = 20;
         public override void Posicionar(int jogador, string senha, int id, Tabuleiro tabuleiroRecebido)
         {
             string[] personagens = BancoAuxiliar.TratarDados(Jogo.ListarPersonagens());
             string cartasDoJogador = Jogo.ListarCartas(jogador, senha);
-
+            cartasDoJogador = cartasDoJogador.Replace("\r\n", "");
+            bool posicionouPersonagem = false;
             string tabuleiro = Jogo.VerificarVez(id);
             tabuleiro = tabuleiro.Replace("\r", "");
             string[] tabuleiroTratado;
@@ -23,22 +28,42 @@ namespace sistema_autonomo.Classes
             for (int i = 1; i < tabuleiroTratado.Length - 1; i++)
             {
                 CartasJogadas.Add(tabuleiroTratado[i].Substring(2, 1));
-            }
+            } 
 
-            //posicionar personagens das cartas
+            //posicionar personagens das cartas (Com estrategia)
             for (int i = 0; i < cartasDoJogador.Length; i++)
             {
                 if (!(CartasJogadas.Contains(cartasDoJogador.Substring(i, 1))))
                 {
-                    int j = 0;
-                    do
+                    for(int j = ULTIMA_POSICAO_SETOR3; j >= PRIMEIRA_POSICAO_SETOR2; j--)
                     {
-                        j++;
+                        if (tabuleiroRecebido.VerificarPosicaoSetorDisponivel(j) == false)
+                        {
+                            if(j >= 13 && j <= 16)
+                                Jogo.ColocarPersonagem(jogador, senha, 3, cartasDoJogador.Substring(i, 1));
+                            else
+                                Jogo.ColocarPersonagem(jogador, senha, 2, cartasDoJogador.Substring(i, 1));
+
+                            posicionouPersonagem = true;
+                            break;
+                        }
                     }
-                    while (tabuleiroRecebido.VerificarSetorDisponivel(j) == true);
-                    if (j < 5)
+                    if(posicionouPersonagem == false)
                     {
-                        Jogo.ColocarPersonagem(jogador, senha, j, cartasDoJogador.Substring(i, 1));
+                        for(int j = PRIMEIRA_POSICAO_SETOR1; j <= ULTIMA_POSICAO_SETOR4; j++)
+                        {
+                            if (tabuleiroRecebido.VerificarPosicaoSetorDisponivel(j) == false)
+                            {
+                                if(j >= 5 && j <= 8)
+                                    Jogo.ColocarPersonagem(jogador, senha, 1, cartasDoJogador.Substring(i, 1));
+                                else if(j >= 9 && j <= 12)
+                                    Jogo.ColocarPersonagem(jogador, senha, 2, cartasDoJogador.Substring(i, 1));
+                                else if (j >= 13 && j <= 16)
+                                    Jogo.ColocarPersonagem(jogador, senha, 3, cartasDoJogador.Substring(i, 1));
+                                else if (j >= 17 && j <= 20)
+                                    Jogo.ColocarPersonagem(jogador, senha, 4, cartasDoJogador.Substring(i, 1));
+                            }
+                        }
                     }
                 }
             }
@@ -61,6 +86,8 @@ namespace sistema_autonomo.Classes
                 }
             }
         }
+
+
         public override void Promover(string personagem, JogadorLocal jogadorLocal)
         {
             //Dados recebidos para promover o personagem
