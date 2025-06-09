@@ -27,7 +27,7 @@ namespace sistema_autonomo.Classes
             for (int i = 1; i < tabuleiroTratado.Length - 1; i++)
             {
                 CartasJogadas.Add(tabuleiroTratado[i].Substring(2, 1));
-            }
+            } 
 
             //posicionar personagens das cartas (Com estrategia)
             for (int i = 0; i < cartasDoJogador.Length; i++)
@@ -44,7 +44,7 @@ namespace sistema_autonomo.Classes
                         Jogo.ColocarPersonagem(jogador, senha, setor, cartasDoJogador.Substring(i, 1));
                         posicionouPersonagem = true;
                     }
-                    if (posicionouPersonagem == false)
+                    if(posicionouPersonagem == false)
                     {
                         setor = 1;
                         while (tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor < 5)
@@ -61,18 +61,18 @@ namespace sistema_autonomo.Classes
             }
 
             //posicionar restante dos personagens
-            if (posicionouPersonagem == false)
+            if(posicionouPersonagem == false)
             {
                 for (int i = 0; i < personagens.Length - 1; i++)
                 {
                     if (!(CartasJogadas.Contains(personagens[i].Substring(0, 1))))
                     {
                         setor = 4;
-                        while (tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor > 0)
+                        while(tabuleiroRecebido.VerificarSetorDisponivel(setor) == true && setor > 0)
                         {
                             setor--;
                         }
-                        if (setor > 0)
+                        if(setor > 0)
                         {
                             Jogo.ColocarPersonagem(jogador, senha, setor, personagens[i].Substring(0, 1));
                         }
@@ -98,7 +98,7 @@ namespace sistema_autonomo.Classes
             string retornoServer;
 
             retornoServer = Jogo.Promover(idJogador, senhaJogador, retornoPersonagens);
-            if (retornoServer.Substring(0, 4) == "ERRO")
+            if(retornoServer.Substring(0,4) == "ERRO")
             {
                 retornoPersonagens = tabuleiroRecebido.PromoverPrimeira();
                 Jogo.Promover(idJogador, senhaJogador, retornoPersonagens);

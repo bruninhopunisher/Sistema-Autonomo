@@ -283,9 +283,9 @@
             this.lblAltNomeJogador1.ForeColor = System.Drawing.Color.White;
             this.lblAltNomeJogador1.Location = new System.Drawing.Point(95, 112);
             this.lblAltNomeJogador1.Name = "lblAltNomeJogador1";
-            this.lblAltNomeJogador1.Size = new System.Drawing.Size(230, 24);
+            this.lblAltNomeJogador1.Size = new System.Drawing.Size(97, 24);
             this.lblAltNomeJogador1.TabIndex = 37;
-            this.lblAltNomeJogador1.Text = "LucasLucasLucasLucas";
+            this.lblAltNomeJogador1.Text = "Jogador1";
             this.lblAltNomeJogador1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAltRodadaPartida
@@ -436,9 +436,9 @@
             this.lblAltNomeJogador2.ForeColor = System.Drawing.Color.White;
             this.lblAltNomeJogador2.Location = new System.Drawing.Point(95, 224);
             this.lblAltNomeJogador2.Name = "lblAltNomeJogador2";
-            this.lblAltNomeJogador2.Size = new System.Drawing.Size(230, 24);
+            this.lblAltNomeJogador2.Size = new System.Drawing.Size(97, 24);
             this.lblAltNomeJogador2.TabIndex = 64;
-            this.lblAltNomeJogador2.Text = "LucasLucasLucasLucas";
+            this.lblAltNomeJogador2.Text = "Jogador2";
             this.lblAltNomeJogador2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picVotosJogador3
@@ -512,9 +512,9 @@
             this.lblAltNomeJogador3.ForeColor = System.Drawing.Color.White;
             this.lblAltNomeJogador3.Location = new System.Drawing.Point(95, 335);
             this.lblAltNomeJogador3.Name = "lblAltNomeJogador3";
-            this.lblAltNomeJogador3.Size = new System.Drawing.Size(230, 24);
+            this.lblAltNomeJogador3.Size = new System.Drawing.Size(97, 24);
             this.lblAltNomeJogador3.TabIndex = 70;
-            this.lblAltNomeJogador3.Text = "LucasLucasLucasLucas";
+            this.lblAltNomeJogador3.Text = "Jogador3";
             this.lblAltNomeJogador3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAltNomeJogador3.Visible = false;
             // 
@@ -589,9 +589,9 @@
             this.lblAltNomeJogador4.ForeColor = System.Drawing.Color.White;
             this.lblAltNomeJogador4.Location = new System.Drawing.Point(95, 449);
             this.lblAltNomeJogador4.Name = "lblAltNomeJogador4";
-            this.lblAltNomeJogador4.Size = new System.Drawing.Size(230, 24);
+            this.lblAltNomeJogador4.Size = new System.Drawing.Size(97, 24);
             this.lblAltNomeJogador4.TabIndex = 76;
-            this.lblAltNomeJogador4.Text = "LucasLucasLucasLucas";
+            this.lblAltNomeJogador4.Text = "Jogador4";
             this.lblAltNomeJogador4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAltNomeJogador4.Visible = false;
             // 
