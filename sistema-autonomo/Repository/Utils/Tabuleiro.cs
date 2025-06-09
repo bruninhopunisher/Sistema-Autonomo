@@ -43,7 +43,7 @@ namespace sistema_autonomo.Classes
                 { 1, new Point(923, 572) }, { 2, new Point(983, 572) }, { 3, new Point(1043, 572) }, { 4, new Point(1103, 572) }   // 0º
             };
         }
-        public string VerificarQtdPersonagensEstrategia(string minhasCartas)
+        public string VerificarPersonagemAdversario(string minhasCartas)
         {
             //int qtdPersonagensNaEstrategia = 0;
             List<string> minhasCartasRecebidas = new List<string>();
@@ -52,7 +52,7 @@ namespace sistema_autonomo.Classes
                 minhasCartasRecebidas.Add(minhasCartas[i].ToString());
             }
 
-            for (int i = 24; i > 9; i--)
+            for (int i = 24; i > 0; i--)
             {
                 if (!minhasCartasRecebidas.Contains(posicaoDosPersonagens[i]) && posicaoDosPersonagens[i] != null)
                 {
@@ -60,30 +60,25 @@ namespace sistema_autonomo.Classes
                     return posicaoDosPersonagens[i];
                 }
             }
-            Console.WriteLine("Deu errooooooooooooooooooooooooooooooooooo");
             return "ERRO";
-
-            /*
-            string cartaPromover = "";
-
-            for(int i = 9; i <= 24; i++)
+        }
+        public string VerificarMeuPersonagem(string minhasCartas)
+        {
+            List<string> minhasCartasRecebidas = new List<string>();
+            for (int i = 0; i < minhasCartas.Length; i++)
             {
-                for (int j = 0; j < minhasCartas.Length - 1; j++)
+                minhasCartasRecebidas.Add(minhasCartas[i].ToString());
+            }
+
+            for (int i = 1; i < 25; i++)
+            {
+                if (minhasCartasRecebidas.Contains(posicaoDosPersonagens[i]) && posicaoDosPersonagens[i] != null)
                 {
-                    if (minhasCartas[j].ToString() == posicaoDosPersonagens[i])
-                    {
-                        ehMinhaCarta = true;
-                    }
-                }
-                if (!ehMinhaCarta)
-                {
-                    Console.WriteLine("Acarta que deveria ser promovida é " + cartaPromover);
-                    cartaPromover = posicaoDosPersonagens[i];
-                    break;
+                    Console.WriteLine("carta retornada: " + posicaoDosPersonagens[i]);
+                    return posicaoDosPersonagens[i];
                 }
             }
-            return cartaPromover;
-            */
+            return "ERRO";
         }
         public string PromoverPrimeira()
         {
@@ -98,7 +93,6 @@ namespace sistema_autonomo.Classes
             }
             return retorno;
         }
-
         public Point PosicaoDoSetor(int posicaoSetor)
         {
             return posicoesDeCadaSetor[posicaoSetor];
@@ -254,7 +248,7 @@ namespace sistema_autonomo.Classes
         }
         public string VerificarPersonagemDaVotacao()
         {
-            if (posicaoDosPersonagens[25].Substring(0, 1) != null)
+            if (posicaoDosPersonagens[25] != null)
                 return posicaoDosPersonagens[25].Substring(0, 1);
             else
                 return "Erro!";

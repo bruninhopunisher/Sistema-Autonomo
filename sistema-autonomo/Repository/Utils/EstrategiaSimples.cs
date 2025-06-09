@@ -6,7 +6,16 @@ namespace sistema_autonomo.Classes
 {
     public class EstrategiaSimples : Estrategia
     {
-        public int qtdVotacoesOcorridas = 0;
+        public int QtdVotacoesOcorridas { get; private set; }
+        private string retornoVotacao = "naodeuerro";
+        public EstrategiaSimples()
+        {
+            SetQtdVotacoes(0);
+        }
+        public void SetQtdVotacoes(int qtdVotacoes)
+        {
+            QtdVotacoesOcorridas = qtdVotacoes;
+        }
         public override void Posicionar(int jogador, string senha, int id, Tabuleiro tabuleiroRecebido)
         {
             int setor;
@@ -80,36 +89,35 @@ namespace sistema_autonomo.Classes
                 }
             }
         }
-        public override void Promover(string personagem, JogadorLocal jogadorLocal)
-        {
-            //Dados recebidos para promover o personagem
-            int idJogador = jogadorLocal.Id;
-            string senhaJogador = jogadorLocal.Senha;
-
-            Jogo.Promover(idJogador, senhaJogador, personagem);
-        }
         public override void Promover(JogadorLocal jogadorLocal, Tabuleiro tabuleiroRecebido, string minhasCartas)
         {
             //Dados recebidos para promover o personagem
             int idJogador = jogadorLocal.Id;
             string senhaJogador = jogadorLocal.Senha;
-
-            string retornoPersonagens = tabuleiroRecebido.VerificarQtdPersonagensEstrategia(minhasCartas);
+            string personagemPromover;
             string retornoServer;
 
-            retornoServer = Jogo.Promover(idJogador, senhaJogador, retornoPersonagens);
+            if (QtdVotacoesOcorridas < 7)
+            {
+                personagemPromover = tabuleiroRecebido.VerificarPersonagemAdversario(minhasCartas);
+            }
+            else
+            {
+                personagemPromover = tabuleiroRecebido.VerificarMeuPersonagem(minhasCartas);
+            }
+
+            retornoServer = Jogo.Promover(idJogador, senhaJogador, personagemPromover);
             if(retornoServer.Substring(0,4) == "ERRO")
             {
-                retornoPersonagens = tabuleiroRecebido.PromoverPrimeira();
-                Jogo.Promover(idJogador, senhaJogador, retornoPersonagens);
-
+                personagemPromover = tabuleiroRecebido.PromoverPrimeira();
+                Jogo.Promover(idJogador, senhaJogador, personagemPromover);
             }
         }
         public override void Votar(Tabuleiro tabuleiro, JogadorLocal jogadorLocal)
         {
             string personagemEleitoVotacao;
             List<string> minhasCartas = new List<string>();
-
+            
             personagemEleitoVotacao = tabuleiro.VerificarPersonagemDaVotacao(); //Personagem do rei
 
             //minha lista de personagem
@@ -121,13 +129,21 @@ namespace sistema_autonomo.Classes
                 minhasCartas.Add(meusPersonagensRecebidos.Substring(i, 1));
             }
 
-            if (jogadorLocal.QtdNao > 0 && !minhasCartas.Contains(personagemEleitoVotacao) && qtdVotacoesOcorridas > 3)
+            if (jogadorLocal.QtdNao > 0 && !minhasCartas.Contains(personagemEleitoVotacao) && QtdVotacoesOcorridas > 3)
             {
-                Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "N");
+                retornoVotacao = Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "N");
             }
             else
             {
-                qtdVotacoesOcorridas++;
+                QtdVotacoesOcorridas++;
+                retornoVotacao = Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "S");
+            }
+            if(retornoVotacao == "")
+            {
+                Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "S");
+            }
+            else if (retornoVotacao.Substring(0,4) == "ERRO")
+            {
                 Jogo.Votar(jogadorLocal.Id, jogadorLocal.Senha, "S");
             }
         }

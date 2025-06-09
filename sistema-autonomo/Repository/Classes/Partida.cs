@@ -130,6 +130,7 @@ namespace sistema_autonomo.Classes
             string[] votos = dadosRecebidos.Split('\n');
             string[] infoVoto;
             bool evisivel = true;
+
             for (int i = 0; i < votos.Length - 1; i++)
             {
                 infoVoto = votos[i].Split(',');

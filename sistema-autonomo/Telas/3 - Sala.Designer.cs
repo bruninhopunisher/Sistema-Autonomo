@@ -597,7 +597,7 @@
             // 
             // tmrVerificarVez
             // 
-            this.tmrVerificarVez.Interval = 6000;
+            this.tmrVerificarVez.Interval = 1000;
             this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
             // picMinhaCarta5

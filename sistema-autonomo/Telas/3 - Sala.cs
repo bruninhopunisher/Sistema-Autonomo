@@ -95,6 +95,7 @@ namespace sistema_autonomo
                     personagem.cardPersonagem = mapaPersonagens[personagem.nome];
                 }
             }
+
             qtdPersonagensRecebida = new string[15];
             AtualizarInfoDaTela();
             tmrVerificarVez.Enabled = true;
@@ -102,7 +103,7 @@ namespace sistema_autonomo
         public void AtualizarInfoDaTela()
         {
             //NÃO MEXER NESTE IF PELO AMOR
-            if (qtdPersonagensPosicionados > qtdPersonagensRecebida.Length - 2)
+            if (qtdPersonagensPosicionados > (qtdPersonagensRecebida.Length - 2))
             {
                 partida.AtualizarVoto();
                 qtdPersonagensPosicionados--;
@@ -165,7 +166,6 @@ namespace sistema_autonomo
             }
             else if (faseDaPartida == "P") //Em promoçao
             {
-                //string personagemPromover = tabuleiro.VerificarPersonagemMaisAlto();
                 estrategia.Promover(meuJogador, tabuleiro, cartasSorteadas.Replace("\r\n", ""));
                 qtdPersonagensRecebida = BancoAuxiliar.TratarDados(Jogo.VerificarVez(partida.Id));
             }
@@ -182,7 +182,7 @@ namespace sistema_autonomo
             if (faseDaPartida != null && partida.Rodada != rodadaPassada)
             {
 
-                estrategia.qtdVotacoesOcorridas = 0;
+                estrategia.SetQtdVotacoes(0);
                 rodadaPassada = partida.Rodada;
                 ResetarPosicaoCartas();
                 partida.SetQtdVotoNao();
