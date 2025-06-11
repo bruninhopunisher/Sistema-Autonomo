@@ -52,27 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\BancoAuxiliar.cs" />
-    <Compile Include="Classes\Automacao.cs" />
-    <Compile Include="Classes\Estrategia.cs" />
-    <Compile Include="Classes\EstrategiaSimples.cs" />
-    <Compile Include="Classes\Tabuleiro.cs" />
-    <Compile Include="Classes\Partida.cs" />
-    <Compile Include="Classes\Lobby.cs" />
+    <Compile Include="Repository\Classes\Abstratas\Estrategia.cs" />
+    <Compile Include="Repository\Utils\BancoAuxiliar.cs" />
+    <Compile Include="Repository\Utils\Automacao.cs" />
+    <Compile Include="Repository\Utils\EstrategiaSimples.cs" />
+    <Compile Include="Repository\Classes\Abstratas\Jogador.cs" />
+    <Compile Include="Repository\Classes\JogadorPartida.cs" />
+    <Compile Include="Repository\Utils\Tabuleiro.cs" />
+    <Compile Include="Repository\Classes\Partida.cs" />
+    <Compile Include="Repository\Classes\Lobby.cs" />
     <Compile Include="Telas\1 - Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\1 - Login.Designer.cs">
       <DependentUpon>1 - Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Jogador.cs" />
+    <Compile Include="Repository\Classes\JogadorLocal.cs" />
     <Compile Include="Telas\0 - Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\0 - Inicio.Designer.cs">
       <DependentUpon>0 - Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Personagem.cs" />
+    <Compile Include="Repository\Classes\Personagem.cs" />
     <Compile Include="Telas\2 - Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +89,12 @@
     <Compile Include="Telas\3 - Sala.Designer.cs">
       <DependentUpon>3 - Sala.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Final.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Final.Designer.cs">
+      <DependentUpon>Final.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Telas\2 - Lobby.resx">
       <DependentUpon>2 - Lobby.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +104,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\0 - Inicio.resx">
       <DependentUpon>0 - Inicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="Telas\3 - Sala.resx">
       <DependentUpon>3 - Sala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Final.resx">
+      <DependentUpon>Final.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Jogador.datasource" />
     <None Include="Properties\DataSources\KingMeServer.Jogo.datasource" />

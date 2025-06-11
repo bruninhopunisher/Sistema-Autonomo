@@ -16,7 +16,7 @@ namespace sistema_autonomo
     public partial class Login : Form
     {
         public Partida partida = new Partida();
-        public Jogador jogadorLogado = new Jogador();
+        private DataGridViewRow linhaSelecDgvPartidas;
         public Login()
         {
             InitializeComponent();
@@ -30,85 +30,106 @@ namespace sistema_autonomo
         private void btnListarPartidas_Click(object sender, EventArgs e)
         {
             //Lógica para add partidas na lista e filtro de partidas
+            List<Partida> listaPartidas = new List<Partida>();
             string[] partidas = BancoAuxiliar.TratarDados(Jogo.ListarPartidas("T"));
-            lstPartidas.Items.Clear();
-            for (int i = 0; i < partidas.Length - 1; i++)
+            if (partidas == null)
             {
-                if (cboFiltrarPartidas.Text.Substring(0, 1) == "T")
-                {
-                    lstPartidas.Items.Add(partidas[i]);
-                }
-                //Pega a última letra das info. da partida do servidor para determinar o filtro.
-                else if (cboFiltrarPartidas.Text.Substring(0, 1) == partidas[i].Substring(partidas[i].Length - 1, 1))
-                {
-                    lstPartidas.Items.Add(partidas[i]);
-                }
-            }
-        }
-        public void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Informações da Partida selecionada
-            string[] partidaSelecionada = lstPartidas.SelectedItem.ToString().Split(',');
-            partida.Id = (Convert.ToInt32(partidaSelecionada[0]));
-            partida.Nome = (partidaSelecionada[1]);
-            partida.Data = (partidaSelecionada[2]);
-            partida.Status = (partidaSelecionada[3]);
-            lblIdPartidaSelecionada.Text = partida.Id.ToString();
-            lblNomePartidaSelecionada.Text = partida.Nome;
-            lblDataPartidaSelecionada.Text = partida.Data;
-            switch (partida.Status)
-            {
-                case "A":
-                    lblStatusPartidaSelecionada.Text = "Aberta";
-                    break;
-                case "J":
-                    lblStatusPartidaSelecionada.Text = "Jogando";
-                    break;
-                case "E":
-                    lblStatusPartidaSelecionada.Text = "Encerrada";
-                    break;
-            }
-            //Fim
-            //Informações dos jogadores presentes na partida selecionada
-            string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
-            lstJogadores.Items.Clear();
-            if (jogadores == null)//Compara com null devido ao retorno do tratar dados
-            {
-                lstJogadores.Items.Add("Nenhum jogador na partida!");
                 return;
             }
-            for (int i = 0; i < jogadores.Length; i++)
+            listaPartidas.Clear();
+            if (cboFiltrarPartidas.Text.Substring(0, 1) == "T")
             {
-                lstJogadores.Items.Add(jogadores[i]);
+                for (int i = 0; i < partidas.Length - 1; i++)
+                {
+                    string[] dadosPartida = partidas[i].Split(',');
+                    Partida novaPartida = new Partida();
+                    novaPartida.Id = Convert.ToInt32(dadosPartida[0]);
+                    novaPartida.Nome = dadosPartida[1];
+                    novaPartida.Data = dadosPartida[2];
+                    novaPartida.Status = dadosPartida[3];
+                    listaPartidas.Add(novaPartida);
+                }
             }
-            //Fim
+            else 
+            {
+                for (int i = 0; i < partidas.Length - 1; i++)
+                {
+                    if(cboFiltrarPartidas.Text.Substring(0, 1) == partidas[i].Substring(partidas[i].Length - 1, 1))
+                    {
+                        string[] dadosPartida = partidas[i].Split(',');
+                        Partida novaPartida = new Partida();
+                        novaPartida.Id = Convert.ToInt32(dadosPartida[0]);
+                        novaPartida.Nome = dadosPartida[1];
+                        novaPartida.Status = dadosPartida[3];
+                        listaPartidas.Add(novaPartida);
+                    }
+                }
+            }
+            listaPartidas.Sort((a, b) => b.Id.CompareTo(a.Id));
+            dgvPartidas.Rows.Clear();
+            foreach (Partida partida in listaPartidas)
+            {
+                dgvPartidas.Rows.Add(
+                    partida.Id,
+                    partida.Nome,
+                    partida.Status
+                );
+            }
+        }
+        private void dgvPartidas_SelectionChanged(object sender, EventArgs e)
+        {
+            //Informações da Partida selecionada
+             linhaSelecDgvPartidas = dgvPartidas.CurrentRow;
+            if (linhaSelecDgvPartidas != null)
+            {
+                partida.Id = Convert.ToInt32(linhaSelecDgvPartidas.Cells["ID"].Value);
+                partida.Nome = linhaSelecDgvPartidas.Cells["NOME"].Value.ToString();
+                partida.Status = linhaSelecDgvPartidas.Cells["STATUS"].Value.ToString();
+                //Informações dos jogadores presentes na partida selecionada
+                string[] jogadores = BancoAuxiliar.TratarDados(Jogo.ListarJogadores(partida.Id));
+                lstJogadores.Items.Clear();
+                if (jogadores == null)//Compara com null devido ao retorno do tratar dados
+                {
+                    lstJogadores.Items.Add("Nenhum jogador na partida!");
+                    return;
+                }
+                for (int i = 0; i < jogadores.Length - 1; i++)
+                {
+                    string[] dadosJogadorSeparado = jogadores[i].Split(',');
+                    lstJogadores.Items.Add(dadosJogadorSeparado[1]);
+                }
+                //Fim
+            }
         }
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
             partida.Nome = txtInputNomePartida.Text.Trim();
             partida.Senha = txtInputSenhaPartida.Text.Trim();
-
             if (partida.Nome == "" || partida.Senha == "")
             {
                 MessageBox.Show("ERRO: Nome ou senha invalidos");
             }
             else
             {
-                string idPartidaCriada = Jogo.CriarPartida(partida.Nome, partida.Senha, "Estudantes de Bolonha");
+                string idPartidaCriada = Jogo.CriarPartida(partida.Nome, partida.Senha, partida.NomeGrupo);
                 MessageBox.Show($"Partida criada com sucesso!\nO ID da sua partida é {idPartidaCriada}");
             }
         }
         private void btnEntrarPartida_Click_1(object sender, EventArgs e)
         {
-            jogadorLogado.Nome = txtNomeDoJogador.Text.Trim();
-            jogadorLogado.Senha = txtSenhaEntrarPartida.Text.Trim();
-            string iniciarPartida = Jogo.Entrar(partida.Id, jogadorLogado.Nome, jogadorLogado.Senha);
+            string controller_nome_jogador = txtNomeDoJogador.Text.Trim();
+            string controller_senha_partida = txtSenhaEntrarPartida.Text.Trim();
+            // Instância única de jogador local
+            JogadorLocal jogadorLocal;
+            string iniciarPartida = Jogo.Entrar(partida.Id, controller_nome_jogador, controller_senha_partida);
             string[] dadosTratados = iniciarPartida.Split(',');
             if (iniciarPartida.Substring(0, 1) != "E")
             {
-                jogadorLogado.Id = Convert.ToInt32(dadosTratados[0]);
-                jogadorLogado.Senha = dadosTratados[1];
-                Lobby telaLobby = new Lobby(partida, jogadorLogado);
+                int controller_id = Convert.ToInt32(dadosTratados[0]);
+                string controller_senha_jogador = dadosTratados[1];
+                jogadorLocal = new JogadorLocal(controller_id, controller_nome_jogador, controller_senha_jogador, 0, 3);
+                this.Hide();
+                Lobby telaLobby = new Lobby(partida, jogadorLocal);
                 telaLobby.ShowDialog();
                 this.Close();
             }
